@@ -1,0 +1,68 @@
+{
+  "id": 1795285089586,
+  "jsonrpc": "2.0",
+  "result": {
+    "_meta": {
+      "ui": {
+        "resourceUri": "ui://stitch.googleapis.com/project-viewer",
+        "visibility": [
+          "model",
+          "app"
+        ]
+      }
+    },
+    "content": [
+      {
+        "text": "{\"name\":\"projects/18417079394346181284\",\"title\":\"Chakravyuh Hackathon Landing Page\",\"visibility\":\"PRIVATE\",\"createTime\":\"2026-11-21T17:13:02.229925Z\",\"updateTime\":\"2026-11-21T18:17:24.992882Z\",\"projectType\":\"DESIGN_V2\",\"thumbnailScreenshot\":{\"name\":\"projects/18417079394346181284/files/16444553782744701687\",\"downloadUrl\":\"https://lh3.googleusercontent.com/aida/ALJJyrDCIqMGbD3tI2sWgNGE7QmzscKLi8bRVJhrhBcZzSL2chrjupodltGuTrilcDXm32ff1tNPiFyzT1Jo49oQhFIOJohMB0aQ5tTWN8z1jA6GCB76g7TbpQr_P5smUuXlLSQC9a-LXoaduW5a8RQkBac_u8DvxOD-ATg3cT296Crbjd7hcMTfjl-YUiUHZXGPvqC_NJ8obpfrOz_RtfxNuemB1Z6y4u1JjBsyXl7sdcSz0A\"},\"origin\":\"WEB\",\"designTheme\":{},\"screenInstances\":[{\"id\":\"node_14763565588260839623\",\"x\":-1060,\"width\":960,\"height\":1440,\"label\":\"Chakravyuh 2.0 — Design System\",\"sourceAsset\":\"assets/canvas_node_node_14763565588260839623\",\"type\":\"DESIGN_SYSTEM_INSTANCE\"},{\"id\":\"node_903558427885209850\",\"sourceScreen\":\"projects/18417079394346181284/screens/node_903558427885209850\",\"x\":1836,\"width\":1280,\"height\":9992,\"label\":\"Chakravyuh 2.0 — Landing Page\",\"type\":\"SCREEN_INSTANCE\"}],\"metadata\":{\"userRole\":\"OWNER\"},\"sharingSettings\":{\"permissions\":[{\"id\":\"1038919925695\",\"role\":\"OWNER\",\"email\":\"sibsankar2727@gmail.com\"}],\"accessType\":\"RESTRICTED\"}}",
+        "type": "text"
+      }
+    ],
+    "structuredContent": {
+      "createTime": "2026-11-21T17:13:02.229925Z",
+      "designTheme": {},
+      "metadata": {
+        "userRole": "OWNER"
+      },
+      "name": "projects/18417079394346181284",
+      "origin": "WEB",
+      "projectType": "DESIGN_V2",
+      "screenInstances": [
+        {
+          "height": 1440,
+          "id": "node_14763565588260839623",
+          "label": "Chakravyuh 2.0 — Design System",
+          "sourceAsset": "assets/canvas_node_node_14763565588260839623",
+          "type": "DESIGN_SYSTEM_INSTANCE",
+          "width": 960,
+          "x": -1060
+        },
+        {
+          "height": 9992,
+          "id": "node_903558427885209850",
+          "label": "Chakravyuh 2.0 — Landing Page",
+          "sourceScreen": "projects/18417079394346181284/screens/node_903558427885209850",
+          "type": "SCREEN_INSTANCE",
+          "width": 1280,
+          "x": 1836
+        }
+      ],
+      "sharingSettings": {
+        "accessType": "RESTRICTED",
+        "permissions": [
+          {
+            "email": "sibsankar2727@gmail.com",
+            "id": "1038919925695",
+            "role": "OWNER"
+          }
+        ]
+      },
+      "thumbnailScreenshot": {
+        "downloadUrl": "https://lh3.googleusercontent.com/aida/ALJJyrDCIqMGbD3tI2sWgNGE7QmzscKLi8bRVJhrhBcZzSL2chrjupodltGuTrilcDXm32ff1tNPiFyzT1Jo49oQhFIOJohMB0aQ5tTWN8z1jA6GCB76g7TbpQr_P5smUuXlLSQC9a-LXoaduW5a8RQkBac_u8DvxOD-ATg3cT296Crbjd7hcMTfjl-YUiUHZXGPvqC_NJ8obpfrOz_RtfxNuemB1Z6y4u1JjBsyXl7sdcSz0A",
+        "name": "projects/18417079394346181284/files/16444553782744701687"
+      },
+      "title": "Chakravyuh Hackathon Landing Page",
+      "updateTime": "2026-11-21T18:17:24.992882Z",
+      "visibility": "PRIVATE"
+    }
+  }
+}

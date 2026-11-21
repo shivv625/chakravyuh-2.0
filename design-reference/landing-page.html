@@ -1,0 +1,1396 @@
+<!DOCTYPE html><html lang="en" class="scroll-smooth"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHAKRAVYUH 2.0 — National Level Hackathon | GITA Autonomous College</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config" data-stitch-original-src="7196172b0d847008===../../tailwind.config.js">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'sky-light': '#BFD6EC',
+        'sky-deep': '#8FB4DC',
+        'cream-parchment': '#FFF6E3',
+        'gold-highlight': '#F2B84B',
+        'gold-rich': '#D9961F',
+        'saffron': '#E8761E',
+        'burnt-orange': '#B8521A',
+        'bronze-brown': '#6B3A1E',
+        'dark-chocolate': '#3A1D0E',
+        'krishna-blue': '#4F74BE',
+        'peacock-green': '#3E8E5A',
+        'navy-ink': '#1B2A41',
+        'light-primary': '#6B3A1E',
+        'light-on-primary': '#FFF6E3',
+        'light-primary-container': '#3A1D0E',
+        'light-on-primary-container': '#F2B84B',
+        'light-secondary': '#B8521A',
+        'light-on-secondary': '#FFF6E3',
+        'light-secondary-container': '#E8761E',
+        'light-on-secondary-container': '#3A1D0E',
+        'light-tertiary': '#4F74BE',
+        'light-on-tertiary': '#FFFFFF',
+        'light-tertiary-container': '#BFD6EC',
+        'light-on-tertiary-container': '#1B2A41',
+        'light-error': '#BA1A1A',
+        'light-on-error': '#FFFFFF',
+        'light-background': '#FFF6E3',
+        'light-on-background': '#1B2A41',
+        'light-surface': '#FFF6E3',
+        'light-surface-container-lowest': '#FFFDF8',
+        'light-surface-container-low': '#FCF0D6',
+        'light-surface-container': '#F6E5C3',
+        'light-surface-container-high': '#EAD5AC',
+        'light-on-surface': '#1B2A41',
+        'light-on-surface-variant': '#6B3A1E',
+        'light-outline': '#6B3A1E',
+        'light-outline-variant': '#D9961F',
+      },
+      borderRadius: {
+        'none': '0px',
+        'sm': '4px',
+        'DEFAULT': '6px',
+        'md': '10px',
+        'lg': '16px',
+        'full': '9999px',
+      },
+      spacing: {
+        'gutter-xs': '4px',
+        'gutter-sm': '8px',
+        'gutter-md': '16px',
+        'gutter-lg': '24px',
+        'gutter-xl': '32px',
+        'section': '64px',
+        'page-margin': '24px',
+      },
+      fontFamily: {
+        'display': ['"Cinzel Decorative"', 'sans-serif'],
+        'headline': ['"Cinzel"', 'sans-serif'],
+        'title': ['"Cinzel"', 'sans-serif'],
+        'body': ['"Lato"', 'sans-serif'],
+        'label': ['"Lato"', 'sans-serif'],
+      },
+      fontSize: {
+        'display-lg': ['56px', { lineHeight: '64px', letterSpacing: '1.5px', fontWeight: '700' }],
+        'display-lg-mobile': ['32px', { lineHeight: '38px', letterSpacing: '1px', fontWeight: '700' }],
+        'display-md': ['42px', { lineHeight: '50px', letterSpacing: '1px', fontWeight: '700' }],
+        'display-md-mobile': ['28px', { lineHeight: '34px', letterSpacing: '0.75px', fontWeight: '700' }],
+        'headline-lg': ['32px', { lineHeight: '40px', letterSpacing: '0.75px', fontWeight: '700' }],
+        'headline-md': ['24px', { lineHeight: '32px', letterSpacing: '0.5px', fontWeight: '700' }],
+        'title-lg': ['20px', { lineHeight: '28px', letterSpacing: '0.4px', fontWeight: '600' }],
+        'body-lg': ['18px', { lineHeight: '28px', letterSpacing: '0.1px', fontWeight: '400' }],
+        'body-md': ['16px', { lineHeight: '24px', letterSpacing: '0.1px', fontWeight: '400' }],
+        'label-lg': ['14px', { lineHeight: '20px', letterSpacing: '1.5px', fontWeight: '700' }],
+        'label-sm': ['12px', { lineHeight: '16px', letterSpacing: '1.8px', fontWeight: '700' }],
+      },
+      transitionDuration: {
+        'state-change': '180ms',
+        'card-lift': '280ms',
+        'chakra-orbit': '45000ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+        'card-lift': '0ms',
+        'chakra-orbit': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'ease-out',
+        'card-lift': 'cubic-bezier(0.2, 0, 0, 1)',
+        'chakra-orbit': 'linear',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&amp;family=Cinzel:wght@600;700&amp;family=Lato:wght@400;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet">
+  <style>
+    .material-symbols-outlined, .material-symbols-rounded, .material-symbols-sharp, .material-icons {
+      display: inline-block; width: 1em; height: 1em; line-height: 1 !important;
+      box-sizing: content-box; overflow: hidden; white-space: nowrap; direction: ltr; vertical-align: middle;
+    }
+    .ribbon-pill {
+      clip-path: polygon(14px 0%, calc(100% - 14px) 0%, 100% 50%, calc(100% - 14px) 100%, 14px 100%, 0% 50%);
+    }
+    .epic-text-shadow {
+      text-shadow: 0 2px 0 rgba(58, 29, 14, 0.85), 0 6px 24px rgba(242, 184, 75, 0.45);
+    }
+    .hero-light-scrim {
+      background: radial-gradient(circle at 50% 40%, rgba(255, 246, 227, 0.86) 0%, rgba(255, 246, 227, 0.58) 42%, rgba(58, 29, 14, 0.38) 100%);
+    }
+    .sunburst-bg {
+      background: radial-gradient(circle at 50% 35%, #FFF6E3 0%, #BFD6EC 55%, #8FB4DC 100%);
+    }
+    @keyframes chakraSpin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .animate-chakra {
+      animation: chakraSpin 55s linear infinite;
+    }
+    .stage-plaque {
+      box-shadow: 0 12px 32px rgba(26, 12, 5, 0.55), inset 0 0 0 1px rgba(242, 184, 75, 0.25);
+    }
+    .stage-plaque-active {
+      box-shadow: 0 14px 38px rgba(242, 184, 75, 0.24), inset 0 0 0 1px rgba(242, 184, 75, 0.45);
+    }
+    .reveal-on-scroll {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 500ms ease-out, transform 500ms cubic-bezier(0.2, 0, 0, 1);
+    }
+    .reveal-on-scroll.is-hidden {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .animate-chakra { animation: none; }
+      .reveal-on-scroll, .reveal-on-scroll.is-hidden { opacity: 1; transform: none; transition: none; }
+    }
+  </style>
+</head>
+<body class="bg-cream-parchment text-navy-ink font-body antialiased selection:bg-gold-highlight selection:text-dark-chocolate overflow-x-hidden">
+
+  <!-- =========================================================
+       1. NAVBAR
+  ========================================================== -->
+  <header id="site-navbar" class="fixed top-0 inset-x-0 z-50 transition-colors duration-state-change border-b border-transparent">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 h-20 flex items-center justify-between gap-4">
+      <a href="#hero" class="flex items-center gap-3 shrink-0">
+        <div class="w-10 h-10 rounded-full border-2 border-gold-rich bg-dark-chocolate flex items-center justify-center">
+          <svg class="w-6 h-6 text-gold-highlight" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"></circle>
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6L5.6 18.4"></path>
+          </svg>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-display text-title-lg text-dark-chocolate leading-none" data-design-text-token="title-lg">CHAKRAVYUH</span>
+          <span class="font-label text-label-sm text-bronze-brown tracking-widest leading-none mt-1" data-design-text-token="label-sm">2.0 · NATIONAL</span>
+        </div>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-7" aria-label="Primary">
+        <a href="#about" class="font-label text-label-sm uppercase text-dark-chocolate hover:text-saffron transition-colors">About</a>
+        <a href="#timeline" class="font-label text-label-sm uppercase text-dark-chocolate hover:text-saffron transition-colors">Timeline</a>
+        <a href="#guidelines" class="font-label text-label-sm uppercase text-dark-chocolate hover:text-saffron transition-colors">Guidelines</a>
+        <a href="#sponsors" class="font-label text-label-sm uppercase text-dark-chocolate hover:text-saffron transition-colors">Sponsors</a>
+        <a href="#coordinators" class="font-label text-label-sm uppercase text-dark-chocolate hover:text-saffron transition-colors">Team</a>
+        <a href="#contact" class="font-label text-label-sm uppercase text-dark-chocolate hover:text-saffron transition-colors">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <!-- COMPONENT: button-primary -->
+        <a href="#register" data-component-id="button-primary" data-component-type="button" data-component-variant="primary" class="hidden sm:inline-flex items-center justify-center px-7 py-2.5 bg-dark-chocolate text-gold-highlight border border-gold-rich ribbon-pill font-label text-label-sm uppercase tracking-widest hover:bg-bronze-brown hover:text-cream-parchment focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold-rich transition-colors duration-state-change">
+          <span data-design-text-token="label-sm">Register Now</span>
+        </a>
+
+        <button id="mobile-menu-open" type="button" aria-label="Open navigation menu" aria-expanded="false" class="lg:hidden inline-flex items-center justify-center w-11 h-11 rounded-full border border-bronze-brown bg-cream-parchment text-bronze-brown">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Parchment Drawer -->
+  <div id="mobile-drawer" class="fixed inset-0 z-50 hidden bg-cream-parchment flex-col justify-between p-6 overflow-y-auto" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <div class="flex items-center justify-between border-b border-gold-rich pb-4">
+      <span class="font-display text-title-lg text-bronze-brown">CHAKRAVYUH 2.0</span>
+      <button id="mobile-menu-close" type="button" aria-label="Close navigation menu" class="inline-flex items-center justify-center w-11 h-11 rounded-full border border-bronze-brown text-bronze-brown">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+    <nav class="flex flex-col gap-5 py-8 text-center">
+      <a href="#about" class="mobile-nav-link font-headline text-headline-md text-bronze-brown">About</a>
+      <a href="#timeline" class="mobile-nav-link font-headline text-headline-md text-bronze-brown">The Seven Gates</a>
+      <a href="#guidelines" class="mobile-nav-link font-headline text-headline-md text-bronze-brown">Rules of the Battlefield</a>
+      <a href="#sponsors" class="mobile-nav-link font-headline text-headline-md text-bronze-brown">Our Allies</a>
+      <a href="#coordinators" class="mobile-nav-link font-headline text-headline-md text-bronze-brown">The Commanders</a>
+      <a href="#contact" class="mobile-nav-link font-headline text-headline-md text-bronze-brown">Contact</a>
+    </nav>
+    <div class="pt-4 border-t border-gold-rich flex justify-center">
+      <a href="#register" class="mobile-nav-link inline-flex items-center justify-center px-8 py-3 bg-dark-chocolate text-gold-highlight ribbon-pill font-label text-label-lg uppercase">Register Now</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- =========================================================
+         2. HERO SECTION
+    ========================================================== -->
+    <section id="hero" class="relative min-h-screen flex flex-col justify-between pt-24 pb-12 overflow-hidden sunburst-bg">
+      <!-- Hero Artwork Layer -->
+      <img src="https://lh3.googleusercontent.com/aida/ALJJyrCzB29j9bf3mLd_1R775AxcK_NdkoVVw8LQbk_ktbDtHPdix7jAQxPaM0Thk45U7NRe9B9IyZrPmHypRdW_h7IWeLSGW8r9DI2AyTnvv4cb0HOoi1Rg5vKIADKT66ZY2BftpC9XU2XU6pCQyjAnJv93-xD-RKeuu443Rq7128wYsO_LqELek8TB8iV2yWngixoOygkRw9-Ige48V11R9_mJVEwnC5BqEucJCG7QnEJwivcZOppCewvpm41iB50jTGpck3P89K_P7QXNEp55" alt="Krishna and Arjuna on the chariot at Kurukshetra during golden hour" class="absolute inset-0 w-full h-full object-cover object-center" data-stitch-original-src="a778ea3632159f37===../../images/hero_kurukshetra_chariot.jpg">
+      <div class="absolute inset-0 hero-light-scrim"></div>
+
+      <!-- Concentric Rotating Chakra Watermark -->
+      <div class="pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden opacity-30">
+        <svg class="w-96 h-96 md:w-[680px] md:h-[680px] text-gold-rich animate-chakra" viewBox="0 0 400 400" fill="none" stroke="currentColor" aria-hidden="true">
+          <circle cx="200" cy="200" r="190" stroke-width="1" stroke-dasharray="6 6"></circle>
+          <circle cx="200" cy="200" r="160" stroke-width="1.2"></circle>
+          <circle cx="200" cy="200" r="130" stroke-width="0.8" stroke-dasharray="4 4"></circle>
+          <circle cx="200" cy="200" r="100" stroke-width="1.2"></circle>
+          <circle cx="200" cy="200" r="70" stroke-width="0.8"></circle>
+          <path d="M200 10v380M10 200h380M65 65l270 270M335 65L65 335" stroke-width="0.6"></path>
+        </svg>
+      </div>
+
+      <!-- Top Institutional Badges -->
+      <div class="relative z-10 max-w-7xl w-full mx-auto px-4 md:px-6 flex items-center justify-between gap-4">
+        <div class="inline-flex items-center gap-2 bg-cream-parchment/95 border border-gold-rich rounded-full px-3.5 py-1.5 shadow-sm">
+          <span class="w-2.5 h-2.5 rounded-full bg-saffron"></span>
+          <span class="font-label text-label-sm uppercase text-dark-chocolate" data-design-text-token="label-sm">GITA Autonomous College</span>
+        </div>
+        <div class="inline-flex items-center gap-2 bg-cream-parchment/95 border border-gold-rich rounded-full px-3.5 py-1.5 shadow-sm">
+          <span class="w-2.5 h-2.5 rounded-full bg-krishna-blue"></span>
+          <span class="font-label text-label-sm uppercase text-dark-chocolate" data-design-text-token="label-sm">In Assoc. with BPUT, Odisha</span>
+        </div>
+      </div>
+
+      <!-- Centerpiece Logo, Headline & Countdown -->
+      <div class="relative z-10 max-w-5xl mx-auto px-4 md:px-6 py-8 text-center flex flex-col items-center gap-5">
+        <div class="inline-flex items-center gap-3 px-5 py-1.5 bg-dark-chocolate text-gold-highlight border border-gold-rich ribbon-pill">
+          <span class="font-label text-label-sm uppercase tracking-widest" data-design-text-token="label-sm">National Level 36-Hour Hackathon</span>
+        </div>
+
+        <div class="flex flex-col items-center gap-2">
+          <p class="font-display text-headline-md md:text-headline-lg text-dark-chocolate tracking-widest">CHAKRAVYUH <span class="text-krishna-blue">2.0</span></p>
+          <h1 data-component-id="typography-display" data-component-type="typography" data-component-variant="display" data-design-text-token="display-lg" class="font-display text-display-lg-mobile md:text-display-lg text-gold-highlight epic-text-shadow uppercase text-balance">
+            Break The Chakravyuh
+          </h1>
+          <p class="font-body text-body-lg text-dark-chocolate font-bold max-w-2xl text-pretty" data-design-text-token="body-lg">
+            National Level Hackathon · GITA Autonomous College, Bhubaneswar
+          </p>
+        </div>
+
+        <!-- Transparent Prize Pool Crest -->
+        <div class="w-full max-w-lg mx-auto my-1 flex items-center justify-center">
+          <img src="https://lh3.googleusercontent.com/aida/ALJJyrAJICSFTa9J7-xFLheKPSPsZ0yrFubZPmMJucf4B3iv4cwsg2bk9hYQFIs9qO8BTkiwm5d6z7UXNqnr_dKKp1anSKnnr07me4Q_hHX3TYtGJY78PttO0H553D3PTmRZnLHC4B2vowpc_XPqUQVBCDC-GWY3Ifod1YUCHvL0kpnwH9mVHR9Q5MOJWwPLXCvC1lhn9rG721qWshPtWyMhLTtcWTDvAraA3m_MdyDbiWvajFYGENXw8O4sEvc3cVjS3lGs5TclhQ" alt="Prize Pool ₹1,00,000/-" class="w-full max-w-md h-auto object-contain drop-shadow-md" data-stitch-original-src="3f3ebad420ce85b4===../../images/prize_pool_crest.png">
+        </div>
+
+        <!-- Live Countdown on Brown Plates -->
+        <div class="grid grid-cols-4 gap-3 sm:gap-4 max-w-lg w-full" aria-label="Hackathon Countdown">
+          <div class="bg-dark-chocolate border border-gold-rich rounded p-3 flex flex-col items-center shadow">
+            <span id="cd-days" class="font-headline text-headline-md md:text-headline-lg text-gold-highlight tabular-nums">62</span>
+            <span class="font-label text-label-sm uppercase text-cream-parchment">Days</span>
+          </div>
+          <div class="bg-dark-chocolate border border-gold-rich rounded p-3 flex flex-col items-center shadow">
+            <span id="cd-hours" class="font-headline text-headline-md md:text-headline-lg text-gold-highlight tabular-nums">14</span>
+            <span class="font-label text-label-sm uppercase text-cream-parchment">Hrs</span>
+          </div>
+          <div class="bg-dark-chocolate border border-gold-rich rounded p-3 flex flex-col items-center shadow">
+            <span id="cd-mins" class="font-headline text-headline-md md:text-headline-lg text-gold-highlight tabular-nums">45</span>
+            <span class="font-label text-label-sm uppercase text-cream-parchment">Min</span>
+          </div>
+          <div class="bg-dark-chocolate border border-gold-rich rounded p-3 flex flex-col items-center shadow">
+            <span id="cd-secs" class="font-headline text-headline-md md:text-headline-lg text-gold-highlight tabular-nums">30</span>
+            <span class="font-label text-label-sm uppercase text-cream-parchment">Sec</span>
+          </div>
+        </div>
+
+        <!-- Primary & Secondary CTAs -->
+        <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
+          <a href="#register" data-component-id="button-primary" data-component-type="button" data-component-variant="primary" class="inline-flex items-center justify-center px-9 py-3.5 bg-dark-chocolate text-gold-highlight border border-gold-rich ribbon-pill font-label text-label-lg uppercase tracking-widest hover:bg-bronze-brown hover:text-cream-parchment transition-colors duration-state-change shadow-md">
+            <span data-design-text-token="label-lg">Register Now</span>
+          </a>
+          <a href="#timeline" data-component-id="button-secondary" data-component-type="button" data-component-variant="secondary" class="inline-flex items-center justify-center px-8 py-3.5 bg-cream-parchment/95 text-dark-chocolate border-2 border-bronze-brown ribbon-pill font-label text-label-lg uppercase tracking-widest hover:bg-light-surface-container transition-colors duration-state-change">
+            <span data-design-text-token="label-lg">View Timeline</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Bottom Location Pill & Arrow Scroll Indicator -->
+      <div class="relative z-10 max-w-7xl w-full mx-auto px-4 md:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="inline-flex items-center gap-2 bg-dark-chocolate/95 text-cream-parchment border border-gold-rich rounded-full px-5 py-2 shadow">
+          <span class="material-symbols-outlined text-gold-highlight text-body-lg" aria-hidden="true">location_on</span>
+          <span class="font-label text-label-sm uppercase tracking-wider" data-design-text-token="label-sm">GITA Autonomous College, BBSR</span>
+        </div>
+        <a href="#about" class="inline-flex flex-col items-center gap-1 text-dark-chocolate hover:text-saffron transition-colors">
+          <span class="font-label text-label-sm uppercase tracking-widest">Enter Gate I</span>
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M12 4v16m0 0l-5-5m5 5l5-5"></path>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         3. ABOUT / BASIC INFORMATION
+    ========================================================== -->
+    <section id="about" class="py-16 md:py-24 bg-cream-parchment border-t-2 border-gold-rich">
+      <div class="max-w-7xl mx-auto px-4 md:px-6 flex flex-col gap-12">
+        <!-- Story + Arched Arjuna Artwork -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          <div class="lg:col-span-7 flex flex-col gap-6">
+            <div class="flex items-center gap-3">
+              <span class="h-px w-10 bg-gold-rich"></span>
+              <span class="font-label text-label-sm uppercase text-bronze-brown" data-design-text-token="label-sm">The Legend &amp; The Challenge</span>
+            </div>
+            <h2 class="font-display text-display-md-mobile md:text-display-md text-bronze-brown text-balance" data-design-text-token="display-md">
+              Seven Rings. Thirty-Six Hours. One Breakthrough.
+            </h2>
+            <p class="font-body text-body-lg text-navy-ink max-w-prose text-pretty" data-design-text-token="body-lg">
+              In the Mahabharata, the Chakravyuh was a formidable seven-ring spiral formation designed to test strategy, courage, and clarity under pressure. Chakravyuh 2.0 brings that spirit to modern engineering at GITA Autonomous College, Bhubaneswar—challenging India&#39;s sharpest student builders to pierce seven progressive gates from ideation to live deployment.
+            </p>
+            <p class="font-body text-body-md text-navy-ink max-w-prose text-pretty" data-design-text-token="body-md">
+              Hosted in association with Biju Patnaik University of Technology (BPUT), Odisha, the hackathon unites 500+ innovators for 36 hours of mentorship, rapid prototyping, and high-stakes evaluation.
+            </p>
+
+            <!-- Stats Strip -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 border-t border-gold-rich">
+              <div>
+                <p class="font-headline text-headline-md md:text-headline-lg text-bronze-brown tabular-nums">500+</p>
+                <p class="font-label text-label-sm uppercase text-bronze-brown">Participants</p>
+              </div>
+              <div>
+                <p class="font-headline text-headline-md md:text-headline-lg text-bronze-brown tabular-nums">125</p>
+                <p class="font-label text-label-sm uppercase text-bronze-brown">Teams</p>
+              </div>
+              <div>
+                <p class="font-headline text-headline-md md:text-headline-lg text-bronze-brown tabular-nums">₹1.5L</p>
+                <p class="font-label text-label-sm uppercase text-bronze-brown">Prizes</p>
+              </div>
+              <div>
+                <p class="font-headline text-headline-md md:text-headline-lg text-bronze-brown tabular-nums">40+</p>
+                <p class="font-label text-label-sm uppercase text-bronze-brown">Colleges</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5 flex justify-center">
+            <div class="relative w-full max-w-sm rounded-t-full border-4 border-gold-rich p-2 bg-light-surface-container-low shadow-lg">
+              <div class="rounded-t-full overflow-hidden border border-bronze-brown">
+                <img src="https://lh3.googleusercontent.com/aida/ALJJyrA4uMmSOLswWDszvLvRwH-TQxR3f-sWaR4oT8hFA0_dT1UZgH6CaTBykS5U899Zlhru0JKMr88Dk_0fw-LV1GiJ2mfccDticz1sWpyea_4rTsDTZTKLKpZx-CPTxCDKo0qcOL7imrIlKo4Lh6jnjmy1trf7GEQX8nrV0DfS1a7lcuj1yxcevGQWgtBUTUV1wU2Xr4KALtC0ZmBAkYAf4MVIR-sTjstwjCLHnaDbszZ20UZSvd_uILworlAZWgTVGCm6CNppBw" alt="Arjuna drawing his golden bow toward the sunlit sky" class="w-full h-96 object-cover" data-stitch-original-src="e3e165f8fc3b6c00===../../images/arjuna_bow_arched.jpg">
+              </div>
+              <div class="py-3 text-center bg-dark-chocolate text-gold-highlight">
+                <span class="font-label text-label-sm uppercase tracking-widest">Aim True · Build Fearlessly</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6 Ornate Info Plaques (Dates, Venue, Team Size, Mode, Prize Pool, Eligibility) -->
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 items-stretch">
+          <article class="bg-light-surface-container-lowest border-2 border-gold-rich rounded-md p-5 flex flex-col items-center text-center justify-between gap-2.5 shadow-sm hover:-translate-y-1 transition-transform duration-card-lift">
+            <div class="w-12 h-12 rounded-full bg-dark-chocolate border border-gold-rich flex items-center justify-center text-gold-highlight shadow-sm">
+              <span class="material-symbols-outlined text-body-lg" aria-hidden="true">calendar_month</span>
+            </div>
+            <div class="flex flex-col gap-0.5">
+              <span class="font-label text-label-sm uppercase text-bronze-brown">Dates</span>
+              <span class="font-title text-body-md font-bold text-dark-chocolate tabular-nums">23–24 Jan 2027</span>
+              <span class="font-body text-label-sm text-navy-ink">Sat–Sun Sprint</span>
+            </div>
+          </article>
+
+          <article class="bg-light-surface-container-lowest border-2 border-gold-rich rounded-md p-5 flex flex-col items-center text-center justify-between gap-2.5 shadow-sm hover:-translate-y-1 transition-transform duration-card-lift">
+            <div class="w-12 h-12 rounded-full bg-dark-chocolate border border-gold-rich flex items-center justify-center text-gold-highlight shadow-sm">
+              <span class="material-symbols-outlined text-body-lg" aria-hidden="true">location_on</span>
+            </div>
+            <div class="flex flex-col gap-0.5">
+              <span class="font-label text-label-sm uppercase text-bronze-brown">Venue</span>
+              <span class="font-title text-body-md font-bold text-dark-chocolate">GITA, BBSR</span>
+              <span class="font-body text-label-sm text-navy-ink">Odisha Campus</span>
+            </div>
+          </article>
+
+          <article class="bg-light-surface-container-lowest border-2 border-gold-rich rounded-md p-5 flex flex-col items-center text-center justify-between gap-2.5 shadow-sm hover:-translate-y-1 transition-transform duration-card-lift">
+            <div class="w-12 h-12 rounded-full bg-dark-chocolate border border-gold-rich flex items-center justify-center text-gold-highlight shadow-sm">
+              <span class="material-symbols-outlined text-body-lg" aria-hidden="true">groups</span>
+            </div>
+            <div class="flex flex-col gap-0.5">
+              <span class="font-label text-label-sm uppercase text-bronze-brown">Team Size</span>
+              <span class="font-title text-body-md font-bold text-dark-chocolate">2–4 Members</span>
+              <span class="font-body text-label-sm text-navy-ink">Inter-College OK</span>
+            </div>
+          </article>
+
+          <article class="bg-light-surface-container-lowest border-2 border-gold-rich rounded-md p-5 flex flex-col items-center text-center justify-between gap-2.5 shadow-sm hover:-translate-y-1 transition-transform duration-card-lift">
+            <div class="w-12 h-12 rounded-full bg-dark-chocolate border border-gold-rich flex items-center justify-center text-gold-highlight shadow-sm">
+              <span class="material-symbols-outlined text-body-lg" aria-hidden="true">schedule</span>
+            </div>
+            <div class="flex flex-col gap-0.5">
+              <span class="font-label text-label-sm uppercase text-bronze-brown">Mode</span>
+              <span class="font-title text-body-md font-bold text-dark-chocolate">Offline · 36h</span>
+              <span class="font-body text-label-sm text-navy-ink">Non-Stop Build</span>
+            </div>
+          </article>
+
+          <article class="bg-dark-chocolate border-2 border-gold-highlight rounded-md p-5 flex flex-col items-center text-center justify-between gap-2.5 shadow-md hover:-translate-y-1 transition-transform duration-card-lift">
+            <div class="w-12 h-12 rounded-full bg-bronze-brown border border-gold-highlight flex items-center justify-center text-gold-highlight shadow-sm">
+              <span class="material-symbols-outlined text-body-lg" aria-hidden="true">emoji_events</span>
+            </div>
+            <div class="flex flex-col gap-0.5">
+              <span class="font-label text-label-sm uppercase text-cream-parchment">Prize Pool</span>
+              <span class="font-title text-body-md font-bold text-gold-highlight tabular-nums">₹1,00,000</span>
+              <span class="font-body text-label-sm text-cream-parchment">Cash &amp; Swag</span>
+            </div>
+          </article>
+
+          <article class="bg-light-surface-container-lowest border-2 border-gold-rich rounded-md p-5 flex flex-col items-center text-center justify-between gap-2.5 shadow-sm hover:-translate-y-1 transition-transform duration-card-lift">
+            <div class="w-12 h-12 rounded-full bg-dark-chocolate border border-gold-rich flex items-center justify-center text-gold-highlight shadow-sm">
+              <span class="material-symbols-outlined text-body-lg" aria-hidden="true">school</span>
+            </div>
+            <div class="flex flex-col gap-0.5">
+              <span class="font-label text-label-sm uppercase text-bronze-brown">Eligibility</span>
+              <span class="font-title text-body-md font-bold text-dark-chocolate">UG / PG India</span>
+              <span class="font-body text-label-sm text-navy-ink">All Branches</span>
+            </div>
+          </article>
+        </div>
+
+        <!-- Tracks / Domains Row -->
+        <div id="tracks" class="flex flex-col gap-6 pt-2">
+          <div class="flex items-center justify-between flex-wrap gap-4 border-b border-gold-rich/50 pb-3">
+            <div>
+              <span class="font-label text-label-sm uppercase text-bronze-brown">Choose Your Astra</span>
+              <h3 class="font-headline text-headline-md text-bronze-brown">Tracks &amp; Domains</h3>
+            </div>
+            <span class="px-4 py-1 bg-dark-chocolate text-gold-highlight border border-gold-rich ribbon-pill font-label text-label-sm uppercase">5 Battlefields</span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 items-stretch">
+            <a href="#register" data-component-id="card-interactive" data-component-type="card" data-component-variant="interactive" class="group bg-light-surface-container-lowest border-2 border-gold-rich rounded-md p-5 flex flex-col justify-between gap-4 shadow-sm hover:bg-light-surface-container-low hover:-translate-y-1 transition-transform duration-card-lift">
+              <div class="flex flex-col gap-3">
+                <div class="flex items-center justify-between">
+                  <span class="px-2.5 py-0.5 bg-dark-chocolate text-gold-highlight font-label text-label-sm uppercase rounded-sm">Astra 01</span>
+                  <div class="w-10 h-10 rounded-full border border-bronze-brown bg-cream-parchment flex items-center justify-center text-bronze-brown">
+                    <span class="material-symbols-outlined text-body-lg" aria-hidden="true">psychology</span>
+                  </div>
+                </div>
+                <h4 class="font-title text-title-lg text-dark-chocolate">AI &amp; ML</h4>
+                <p class="font-body text-body-md text-navy-ink">Applied GenAI, computer vision, and autonomous agents.</p>
+              </div>
+              <div class="flex flex-wrap gap-1.5 pt-2 border-t border-gold-rich/40">
+                <span class="px-2 py-0.5 bg-light-surface-container border border-gold-rich/60 rounded-sm font-label text-label-sm text-bronze-brown">GenAI</span>
+                <span class="px-2 py-0.5 bg-light-surface-container border border-gold-rich/60 rounded-sm font-label text-label-sm text-bronze-brown">Vision</span>
+              </div>
+            </a>
+
+            <a href="#register" data-component-id="card-interactive" data-component-type="card" data-component-variant="interactive" class="group bg-light-surface-container-lowest border-2 border-gold-rich rounded-md p-5 flex flex-col justify-between gap-4 shadow-sm hover:bg-light-surface-container-low hover:-translate-y-1 transition-transform duration-card-lift">
+              <div class="flex flex-col gap-3">
+                <div class="flex items-center justify-between">
+                  <span class="px-2.5 py-0.5 bg-dark-chocolate text-gold-highlight font-label text-label-sm uppercase rounded-sm">Astra 02</span>
+                  <div class="w-10 h-10 rounded-full border border-bronze-brown bg-cream-parchment flex items-center justify-center text-bronze-brown">
+                    <span class="material-symbols-outlined text-body-lg" aria-hidden="true">verified_user</span>
+                  </div>
+                </div>
+                <h4 class="font-title text-title-lg text-dark-chocolate">Web3 &amp; Trust</h4>
+                <p class="font-body text-body-md text-navy-ink">Decentralized identity, DeFi rails, and verifiable credentials.</p>
+              </div>
+              <div class="flex flex-wrap gap-1.5 pt-2 border-t border-gold-rich/40">
+                <span class="px-2 py-0.5 bg-light-surface-container border border-gold-rich/60 rounded-sm font-label text-label-sm text-bronze-brown">DeFi</span>
+                <span class="px-2 py-0.5 bg-light-surface-container border border-gold-rich/60 rounded-sm font-label text-label-sm text-bronze-brown">Identity</span>
+              </div>
+            </a>
+
+            <a href="#register" data-component-id="card-interactive" data-component-type="card" data-component-variant="interactive" class="group bg-light-surface-container-lowest border-2 border-gold-rich rounded-md p-5 flex flex-col justify-between gap-4 shadow-sm hover:bg-light-surface-container-low hover:-translate-y-1 transition-transform duration-card-lift">
+              <div class="flex flex-col gap-3">
+                <div class="flex items-center justify-between">
+                  <span class="px-2.5 py-0.5 bg-dark-chocolate text-gold-highlight font-label text-label-sm uppercase rounded-sm">Astra 03</span>
+                  <div class="w-10 h-10 rounded-full border border-bronze-brown bg-cream-parchment flex items-center justify-center text-bronze-brown">
+                    <span class="material-symbols-outlined text-body-lg" aria-hidden="true">account_balance</span>
+                  </div>
+                </div>
+                <h4 class="font-title text-title-lg text-dark-chocolate">FinTech</h4>
+                <p class="font-body text-body-md text-navy-ink">UPI-scale payments, fraud defense, and credit inclusion.</p>
+              </div>
+              <div class="flex flex-wrap gap-1.5 pt-2 border-t border-gold-rich/40">
+                <span class="px-2 py-0.5 bg-light-surface-container border border-gold-rich/60 rounded-sm font-label text-label-sm text-bronze-brown">Payments</span>
+                <span class="px-2 py-0.5 bg-light-surface-container border border-gold-rich/60 rounded-sm font-label text-label-sm text-bronze-brown">Security</span>
+              </div>
+            </a>
+
+            <a href="#register" data-component-id="card-interactive" data-component-type="card" data-component-variant="interactive" class="group bg-light-surface-container-lowest border-2 border-gold-rich rounded-md p-5 flex flex-col justify-between gap-4 shadow-sm hover:bg-light-surface-container-low hover:-translate-y-1 transition-transform duration-card-lift">
+              <div class="flex flex-col gap-3">
+                <div class="flex items-center justify-between">
+                  <span class="px-2.5 py-0.5 bg-dark-chocolate text-gold-highlight font-label text-label-sm uppercase rounded-sm">Astra 04</span>
+                  <div class="w-10 h-10 rounded-full border border-bronze-brown bg-cream-parchment flex items-center justify-center text-bronze-brown">
+                    <span class="material-symbols-outlined text-body-lg" aria-hidden="true">health_and_safety</span>
+                  </div>
+                </div>
+                <h4 class="font-title text-title-lg text-dark-chocolate">HealthTech</h4>
+                <p class="font-body text-body-md text-navy-ink">Rural diagnostics, triage tools, and assistive medical devices.</p>
+              </div>
+              <div class="flex flex-wrap gap-1.5 pt-2 border-t border-gold-rich/40">
+                <span class="px-2 py-0.5 bg-light-surface-container border border-gold-rich/60 rounded-sm font-label text-label-sm text-bronze-brown">Triage</span>
+                <span class="px-2 py-0.5 bg-light-surface-container border border-gold-rich/60 rounded-sm font-label text-label-sm text-bronze-brown">MedTech</span>
+              </div>
+            </a>
+
+            <a href="#register" data-component-id="card-interactive" data-component-type="card" data-component-variant="interactive" class="group bg-light-surface-container-lowest border-2 border-gold-rich rounded-md p-5 flex flex-col justify-between gap-4 shadow-sm hover:bg-light-surface-container-low hover:-translate-y-1 transition-transform duration-card-lift">
+              <div class="flex flex-col gap-3">
+                <div class="flex items-center justify-between">
+                  <span class="px-2.5 py-0.5 bg-dark-chocolate text-gold-highlight font-label text-label-sm uppercase rounded-sm">Astra 05</span>
+                  <div class="w-10 h-10 rounded-full border border-bronze-brown bg-cream-parchment flex items-center justify-center text-bronze-brown">
+                    <span class="material-symbols-outlined text-body-lg" aria-hidden="true">public</span>
+                  </div>
+                </div>
+                <h4 class="font-title text-title-lg text-dark-chocolate">Open Track</h4>
+                <p class="font-body text-body-md text-navy-ink">AgriTech, Smart Odisha, IoT, and campus sustainability.</p>
+              </div>
+              <div class="flex flex-wrap gap-1.5 pt-2 border-t border-gold-rich/40">
+                <span class="px-2 py-0.5 bg-light-surface-container border border-gold-rich/60 rounded-sm font-label text-label-sm text-bronze-brown">AgriTech</span>
+                <span class="px-2 py-0.5 bg-light-surface-container border border-gold-rich/60 rounded-sm font-label text-label-sm text-bronze-brown">IoT</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         4. TIMELINE — "THE SEVEN GATES" (STAGE-BY-STAGE ROADMAP)
+    ========================================================== -->
+    <section id="timeline" class="relative py-16 md:py-24 bg-dark-chocolate text-cream-parchment border-t-4 border-saffron overflow-hidden">
+      <!-- Kurukshetra Spiral Battlefield Backdrop -->
+      <img src="https://lh3.googleusercontent.com/aida/ALJJyrCVra7OD8_Cs-WAI4RdBd8_Gw9VZW8JuMlhPMv8VyKIBUGN4v3R_wLgDX7vIrU_KCmeGicqmsRXVSFjr8W-6j1t6cWp0QH2WLU2JJrM6AYQLjnQqvq-JxLP5q7EwwYMNukHiaNBJhUUtCUrzIaDAY2iarwTDNTn0DHkavwTPPgGsGu_-e6cPw85RlWCeAyoXJ3SI8amcbWkZmEumnewFVg3vbCB4vSa44jsMYmECa3mbla02Ut59eSyFlR3H_ecGzRp7oqVfoibE8E" alt="Chakravyuh spiral formation on Kurukshetra at twilight golden hour" class="absolute inset-0 w-full h-full object-cover object-center opacity-55" data-stitch-original-src="93cc6b16c030b4e4===../../images/roadmap_chakravyuh_bg.jpg">
+      <div class="absolute inset-0 bg-gradient-to-b from-dark-chocolate/90 via-dark-chocolate/75 to-dark-chocolate/95"></div>
+
+      <!-- Faint Chakravyuh Concentric Watermark -->
+      <div class="pointer-events-none absolute inset-0 flex items-center justify-center opacity-15" aria-hidden="true">
+        <svg class="w-[760px] h-[760px] text-gold-rich" viewBox="0 0 400 400" fill="none" stroke="currentColor">
+          <circle cx="200" cy="200" r="190" stroke-width="1" stroke-dasharray="6 6"></circle>
+          <circle cx="200" cy="200" r="155" stroke-width="1"></circle>
+          <circle cx="200" cy="200" r="120" stroke-width="1" stroke-dasharray="4 4"></circle>
+          <circle cx="200" cy="200" r="85" stroke-width="1"></circle>
+          <circle cx="200" cy="200" r="50" stroke-width="1.2"></circle>
+        </svg>
+      </div>
+
+      <div class="relative z-10 max-w-5xl mx-auto px-4 md:px-6 flex flex-col gap-12">
+        <div class="text-center flex flex-col items-center gap-3 reveal-on-scroll">
+          <span class="px-4 py-1 bg-bronze-brown/80 border border-gold-rich ribbon-pill font-label text-label-sm uppercase text-gold-highlight tracking-widest">Stage-by-Stage Progression</span>
+          <h2 class="font-display text-display-md-mobile md:text-display-md text-gold-highlight uppercase">The Seven Gates</h2>
+          <p class="font-body text-body-md text-cream-parchment max-w-xl">
+            Navigate each concentric ring of the Chakravyuh—from squad registration to the Grand Finale at GITA Autonomous College.
+          </p>
+        </div>
+
+        <!-- Stage-by-Stage Zig-Zag Ornate Plaques -->
+        <div class="flex flex-col gap-6 md:gap-0">
+
+          <!-- STAGE 1 (Left) -->
+          <div class="flex flex-col md:flex-row items-center md:justify-start reveal-on-scroll">
+            <article class="relative w-full max-w-md bg-dark-chocolate/95 border-2 border-gold-highlight rounded-lg px-7 pt-9 pb-6 text-center flex flex-col items-center gap-2.5 stage-plaque-active hover:-translate-y-1 transition-transform duration-card-lift">
+              <div class="absolute -top-5 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full border-2 border-gold-highlight bg-dark-chocolate flex items-center justify-center text-gold-highlight shadow">
+                <span class="material-symbols-outlined text-body-lg" aria-hidden="true">calendar_month</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="font-label text-label-sm uppercase text-gold-highlight">Gate I</span>
+                <span class="px-2.5 py-0.5 rounded-full bg-gold-highlight text-dark-chocolate font-label text-label-sm uppercase">Live Now</span>
+              </div>
+              <h3 class="font-headline text-title-lg text-cream-parchment">Registration Opens</h3>
+              <span class="px-4 py-1 rounded-full bg-bronze-brown/70 border border-gold-rich font-label text-label-sm text-gold-highlight tabular-nums">15 DEC 2026 · 10:00 AM</span>
+              <p class="font-body text-body-md text-cream-parchment text-balance">Squad registration and track selection goes live across India.</p>
+            </article>
+          </div>
+
+          <!-- Connector 1 -> 2 -->
+          <div class="hidden md:flex justify-center -my-2" aria-hidden="true">
+            <svg class="w-72 h-16 text-gold-highlight" viewBox="0 0 280 70" fill="none">
+              <path d="M24 4 C 24 45, 256 25, 256 66" stroke="currentColor" stroke-width="2" stroke-dasharray="6 4"></path>
+              <circle cx="24" cy="4" r="4.5" fill="currentColor"></circle>
+              <circle cx="256" cy="66" r="4.5" fill="currentColor"></circle>
+            </svg>
+          </div>
+
+          <!-- STAGE 2 (Right) -->
+          <div class="flex flex-col md:flex-row items-center md:justify-end reveal-on-scroll">
+            <article class="relative w-full max-w-md bg-dark-chocolate/95 border-2 border-saffron rounded-lg px-7 pt-9 pb-6 text-center flex flex-col items-center gap-2.5 stage-plaque hover:-translate-y-1 transition-transform duration-card-lift">
+              <div class="absolute -top-5 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full border-2 border-saffron bg-dark-chocolate flex items-center justify-center text-saffron shadow">
+                <span class="material-symbols-outlined text-body-lg" aria-hidden="true">hourglass_bottom</span>
+              </div>
+              <span class="font-label text-label-sm uppercase text-gold-highlight">Gate II · Deadline</span>
+              <h3 class="font-headline text-title-lg text-cream-parchment">Registration Closes</h3>
+              <span class="px-4 py-1 rounded-full bg-bronze-brown/70 border border-saffron font-label text-label-sm text-cream-parchment tabular-nums">10 JAN 2027 · 11:59 PM</span>
+              <p class="font-body text-body-md text-cream-parchment text-balance">Last date to register your team and submit your idea pitch.</p>
+            </article>
+          </div>
+
+          <!-- Connector 2 -> 3 -->
+          <div class="hidden md:flex justify-center -my-2" aria-hidden="true">
+            <svg class="w-72 h-16 text-saffron" viewBox="0 0 280 70" fill="none">
+              <path d="M256 4 C 256 45, 24 25, 24 66" stroke="currentColor" stroke-width="2" stroke-dasharray="6 4"></path>
+              <circle cx="256" cy="4" r="4.5" fill="currentColor"></circle>
+              <circle cx="24" cy="66" r="4.5" fill="currentColor"></circle>
+            </svg>
+          </div>
+
+          <!-- STAGE 3 (Left) -->
+          <div class="flex flex-col md:flex-row items-center md:justify-start reveal-on-scroll">
+            <article class="relative w-full max-w-md bg-dark-chocolate/95 border-2 border-krishna-blue rounded-lg px-7 pt-9 pb-6 text-center flex flex-col items-center gap-2.5 stage-plaque hover:-translate-y-1 transition-transform duration-card-lift">
+              <div class="absolute -top-5 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full border-2 border-krishna-blue bg-dark-chocolate flex items-center justify-center text-sky-light shadow">
+                <span class="material-symbols-outlined text-body-lg" aria-hidden="true">verified</span>
+              </div>
+              <span class="font-label text-label-sm uppercase text-sky-light">Gate III · Selection</span>
+              <h3 class="font-headline text-title-lg text-cream-parchment">Shortlist Announcement</h3>
+              <span class="px-4 py-1 rounded-full bg-bronze-brown/70 border border-krishna-blue font-label text-label-sm text-sky-light tabular-nums">15 JAN 2027 · 06:00 PM</span>
+              <p class="font-body text-body-md text-cream-parchment text-balance">Top 125 teams invited to GITA Campus, Bhubaneswar.</p>
+            </article>
+          </div>
+
+          <!-- Connector 3 -> 4 -->
+          <div class="hidden md:flex justify-center -my-2" aria-hidden="true">
+            <svg class="w-72 h-16 text-gold-rich" viewBox="0 0 280 70" fill="none">
+              <path d="M24 4 C 24 45, 256 25, 256 66" stroke="currentColor" stroke-width="2" stroke-dasharray="6 4"></path>
+              <circle cx="24" cy="4" r="4.5" fill="currentColor"></circle>
+              <circle cx="256" cy="66" r="4.5" fill="currentColor"></circle>
+            </svg>
+          </div>
+
+          <!-- STAGE 4 (Right) -->
+          <div class="flex flex-col md:flex-row items-center md:justify-end reveal-on-scroll">
+            <article class="relative w-full max-w-md bg-dark-chocolate/95 border-2 border-gold-rich rounded-lg px-7 pt-9 pb-6 text-center flex flex-col items-center gap-2.5 stage-plaque hover:-translate-y-1 transition-transform duration-card-lift">
+              <div class="absolute -top-5 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full border-2 border-gold-rich bg-dark-chocolate flex items-center justify-center text-gold-highlight shadow">
+                <span class="material-symbols-outlined text-body-lg" aria-hidden="true">rocket_launch</span>
+              </div>
+              <span class="font-label text-label-sm uppercase text-gold-highlight">Gate IV · Day 1</span>
+              <h3 class="font-headline text-title-lg text-cream-parchment">Hackathon Kickoff</h3>
+              <span class="px-4 py-1 rounded-full bg-bronze-brown/70 border border-gold-rich font-label text-label-sm text-gold-highlight tabular-nums">23 JAN 2027 · 09:00 AM</span>
+              <p class="font-body text-body-md text-cream-parchment text-balance">Check-in, opening ceremony, and 36-hour build begins.</p>
+            </article>
+          </div>
+
+          <!-- Connector 4 -> 5 -->
+          <div class="hidden md:flex justify-center -my-2" aria-hidden="true">
+            <svg class="w-72 h-16 text-gold-rich" viewBox="0 0 280 70" fill="none">
+              <path d="M256 4 C 256 45, 24 25, 24 66" stroke="currentColor" stroke-width="2" stroke-dasharray="6 4"></path>
+              <circle cx="256" cy="4" r="4.5" fill="currentColor"></circle>
+              <circle cx="24" cy="66" r="4.5" fill="currentColor"></circle>
+            </svg>
+          </div>
+
+          <!-- STAGE 5 (Left) -->
+          <div class="flex flex-col md:flex-row items-center md:justify-start reveal-on-scroll">
+            <article class="relative w-full max-w-md bg-dark-chocolate/95 border-2 border-peacock-green rounded-lg px-7 pt-9 pb-6 text-center flex flex-col items-center gap-2.5 stage-plaque hover:-translate-y-1 transition-transform duration-card-lift">
+              <div class="absolute -top-5 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full border-2 border-peacock-green bg-dark-chocolate flex items-center justify-center text-cream-parchment shadow">
+                <span class="material-symbols-outlined text-body-lg" aria-hidden="true">groups</span>
+              </div>
+              <span class="font-label text-label-sm uppercase text-cream-parchment">Gate V · Checkpoint</span>
+              <h3 class="font-headline text-title-lg text-cream-parchment">Mid Evaluation</h3>
+              <span class="px-4 py-1 rounded-full bg-bronze-brown/70 border border-peacock-green font-label text-label-sm text-cream-parchment tabular-nums">23 JAN 2027 · 08:00 PM</span>
+              <p class="font-body text-body-md text-cream-parchment text-balance">Architecture review and mentoring with industry experts.</p>
+            </article>
+          </div>
+
+          <!-- Connector 5 -> 6 -->
+          <div class="hidden md:flex justify-center -my-2" aria-hidden="true">
+            <svg class="w-72 h-16 text-saffron" viewBox="0 0 280 70" fill="none">
+              <path d="M24 4 C 24 45, 256 25, 256 66" stroke="currentColor" stroke-width="2" stroke-dasharray="6 4"></path>
+              <circle cx="24" cy="4" r="4.5" fill="currentColor"></circle>
+              <circle cx="256" cy="66" r="4.5" fill="currentColor"></circle>
+            </svg>
+          </div>
+
+          <!-- STAGE 6 (Right) -->
+          <div class="flex flex-col md:flex-row items-center md:justify-end reveal-on-scroll">
+            <article class="relative w-full max-w-md bg-dark-chocolate/95 border-2 border-saffron rounded-lg px-7 pt-9 pb-6 text-center flex flex-col items-center gap-2.5 stage-plaque hover:-translate-y-1 transition-transform duration-card-lift">
+              <div class="absolute -top-5 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full border-2 border-saffron bg-dark-chocolate flex items-center justify-center text-saffron shadow">
+                <span class="material-symbols-outlined text-body-lg" aria-hidden="true">gavel</span>
+              </div>
+              <span class="font-label text-label-sm uppercase text-gold-highlight">Gate VI · Day 2</span>
+              <h3 class="font-headline text-title-lg text-cream-parchment">Final Pitch &amp; Judging</h3>
+              <span class="px-4 py-1 rounded-full bg-bronze-brown/70 border border-saffron font-label text-label-sm text-cream-parchment tabular-nums">24 JAN 2027 · 02:00 PM</span>
+              <p class="font-body text-body-md text-cream-parchment text-balance">Live working demos before the national jury panel.</p>
+            </article>
+          </div>
+
+          <!-- Connector 6 -> 7 -->
+          <div class="hidden md:flex justify-center -my-2" aria-hidden="true">
+            <svg class="w-72 h-16 text-gold-highlight" viewBox="0 0 280 70" fill="none">
+              <path d="M256 4 C 256 45, 24 25, 24 66" stroke="currentColor" stroke-width="2" stroke-dasharray="6 4"></path>
+              <circle cx="256" cy="4" r="4.5" fill="currentColor"></circle>
+              <circle cx="24" cy="66" r="4.5" fill="currentColor"></circle>
+            </svg>
+          </div>
+
+          <!-- STAGE 7 (Left / Grand Finale) -->
+          <div class="flex flex-col md:flex-row items-center md:justify-start reveal-on-scroll">
+            <article class="relative w-full max-w-md bg-dark-chocolate/95 border-2 border-gold-highlight rounded-lg px-7 pt-9 pb-6 text-center flex flex-col items-center gap-2.5 stage-plaque-active hover:-translate-y-1 transition-transform duration-card-lift">
+              <div class="absolute -top-5 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full border-2 border-gold-highlight bg-dark-chocolate flex items-center justify-center text-gold-highlight shadow">
+                <span class="material-symbols-outlined text-body-lg" aria-hidden="true">emoji_events</span>
+              </div>
+              <span class="font-label text-label-sm uppercase text-gold-highlight">Gate VII · Grand Finale</span>
+              <h3 class="font-headline text-title-lg text-cream-parchment">Prize Distribution</h3>
+              <span class="px-4 py-1 rounded-full bg-bronze-brown/70 border border-gold-highlight font-label text-label-sm text-gold-highlight tabular-nums">24 JAN 2027 · 05:30 PM</span>
+              <p class="font-body text-body-md text-cream-parchment text-balance">Champions crowned and ₹1,50,000 prize pool awarded.</p>
+            </article>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         5. GUIDELINES — "RULES OF THE BATTLEFIELD" (NIYAM)
+    ========================================================== -->
+    <section id="guidelines" class="py-16 md:py-24 bg-cream-parchment border-t-2 border-gold-rich">
+      <div class="max-w-7xl mx-auto px-4 md:px-6 flex flex-col gap-12">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div>
+            <span class="font-label text-label-sm uppercase text-bronze-brown">Niyam · Code of Conduct</span>
+            <h2 class="font-display text-display-md-mobile md:text-display-md text-bronze-brown mt-1">Rules of the Battlefield</h2>
+          </div>
+          <a href="#register" data-component-id="button-with-icon" data-component-type="button" data-component-variant="with-icon" class="inline-flex items-center justify-center gap-gutter-sm px-6 py-3 bg-bronze-brown text-cream-parchment border border-gold-rich ribbon-pill font-label text-label-sm uppercase tracking-widest hover:bg-dark-chocolate hover:text-gold-highlight transition-colors">
+            <span class="material-symbols-outlined text-body-lg" aria-hidden="true">menu_book</span>
+            <span data-design-text-token="label-sm">Download Full Rulebook</span>
+          </a>
+        </div>
+
+        <!-- 2-Column Scroll Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+          <article data-component-id="card-elevated" data-component-type="card" data-component-variant="elevated" class="bg-light-surface-container-lowest border border-gold-rich rounded p-6 shadow-sm flex flex-col gap-3">
+            <div class="flex items-center justify-between">
+              <span class="px-3 py-1 bg-dark-chocolate text-gold-highlight font-label text-label-sm rounded-sm">NIYAM 01</span>
+              <span class="font-label text-label-sm uppercase text-bronze-brown">Squads</span>
+            </div>
+            <h3 class="font-title text-title-lg text-bronze-brown" data-design-text-token="title-lg">Team Size &amp; Eligibility</h3>
+            <p class="font-body text-body-md text-navy-ink" data-design-text-token="body-md">
+              Teams must consist of 2 to 4 students currently enrolled in any recognized UG/PG program across India. Inter-college teams are permitted.
+            </p>
+          </article>
+
+          <article data-component-id="card-elevated" data-component-type="card" data-component-variant="elevated" class="bg-light-surface-container-lowest border border-gold-rich rounded p-6 shadow-sm flex flex-col gap-3">
+            <div class="flex items-center justify-between">
+              <span class="px-3 py-1 bg-dark-chocolate text-gold-highlight font-label text-label-sm rounded-sm">NIYAM 02</span>
+              <span class="font-label text-label-sm uppercase text-bronze-brown">Integrity</span>
+            </div>
+            <h3 class="font-title text-title-lg text-bronze-brown" data-design-text-token="title-lg">Original Work &amp; GitHub</h3>
+            <p class="font-body text-body-md text-navy-ink" data-design-text-token="body-md">
+              All code must be written during the 36-hour window and pushed to a public or jury-accessible GitHub repository initialized at kickoff.
+            </p>
+          </article>
+
+          <article data-component-id="card-elevated" data-component-type="card" data-component-variant="elevated" class="bg-light-surface-container-lowest border border-gold-rich rounded p-6 shadow-sm flex flex-col gap-3">
+            <div class="flex items-center justify-between">
+              <span class="px-3 py-1 bg-dark-chocolate text-gold-highlight font-label text-label-sm rounded-sm">NIYAM 03</span>
+              <span class="font-label text-label-sm uppercase text-bronze-brown">Arsenal</span>
+            </div>
+            <h3 class="font-title text-title-lg text-bronze-brown" data-design-text-token="title-lg">Tech Stack &amp; Gear</h3>
+            <p class="font-body text-body-md text-navy-ink" data-design-text-token="body-md">
+              Any open-source framework, cloud API, or hardware kit is allowed. Bring your laptops, chargers, college ID cards, and extension boards.
+            </p>
+          </article>
+
+          <!-- Judging Criteria Weighted Bars -->
+          <article data-component-id="card-elevated" data-component-type="card" data-component-variant="elevated" class="bg-light-surface-container-lowest border border-gold-rich rounded p-6 shadow-sm flex flex-col gap-3">
+            <div class="flex items-center justify-between">
+              <span class="px-3 py-1 bg-dark-chocolate text-gold-highlight font-label text-label-sm rounded-sm">NIYAM 04</span>
+              <span class="font-label text-label-sm uppercase text-bronze-brown">Evaluation</span>
+            </div>
+            <h3 class="font-title text-title-lg text-bronze-brown" data-design-text-token="title-lg">Judging Criteria</h3>
+            <div class="flex flex-col gap-2.5 pt-1">
+              <div>
+                <div class="flex justify-between font-label text-label-sm text-navy-ink"><span>Innovation &amp; Originality</span><span class="tabular-nums">30%</span></div>
+                <div class="w-full h-2 bg-light-surface-container rounded-full overflow-hidden"><div class="h-full bg-saffron w-[30%]"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between font-label text-label-sm text-navy-ink"><span>Technical Depth</span><span class="tabular-nums">30%</span></div>
+                <div class="w-full h-2 bg-light-surface-container rounded-full overflow-hidden"><div class="h-full bg-bronze-brown w-[30%]"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between font-label text-label-sm text-navy-ink"><span>Real-World Impact</span><span class="tabular-nums">25%</span></div>
+                <div class="w-full h-2 bg-light-surface-container rounded-full overflow-hidden"><div class="h-full bg-krishna-blue w-[25%]"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between font-label text-label-sm text-navy-ink"><span>Presentation &amp; Demo</span><span class="tabular-nums">15%</span></div>
+                <div class="w-full h-2 bg-light-surface-container rounded-full overflow-hidden"><div class="h-full bg-gold-rich w-[15%]"></div></div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- FAQ Accordion -->
+        <div class="max-w-4xl mx-auto w-full flex flex-col gap-4">
+          <h3 class="font-headline text-headline-md text-bronze-brown text-center">Frequently Asked Questions</h3>
+          <div data-component-id="accordion-group" data-component-type="accordion" data-component-variant="group" class="divide-y divide-gold-rich border-y border-gold-rich">
+            <details name="faq-group" class="group py-4" open>
+              <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-title text-title-lg text-bronze-brown">
+                <span data-design-text-token="title-lg">Is there a registration fee for shortlisted teams?</span>
+                <span class="material-symbols-outlined text-gold-rich group-open:rotate-45 transition-transform duration-state-change" aria-hidden="true">brightness_7</span>
+              </summary>
+              <div class="pt-3 pr-8">
+                <p class="font-body text-body-md text-navy-ink" data-design-text-token="body-md">
+                  Idea submission is completely free. Shortlisted teams pay a nominal ₹400 per member hospitality fee covering all meals, snacks, and campus accommodation for 36 hours.
+                </p>
+              </div>
+            </details>
+            <details name="faq-group" class="group py-4">
+              <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-title text-title-lg text-bronze-brown">
+                <span data-design-text-token="title-lg">Can we use pre-trained AI models or public APIs?</span>
+                <span class="material-symbols-outlined text-gold-rich group-open:rotate-45 transition-transform duration-state-change" aria-hidden="true">brightness_7</span>
+              </summary>
+              <div class="pt-3 pr-8">
+                <p class="font-body text-body-md text-navy-ink" data-design-text-token="body-md">
+                  Yes, open-weight models and public APIs are permitted, provided your core application logic, integration, and product workflow are built during the hackathon.
+                </p>
+              </div>
+            </details>
+            <details name="faq-group" class="group py-4">
+              <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-title text-title-lg text-bronze-brown">
+                <span data-design-text-token="title-lg">Will travel reimbursement or certificates be provided?</span>
+                <span class="material-symbols-outlined text-gold-rich group-open:rotate-45 transition-transform duration-state-change" aria-hidden="true">brightness_7</span>
+              </summary>
+              <div class="pt-3 pr-8">
+                <p class="font-body text-body-md text-navy-ink" data-design-text-token="body-md">
+                  Every finalist receives an official BPUT-recognized participation certificate, swag kit, and mentor feedback. Travel support is available for outstation winners.
+                </p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         6. SPONSORS — "OUR ALLIES"
+    ========================================================== -->
+    <section id="sponsors" class="relative py-16 md:py-24 overflow-hidden border-t-2 border-gold-rich">
+      <img src="https://lh3.googleusercontent.com/aida/ALJJyrD6MtqaUg4vtqqBCFSF27ZEoNxgxhqiK6ZcwnsoCplBGt9KAauYal8WqdKae3jngUk-SCMbnfO5Ll-oqidt8r0t04oeljA6LHY_hicupPwQxVggiYfjaz1Ro1hB8FbDXmh1TYsXVq8ORVhoqvRLCxxnfC8p0QjRiOemYIQhtAP8Y3DM8VReBSRI8gwt46gF0sLX1JBVOvWDzAeLJeBMuNA-Y4c3gnY6FySFiRppYC6UeKDVZLWfH8PvjxOXeisxic-aIyVEu9kVY09vng" alt="Sunset over Kurukshetra with Lord Krishna on the right" class="absolute inset-0 w-full h-full object-cover object-center" data-stitch-original-src="2be87533799737d0===../../images/krishna_horizon_allies.jpg">
+      <div class="absolute inset-0 bg-cream-parchment/85"></div>
+
+      <div class="relative z-10 max-w-7xl mx-auto px-4 md:px-6 flex flex-col gap-12">
+        <div class="text-center flex flex-col items-center gap-2">
+          <span class="font-label text-label-sm uppercase text-bronze-brown">Backed By Industry &amp; Academia</span>
+          <h2 class="font-display text-display-md-mobile md:text-display-md text-bronze-brown uppercase">Our Allies</h2>
+        </div>
+
+        <!-- Tiered Sponsor Grid -->
+        <div class="flex flex-col gap-8">
+          <div class="flex flex-col items-center gap-3">
+            <span class="font-label text-label-sm uppercase text-bronze-brown">Title Sponsor</span>
+            <div class="w-full max-w-md bg-light-surface-container-lowest border-2 border-gold-rich rounded p-8 text-center shadow-md">
+              <p class="font-headline text-headline-md text-bronze-brown">Your Brand Here</p>
+              <p class="font-body text-body-md text-navy-ink mt-1">Premier Title Partner Slot Open</p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <div class="bg-light-surface-container-lowest border border-gold-rich rounded p-6 text-center">
+              <span class="font-label text-label-sm uppercase text-bronze-brown">Gold Ally</span>
+              <p class="font-title text-title-lg text-bronze-brown mt-2">Odisha Cloud Collective</p>
+            </div>
+            <div class="bg-light-surface-container-lowest border border-gold-rich rounded p-6 text-center">
+              <span class="font-label text-label-sm uppercase text-bronze-brown">Gold Ally</span>
+              <p class="font-title text-title-lg text-bronze-brown mt-2">Kalinga DevWorks</p>
+            </div>
+            <div class="bg-light-surface-container-lowest border border-gold-rich rounded p-6 text-center">
+              <span class="font-label text-label-sm uppercase text-bronze-brown">Community Partner</span>
+              <p class="font-title text-title-lg text-bronze-brown mt-2">BPUT Innovation Cell</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Poster 3 Style "BECOME A SPONSOR" Panel -->
+        <div class="bg-light-surface-container-lowest/95 border-2 border-gold-rich rounded p-8 md:p-10 shadow-lg flex flex-col gap-8">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+            <div class="flex flex-col gap-3 max-w-2xl">
+              <div class="inline-block self-start bg-dark-chocolate text-cream-parchment px-5 py-2">
+                <span class="font-headline text-headline-md uppercase tracking-wider">Call For Sponsors</span>
+              </div>
+              <p class="font-body text-body-lg text-navy-ink font-bold">
+                Partner with us in shaping innovation, empowering young minds and building a brighter tomorrow.
+              </p>
+            </div>
+
+            <!-- Gold-framed QR + Ribbon -->
+            <div class="flex flex-col items-center gap-2 shrink-0">
+              <div class="p-2.5 bg-cream-parchment border-2 border-gold-rich rounded">
+                <svg class="w-24 h-24 text-dark-chocolate" viewBox="0 0 24 24" fill="currentColor" aria-label="Sponsor QR Code">
+                  <path d="M3 3h8v8H3V3zm2 2v4h4V5H5zm8-2h8v8h-8V3zm2 2v4h4V5h-4zM3 13h8v8H3v-8zm2 2v4h4v-4H5zm10-2h2v2h-2v-2zm4 0h2v4h-2v-4zm-4 4h2v4h-2v-4zm4 2h2v2h-2v-2zm-6-2h2v2h-2v-2z"></path>
+                </svg>
+              </div>
+              <span class="px-4 py-1 bg-dark-chocolate text-cream-parchment ribbon-pill font-label text-label-sm uppercase">Scan To Partner</span>
+            </div>
+          </div>
+
+          <!-- 4 Poster-3 Icon Benefits with Thin Vertical Dividers -->
+          <div class="grid grid-cols-2 lg:grid-cols-4 divide-y lg:divide-y-0 lg:divide-x divide-bronze-brown/40 border-y border-bronze-brown/30 py-4">
+            <div class="flex flex-col items-center text-center gap-2 px-4 py-2">
+              <div class="w-12 h-12 rounded-full border border-bronze-brown flex items-center justify-center text-bronze-brown">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 12a4 4 0 100-8 4 4 0 000 8zM4 20c0-3.3 3.6-6 8-6s8 2.7 8 6"></path></svg>
+              </div>
+              <span class="font-label text-label-sm uppercase text-navy-ink">Brand Visibility</span>
+            </div>
+            <div class="flex flex-col items-center text-center gap-2 px-4 py-2">
+              <div class="w-12 h-12 rounded-full border border-bronze-brown flex items-center justify-center text-bronze-brown">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-3.5 10.9c.7.5 1 1.3 1 2.1h5c0-.8.3-1.6 1-2.1A6 6 0 0012 3z"></path></svg>
+              </div>
+              <span class="font-label text-label-sm uppercase text-navy-ink">Engage Young Talent</span>
+            </div>
+            <div class="flex flex-col items-center text-center gap-2 px-4 py-2">
+              <div class="w-12 h-12 rounded-full border border-bronze-brown flex items-center justify-center text-bronze-brown">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 12l4 4 6-6M3 12l4 4M15 8l3-3 3 3"></path></svg>
+              </div>
+              <span class="font-label text-label-sm uppercase text-navy-ink">Lasting Partnerships</span>
+            </div>
+            <div class="flex flex-col items-center text-center gap-2 px-4 py-2">
+              <div class="w-12 h-12 rounded-full border border-bronze-brown flex items-center justify-center text-bronze-brown">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 17l6-6 4 4 6-8M16 7h4v4"></path></svg>
+              </div>
+              <span class="font-label text-label-sm uppercase text-navy-ink">Be Part of Impact</span>
+            </div>
+          </div>
+
+          <div class="flex justify-center">
+            <a href="#contact" class="inline-flex items-center justify-center gap-2 px-8 py-3 bg-dark-chocolate text-gold-highlight border border-gold-rich ribbon-pill font-label text-label-sm uppercase tracking-widest hover:bg-bronze-brown">
+              <span class="material-symbols-outlined text-body-lg" aria-hidden="true">description</span>
+              <span>Download Sponsorship Brochure</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         7. COORDINATORS — "THE COMMANDERS"
+    ========================================================== -->
+    <section id="coordinators" class="py-16 md:py-24 bg-cream-parchment border-t-2 border-gold-rich">
+      <div class="max-w-7xl mx-auto px-4 md:px-6 flex flex-col gap-10">
+        <div class="text-center flex flex-col items-center gap-2">
+          <span class="font-label text-label-sm uppercase text-bronze-brown">Faculty &amp; Student Organizing Committee</span>
+          <h2 class="font-display text-display-md-mobile md:text-display-md text-bronze-brown uppercase">The Commanders</h2>
+        </div>
+
+        <!-- 4-Column Desktop / Horizontal Swipe Mobile -->
+        <div class="flex md:grid md:grid-cols-4 gap-6 overflow-x-auto pb-4 md:pb-0 snap-x snap-mandatory">
+          <article class="min-w-[260px] snap-center bg-light-surface-container-lowest border-2 border-gold-rich rounded-t-full p-6 flex flex-col items-center text-center gap-4 shadow-sm hover:-translate-y-1 transition-transform duration-card-lift">
+            <div class="w-28 h-28 rounded-full border-2 border-gold-rich p-1">
+              <img src="https://lh3.googleusercontent.com/aida/ALJJyrBWf6XKIvi7WIbS7pyjiIFuaqZGBGzZL1VriMomwhgYXWqtL8QEFE1HTvZpjP-Be4NdgeYsZ00ibI41I7CadZAiP3Ps4hzTC6oUgdySl_IJ6STMiJSE0_0y9Vt0Stwe9vm3G57K9ZS0RioGNKjGZ0JQoGHNtTYqxA5OAvRicdZeQWPEImnz0NhNOZclveGdiswo72ZC5BYE6tZHCcNjMPDcGoDU0jRadCcz2PZz3SmR-dyg9ilRVLA8puX_TdtziNVJOUXeLDXw" alt="Prof. D. Mohanty" class="w-full h-full rounded-full object-cover" data-stitch-original-src="b128d0959aebe5f9===../../images/coordinator_faculty.jpg">
+            </div>
+            <div>
+              <h3 class="font-headline text-title-lg text-bronze-brown">Prof. D. Mohanty</h3>
+              <p class="font-label text-label-sm uppercase text-bronze-brown mt-1">Faculty Convener · CSE</p>
+            </div>
+            <p class="font-body text-body-md text-navy-ink">“Guiding student builders from classroom theory to national impact.”</p>
+            <span class="font-label text-label-sm text-bronze-brown tabular-nums">+91 94370 12840</span>
+          </article>
+
+          <article class="min-w-[260px] snap-center bg-light-surface-container-lowest border-2 border-gold-rich rounded-t-full p-6 flex flex-col items-center text-center gap-4 shadow-sm hover:-translate-y-1 transition-transform duration-card-lift">
+            <div class="w-28 h-28 rounded-full border-2 border-gold-rich p-1">
+              <img src="https://lh3.googleusercontent.com/aida/ALJJyrD7rsuTkf2Quz9DaAAmjEBBPZYGPOlHM_5SNc_SI8t9SFSVe5hAN2pqh0ApZ6DXnK4ClpKFv3hrJ2xHdUsLpd_L2Y3CT943hMmqArBYSVZOZ1xc_Sl1unT9HvP3S0kgTwwpCAsnDlc0lnEp5MJAXqUxVQUYRqcKOHgaYJ-jigP6zhQkCz9GarpERhaR86hoq9w__8-_IH9Gbw9ox-43VCK9HAKur8KvFbJRHVCHTNiKcxb6n3sIn8a9FmhRds6Kj74MPEXHMm7D" alt="Ananya Pattnaik" class="w-full h-full rounded-full object-cover" data-stitch-original-src="a51ac866f80c0211===../../images/coordinator_lead_1.jpg">
+            </div>
+            <div>
+              <h3 class="font-headline text-title-lg text-bronze-brown">Ananya Pattnaik</h3>
+              <p class="font-label text-label-sm uppercase text-bronze-brown mt-1">Lead Student Coordinator</p>
+            </div>
+            <p class="font-body text-body-md text-navy-ink">“Every gate is an invitation to ship something unforgettable.”</p>
+            <span class="font-label text-label-sm text-bronze-brown tabular-nums">+91 82491 55312</span>
+          </article>
+
+          <article class="min-w-[260px] snap-center bg-light-surface-container-lowest border-2 border-gold-rich rounded-t-full p-6 flex flex-col items-center text-center gap-4 shadow-sm hover:-translate-y-1 transition-transform duration-card-lift">
+            <div class="w-28 h-28 rounded-full border-2 border-gold-rich p-1">
+              <img src="https://lh3.googleusercontent.com/aida/ALJJyrCvJljKNsE0i_dN1liV6p_hTpRMVBIhJyfu1T5xvZ-_LDB3IXyxSRsVkUV77DYOQnjwcYUD_tawjWCEf0rHvmNuaZkZwSbk0QzHwnvycKPF94odEhpmQfwRzJ4c2Xu5gdUBWOO8_n97iCFstt40hIQ-3WCpwNTq8ZtGsggu8zfneUKEWbPaWpA_PWzk3TtryiahzI1owPGcKnVZBHDp9zVvobeK6ozgoNZWS86kFY_JCW8Qzk1sZjgq1WLjS5sERgYVdGAfxZoD" alt="Subham Tripathy" class="w-full h-full rounded-full object-cover" data-stitch-original-src="3cf8c54c6c401070===../../images/coordinator_lead_2.jpg">
+            </div>
+            <div>
+              <h3 class="font-headline text-title-lg text-bronze-brown">Subham Tripathy</h3>
+              <p class="font-label text-label-sm uppercase text-bronze-brown mt-1">Operations &amp; Alliances</p>
+            </div>
+            <p class="font-body text-body-md text-navy-ink">“36 hours of seamless hospitality, mentors, and pure focus.”</p>
+            <span class="font-label text-label-sm text-bronze-brown tabular-nums">+91 79784 31029</span>
+          </article>
+
+          <article class="min-w-[260px] snap-center bg-light-surface-container-lowest border-2 border-gold-rich rounded-t-full p-6 flex flex-col items-center text-center gap-4 shadow-sm hover:-translate-y-1 transition-transform duration-card-lift">
+            <div class="w-28 h-28 rounded-full border-2 border-gold-rich p-1">
+              <img src="https://lh3.googleusercontent.com/aida/ALJJyrDerFSyqK0lNRC1_L0t1_hR6uMSpGZfpRpLCNxh3ACT-VOzKpiSI_6jck4n5yo3i7B4STMf_EJLh-J7gQUVHoZj4N2T81Gj0Ob-2JeXgb33EYN5i_DItf4p0-H-13sRZ008hqeIy44GitxZzPOgb_WFp-RWWdMCTMyui5ogHgD9z0eDmBJGCFD5UYkbAjXRpLgHnjrLzh7j3EWShZznGX5Y4wMQIHKWSz4oowZPV4_xxdg1fT-Z7aQanEQbzgCXUui3ie1Q" alt="Rohan Behera" class="w-full h-full rounded-full object-cover" data-stitch-original-src="18a0adc9d30182a9===../../images/coordinator_tech.jpg">
+            </div>
+            <div>
+              <h3 class="font-headline text-title-lg text-bronze-brown">Rohan Behera</h3>
+              <p class="font-label text-label-sm uppercase text-bronze-brown mt-1">Technical &amp; Design Lead</p>
+            </div>
+            <p class="font-body text-body-md text-navy-ink">“Built for developers who care about craft as much as code.”</p>
+            <span class="font-label text-label-sm text-bronze-brown tabular-nums">+91 90402 67118</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         7B. COMMUNITY & SOCIALS HUB
+    ========================================================== -->
+    <section id="community" class="py-16 md:py-24 bg-light-surface-container-low border-t-2 border-gold-rich">
+      <div class="max-w-7xl mx-auto px-4 md:px-6 flex flex-col gap-10">
+        <div class="text-center flex flex-col items-center gap-2">
+          <span class="font-label text-label-sm uppercase text-bronze-brown">Connect &amp; Stay Updated</span>
+          <h2 class="font-display text-display-md-mobile md:text-display-md text-bronze-brown uppercase">Join The Community</h2>
+          <p class="font-body text-body-md text-navy-ink max-w-xl">
+            Follow our official channels and scan to join the WhatsApp community for teammate matching, problem releases, and live announcements.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+          <!-- WhatsApp Community -->
+          <article class="bg-light-surface-container-lowest border-2 border-gold-rich rounded p-6 flex flex-col items-center text-center justify-between gap-5 shadow-sm hover:-translate-y-1 transition-transform duration-card-lift reveal-on-scroll">
+            <div class="flex flex-col items-center gap-3">
+              <div class="w-14 h-14 rounded-full border-2 border-gold-rich bg-cream-parchment flex items-center justify-center shadow-sm">
+                <svg class="w-8 h-8" viewBox="0 0 32 32" aria-hidden="true">
+                  <path fill="#25D366" d="M16 3C8.8 3 3 8.8 3 16c0 2.4.7 4.8 1.9 6.8L3.6 29l6.4-1.3c1.9 1 4 1.6 6 1.6 7.2 0 13-5.8 13-13S23.2 3 16 3z"></path>
+                  <path fill="#FFFFFF" d="M22.2 19.3c-.3-.2-2-.9-2.3-1-.3-.1-.5-.2-.7.2-.2.3-.9 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-2-1.8-2.3-.2-.3 0-.5.1-.6.1-.1.3-.4.5-.5.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.7-1.8-1-2.4-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.2.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"></path>
+                </svg>
+              </div>
+              <div>
+                <span class="font-label text-label-sm uppercase text-bronze-brown">WhatsApp Community</span>
+                <h3 class="font-headline text-title-lg text-dark-chocolate mt-1">Chakravyuh 2.0 Official</h3>
+              </div>
+              <p class="font-body text-body-md text-navy-ink">
+                Find teammates, get instant shortlist alerts, and ask queries directly to student coordinators.
+              </p>
+            </div>
+
+            <div class="flex flex-col items-center gap-3">
+              <div class="p-2.5 bg-cream-parchment border-2 border-gold-rich rounded">
+                <svg class="w-28 h-28 text-dark-chocolate" viewBox="0 0 24 24" fill="currentColor" aria-label="WhatsApp Community QR Code">
+                  <path d="M3 3h8v8H3V3zm2 2v4h4V5H5zm8-2h8v8h-8V3zm2 2v4h4V5h-4zM3 13h8v8H3v-8zm2 2v4h4v-4H5zm10-2h2v2h-2v-2zm4 0h2v4h-2v-4zm-4 4h2v4h-2v-4zm4 2h2v2h-2v-2z"></path>
+                </svg>
+              </div>
+              <a href="#register" class="inline-flex items-center justify-center px-6 py-2 bg-dark-chocolate text-gold-highlight border border-gold-rich ribbon-pill font-label text-label-sm uppercase tracking-wider hover:bg-bronze-brown transition-colors">
+                Scan For WhatsApp
+              </a>
+            </div>
+          </article>
+
+          <!-- Instagram -->
+          <article class="bg-light-surface-container-lowest border-2 border-gold-rich rounded p-6 flex flex-col items-center text-center justify-between gap-5 shadow-sm hover:-translate-y-1 transition-transform duration-card-lift reveal-on-scroll">
+            <div class="flex flex-col items-center gap-3">
+              <div class="w-14 h-14 rounded-full border-2 border-gold-rich bg-cream-parchment flex items-center justify-center shadow-sm">
+                <svg class="w-8 h-8" viewBox="0 0 32 32" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="ig-brand-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+                      <stop offset="0%" stop-color="#F58529"></stop>
+                      <stop offset="45%" stop-color="#DD2A7B"></stop>
+                      <stop offset="75%" stop-color="#8134AF"></stop>
+                      <stop offset="100%" stop-color="#515BD4"></stop>
+                    </linearGradient>
+                  </defs>
+                  <rect x="3" y="3" width="26" height="26" rx="7" fill="url(#ig-brand-grad)"></rect>
+                  <rect x="8.5" y="8.5" width="15" height="15" rx="4.2" fill="none" stroke="#FFFFFF" stroke-width="2"></rect>
+                  <circle cx="16" cy="16" r="3.7" fill="none" stroke="#FFFFFF" stroke-width="2"></circle>
+                  <circle cx="20.8" cy="11.2" r="1.1" fill="#FFFFFF"></circle>
+                </svg>
+              </div>
+              <div>
+                <span class="font-label text-label-sm uppercase text-bronze-brown">Instagram</span>
+                <h3 class="font-headline text-title-lg text-dark-chocolate mt-1">@chakravyuh.gita</h3>
+              </div>
+              <p class="font-body text-body-md text-navy-ink">
+                Daily countdowns, speaker &amp; jury reveals, campus reels, and live hackathon highlights.
+              </p>
+            </div>
+
+            <div class="flex flex-col items-center gap-3">
+              <div class="p-2.5 bg-cream-parchment border-2 border-gold-rich rounded">
+                <svg class="w-28 h-28 text-dark-chocolate" viewBox="0 0 24 24" fill="currentColor" aria-label="Instagram QR Code">
+                  <path d="M3 3h8v8H3V3zm2 2v4h4V5H5zm8-2h8v8h-8V3zm2 2v4h4V5h-4zM3 13h8v8H3v-8zm2 2v4h4v-4H5zm11-2h4v2h-4v-2zm-2 3h2v4h-2v-4zm4 2h3v3h-3v-3zm-2 2h2v2h-2v-2z"></path>
+                </svg>
+              </div>
+              <a href="#register" class="inline-flex items-center justify-center px-6 py-2 bg-dark-chocolate text-gold-highlight border border-gold-rich ribbon-pill font-label text-label-sm uppercase tracking-wider hover:bg-bronze-brown transition-colors">
+                Follow @chakravyuh.gita
+              </a>
+            </div>
+          </article>
+
+          <!-- LinkedIn -->
+          <article class="bg-light-surface-container-lowest border-2 border-gold-rich rounded p-6 flex flex-col items-center text-center justify-between gap-5 shadow-sm hover:-translate-y-1 transition-transform duration-card-lift reveal-on-scroll">
+            <div class="flex flex-col items-center gap-3">
+              <div class="w-14 h-14 rounded-full border-2 border-gold-rich bg-cream-parchment flex items-center justify-center shadow-sm">
+                <svg class="w-8 h-8" viewBox="0 0 32 32" aria-hidden="true">
+                  <rect x="3" y="3" width="26" height="26" rx="5" fill="#0A66C2"></rect>
+                  <path fill="#FFFFFF" d="M10.5 13.5h3v10h-3v-10zm1.5-4.8a1.75 1.75 0 110 3.5 1.75 1.75 0 010-3.5zM15.8 13.5h2.9v1.4h.1c.4-.8 1.4-1.6 2.9-1.6 3.1 0 3.7 2 3.7 4.7v5.5h-3v-4.9c0-1.2 0-2.7-1.6-2.7s-1.9 1.3-1.9 2.6v5h-3v-10z"></path>
+                </svg>
+              </div>
+              <div>
+                <span class="font-label text-label-sm uppercase text-bronze-brown">LinkedIn</span>
+                <h3 class="font-headline text-title-lg text-dark-chocolate mt-1">Chakravyuh 2.0 · GITA</h3>
+              </div>
+              <p class="font-body text-body-md text-navy-ink">
+                Official partner spotlights, BPUT announcements, and post-event winner showcases.
+              </p>
+            </div>
+
+            <div class="flex flex-col items-center gap-3">
+              <div class="p-2.5 bg-cream-parchment border-2 border-gold-rich rounded">
+                <svg class="w-28 h-28 text-dark-chocolate" viewBox="0 0 24 24" fill="currentColor" aria-label="LinkedIn QR Code">
+                  <path d="M3 3h8v8H3V3zm2 2v4h4V5H5zm8-2h8v8h-8V3zm2 2v4h4V5h-4zM3 13h8v8H3v-8zm2 2v4h4v-4H5zm10 0h4v2h-4v-2zm2 3h4v3h-4v-3zm-3 1h2v2h-2v-2z"></path>
+                </svg>
+              </div>
+              <a href="#register" class="inline-flex items-center justify-center px-6 py-2 bg-dark-chocolate text-gold-highlight border border-gold-rich ribbon-pill font-label text-label-sm uppercase tracking-wider hover:bg-bronze-brown transition-colors">
+                Connect On LinkedIn
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         8. CONTACT
+    ========================================================== -->
+    <section id="contact" class="py-16 md:py-24 bg-dark-chocolate text-cream-parchment border-t-4 border-gold-rich">
+      <div class="max-w-7xl mx-auto px-4 md:px-6 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        <div class="lg:col-span-5 flex flex-col gap-6">
+          <span class="font-label text-label-sm uppercase text-gold-highlight">Reach The War Room</span>
+          <h2 class="font-display text-display-md-mobile md:text-display-md text-gold-highlight uppercase">Contact Us</h2>
+          <p class="font-body text-body-md text-cream-parchment">
+            Questions about problem statements, campus travel, or sponsorships? Our organizing committee is ready to assist.
+          </p>
+
+          <div class="flex flex-col gap-3 border-y border-gold-rich/40 py-5">
+            <p class="font-body text-body-md text-cream-parchment tabular-nums"><strong class="text-gold-highlight">Phone:</strong> +91 94370 12840 / +91 82491 55312</p>
+            <p class="font-body text-body-md text-cream-parchment"><strong class="text-gold-highlight">Email:</strong> chakravyuh@gita.edu.in</p>
+            <p class="font-body text-body-md text-cream-parchment"><strong class="text-gold-highlight">Campus:</strong> GITA Autonomous College, Badaraghunathpur, Bhubaneswar, Odisha 752054</p>
+          </div>
+
+          <div class="flex items-center gap-4">
+            <div class="p-2 bg-cream-parchment border-2 border-gold-rich rounded shrink-0">
+              <svg class="w-16 h-16 text-dark-chocolate" viewBox="0 0 24 24" fill="currentColor" aria-label="Updates QR">
+                <path d="M3 3h8v8H3V3zm2 2v4h4V5H5zm8-2h8v8h-8V3zm2 2v4h4V5h-4zM3 13h8v8H3v-8zm2 2v4h4v-4H5zm10-2h2v2h-2v-2zm4 0h2v4h-2v-4zm-4 4h2v4h-2v-4zm4 2h2v2h-2v-2z"></path>
+              </svg>
+            </div>
+            <div class="flex flex-col gap-1">
+              <span class="px-3 py-1 bg-bronze-brown text-gold-highlight ribbon-pill font-label text-label-sm uppercase self-start">Scan For Updates</span>
+              <p class="font-body text-body-md text-cream-parchment">Join the official WhatsApp &amp; Discord announcements channel.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 bg-cream-parchment text-navy-ink border-2 border-gold-rich rounded p-6 md:p-8 shadow-lg">
+          <form id="contact-form" class="flex flex-col gap-5">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <label data-component-id="input-field-text" data-component-type="input-field" data-component-variant="text" class="flex flex-col gap-1">
+                <span class="font-label text-label-sm uppercase text-bronze-brown" data-design-text-token="label-sm">Your Name</span>
+                <input type="text" required placeholder="Arjuna Pandava" class="w-full bg-light-surface-container-lowest border-0 border-b-2 border-gold-rich px-3 py-2.5 font-body text-body-md text-navy-ink placeholder:text-bronze-brown focus:border-saffron focus:ring-0">
+              </label>
+              <label data-component-id="input-field-icon" data-component-type="input-field" data-component-variant="with-icon" class="flex flex-col gap-1">
+                <span class="font-label text-label-sm uppercase text-bronze-brown" data-design-text-token="label-sm">Email Address</span>
+                <input type="email" required placeholder="you@college.edu.in" class="w-full bg-light-surface-container-lowest border-0 border-b-2 border-gold-rich px-3 py-2.5 font-body text-body-md text-navy-ink placeholder:text-bronze-brown focus:border-saffron focus:ring-0">
+              </label>
+            </div>
+            <label class="flex flex-col gap-1">
+              <span class="font-label text-label-sm uppercase text-bronze-brown">Subject</span>
+              <input type="text" required placeholder="Team Registration / Sponsorship Inquiry" class="w-full bg-light-surface-container-lowest border-0 border-b-2 border-gold-rich px-3 py-2.5 font-body text-body-md text-navy-ink placeholder:text-bronze-brown focus:border-saffron focus:ring-0">
+            </label>
+            <label class="flex flex-col gap-1">
+              <span class="font-label text-label-sm uppercase text-bronze-brown">Message</span>
+              <textarea rows="3" required placeholder="Write your message to the organizing team..." class="w-full bg-light-surface-container-lowest border-0 border-b-2 border-gold-rich px-3 py-2.5 font-body text-body-md text-navy-ink placeholder:text-bronze-brown focus:border-saffron focus:ring-0"></textarea>
+            </label>
+            <div class="flex items-center justify-between flex-wrap gap-4">
+              <button type="submit" class="inline-flex items-center justify-center px-8 py-3 bg-dark-chocolate text-gold-highlight border border-gold-rich ribbon-pill font-label text-label-sm uppercase tracking-widest hover:bg-bronze-brown">
+                Send Message
+              </button>
+              <span id="contact-status" class="hidden font-label text-label-sm text-peacock-green">Message dispatched to the War Room.</span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         9. REGISTRATION — "THE FINAL GATE AWAITS"
+    ========================================================== -->
+    <section id="register" class="py-16 md:py-24 sunburst-bg border-t-4 border-gold-rich">
+      <div class="max-w-5xl mx-auto px-4 md:px-6 text-center flex flex-col items-center gap-8">
+        <div class="inline-flex items-center gap-2 px-5 py-1.5 bg-dark-chocolate text-gold-highlight border border-gold-rich ribbon-pill">
+          <span class="font-label text-label-sm uppercase">Limited Seats · 125 Teams Max</span>
+        </div>
+
+        <div class="flex flex-col gap-2">
+          <h2 class="font-display text-display-md-mobile md:text-display-lg text-dark-chocolate uppercase">The Final Gate Awaits</h2>
+          <p class="font-body text-body-lg text-dark-chocolate">Registrations are live now. Secure your squad&#39;s place on the battlefield.</p>
+        </div>
+
+        <!-- 3-Step Horizontal Flow -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 w-full">
+          <div class="bg-cream-parchment/95 border border-gold-rich rounded p-5 flex flex-col items-center gap-2">
+            <span class="w-9 h-9 rounded-full bg-dark-chocolate text-gold-highlight font-headline font-bold flex items-center justify-center">01</span>
+            <h3 class="font-title text-title-lg text-bronze-brown">Scan or Click</h3>
+            <p class="font-body text-body-md text-navy-ink">Open the official Chakravyuh 2.0 registration portal.</p>
+          </div>
+          <div class="bg-cream-parchment/95 border border-gold-rich rounded p-5 flex flex-col items-center gap-2">
+            <span class="w-9 h-9 rounded-full bg-dark-chocolate text-gold-highlight font-headline font-bold flex items-center justify-center">02</span>
+            <h3 class="font-title text-title-lg text-bronze-brown">Fill Team Details</h3>
+            <p class="font-body text-body-md text-navy-ink">Add 2–4 members, college IDs, and choose your track.</p>
+          </div>
+          <div class="bg-cream-parchment/95 border border-gold-rich rounded p-5 flex flex-col items-center gap-2">
+            <span class="w-9 h-9 rounded-full bg-dark-chocolate text-gold-highlight font-headline font-bold flex items-center justify-center">03</span>
+            <h3 class="font-title text-title-lg text-bronze-brown">Confirm Entry</h3>
+            <p class="font-body text-body-md text-navy-ink">Receive your Gate Pass ID and shortlist updates.</p>
+          </div>
+        </div>
+
+        <!-- QR + Quick Entry Preview -->
+        <div class="w-full bg-cream-parchment/95 border-2 border-gold-rich rounded p-6 md:p-8 grid grid-cols-1 md:grid-cols-12 gap-8 items-center shadow-lg">
+          <div class="md:col-span-5 flex flex-col items-center gap-3">
+            <div class="p-3 bg-light-surface-container-lowest border-2 border-gold-rich rounded">
+              <svg class="w-32 h-32 text-dark-chocolate" viewBox="0 0 24 24" fill="currentColor" aria-label="Scan to Register QR">
+                <path d="M3 3h8v8H3V3zm2 2v4h4V5H5zm8-2h8v8h-8V3zm2 2v4h4V5h-4zM3 13h8v8H3v-8zm2 2v4h4v-4H5zm10-2h2v2h-2v-2zm4 0h2v4h-2v-4zm-4 4h2v4h-2v-4zm4 2h2v2h-2v-2z"></path>
+              </svg>
+            </div>
+            <span class="px-5 py-1.5 bg-dark-chocolate text-cream-parchment ribbon-pill font-label text-label-sm uppercase">Scan To Register</span>
+          </div>
+
+          <form id="quick-reg-form" class="md:col-span-7 flex flex-col gap-4 text-left">
+            <h3 class="font-headline text-headline-md text-bronze-brown">Quick Squad Pre-Registration</h3>
+            <label class="flex flex-col gap-1">
+              <span class="font-label text-label-sm uppercase text-bronze-brown">Team Name</span>
+              <input type="text" required placeholder="e.g. Indraprastha Devs" class="w-full bg-light-surface-container-lowest border-0 border-b-2 border-gold-rich px-3 py-2 font-body text-body-md text-navy-ink focus:border-saffron focus:ring-0">
+            </label>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <label class="flex flex-col gap-1">
+                <span class="font-label text-label-sm uppercase text-bronze-brown">Leader Email</span>
+                <input type="email" required placeholder="leader@gita.edu.in" class="w-full bg-light-surface-container-lowest border-0 border-b-2 border-gold-rich px-3 py-2 font-body text-body-md text-navy-ink focus:border-saffron focus:ring-0">
+              </label>
+              <label class="flex flex-col gap-1">
+                <span class="font-label text-label-sm uppercase text-bronze-brown">College</span>
+                <input type="text" required placeholder="GITA Autonomous College" class="w-full bg-light-surface-container-lowest border-0 border-b-2 border-gold-rich px-3 py-2 font-body text-body-md text-navy-ink focus:border-saffron focus:ring-0">
+              </label>
+            </div>
+            <div class="flex items-center gap-4 pt-2">
+              <button type="submit" class="inline-flex items-center justify-center px-8 py-3 bg-dark-chocolate text-gold-highlight border border-gold-rich ribbon-pill font-label text-label-lg uppercase tracking-widest hover:bg-bronze-brown">
+                Register Now
+              </button>
+              <span id="reg-status" class="hidden font-label text-label-sm text-peacock-green">Squad pre-registered! Check your inbox.</span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================
+       10. FOOTER
+  ========================================================== -->
+  <footer class="bg-dark-chocolate text-cream-parchment border-t-4 border-gold-rich py-12">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 flex flex-col gap-8">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-8 border-b border-gold-rich/40">
+        <div>
+          <p class="font-display text-headline-md text-gold-highlight">CHAKRAVYUH 2.0</p>
+          <p class="font-body text-body-md text-cream-parchment mt-1">Break the Chakravyuh. Build the Future.</p>
+        </div>
+        <div class="flex flex-wrap gap-6 font-label text-label-sm uppercase">
+          <a href="#about" class="hover:text-gold-highlight">About</a>
+          <a href="#timeline" class="hover:text-gold-highlight">Timeline</a>
+          <a href="#guidelines" class="hover:text-gold-highlight">Guidelines</a>
+          <a href="#sponsors" class="hover:text-gold-highlight">Sponsors</a>
+          <a href="#coordinators" class="hover:text-gold-highlight">Team</a>
+          <a href="#register" class="text-gold-highlight">Register</a>
+        </div>
+      </div>
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 font-body text-body-md text-cream-parchment">
+        <p>Organised by Coding &amp; Innovation Club, Dept. of CSE, GITA Autonomous College, Bhubaneswar · In assoc. with BPUT, Odisha</p>
+        <p class="tabular-nums">© 2026 Chakravyuh 2.0 · All Rights Reserved</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      // Sticky Navbar
+      var navbar = document.getElementById('site-navbar');
+      window.addEventListener('scroll', function () {
+        if (window.scrollY > 40) {
+          navbar.classList.add('bg-cream-parchment/95', 'border-gold-rich', 'shadow-sm');
+          navbar.classList.remove('border-transparent');
+        } else {
+          navbar.classList.remove('bg-cream-parchment/95', 'border-gold-rich', 'shadow-sm');
+          navbar.classList.add('border-transparent');
+        }
+      });
+
+      // Mobile Drawer
+      var drawer = document.getElementById('mobile-drawer');
+      var openBtn = document.getElementById('mobile-menu-open');
+      var closeBtn = document.getElementById('mobile-menu-close');
+      var links = document.querySelectorAll('.mobile-nav-link');
+      if (openBtn && drawer) {
+        openBtn.addEventListener('click', function () {
+          drawer.classList.remove('hidden');
+          drawer.classList.add('flex');
+          openBtn.setAttribute('aria-expanded', 'true');
+        });
+      }
+      if (closeBtn && drawer) {
+        closeBtn.addEventListener('click', function () {
+          drawer.classList.add('hidden');
+          drawer.classList.remove('flex');
+          openBtn.setAttribute('aria-expanded', 'false');
+        });
+      }
+      links.forEach(function (link) {
+        link.addEventListener('click', function () {
+          drawer.classList.add('hidden');
+          drawer.classList.remove('flex');
+        });
+      });
+
+      // Live Countdown to 23 Jan 2027 09:00 IST
+      var target = new Date('2027-01-23T09:00:00+05:30').getTime();
+      function updateCountdown() {
+        var now = Date.now();
+        var diff = Math.max(0, target - now);
+        var d = Math.floor(diff / 86400000);
+        var h = Math.floor((diff % 86400000) / 3600000);
+        var m = Math.floor((diff % 3600000) / 60000);
+        var s = Math.floor((diff % 60000) / 1000);
+        var elD = document.getElementById('cd-days');
+        var elH = document.getElementById('cd-hours');
+        var elM = document.getElementById('cd-mins');
+        var elS = document.getElementById('cd-secs');
+        if (elD) elD.textContent = String(d).padStart(2, '0');
+        if (elH) elH.textContent = String(h).padStart(2, '0');
+        if (elM) elM.textContent = String(m).padStart(2, '0');
+        if (elS) elS.textContent = String(s).padStart(2, '0');
+      }
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+
+      // Interactive Seven Gates
+      var gates = [
+        { roman: 'Gate I · Live Now', time: '15 Dec 2026 · 10:00 AM', title: 'Registration Opens', desc: 'Portal opens for teams of 2–4 warriors across India to submit their squad details and track preference.' },
+        { roman: 'Gate II · Upcoming', time: '10 Jan 2027 · 11:59 PM', title: 'Registration Closes', desc: 'Final deadline to lock your team roster and submit your initial problem statement pitch.' },
+        { roman: 'Gate III · Upcoming', time: '15 Jan 2027 · 06:00 PM', title: 'Shortlist Announcement', desc: 'Top 125 teams are announced and receive official invitations to GITA Autonomous College, Bhubaneswar.' },
+        { roman: 'Gate IV · Upcoming', time: '23 Jan 2027 · 09:00 AM', title: 'Hackathon Day 1 Kickoff', desc: 'On-campus check-in, inaugural ceremony, and the 36-hour coding marathon begins.' },
+        { roman: 'Gate V · Upcoming', time: '23 Jan 2027 · 08:00 PM', title: 'Mid Evaluation', desc: 'First technical architecture review and mentorship round with industry experts.' },
+        { roman: 'Gate VI · Upcoming', time: '24 Jan 2027 · 02:00 PM', title: 'Final Pitch & Judging', desc: 'Working prototypes are demonstrated live before the national jury panel.' },
+        { roman: 'Gate VII · Finale', time: '24 Jan 2027 · 05:30 PM', title: 'Prize Distribution', desc: 'Champions are crowned and the ₹1,50,000 prize pool is awarded.' }
+      ];
+      var gateBtns = document.querySelectorAll('[data-gate]');
+      gateBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var idx = Number(btn.getAttribute('data-gate'));
+          var g = gates[idx];
+          if (!g) return;
+          document.getElementById('gate-detail-roman').textContent = g.roman;
+          document.getElementById('gate-detail-time').textContent = g.time;
+          document.getElementById('gate-detail-title').textContent = g.title;
+          document.getElementById('gate-detail-desc').textContent = g.desc;
+          document.querySelectorAll('.gate-btn').forEach(function (b) {
+            var active = Number(b.getAttribute('data-gate')) === idx;
+            b.className = active
+              ? b.className.replace('bg-bronze-brown text-cream-parchment', 'bg-gold-highlight text-dark-chocolate')
+              : b.className.replace('bg-gold-highlight text-dark-chocolate', 'bg-bronze-brown text-cream-parchment');
+          });
+        });
+      });
+
+      // Forms
+      var contactForm = document.getElementById('contact-form');
+      if (contactForm) {
+        contactForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          document.getElementById('contact-status').classList.remove('hidden');
+        });
+      }
+      var regForm = document.getElementById('quick-reg-form');
+      if (regForm) {
+        regForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          document.getElementById('reg-status').classList.remove('hidden');
+        });
+      }
+    })();
+  </script>
+
+
+</body></html>

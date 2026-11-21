@@ -1,0 +1,38 @@
+{
+  "id": 1795285091514,
+  "jsonrpc": "2.0",
+  "result": {
+    "_meta": {
+      "ui": {
+        "resourceUri": "ui://stitch.googleapis.com/project-viewer",
+        "visibility": [
+          "model",
+          "app"
+        ]
+      }
+    },
+    "content": [
+      {
+        "text": "{\"screens\":[{\"name\":\"projects/18417079394346181284/screens/node_903558427885209850\",\"title\":\"Chakravyuh 2.0 — Landing Page\",\"screenshot\":{},\"htmlCode\":{\"name\":\"projects/18417079394346181284/files/node_903558427885209850\",\"mimeType\":\"text/html\"},\"width\":\"1280\",\"height\":\"9992\",\"deviceType\":\"DESKTOP\",\"screenType\":\"DESIGN\"}]}",
+        "type": "text"
+      }
+    ],
+    "structuredContent": {
+      "screens": [
+        {
+          "deviceType": "DESKTOP",
+          "height": "9992",
+          "htmlCode": {
+            "mimeType": "text/html",
+            "name": "projects/18417079394346181284/files/node_903558427885209850"
+          },
+          "name": "projects/18417079394346181284/screens/node_903558427885209850",
+          "screenType": "DESIGN",
+          "screenshot": {},
+          "title": "Chakravyuh 2.0 — Landing Page",
+          "width": "1280"
+        }
+      ]
+    }
+  }
+}

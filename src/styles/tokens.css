@@ -1,0 +1,81 @@
+:root {
+  --color-sky-light: #BFD6EC;
+  --color-sky-deep: #8FB4DC;
+  --color-cream-parchment: #FFF6E3;
+  --color-gold-highlight: #F2B84B;
+  --color-gold-rich: #D9961F;
+  --color-saffron: #E8761E;
+  --color-burnt-orange: #B8521A;
+  --color-bronze-brown: #6B3A1E;
+  --color-dark-chocolate: #3A1D0E;
+  --color-krishna-blue: #4F74BE;
+  --color-peacock-green: #3E8E5A;
+  --color-navy-ink: #1B2A41;
+  --color-surface-lowest: #FFFDF8;
+  --color-surface-low: #FCF0D6;
+  --color-surface-container: #F6E5C3;
+  --color-surface-high: #EAD5AC;
+
+  --font-cinzel-decorative: 'Cinzel Decorative', serif;
+  --font-cinzel: 'Cinzel', serif;
+  --font-lato: 'Lato', sans-serif;
+  --font-cormorant: 'Cormorant Garamond', serif;
+}
+
+.ribbon-pill {
+  clip-path: polygon(14px 0%, calc(100% - 14px) 0%, 100% 50%, calc(100% - 14px) 100%, 14px 100%, 0% 50%);
+}
+
+.epic-text-shadow {
+  text-shadow: 0 2px 0 rgba(58, 29, 14, 0.85), 0 6px 24px rgba(242, 184, 75, 0.45);
+}
+
+.hero-light-scrim {
+  background: radial-gradient(circle at 50% 40%, rgba(255, 246, 227, 0.86) 0%, rgba(255, 246, 227, 0.58) 42%, rgba(58, 29, 14, 0.38) 100%);
+}
+
+.sunburst-bg {
+  background: radial-gradient(circle at 50% 35%, #FFF6E3 0%, #BFD6EC 55%, #8FB4DC 100%);
+}
+
+@keyframes chakraSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-chakra {
+  animation: chakraSpin 55s linear infinite;
+}
+
+.stage-plaque {
+  box-shadow: 0 12px 32px rgba(26, 12, 5, 0.55), inset 0 0 0 1px rgba(242, 184, 75, 0.25);
+}
+
+.stage-plaque-active {
+  box-shadow: 0 14px 38px rgba(242, 184, 75, 0.24), inset 0 0 0 1px rgba(242, 184, 75, 0.45);
+}
+
+/* Shimmer sweep animation */
+@keyframes goldShimmer {
+  0% { transform: translateX(-150%); }
+  100% { transform: translateX(150%); }
+}
+
+.animate-gold-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.animate-gold-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(242, 184, 75, 0.45), transparent);
+  transform: translateX(-150%);
+  animation: goldShimmer 3s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-chakra { animation: none; }
+  .animate-gold-shimmer::after { animation: none; }
+}
