@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { HeroSection } from '@/components/sections/HeroSection';
+import { RibbonBannerSection } from '@/components/sections/RibbonBannerSection';
 import { AboutSection } from '@/components/sections/AboutSection';
 import { TimelineSection } from '@/components/sections/TimelineSection';
 import { GuidelinesSection } from '@/components/sections/GuidelinesSection';
@@ -36,6 +37,7 @@ export default function Home() {
       {/* 4. Main Section Sequence (Coordinators is opened via modal from navbar, not shown in scroll flow) */}
       <main>
         <HeroSection onRegisterClick={() => setModalOpen(true)} />
+        <RibbonBannerSection />
         <AboutSection />
         <TimelineSection />
         <GuidelinesSection />
