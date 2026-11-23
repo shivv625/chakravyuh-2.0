@@ -30,6 +30,18 @@ export const IntroVideoTransition: React.FC<IntroVideoTransitionProps> = ({ onCo
     }, 750);
   };
 
+  const setStartTime = () => {
+    if (videoRef.current) {
+      try {
+        if (videoRef.current.currentTime < 0.03) {
+          videoRef.current.currentTime = 0.03;
+        }
+      } catch {
+        // Ignored if media not yet seekable
+      }
+    }
+  };
+
   useEffect(() => {
     // Check prefers-reduced-motion
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -45,8 +57,9 @@ export const IntroVideoTransition: React.FC<IntroVideoTransitionProps> = ({ onCo
       }
     }, 9000);
 
-    // Auto-attempt playback with sound catch
+    // Auto-attempt playback from 0.03s
     if (videoRef.current) {
+      setStartTime();
       const playPromise = videoRef.current.play();
       if (playPromise !== undefined) {
         playPromise.catch(() => {
@@ -54,6 +67,7 @@ export const IntroVideoTransition: React.FC<IntroVideoTransitionProps> = ({ onCo
           if (videoRef.current) {
             videoRef.current.muted = true;
             setIsMuted(true);
+            setStartTime();
             videoRef.current.play().catch(() => {
               // If still blocked, fallback gracefully
             });
@@ -86,114 +100,99 @@ export const IntroVideoTransition: React.FC<IntroVideoTransitionProps> = ({ onCo
   return (
     <div
       aria-label="Welcome intro video"
-      className={`fixed inset-0 z-[100] flex items-center justify-center bg-dark-chocolate transition-all duration-700 ease-out select-none ${
+      className={`fixed inset-0 z-[100] w-screen h-screen overflow-hidden bg-black transition-all duration-700 ease-out select-none ${
         exiting ? 'opacity-0 scale-105 pointer-events-none' : 'opacity-100 scale-100 pointer-events-auto'
       }`}
     >
-      {/* Ambient Kurukshetra Golden Glow Backlight */}
-      <div
-        className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-40 transition-opacity duration-700"
-        aria-hidden="true"
-      >
-        <div className="w-[600px] h-[600px] md:w-[900px] md:h-[900px] rounded-full bg-gradient-radial from-gold-highlight/30 via-saffron/15 to-transparent blur-3xl animate-pulse" />
-      </div>
+      {/* 1. Edge-to-Edge Fullscreen Video */}
+      <video
+        ref={videoRef}
+        src="/assets/chakravyuh_intro.mp4#t=0.03"
+        autoPlay
+        muted={isMuted}
+        playsInline
+        preload="auto"
+        onLoadedMetadata={setStartTime}
+        onLoadedData={setStartTime}
+        onCanPlay={setStartTime}
+        onTimeUpdate={handleTimeUpdate}
+        onEnded={triggerExit}
+        onError={triggerExit}
+        className="absolute inset-0 w-full h-full object-cover"
+      />
 
-      {/* Rotating Sacred Chakra Watermark */}
+      {/* 2. Cinematic Golden Radial Overlay */}
       <div
-        className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-10"
         aria-hidden="true"
-      >
-        <svg
-          className="w-[700px] h-[700px] text-gold-rich animate-chakra"
-          viewBox="0 0 400 400"
-          fill="none"
-          stroke="currentColor"
-        >
-          <circle cx="200" cy="200" r="190" strokeWidth="0.8" strokeDasharray="6 6" />
-          <circle cx="200" cy="200" r="150" strokeWidth="1" />
-          <circle cx="200" cy="200" r="110" strokeWidth="0.8" strokeDasharray="4 4" />
-          <circle cx="200" cy="200" r="70" strokeWidth="1.2" />
-          <path d="M200 10v380M10 200h380M66 66l268 268M334 66L66 334" strokeWidth="0.5" />
-        </svg>
-      </div>
+        className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/40"
+      />
 
-      {/* Centerpiece Video Theater Frame */}
-      <div className="relative z-10 w-full max-w-4xl mx-4 sm:mx-6 flex flex-col items-center gap-4">
-        {/* Top Floating Badge */}
-        <div className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-dark-chocolate/90 border border-gold-rich/80 shadow-md backdrop-blur-md">
+      {/* 3. Golden Flash Sunburst on Exit Transition */}
+      <div
+        aria-hidden="true"
+        className={`pointer-events-none absolute inset-0 bg-gradient-radial from-gold-highlight/40 via-saffron/20 to-transparent transition-opacity duration-700 ${
+          exiting ? 'opacity-100' : 'opacity-0'
+        }`}
+      />
+
+      {/* 4. Top Floating Bar (Branding + Audio Controls) */}
+      <div className="absolute top-5 inset-x-0 z-20 flex items-center justify-between px-5 sm:px-8 pointer-events-none">
+        {/* Left/Center Crest Badge */}
+        <div className="pointer-events-auto flex items-center gap-2 px-4 py-1.5 rounded-full bg-dark-chocolate/85 border border-gold-rich/80 shadow-lg backdrop-blur-md">
           <Sparkles className="w-3.5 h-3.5 text-gold-highlight animate-spin" style={{ animationDuration: '4s' }} />
-          <span className="font-label text-[11px] sm:text-xs uppercase tracking-widest text-gold-highlight font-bold">
+          <span className="font-label text-xs uppercase tracking-widest text-gold-highlight font-bold">
             CHAKRAVYUH 2.0 · INITIATING ARENA
           </span>
         </div>
 
-        {/* Video Card with Ornate Gold Frame */}
-        <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-black border-2 border-gold-highlight shadow-[0_0_60px_rgba(242,184,75,0.25),0_20px_40px_rgba(0,0,0,0.8)]">
-          {/* 4 Corner Antique Gold Accents */}
-          <div className="pointer-events-none absolute top-2 left-2 w-5 h-5 border-t-2 border-l-2 border-gold-highlight z-20" />
-          <div className="pointer-events-none absolute top-2 right-2 w-5 h-5 border-t-2 border-r-2 border-gold-highlight z-20" />
-          <div className="pointer-events-none absolute bottom-3 left-2 w-5 h-5 border-b-2 border-l-2 border-gold-highlight z-20" />
-          <div className="pointer-events-none absolute bottom-3 right-2 w-5 h-5 border-b-2 border-r-2 border-gold-highlight z-20" />
-
-          {/* HTML5 Video Element */}
-          <video
-            ref={videoRef}
-            src="/assets/chakravyuh_intro.mp4"
-            autoPlay
-            muted={isMuted}
-            playsInline
-            preload="auto"
-            onTimeUpdate={handleTimeUpdate}
-            onEnded={triggerExit}
-            onError={triggerExit}
-            className="w-full h-full object-cover"
-          />
-
-          {/* Golden Glint Sheen Effect */}
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-0 bg-gradient-to-t from-dark-chocolate/40 via-transparent to-transparent"
-          />
-
-          {/* Sound Toggle (Top-Right inside video) */}
-          <button
-            type="button"
-            onClick={toggleSound}
-            aria-label={isMuted ? 'Unmute video audio' : 'Mute video audio'}
-            className="absolute top-4 right-4 z-30 p-2 rounded-full bg-dark-chocolate/80 hover:bg-bronze-brown border border-gold-rich/70 text-gold-highlight backdrop-blur-md transition-all shadow-md group cursor-pointer"
-          >
-            {isMuted ? (
+        {/* Right Audio Toggle Button */}
+        <button
+          type="button"
+          onClick={toggleSound}
+          aria-label={isMuted ? 'Unmute video audio' : 'Mute video audio'}
+          className="pointer-events-auto inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-dark-chocolate/85 hover:bg-bronze-brown border border-gold-rich/80 text-gold-highlight backdrop-blur-md transition-all shadow-lg group cursor-pointer"
+        >
+          {isMuted ? (
+            <>
               <VolumeX className="w-4 h-4 text-gold-highlight group-hover:scale-110 transition-transform" />
-            ) : (
+              <span className="font-label text-xs uppercase text-cream-parchment font-semibold hidden sm:inline">
+                Unmute
+              </span>
+            </>
+          ) : (
+            <>
               <Volume2 className="w-4 h-4 text-gold-highlight group-hover:scale-110 transition-transform" />
-            )}
-          </button>
+              <span className="font-label text-xs uppercase text-gold-highlight font-semibold hidden sm:inline">
+                Sound On
+              </span>
+            </>
+          )}
+        </button>
+      </div>
 
-          {/* Golden Progress Bar along bottom edge */}
-          <div className="absolute bottom-0 inset-x-0 h-1.5 bg-dark-chocolate/80 z-20 overflow-hidden">
-            <div
-              className="h-full bg-gradient-to-r from-saffron via-gold-highlight to-gold-rich transition-all duration-150 ease-linear shadow-[0_0_8px_#F2B84B]"
-              style={{ width: `${progress}%` }}
-            />
-          </div>
-        </div>
+      {/* 5. Bottom Navigation Bar */}
+      <div className="absolute bottom-5 inset-x-0 z-20 flex items-center justify-between px-5 sm:px-8 pointer-events-none">
+        <span className="font-label text-cream-parchment/80 uppercase tracking-widest text-xs font-semibold drop-shadow-md hidden sm:inline">
+          GITA Autonomous College · BPUT Odisha
+        </span>
 
-        {/* Bottom Actions Bar */}
-        <div className="w-full flex items-center justify-between px-2 pt-1 text-xs">
-          <span className="font-label text-cream-parchment/80 uppercase tracking-wider text-[11px] sm:text-xs hidden sm:inline">
-            GITA Autonomous College &amp; BPUT Odisha
-          </span>
+        {/* Enter Arena CTA */}
+        <button
+          type="button"
+          onClick={triggerExit}
+          className="pointer-events-auto ml-auto inline-flex items-center gap-2.5 px-6 py-2.5 bg-dark-chocolate/95 hover:bg-gold-highlight hover:text-dark-chocolate text-gold-highlight border-2 border-gold-rich ribbon-pill font-label text-xs sm:text-sm uppercase tracking-widest font-bold shadow-2xl transition-all duration-300 cursor-pointer backdrop-blur-md hover:scale-105 active:scale-95"
+        >
+          <span>Enter Arena</span>
+          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+        </button>
+      </div>
 
-          {/* Enter Arena / Skip CTA */}
-          <button
-            type="button"
-            onClick={triggerExit}
-            className="group ml-auto inline-flex items-center gap-2 px-5 py-2 bg-dark-chocolate/95 hover:bg-gold-highlight hover:text-dark-chocolate text-gold-highlight border border-gold-rich ribbon-pill font-label text-xs uppercase tracking-widest font-bold shadow-xl transition-all duration-300 cursor-pointer backdrop-blur-md hover:scale-105 active:scale-95"
-          >
-            <span>Enter Arena</span>
-            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-          </button>
-        </div>
+      {/* 6. Glowing Gold Edge Progress Bar */}
+      <div className="absolute bottom-0 inset-x-0 h-1.5 bg-black/80 z-30 overflow-hidden">
+        <div
+          className="h-full bg-gradient-to-r from-saffron via-gold-highlight to-gold-rich transition-all duration-150 ease-linear shadow-[0_0_10px_#F2B84B]"
+          style={{ width: `${progress}%` }}
+        />
       </div>
     </div>
   );
