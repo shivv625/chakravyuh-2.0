@@ -184,44 +184,122 @@ export const AboutSection: React.FC = () => {
           </div>
         </div>
 
-        {/* 6 Ornate Info Plaques */}
+        {/* Battlefield Briefing Header */}
+        <div className="flex items-center justify-between flex-wrap gap-2 pt-2 border-t border-gold-rich/40">
+          <div className="flex items-center gap-2.5">
+            <span className="w-2.5 h-2.5 rotate-45 bg-gold-rich inline-block shadow-[0_0_8px_rgba(242,184,75,0.7)]" />
+            <span className="font-label text-xs sm:text-sm uppercase tracking-widest text-bronze-brown font-bold">
+              Battlefield Briefing · Key Intel
+            </span>
+          </div>
+          <span className="font-label text-xs uppercase tracking-wider text-bronze-brown/80 hidden sm:inline">
+            36-Hour National Arena · GITA Autonomous College
+          </span>
+        </div>
+
+        {/* 6 Ornate Info Plaques (Battlefield Briefing Cards with Concept-Matched Hover) */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 items-stretch">
           {infoPlaques.map((plaque) => (
             <article
               key={plaque.label}
-              className={`border-2 rounded-md p-5 flex flex-col items-center text-center justify-between gap-3 shadow-sm hover:-translate-y-1 transition-transform duration-card-lift ${
+              className={`group relative overflow-hidden border-2 rounded-md p-5 flex flex-col items-center text-center justify-between gap-3 cursor-default transition-all duration-300 ease-out select-none ${
                 plaque.isHighlight
-                  ? 'bg-dark-chocolate border-gold-highlight text-cream-parchment shadow-md'
-                  : 'bg-light-surface-container-lowest border-gold-rich text-navy-ink'
+                  ? 'bg-dark-chocolate border-gold-highlight text-cream-parchment shadow-md hover:-translate-y-2 hover:shadow-[0_18px_36px_-6px_rgba(26,12,5,0.7),0_0_0_2px_#F2B84B,0_0_30px_rgba(242,184,75,0.45)]'
+                  : 'bg-light-surface-container-lowest border-gold-rich text-navy-ink shadow-sm hover:-translate-y-2 hover:bg-light-surface-container-low hover:border-gold-highlight hover:shadow-[0_16px_32px_-6px_rgba(107,58,30,0.22),0_0_0_1.5px_#D9961F,0_0_24px_rgba(242,184,75,0.32)]'
               }`}
             >
+              {/* Corner Ornaments (Ancient Bronze / Gold Brackets) */}
               <div
-                className={`w-12 h-12 rounded-full border flex items-center justify-center shadow-sm ${
+                className={`absolute top-1 left-1 w-2.5 h-2.5 border-t-2 border-l-2 transition-colors duration-300 ${
                   plaque.isHighlight
-                    ? 'bg-bronze-brown border-gold-highlight'
-                    : 'bg-dark-chocolate border-gold-rich'
+                    ? 'border-gold-highlight/60 group-hover:border-gold-highlight'
+                    : 'border-gold-rich/40 group-hover:border-gold-highlight'
                 }`}
-              >
-                {plaque.icon}
+              />
+              <div
+                className={`absolute top-1 right-1 w-2.5 h-2.5 border-t-2 border-r-2 transition-colors duration-300 ${
+                  plaque.isHighlight
+                    ? 'border-gold-highlight/60 group-hover:border-gold-highlight'
+                    : 'border-gold-rich/40 group-hover:border-gold-highlight'
+                }`}
+              />
+              <div
+                className={`absolute bottom-1 left-1 w-2.5 h-2.5 border-b-2 border-l-2 transition-colors duration-300 ${
+                  plaque.isHighlight
+                    ? 'border-gold-highlight/60 group-hover:border-gold-highlight'
+                    : 'border-gold-rich/40 group-hover:border-gold-highlight'
+                }`}
+              />
+              <div
+                className={`absolute bottom-1 right-1 w-2.5 h-2.5 border-b-2 border-r-2 transition-colors duration-300 ${
+                  plaque.isHighlight
+                    ? 'border-gold-highlight/60 group-hover:border-gold-highlight'
+                    : 'border-gold-rich/40 group-hover:border-gold-highlight'
+                }`}
+              />
+
+              {/* Sunlight Glint Shimmer Sweep on Hover */}
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out opacity-0 group-hover:opacity-100"
+                style={{
+                  background:
+                    'linear-gradient(105deg, transparent 20%, rgba(242, 184, 75, 0.28) 50%, transparent 80%)',
+                }}
+              />
+
+              {/* Concentric Rotating Chakra Crest Icon */}
+              <div className="relative">
+                {/* Rotating Gold Chakra Ring on Hover */}
+                <div
+                  aria-hidden="true"
+                  className={`absolute -inset-1 rounded-full border border-dashed transition-transform duration-700 ease-out group-hover:rotate-180 ${
+                    plaque.isHighlight
+                      ? 'border-gold-highlight/80 group-hover:border-gold-highlight'
+                      : 'border-gold-rich/50 group-hover:border-gold-highlight'
+                  }`}
+                />
+
+                <div
+                  className={`relative w-12 h-12 rounded-full border flex items-center justify-center transition-all duration-300 shadow-sm group-hover:scale-110 ${
+                    plaque.isHighlight
+                      ? 'bg-bronze-brown border-gold-highlight shadow-[0_0_12px_rgba(242,184,75,0.4)]'
+                      : 'bg-dark-chocolate border-gold-rich group-hover:border-gold-highlight group-hover:shadow-[0_0_12px_rgba(242,184,75,0.35)]'
+                  }`}
+                >
+                  <div className="transition-transform duration-300 group-hover:scale-110">
+                    {plaque.icon}
+                  </div>
+                </div>
               </div>
-              <div className="flex flex-col gap-0.5">
+
+              {/* Plaque Intel Details */}
+              <div className="flex flex-col gap-0.5 z-10">
                 <span
-                  className={`font-label text-label-sm uppercase tracking-wider ${
-                    plaque.isHighlight ? 'text-cream-parchment' : 'text-bronze-brown'
+                  className={`font-label text-label-sm uppercase tracking-wider transition-colors duration-200 ${
+                    plaque.isHighlight
+                      ? 'text-cream-parchment group-hover:text-gold-highlight font-semibold'
+                      : 'text-bronze-brown group-hover:text-saffron font-bold'
                   }`}
                 >
                   {plaque.label}
                 </span>
+
                 <span
-                  className={`font-title text-body-md font-bold tabular-nums ${
-                    plaque.isHighlight ? 'text-gold-highlight' : 'text-dark-chocolate'
+                  className={`font-title text-body-md font-bold tabular-nums transition-transform duration-200 group-hover:scale-105 ${
+                    plaque.isHighlight
+                      ? 'text-gold-highlight'
+                      : 'text-dark-chocolate group-hover:text-bronze-brown'
                   }`}
                 >
                   {plaque.value}
                 </span>
+
                 <span
-                  className={`font-body text-label-sm ${
-                    plaque.isHighlight ? 'text-cream-parchment/80' : 'text-navy-ink/80'
+                  className={`font-body text-label-sm transition-colors duration-200 ${
+                    plaque.isHighlight
+                      ? 'text-cream-parchment/85 group-hover:text-cream-parchment'
+                      : 'text-navy-ink/80 group-hover:text-navy-ink font-medium'
                   }`}
                 >
                   {plaque.subtext}
