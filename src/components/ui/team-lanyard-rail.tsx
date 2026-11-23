@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export interface LanyardLink {
   label: string;
@@ -174,11 +175,17 @@ function geometry(W: number, items: LanyardMember[]) {
     swingK: pendulum.map((len) => (SWING_K * restLength) / len),
     couple: pendulum.map((len) => (0.25 * 57.3) / len),
     maxStretch: Math.round(MAX_STRETCH * Math.min(1, W / 118)),
-    height: Math.ceil(bottom + 16 * u + 8),
+    height: Math.ceil(bottom + 36 * u + 28),
   };
 }
 
 function layoutTargets(width: number, W: number, carousel: boolean, center: number | null, count: number) {
+  const isScrollable = count > 6;
+  if (isScrollable) {
+    const pitch = 180;
+    const start = 80 + W / 2;
+    return { xs: Array.from({ length: count }, (_, i) => start + i * pitch), total: 0 };
+  }
   if (!carousel) {
     const pitch = clamp((width - 40 - W * 0.6) / Math.max(1, count), W * RAIL_PITCH_MIN, W * RAIL_PITCH_MAX);
     const start = width / 2 - (pitch * (count - 1)) / 2;
@@ -397,6 +404,24 @@ export function TeamLanyardRail({
   const uid = React.useId().replace(/[^a-zA-Z0-9_-]/g, "");
   const count = items.length;
   const stageRef = React.useRef(null as HTMLDivElement | null);
+  const scrollRef = React.useRef(null as HTMLDivElement | null);
+  const isScrollable = count > 6;
+  const [canScrollLeft, setCanScrollLeft] = React.useState(false);
+  const [canScrollRight, setCanScrollRight] = React.useState(true);
+
+  const checkScroll = React.useCallback(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    setCanScrollLeft(el.scrollLeft > 15);
+    setCanScrollRight(el.scrollLeft < el.scrollWidth - el.clientWidth - 15);
+  }, []);
+
+  const handleScrollBy = (amount: number) => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: amount, behavior: "smooth" });
+    }
+  };
+
   const slots = React.useRef([] as (HTMLDivElement | null)[]);
   const swings = React.useRef([] as (HTMLSpanElement | null)[]);
   const straps = React.useRef([] as (HTMLSpanElement | null)[]);
@@ -457,16 +482,24 @@ export function TeamLanyardRail({
   React.useLayoutEffect(() => {
     const stage = stageRef.current;
     if (!stage) return;
-    const measure = (width: number) => {
+    const scrollEl = scrollRef.current;
+    const measure = (containerWidth: number) => {
       const n = Math.max(1, live.current.count);
-      const railW = Math.min(MAX_W, (width - 40) / (n * RAIL_PITCH_MIN + 0.4));
-      const carousel = railW < MIN_RAIL_W;
-      const W = Math.round((carousel ? clamp(width * 0.3, 96, 118) : railW) * 4) / 4;
-      setSize((old) => (Math.abs(old.width - width) < 0.5 && old.carousel === carousel && old.W === W ? old : { width, W, carousel }));
+      const scrollable = n > 6;
+      const pitch = 180;
+      const totalRailWidth = scrollable ? Math.max(containerWidth, 80 + n * pitch + 80) : containerWidth;
+      const railW = Math.min(MAX_W, (totalRailWidth - 40) / (n * RAIL_PITCH_MIN + 0.4));
+      const carousel = !scrollable && railW < MIN_RAIL_W;
+      const W = scrollable ? MAX_W : (Math.round((carousel ? clamp(totalRailWidth * 0.3, 96, 118) : railW) * 4) / 4);
+      setSize((old) => (Math.abs(old.width - totalRailWidth) < 0.5 && old.carousel === carousel && old.W === W ? old : { width: totalRailWidth, W, carousel }));
     };
-    measure(stage.clientWidth);
-    const observer = new ResizeObserver((entries) => { const box = entries[0]; if (box) measure(box.contentRect.width); });
-    observer.observe(stage);
+    const targetEl = scrollEl?.parentElement || stage.parentElement || stage;
+    measure(targetEl.clientWidth || 1000);
+    const observer = new ResizeObserver((entries) => {
+      const box = entries[0];
+      if (box) measure(box.contentRect.width);
+    });
+    observer.observe(targetEl);
     return () => observer.disconnect();
   }, [count]);
 
@@ -956,7 +989,7 @@ export function TeamLanyardRail({
       data-mode={size.carousel ? "carousel" : "rail"}
       data-active={active ?? ""}
       data-flipped={flipped ?? ""}
-      className={`relative isolate w-full overflow-hidden bg-background text-foreground ${className ?? ""}`}
+      className={`relative isolate w-full bg-background text-foreground ${className ?? ""}`}
     >
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10" style={{ background: "radial-gradient(closest-side at 50% 46%, color-mix(in oklab, var(--color-foreground) 7%, transparent), transparent)" }} />
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10" style={{ background: "radial-gradient(color-mix(in oklab, var(--color-foreground) 8%, transparent) 1px, transparent 1.3px) 0 0 / 18px 18px", maskImage: "radial-gradient(closest-side at 50% 50%, black 55%, transparent)", WebkitMaskImage: "radial-gradient(closest-side at 50% 50%, black 55%, transparent)" }} />
@@ -967,24 +1000,54 @@ export function TeamLanyardRail({
         </header>
       )}
 
-      <div
-        ref={stageRef}
-        data-stage
-        role="group"
-        aria-label={heading ?? "Team"}
-        aria-roledescription="lanyard rail"
-        className="relative mt-4 w-full touch-pan-y select-none"
-        style={{ height: g.height, overflowX: "clip" }}
-        onPointerMove={onPointerMove}
-        onPointerDown={onPointerDown}
-        onPointerUp={(event) => finishPointer(event, false)}
-        onPointerCancel={(event) => finishPointer(event, true)}
-        onPointerLeave={(event) => {
-          pointer.current.hoverHit = -1;
-          if (event.pointerType === "mouse" && pointer.current.id < 0 && !size.carousel && !document.activeElement?.matches("[data-badge]:focus-visible")) setActive(null);
-        }}
-        onKeyDown={onKeyDown}
-      >
+      {isScrollable && (
+        <div className="relative z-10 flex items-center justify-between px-6 pt-2 pb-1 text-xs text-muted-foreground">
+          <span className="font-semibold uppercase tracking-wider text-bronze-brown">
+            {count} Commanders on War Room Rail
+          </span>
+          <span className="hidden sm:flex items-center gap-1 font-semibold text-saffron">
+            Scroll or drag right →
+          </span>
+        </div>
+      )}
+
+      <div className="relative w-full group/rail">
+        {isScrollable && (
+          <button
+            type="button"
+            onClick={() => handleScrollBy(-420)}
+            aria-label="Scroll left along commanders rail"
+            disabled={!canScrollLeft}
+            className="absolute left-2 top-1/2 -translate-y-1/2 z-40 w-11 h-11 rounded-full bg-cream-parchment/95 border-2 border-gold-rich text-dark-chocolate shadow-lg flex items-center justify-center hover:bg-gold-highlight hover:scale-105 active:scale-95 transition-all disabled:opacity-0 disabled:pointer-events-none"
+          >
+            <ChevronLeft className="w-6 h-6 text-dark-chocolate" />
+          </button>
+        )}
+
+        <div
+          ref={scrollRef}
+          onScroll={checkScroll}
+          className="w-full overflow-x-auto overflow-y-visible scrollbar-thin scrollbar-track-cream-parchment scrollbar-thumb-gold-rich pb-4 select-none"
+          style={{ WebkitOverflowScrolling: "touch", scrollBehavior: "smooth" }}
+        >
+          <div
+            ref={stageRef}
+            data-stage
+            role="group"
+            aria-label={heading ?? "Team"}
+            aria-roledescription="lanyard rail"
+            className="relative mt-2 touch-pan-y select-none"
+            style={{ width: size.width || "100%", minWidth: "100%", height: g.height }}
+            onPointerMove={onPointerMove}
+            onPointerDown={onPointerDown}
+            onPointerUp={(event) => finishPointer(event, false)}
+            onPointerCancel={(event) => finishPointer(event, true)}
+            onPointerLeave={(event) => {
+              pointer.current.hoverHit = -1;
+              if (event.pointerType === "mouse" && pointer.current.id < 0 && !size.carousel && !document.activeElement?.matches("[data-badge]:focus-visible")) setActive(null);
+            }}
+            onKeyDown={onKeyDown}
+          >
         <div aria-hidden="true" data-rail className="pointer-events-none absolute inset-x-0 z-0" style={{ top: g.railY - g.railR, height: g.railR * 2 }}>
           <div className="absolute inset-x-0 h-3 rounded-full bg-foreground/10 blur-[5px]" style={{ top: g.railR * 2 + 2 }} />
           <div className="absolute inset-0 rounded-full" style={{ background: "linear-gradient(to bottom, color-mix(in oklab, var(--color-muted-foreground) 35%, white) 0%, white 20%, color-mix(in oklab, var(--color-muted-foreground) 70%, white) 40%, var(--color-muted-foreground) 64%, color-mix(in oklab, var(--color-muted-foreground) 55%, black) 100%)", boxShadow: "0 1px 0 color-mix(in oklab, var(--color-foreground) 18%, transparent)" }} />
@@ -1109,6 +1172,20 @@ export function TeamLanyardRail({
             <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 left-0 z-50 w-12 bg-gradient-to-r from-background from-25% to-transparent" />
             <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 right-0 z-50 w-12 bg-gradient-to-l from-background from-25% to-transparent" />
           </>
+        )}
+          </div>
+        </div>
+
+        {isScrollable && (
+          <button
+            type="button"
+            onClick={() => handleScrollBy(420)}
+            aria-label="Scroll right along commanders rail"
+            disabled={!canScrollRight}
+            className="absolute right-2 top-1/2 -translate-y-1/2 z-40 w-11 h-11 rounded-full bg-cream-parchment/95 border-2 border-gold-rich text-dark-chocolate shadow-lg flex items-center justify-center hover:bg-gold-highlight hover:scale-105 active:scale-95 transition-all disabled:opacity-0 disabled:pointer-events-none"
+          >
+            <ChevronRight className="w-6 h-6 text-dark-chocolate" />
+          </button>
         )}
       </div>
 
