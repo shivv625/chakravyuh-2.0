@@ -8,6 +8,7 @@ import { RibbonBannerSection } from '@/components/sections/RibbonBannerSection';
 import { AboutSection } from '@/components/sections/AboutSection';
 import { TimelineSection } from '@/components/sections/TimelineSection';
 import { GuidelinesSection } from '@/components/sections/GuidelinesSection';
+import { GlimpseSection } from '@/components/sections/GlimpseSection';
 import { SponsorsSection } from '@/components/sections/SponsorsSection';
 import { CoordinatorsModal } from '@/components/sections/CoordinatorsModal';
 import { CommunitySection } from '@/components/sections/CommunitySection';
@@ -41,6 +42,7 @@ export default function Home() {
         <AboutSection />
         <TimelineSection />
         <GuidelinesSection />
+        <GlimpseSection />
         <SponsorsSection />
         <CommunitySection />
         <ContactSection />
