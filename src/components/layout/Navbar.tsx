@@ -8,9 +8,10 @@ import { Menu, X, ArrowUpRight } from 'lucide-react';
 
 interface NavbarProps {
   onRegisterClick?: () => void;
+  onCoordinatorsClick?: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onRegisterClick }) => {
+export const Navbar: React.FC<NavbarProps> = ({ onRegisterClick, onCoordinatorsClick }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
@@ -20,7 +21,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRegisterClick }) => {
     { label: 'Timeline', href: '#timeline' },
     { label: 'Guidelines', href: '#guidelines' },
     { label: 'Sponsors', href: '#sponsors' },
-    { label: 'Team', href: '#coordinators' },
+    { label: 'Coordinators', href: '#coordinators' },
     { label: 'Contact', href: '#contact' },
   ];
 
@@ -68,6 +69,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onRegisterClick }) => {
   }, [mobileMenuOpen]);
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href === '#coordinators') {
+      e.preventDefault();
+      setMobileMenuOpen(false);
+      if (onCoordinatorsClick) {
+        onCoordinatorsClick();
+      }
+      return;
+    }
     if (href.startsWith('#')) {
       e.preventDefault();
       const targetId = href.replace('#', '');

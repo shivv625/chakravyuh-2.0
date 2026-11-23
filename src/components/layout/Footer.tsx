@@ -5,7 +5,11 @@ import Link from 'next/link';
 import { SITE_CONFIG } from '@/content/site';
 import { ArrowUp, ArrowUpRight, Shield, Award, MapPin } from 'lucide-react';
 
-export const Footer: React.FC = () => {
+interface FooterProps {
+  onCoordinatorsClick?: () => void;
+}
+
+export const Footer: React.FC<FooterProps> = ({ onCoordinatorsClick }) => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -52,7 +56,16 @@ export const Footer: React.FC = () => {
             <a href="#sponsors" className="hover:text-gold-highlight transition-colors">
               Sponsors
             </a>
-            <a href="#coordinators" className="hover:text-gold-highlight transition-colors">
+            <a
+              href="#coordinators"
+              onClick={(e) => {
+                if (onCoordinatorsClick) {
+                  e.preventDefault();
+                  onCoordinatorsClick();
+                }
+              }}
+              className="hover:text-gold-highlight transition-colors cursor-pointer"
+            >
               Commanders
             </a>
             <a href="#register" className="text-gold-highlight font-bold hover:underline">

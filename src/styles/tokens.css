@@ -16,6 +16,23 @@
   --color-surface-container: #F6E5C3;
   --color-surface-high: #EAD5AC;
 
+  /* shadcn UI & Lanyard Rail Semantic Tokens (Kurukshetra Parchment & Gold Theme) */
+  --color-background: #FFF6E3;
+  --color-foreground: #1B2A41;
+  --color-card: #FFFDF8;
+  --color-card-foreground: #1B2A41;
+  --color-muted: #F6E5C3;
+  --color-muted-foreground: #6B3A1E;
+  --color-border: #D9961F;
+  --color-ring: #F2B84B;
+
+  /* Chart & Lanyard Tone Ribbons (1: Saffron, 2: Gold, 3: Krishna Blue, 4: Peacock Green, 5: Burnt Orange) */
+  --color-chart-1: #E8761E;
+  --color-chart-2: #D9961F;
+  --color-chart-3: #4F74BE;
+  --color-chart-4: #3E8E5A;
+  --color-chart-5: #B8521A;
+
   --font-cinzel-decorative: 'Cinzel Decorative', serif;
   --font-cinzel: 'Cinzel', serif;
   --font-lato: 'Lato', sans-serif;

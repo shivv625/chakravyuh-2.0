@@ -46,6 +46,27 @@ const config: Config = {
         'light-on-surface-variant': '#6B3A1E',
         'light-outline': '#6B3A1E',
         'light-outline-variant': '#D9961F',
+
+        // shadcn UI & Lanyard Badge Semantic tokens
+        background: 'var(--color-background)',
+        foreground: 'var(--color-foreground)',
+        card: {
+          DEFAULT: 'var(--color-card)',
+          foreground: 'var(--color-card-foreground)',
+        },
+        muted: {
+          DEFAULT: 'var(--color-muted)',
+          foreground: 'var(--color-muted-foreground)',
+        },
+        border: 'var(--color-border)',
+        ring: 'var(--color-ring)',
+        chart: {
+          1: 'var(--color-chart-1)',
+          2: 'var(--color-chart-2)',
+          3: 'var(--color-chart-3)',
+          4: 'var(--color-chart-4)',
+          5: 'var(--color-chart-5)',
+        },
       },
       borderRadius: {
         'none': '0px',
