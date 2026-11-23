@@ -14,11 +14,112 @@ import {
   HeartPulse,
   Globe,
   Sparkles,
+  ArrowRight,
+  ChevronRight,
 } from 'lucide-react';
 
 export const AboutSection: React.FC = () => {
   const [statsCounted, setStatsCounted] = useState(false);
+  const [activeAstra, setActiveAstra] = useState<'aiml' | 'web3' | 'fintech' | 'healthtech' | 'open'>('aiml');
   const statsRef = useRef<HTMLDivElement | null>(null);
+
+  const astraTracks = [
+    {
+      id: 'aiml' as const,
+      code: 'Astra 01',
+      title: 'AI & ML',
+      fullTitle: 'AI & Machine Learning',
+      subtitle: 'Brahmastra of Intelligence',
+      shortTags: 'GenAI · Vision · Agents',
+      description:
+        'Build applied generative AI, computer vision, and autonomous multi-agent workflows engineered for latency, accuracy, and real-world deployment.',
+      prompts: [
+        'Vernacular Odia & Hindi voice-first citizen service agents',
+        'Real-time edge vision for campus & industrial safety',
+        'Automated code & documentation copilots for SMEs',
+      ],
+      tags: ['GenAI', 'Vision', 'Agents'],
+      image: '/assets/track_aiml.jpg',
+      alt: 'Luminous golden chakra neural constellation above an astrolabe',
+      icon: <BrainCircuit className="w-5 h-5 text-bronze-brown" />,
+    },
+    {
+      id: 'web3' as const,
+      code: 'Astra 02',
+      title: 'Web3 & Trust',
+      fullTitle: 'Web3 & Digital Trust',
+      subtitle: 'Sudarshana of Trust',
+      shortTags: 'DeFi · Identity · ZK',
+      description:
+        'Architect decentralized identity, zero-knowledge verification, and transparent public-good rails that eliminate single points of failure.',
+      prompts: [
+        'Tamper-proof academic & hackathon credential verification',
+        'Privacy-preserving ZK-proofs for student KYC',
+        'Transparent supply-chain provenance for local artisans',
+      ],
+      tags: ['DeFi', 'Identity', 'ZK'],
+      image: '/assets/track_web3.jpg',
+      alt: 'Golden interlocking shield and celestial seal over sandstone pillars',
+      icon: <ShieldCheck className="w-5 h-5 text-bronze-brown" />,
+    },
+    {
+      id: 'fintech' as const,
+      code: 'Astra 03',
+      title: 'FinTech',
+      fullTitle: 'FinTech & Inclusion',
+      subtitle: 'Kubera Treasury',
+      shortTags: 'Payments · Fraud · Credit',
+      description:
+        "Create UPI-scale payment experiences, real-time fraud defense, and micro-credit scoring tools tailored for Bharat's next billion users.",
+      prompts: [
+        'Real-time UPI phishing & mule-account detection',
+        'Alternative credit scoring for rural micro-merchants',
+        'Automated student expense & scholarship budgeting',
+      ],
+      tags: ['Payments', 'Security', 'Credit'],
+      image: '/assets/track_fintech.jpg',
+      alt: 'Royal treasury scale balanced with golden coins and sacred geometry',
+      icon: <Landmark className="w-5 h-5 text-bronze-brown" />,
+    },
+    {
+      id: 'healthtech' as const,
+      code: 'Astra 04',
+      title: 'HealthTech',
+      fullTitle: 'HealthTech & MedTech',
+      subtitle: 'Sanjeevani',
+      shortTags: 'Triage · MedTech · Diagnostics',
+      description:
+        'Design accessible rural diagnostics, smart emergency triage, and low-cost assistive medical tools that bridge clinics and communities.',
+      prompts: [
+        'Offline-capable primary health worker triage assistant',
+        'Low-cost wearable vitals alert for elderly care',
+        'Multilingual prescription & dosage companion',
+      ],
+      tags: ['Triage', 'MedTech', 'Diagnostics'],
+      image: '/assets/track_healthtech.jpg',
+      alt: 'Glowing Sanjeevani herb beside a radiant brass healing vessel',
+      icon: <HeartPulse className="w-5 h-5 text-bronze-brown" />,
+    },
+    {
+      id: 'open' as const,
+      code: 'Astra 05',
+      title: 'Open Track',
+      fullTitle: 'Open Innovation & Smart Odisha',
+      subtitle: 'Vishwakarma Open',
+      shortTags: 'AgriTech · Smart Odisha · IoT',
+      description:
+        'Tackle AgriTech, disaster resilience, IoT hardware, clean energy, or campus sustainability—bring your boldest original idea to life.',
+      prompts: [
+        'Coastal cyclone early-warning & mesh relay network',
+        'Smart soil & crop-disease advisory for Odisha farmers',
+        'Campus solar micro-grid & waste-to-energy tracker',
+      ],
+      tags: ['AgriTech', 'IoT', 'Climate'],
+      image: '/assets/track_open.jpg',
+      alt: 'Lush green fields of Odisha meeting a glowing solar chakra horizon',
+      icon: <Globe className="w-5 h-5 text-bronze-brown" />,
+    },
+  ];
 
   useEffect(() => {
     if (!statsRef.current) return;
@@ -33,22 +134,6 @@ export const AboutSection: React.FC = () => {
     observer.observe(statsRef.current);
     return () => observer.disconnect();
   }, []);
-
-  const getTrackIcon = (iconName: string) => {
-    switch (iconName) {
-      case 'BrainCircuit':
-        return <BrainCircuit className="w-6 h-6 text-bronze-brown" />;
-      case 'ShieldCheck':
-        return <ShieldCheck className="w-6 h-6 text-bronze-brown" />;
-      case 'Landmark':
-        return <Landmark className="w-6 h-6 text-bronze-brown" />;
-      case 'HeartPulse':
-        return <HeartPulse className="w-6 h-6 text-bronze-brown" />;
-      case 'Globe':
-      default:
-        return <Globe className="w-6 h-6 text-bronze-brown" />;
-    }
-  };
 
   return (
     <section id="about" className="py-16 md:py-24 bg-cream-parchment border-t-2 border-gold-rich">
@@ -430,58 +515,144 @@ export const AboutSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Tracks / Domains Section */}
+        {/* Tracks / Domains — Interactive Astra Armory Showcase from Stitch */}
         <div id="tracks" className="flex flex-col gap-6 pt-4">
           <div className="flex items-center justify-between flex-wrap gap-4 border-b border-gold-rich/50 pb-3">
             <div>
-              <span className="font-label text-label-sm uppercase text-bronze-brown tracking-widest font-bold">
+              <span className="font-label text-label-sm uppercase text-bronze-brown font-bold tracking-wider">
                 Choose Your Astra
               </span>
               <h3 className="font-headline text-headline-md text-bronze-brown">
                 Tracks &amp; Domains
               </h3>
             </div>
-            <span className="px-4 py-1 bg-dark-chocolate text-gold-highlight border border-gold-rich ribbon-pill font-label text-label-sm uppercase font-bold">
-              5 Battlefields
+            <span className="px-4 py-1 bg-dark-chocolate text-gold-highlight border border-gold-rich ribbon-pill font-label text-label-sm uppercase font-bold tracking-wider shadow-sm">
+              5 Battlefields · Interactive Armory
             </span>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 items-stretch">
-            {SITE_CONFIG.TRACKS.map((track) => (
-              <a
-                key={track.id}
-                href="#register"
-                className="group bg-light-surface-container-lowest border-2 border-gold-rich rounded-md p-5 flex flex-col justify-between gap-4 shadow-sm hover:bg-light-surface-container-low hover:-translate-y-1 transition-all duration-card-lift"
-              >
-                <div className="flex flex-col gap-3">
-                  <div className="flex items-center justify-between">
-                    <span className="px-2.5 py-0.5 bg-dark-chocolate text-gold-highlight font-label text-label-sm uppercase rounded-sm font-bold">
-                      {track.code}
-                    </span>
-                    <div className="w-10 h-10 rounded-full border border-bronze-brown bg-cream-parchment flex items-center justify-center">
-                      {getTrackIcon(track.iconName)}
+          {/* 5+7 Master-Detail Astra Armory */}
+          <div className="bg-dark-chocolate text-cream-parchment border-2 border-gold-highlight rounded-xl p-5 md:p-7 shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+            {/* Left 5 Cols: 5 Interactive Astra Selector Rows */}
+            <div
+              className="lg:col-span-5 flex flex-col gap-3 justify-between"
+              role="tablist"
+              aria-label="Select a hackathon track"
+            >
+              {astraTracks.map((astra) => {
+                const isSelected = activeAstra === astra.id;
+                return (
+                  <button
+                    key={astra.id}
+                    type="button"
+                    role="tab"
+                    aria-selected={isSelected}
+                    onClick={() => setActiveAstra(astra.id)}
+                    className={`w-full text-left rounded-lg p-3.5 flex items-center gap-3.5 transition-all duration-200 select-none ${
+                      isSelected
+                        ? 'border-2 border-gold-highlight bg-bronze-brown/80 shadow-[0_4px_16px_rgba(242,184,75,0.25)] translate-x-1'
+                        : 'border border-gold-rich/40 bg-dark-chocolate/80 hover:bg-bronze-brown/40 hover:border-gold-rich/70'
+                    }`}
+                  >
+                    <div className="relative w-14 h-14 rounded-md overflow-hidden border border-gold-highlight shrink-0 bg-dark-chocolate shadow-xs">
+                      <Image
+                        src={astra.image}
+                        alt={astra.title}
+                        fill
+                        sizes="56px"
+                        className="object-cover"
+                      />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <span className="font-label text-label-sm uppercase text-gold-highlight block font-bold">
+                        {astra.code}
+                      </span>
+                      <span className="font-display text-title-lg text-cream-parchment block truncate font-bold">
+                        {astra.title}
+                      </span>
+                      <span className="font-body text-label-sm text-cream-parchment/90 block truncate font-medium">
+                        {astra.shortTags}
+                      </span>
+                    </div>
+                    {isSelected ? (
+                      <ArrowRight className="w-5 h-5 text-gold-highlight shrink-0 transition-transform duration-200 translate-x-0.5" />
+                    ) : (
+                      <ChevronRight className="w-5 h-5 text-gold-rich shrink-0 opacity-70" />
+                    )}
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Right 7 Cols: Active Astra Spotlight Stage */}
+            <div className="lg:col-span-7 bg-light-surface-container-lowest text-navy-ink border-2 border-gold-rich rounded-lg overflow-hidden flex flex-col justify-between shadow-lg">
+              {(() => {
+                const current = astraTracks.find((a) => a.id === activeAstra) || astraTracks[0];
+                return (
+                  <div key={current.id} className="flex-1 flex flex-col justify-between">
+                    <div className="relative h-56 sm:h-64 w-full overflow-hidden border-b-2 border-gold-rich bg-dark-chocolate">
+                      <Image
+                        src={current.image}
+                        alt={current.alt}
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 55vw"
+                        className="object-cover transition-transform duration-700 hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+                    </div>
+
+                    <div className="p-6 flex-1 flex flex-col justify-between gap-4">
+                      <div>
+                        <div className="flex items-center justify-between gap-2 mb-2">
+                          <span className="px-3 py-0.5 bg-dark-chocolate text-gold-highlight font-label text-label-sm uppercase rounded-sm font-bold shadow-xs">
+                            {current.code} · {current.subtitle}
+                          </span>
+                          <div className="w-8 h-8 rounded-full border border-bronze-brown/40 bg-cream-parchment flex items-center justify-center">
+                            {current.icon}
+                          </div>
+                        </div>
+                        <h4 className="font-display text-headline-md text-dark-chocolate">
+                          {current.fullTitle}
+                        </h4>
+                        <p className="font-body text-body-md text-navy-ink mt-1.5">
+                          {current.description}
+                        </p>
+                      </div>
+
+                      <div className="bg-light-surface-container-low border border-gold-rich/60 rounded-md p-3.5">
+                        <span className="font-label text-label-sm uppercase text-bronze-brown block mb-1.5 font-bold">
+                          Sample Challenge Prompts
+                        </span>
+                        <ul className="font-body text-label-sm text-navy-ink flex flex-col gap-1 font-medium">
+                          {current.prompts.map((p, i) => (
+                            <li key={i}>• {p}</li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      <div className="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-gold-rich/40">
+                        <div className="flex flex-wrap gap-1.5">
+                          {current.tags.map((tag) => (
+                            <span
+                              key={tag}
+                              className="px-2.5 py-0.5 bg-light-surface-container border border-gold-rich/60 rounded-sm font-label text-label-sm text-bronze-brown font-semibold"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                        <a
+                          href="#register"
+                          className="px-5 py-2 bg-dark-chocolate text-gold-highlight border border-gold-rich ribbon-pill font-label text-label-sm uppercase tracking-wider font-bold hover:bg-bronze-brown hover:text-cream-parchment transition-all shadow-sm"
+                        >
+                          Lock This Track →
+                        </a>
+                      </div>
                     </div>
                   </div>
-                  <h4 className="font-title text-title-lg text-dark-chocolate group-hover:text-bronze-brown transition-colors">
-                    {track.title}
-                  </h4>
-                  <p className="font-body text-body-md text-navy-ink">
-                    {track.tagline}
-                  </p>
-                </div>
-
-                <div className="flex flex-wrap gap-1.5 pt-2 border-t border-gold-rich/40">
-                  {track.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-2 py-0.5 bg-light-surface-container border border-gold-rich/60 rounded-sm font-label text-label-sm text-bronze-brown"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </a>
-            ))}
+                );
+              })()}
+            </div>
           </div>
         </div>
       </div>

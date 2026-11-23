@@ -1,0 +1,1873 @@
+<!DOCTYPE html><html lang="en" class="scroll-smooth"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHAKRAVYUH 2.0 — National Level Hackathon | GITA Autonomous College</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config" data-stitch-original-src="7196172b0d847008===../../tailwind.config.js">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'sky-light': '#BFD6EC',
+        'sky-deep': '#8FB4DC',
+        'cream-parchment': '#FFF6E3',
+        'gold-highlight': '#F2B84B',
+        'gold-rich': '#D9961F',
+        'saffron': '#E8761E',
+        'burnt-orange': '#B8521A',
+        'bronze-brown': '#6B3A1E',
+        'dark-chocolate': '#3A1D0E',
+        'krishna-blue': '#4F74BE',
+        'peacock-green': '#3E8E5A',
+        'navy-ink': '#1B2A41',
+        'light-primary': '#6B3A1E',
+        'light-on-primary': '#FFF6E3',
+        'light-primary-container': '#3A1D0E',
+        'light-on-primary-container': '#F2B84B',
+        'light-secondary': '#B8521A',
+        'light-on-secondary': '#FFF6E3',
+        'light-secondary-container': '#E8761E',
+        'light-on-secondary-container': '#3A1D0E',
+        'light-tertiary': '#4F74BE',
+        'light-on-tertiary': '#FFFFFF',
+        'light-tertiary-container': '#BFD6EC',
+        'light-on-tertiary-container': '#1B2A41',
+        'light-error': '#BA1A1A',
+        'light-on-error': '#FFFFFF',
+        'light-background': '#FFF6E3',
+        'light-on-background': '#1B2A41',
+        'light-surface': '#FFF6E3',
+        'light-surface-container-lowest': '#FFFDF8',
+        'light-surface-container-low': '#FCF0D6',
+        'light-surface-container': '#F6E5C3',
+        'light-surface-container-high': '#EAD5AC',
+        'light-on-surface': '#1B2A41',
+        'light-on-surface-variant': '#6B3A1E',
+        'light-outline': '#6B3A1E',
+        'light-outline-variant': '#D9961F',
+      },
+      borderRadius: {
+        'none': '0px',
+        'sm': '4px',
+        'DEFAULT': '6px',
+        'md': '10px',
+        'lg': '16px',
+        'full': '9999px',
+      },
+      spacing: {
+        'gutter-xs': '4px',
+        'gutter-sm': '8px',
+        'gutter-md': '16px',
+        'gutter-lg': '24px',
+        'gutter-xl': '32px',
+        'section': '64px',
+        'page-margin': '24px',
+      },
+      fontFamily: {
+        'display': ['"Cinzel Decorative"', 'sans-serif'],
+        'headline': ['"Cinzel"', 'sans-serif'],
+        'title': ['"Cinzel"', 'sans-serif'],
+        'body': ['"Lato"', 'sans-serif'],
+        'label': ['"Lato"', 'sans-serif'],
+      },
+      fontSize: {
+        'display-lg': ['56px', { lineHeight: '64px', letterSpacing: '1.5px', fontWeight: '700' }],
+        'display-lg-mobile': ['32px', { lineHeight: '38px', letterSpacing: '1px', fontWeight: '700' }],
+        'display-md': ['42px', { lineHeight: '50px', letterSpacing: '1px', fontWeight: '700' }],
+        'display-md-mobile': ['28px', { lineHeight: '34px', letterSpacing: '0.75px', fontWeight: '700' }],
+        'headline-lg': ['32px', { lineHeight: '40px', letterSpacing: '0.75px', fontWeight: '700' }],
+        'headline-md': ['24px', { lineHeight: '32px', letterSpacing: '0.5px', fontWeight: '700' }],
+        'title-lg': ['20px', { lineHeight: '28px', letterSpacing: '0.4px', fontWeight: '600' }],
+        'body-lg': ['18px', { lineHeight: '28px', letterSpacing: '0.1px', fontWeight: '400' }],
+        'body-md': ['16px', { lineHeight: '24px', letterSpacing: '0.1px', fontWeight: '400' }],
+        'label-lg': ['14px', { lineHeight: '20px', letterSpacing: '1.5px', fontWeight: '700' }],
+        'label-sm': ['12px', { lineHeight: '16px', letterSpacing: '1.8px', fontWeight: '700' }],
+      },
+      transitionDuration: {
+        'state-change': '180ms',
+        'card-lift': '280ms',
+        'chakra-orbit': '45000ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+        'card-lift': '0ms',
+        'chakra-orbit': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'ease-out',
+        'card-lift': 'cubic-bezier(0.2, 0, 0, 1)',
+        'chakra-orbit': 'linear',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&amp;family=Cinzel:wght@600;700&amp;family=Lato:wght@400;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet">
+  <style>
+    .material-symbols-outlined, .material-symbols-rounded, .material-symbols-sharp, .material-icons {
+      display: inline-block; width: 1em; height: 1em; line-height: 1 !important;
+      box-sizing: content-box; overflow: hidden; white-space: nowrap; direction: ltr; vertical-align: middle;
+    }
+    .ribbon-pill {
+      clip-path: polygon(14px 0%, calc(100% - 14px) 0%, 100% 50%, calc(100% - 14px) 100%, 14px 100%, 0% 50%);
+    }
+    .epic-text-shadow {
+      text-shadow: 0 2px 0 rgba(58, 29, 14, 0.85), 0 6px 24px rgba(242, 184, 75, 0.45);
+    }
+    .hero-light-scrim {
+      background: radial-gradient(circle at 50% 40%, rgba(255, 246, 227, 0.86) 0%, rgba(255, 246, 227, 0.58) 42%, rgba(58, 29, 14, 0.38) 100%);
+    }
+    .sunburst-bg {
+      background: radial-gradient(circle at 50% 35%, #FFF6E3 0%, #BFD6EC 55%, #8FB4DC 100%);
+    }
+    @keyframes chakraSpin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .animate-chakra {
+      animation: chakraSpin 55s linear infinite;
+    }
+    .stage-plaque {
+      box-shadow: 0 12px 32px rgba(26, 12, 5, 0.55), inset 0 0 0 1px rgba(242, 184, 75, 0.25);
+    }
+    .stage-plaque-active {
+      box-shadow: 0 14px 38px rgba(242, 184, 75, 0.24), inset 0 0 0 1px rgba(242, 184, 75, 0.45);
+    }
+    .reveal-on-scroll {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 500ms ease-out, transform 500ms cubic-bezier(0.2, 0, 0, 1);
+    }
+    .reveal-on-scroll.is-hidden {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .animate-chakra { animation: none; }
+      .reveal-on-scroll, .reveal-on-scroll.is-hidden { opacity: 1; transform: none; transition: none; }
+    }
+  </style>
+</head>
+<body class="bg-cream-parchment text-navy-ink font-body antialiased selection:bg-gold-highlight selection:text-dark-chocolate overflow-x-hidden">
+
+  <!-- =========================================================
+       1. NAVBAR
+  ========================================================== -->
+  <header id="site-navbar" class="fixed top-0 inset-x-0 z-50 transition-colors duration-state-change border-b border-transparent">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 h-20 flex items-center justify-between gap-4">
+      <a href="#hero" class="flex items-center gap-3 shrink-0">
+        <div class="w-10 h-10 rounded-full border-2 border-gold-rich bg-dark-chocolate flex items-center justify-center">
+          <svg class="w-6 h-6 text-gold-highlight" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"></circle>
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6L5.6 18.4"></path>
+          </svg>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-display text-title-lg text-dark-chocolate leading-none" data-design-text-token="title-lg">CHAKRAVYUH</span>
+          <span class="font-label text-label-sm text-bronze-brown tracking-widest leading-none mt-1" data-design-text-token="label-sm">2.0 · NATIONAL</span>
+        </div>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-7" aria-label="Primary">
+        <a href="#about" class="font-label text-label-sm uppercase text-dark-chocolate hover:text-saffron transition-colors">About</a>
+        <a href="#timeline" class="font-label text-label-sm uppercase text-dark-chocolate hover:text-saffron transition-colors">Timeline</a>
+        <a href="#guidelines" class="font-label text-label-sm uppercase text-dark-chocolate hover:text-saffron transition-colors">Guidelines</a>
+        <a href="#sponsors" class="font-label text-label-sm uppercase text-dark-chocolate hover:text-saffron transition-colors">Sponsors</a>
+        <a href="#coordinators" class="font-label text-label-sm uppercase text-dark-chocolate hover:text-saffron transition-colors">Team</a>
+        <a href="#contact" class="font-label text-label-sm uppercase text-dark-chocolate hover:text-saffron transition-colors">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <!-- COMPONENT: button-primary -->
+        <a href="#register" data-component-id="button-primary" data-component-type="button" data-component-variant="primary" class="hidden sm:inline-flex items-center justify-center px-7 py-2.5 bg-dark-chocolate text-gold-highlight border border-gold-rich ribbon-pill font-label text-label-sm uppercase tracking-widest hover:bg-bronze-brown hover:text-cream-parchment focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold-rich transition-colors duration-state-change">
+          <span data-design-text-token="label-sm">Register Now</span>
+        </a>
+
+        <button id="mobile-menu-open" type="button" aria-label="Open navigation menu" aria-expanded="false" class="lg:hidden inline-flex items-center justify-center w-11 h-11 rounded-full border border-bronze-brown bg-cream-parchment text-bronze-brown">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Parchment Drawer -->
+  <div id="mobile-drawer" class="fixed inset-0 z-50 hidden bg-cream-parchment flex-col justify-between p-6 overflow-y-auto" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <div class="flex items-center justify-between border-b border-gold-rich pb-4">
+      <span class="font-display text-title-lg text-bronze-brown">CHAKRAVYUH 2.0</span>
+      <button id="mobile-menu-close" type="button" aria-label="Close navigation menu" class="inline-flex items-center justify-center w-11 h-11 rounded-full border border-bronze-brown text-bronze-brown">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+    <nav class="flex flex-col gap-5 py-8 text-center">
+      <a href="#about" class="mobile-nav-link font-headline text-headline-md text-bronze-brown">About</a>
+      <a href="#timeline" class="mobile-nav-link font-headline text-headline-md text-bronze-brown">The Seven Gates</a>
+      <a href="#guidelines" class="mobile-nav-link font-headline text-headline-md text-bronze-brown">Rules of the Battlefield</a>
+      <a href="#sponsors" class="mobile-nav-link font-headline text-headline-md text-bronze-brown">Our Allies</a>
+      <a href="#coordinators" class="mobile-nav-link font-headline text-headline-md text-bronze-brown">The Commanders</a>
+      <a href="#contact" class="mobile-nav-link font-headline text-headline-md text-bronze-brown">Contact</a>
+    </nav>
+    <div class="pt-4 border-t border-gold-rich flex justify-center">
+      <a href="#register" class="mobile-nav-link inline-flex items-center justify-center px-8 py-3 bg-dark-chocolate text-gold-highlight ribbon-pill font-label text-label-lg uppercase">Register Now</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- =========================================================
+         2. HERO SECTION
+    ========================================================== -->
+    <section id="hero" class="relative min-h-screen flex flex-col justify-between pt-24 pb-12 overflow-hidden sunburst-bg">
+      <!-- Hero Artwork Layer -->
+      <img src="https://lh3.googleusercontent.com/aida/ALJJyrD3KHWrZ4sU4WETMQS4HUq6OAEWb4Qq_ClQRqe2-yqWI-QLnd8Y6W9l5ydfHjyZso8Yhe7anWmYzPcTPzKZG6WuJuqMQQk8H1va1IZKRM9_z7w5D4faFVAol_UTgMjwWZN2cN21EtCh5pV6IaDy3hcW1Qj7QAW9Bi4cxlBGTqAwEEVuwkyUC1eL0skoO5Ie1pucGOT0hjWcUNvdq1i5TwJj7VJUS3rZbQMPEpbAIvKm1TgMCdsx442PNWVIQekzeskpcoWjF7UEluQoQQgM" alt="Krishna and Arjuna on the chariot at Kurukshetra during golden hour" class="absolute inset-0 w-full h-full object-cover object-center" data-stitch-original-src="7796b46808590fe7===../../images/hero_kurukshetra_chariot.jpg">
+      <div class="absolute inset-0 hero-light-scrim"></div>
+
+      <!-- Concentric Rotating Chakra Watermark -->
+      <div class="pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden opacity-30">
+        <svg class="w-96 h-96 md:w-[680px] md:h-[680px] text-gold-rich animate-chakra" viewBox="0 0 400 400" fill="none" stroke="currentColor" aria-hidden="true">
+          <circle cx="200" cy="200" r="190" stroke-width="1" stroke-dasharray="6 6"></circle>
+          <circle cx="200" cy="200" r="160" stroke-width="1.2"></circle>
+          <circle cx="200" cy="200" r="130" stroke-width="0.8" stroke-dasharray="4 4"></circle>
+          <circle cx="200" cy="200" r="100" stroke-width="1.2"></circle>
+          <circle cx="200" cy="200" r="70" stroke-width="0.8"></circle>
+          <path d="M200 10v380M10 200h380M65 65l270 270M335 65L65 335" stroke-width="0.6"></path>
+        </svg>
+      </div>
+
+      <!-- Top Institutional Badges -->
+      <div class="relative z-10 max-w-7xl w-full mx-auto px-4 md:px-6 flex items-center justify-between gap-4">
+        <div class="inline-flex items-center gap-2 bg-cream-parchment/95 border border-gold-rich rounded-full px-3.5 py-1.5 shadow-sm">
+          <span class="w-2.5 h-2.5 rounded-full bg-saffron"></span>
+          <span class="font-label text-label-sm uppercase text-dark-chocolate" data-design-text-token="label-sm">GITA Autonomous College</span>
+        </div>
+        <div class="inline-flex items-center gap-2 bg-cream-parchment/95 border border-gold-rich rounded-full px-3.5 py-1.5 shadow-sm">
+          <span class="w-2.5 h-2.5 rounded-full bg-krishna-blue"></span>
+          <span class="font-label text-label-sm uppercase text-dark-chocolate" data-design-text-token="label-sm">In Assoc. with BPUT, Odisha</span>
+        </div>
+      </div>
+
+      <!-- Centerpiece Logo, Headline & Countdown -->
+      <div class="relative z-10 max-w-5xl mx-auto px-4 md:px-6 py-8 text-center flex flex-col items-center gap-5">
+        <div class="inline-flex items-center gap-3 px-5 py-1.5 bg-dark-chocolate text-gold-highlight border border-gold-rich ribbon-pill">
+          <span class="font-label text-label-sm uppercase tracking-widest" data-design-text-token="label-sm">National Level 36-Hour Hackathon</span>
+        </div>
+
+        <div class="flex flex-col items-center gap-2">
+          <p class="font-display text-headline-md md:text-headline-lg text-dark-chocolate tracking-widest">CHAKRAVYUH <span class="text-krishna-blue">2.0</span></p>
+          <h1 data-component-id="typography-display" data-component-type="typography" data-component-variant="display" data-design-text-token="display-lg" class="font-display text-display-lg-mobile md:text-display-lg text-gold-highlight epic-text-shadow uppercase text-balance">
+            Break The Chakravyuh
+          </h1>
+          <p class="font-body text-body-lg text-dark-chocolate font-bold max-w-2xl text-pretty" data-design-text-token="body-lg">
+            National Level Hackathon · GITA Autonomous College, Bhubaneswar
+          </p>
+        </div>
+
+        <!-- Transparent Prize Pool Crest -->
+        <div class="w-full max-w-lg mx-auto my-1 flex items-center justify-center">
+          <img src="https://lh3.googleusercontent.com/aida/ALJJyrBxUazaMj1wIsdG_YCpJ3Ct3TcRut8PmDM-AKhErW-qyjKsxzUmnxvm2Jt9Y5iCbzBmnM_Ytb9IEbkcjNZbdEjcGRgSInv0OipnqGmTvuRvhCYpi8AXwVkPBMByHkghjYohZxVTFZ3UQJhV1SqQ6Zwtj_K0kFemRBqoIrafvHKDM0URIGXu00c8VVGrHZsbJKDkF02qxZjaK5z2nGXoO_z9X4nvW5O5VjmnVS-i7Ycjn3HhU4S35fX1DJJZvzFgiHoVYylkSA" alt="Prize Pool ₹1,00,000/-" class="w-full max-w-md h-auto object-contain drop-shadow-md" data-stitch-original-src="01b6434d3799caef===../../images/prize_pool_crest.png">
+        </div>
+
+        <!-- Live Countdown on Brown Plates -->
+        <div class="grid grid-cols-4 gap-3 sm:gap-4 max-w-lg w-full" aria-label="Hackathon Countdown">
+          <div class="bg-dark-chocolate border border-gold-rich rounded p-3 flex flex-col items-center shadow">
+            <span id="cd-days" class="font-headline text-headline-md md:text-headline-lg text-gold-highlight tabular-nums">62</span>
+            <span class="font-label text-label-sm uppercase text-cream-parchment">Days</span>
+          </div>
+          <div class="bg-dark-chocolate border border-gold-rich rounded p-3 flex flex-col items-center shadow">
+            <span id="cd-hours" class="font-headline text-headline-md md:text-headline-lg text-gold-highlight tabular-nums">14</span>
+            <span class="font-label text-label-sm uppercase text-cream-parchment">Hrs</span>
+          </div>
+          <div class="bg-dark-chocolate border border-gold-rich rounded p-3 flex flex-col items-center shadow">
+            <span id="cd-mins" class="font-headline text-headline-md md:text-headline-lg text-gold-highlight tabular-nums">45</span>
+            <span class="font-label text-label-sm uppercase text-cream-parchment">Min</span>
+          </div>
+          <div class="bg-dark-chocolate border border-gold-rich rounded p-3 flex flex-col items-center shadow">
+            <span id="cd-secs" class="font-headline text-headline-md md:text-headline-lg text-gold-highlight tabular-nums">30</span>
+            <span class="font-label text-label-sm uppercase text-cream-parchment">Sec</span>
+          </div>
+        </div>
+
+        <!-- Primary & Secondary CTAs -->
+        <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
+          <a href="#register" data-component-id="button-primary" data-component-type="button" data-component-variant="primary" class="inline-flex items-center justify-center px-9 py-3.5 bg-dark-chocolate text-gold-highlight border border-gold-rich ribbon-pill font-label text-label-lg uppercase tracking-widest hover:bg-bronze-brown hover:text-cream-parchment transition-colors duration-state-change shadow-md">
+            <span data-design-text-token="label-lg">Register Now</span>
+          </a>
+          <a href="#timeline" data-component-id="button-secondary" data-component-type="button" data-component-variant="secondary" class="inline-flex items-center justify-center px-8 py-3.5 bg-cream-parchment/95 text-dark-chocolate border-2 border-bronze-brown ribbon-pill font-label text-label-lg uppercase tracking-widest hover:bg-light-surface-container transition-colors duration-state-change">
+            <span data-design-text-token="label-lg">View Timeline</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Bottom Location Pill & Arrow Scroll Indicator -->
+      <div class="relative z-10 max-w-7xl w-full mx-auto px-4 md:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="inline-flex items-center gap-2 bg-dark-chocolate/95 text-cream-parchment border border-gold-rich rounded-full px-5 py-2 shadow">
+          <span class="material-symbols-outlined text-gold-highlight text-body-lg" aria-hidden="true">location_on</span>
+          <span class="font-label text-label-sm uppercase tracking-wider" data-design-text-token="label-sm">GITA Autonomous College, BBSR</span>
+        </div>
+        <a href="#about" class="inline-flex flex-col items-center gap-1 text-dark-chocolate hover:text-saffron transition-colors">
+          <span class="font-label text-label-sm uppercase tracking-widest">Enter Gate I</span>
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M12 4v16m0 0l-5-5m5 5l5-5"></path>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         3. ABOUT / BASIC INFORMATION
+    ========================================================== -->
+    <section id="about" class="py-16 md:py-24 bg-cream-parchment border-t-2 border-gold-rich">
+      <div class="max-w-7xl mx-auto px-4 md:px-6 flex flex-col gap-12">
+        <!-- Story + Arched Arjuna Artwork -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          <div class="lg:col-span-7 flex flex-col gap-6">
+            <div class="flex items-center gap-3">
+              <span class="h-px w-10 bg-gold-rich"></span>
+              <span class="font-label text-label-sm uppercase text-bronze-brown" data-design-text-token="label-sm">The Legend &amp; The Challenge</span>
+            </div>
+            <h2 class="font-display text-display-md-mobile md:text-display-md text-bronze-brown text-balance" data-design-text-token="display-md">
+              Seven Rings. Thirty-Six Hours. One Breakthrough.
+            </h2>
+            <p class="font-body text-body-lg text-navy-ink max-w-prose text-pretty" data-design-text-token="body-lg">
+              In the Mahabharata, the Chakravyuh was a formidable seven-ring spiral formation designed to test strategy, courage, and clarity under pressure. Chakravyuh 2.0 brings that spirit to modern engineering at GITA Autonomous College, Bhubaneswar—challenging India&#39;s sharpest student builders to pierce seven progressive gates from ideation to live deployment.
+            </p>
+            <p class="font-body text-body-md text-navy-ink max-w-prose text-pretty" data-design-text-token="body-md">
+              Hosted in association with Biju Patnaik University of Technology (BPUT), Odisha, the hackathon unites 500+ innovators for 36 hours of mentorship, rapid prototyping, and high-stakes evaluation.
+            </p>
+
+            <!-- Stats Strip -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 border-t border-gold-rich">
+              <div>
+                <p class="font-headline text-headline-md md:text-headline-lg text-bronze-brown tabular-nums">500+</p>
+                <p class="font-label text-label-sm uppercase text-bronze-brown">Participants</p>
+              </div>
+              <div>
+                <p class="font-headline text-headline-md md:text-headline-lg text-bronze-brown tabular-nums">125</p>
+                <p class="font-label text-label-sm uppercase text-bronze-brown">Teams</p>
+              </div>
+              <div>
+                <p class="font-headline text-headline-md md:text-headline-lg text-bronze-brown tabular-nums">₹1L</p>
+                <p class="font-label text-label-sm uppercase text-bronze-brown">Prize Pool</p>
+              </div>
+              <div>
+                <p class="font-headline text-headline-md md:text-headline-lg text-bronze-brown tabular-nums">40+</p>
+                <p class="font-label text-label-sm uppercase text-bronze-brown">Colleges</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5 flex justify-center">
+            <div class="relative w-full max-w-sm rounded-t-full border-4 border-gold-rich p-2 bg-light-surface-container-low shadow-lg">
+              <div class="rounded-t-full overflow-hidden border border-bronze-brown">
+                <img src="https://lh3.googleusercontent.com/aida/ALJJyrAHrz4uGepr_SNFuFjelJeszP8fmGcYft90XHTD0wFp9via0cB0cud4uhA9DWghlSsr6xSOb7vX8WLCnE2doAnuhIE2RqRZNv1mlb_SL7g7X8uoWDjLNbI38VD7hJTv6fe3StsKEatB7Yd-foGTW5H_icLkbFVVqJ30nobhtb17qeUHH97yQOwJxTV-sd8B6LynBzIti0_csAEOKuZvBshFJ6YdmUSQ2AenGBZS7St6gPd27Z-ZtxEzY0KCCwVh1tLjF4Eleg" alt="Arjuna drawing his golden bow toward the sunlit sky" class="w-full h-96 object-cover" data-stitch-original-src="a65df4fa0ae6d90a===../../images/arjuna_bow_arched.jpg">
+              </div>
+              <div class="py-3 text-center bg-dark-chocolate text-gold-highlight">
+                <span class="font-label text-label-sm uppercase tracking-widest">Aim True · Build Fearlessly</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Standout Battlefield Briefing (Dates, Venue, Mode & Key Details) -->
+        <div class="relative bg-light-surface-container-low border-2 border-gold-rich rounded-lg p-6 md:p-8 shadow-md overflow-hidden">
+          <!-- Subtle Corner Accents -->
+          <div class="pointer-events-none absolute top-2 left-2 w-5 h-5 border-t-2 border-l-2 border-bronze-brown"></div>
+          <div class="pointer-events-none absolute top-2 right-2 w-5 h-5 border-t-2 border-r-2 border-bronze-brown"></div>
+          <div class="pointer-events-none absolute bottom-2 left-2 w-5 h-5 border-b-2 border-l-2 border-bronze-brown"></div>
+          <div class="pointer-events-none absolute bottom-2 right-2 w-5 h-5 border-b-2 border-r-2 border-bronze-brown"></div>
+
+          <!-- Briefing Header -->
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-6 mb-6 border-b border-gold-rich/60">
+            <div class="flex items-center gap-3">
+              <span class="px-4 py-1 bg-dark-chocolate text-gold-highlight border border-gold-rich ribbon-pill font-label text-label-sm uppercase tracking-widest">Battlefield Briefing</span>
+              <span class="font-body text-body-md text-bronze-brown font-bold hidden md:inline">Essential Mission Parameters</span>
+            </div>
+            <span class="font-label text-label-sm uppercase text-bronze-brown tracking-wider">36-Hour National Hackathon · Bhubaneswar</span>
+          </div>
+
+          <!-- Top Tier: 3 Heroic Pillars (Dates, Venue, Mode) -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-5">
+            <!-- Pillar 1: Dates -->
+            <article class="bg-dark-chocolate text-cream-parchment border-2 border-gold-highlight rounded-md overflow-hidden flex flex-col justify-between shadow-md hover:-translate-y-1 transition-transform duration-card-lift">
+              <div class="relative h-40 w-full overflow-hidden border-b-2 border-gold-highlight">
+                <img src="https://lh3.googleusercontent.com/aida/ALJJyrDGwU23BJaRe5LHM2INVz1jET9iIvgnPj5wDMH8DUqZRgQLypCqYpFzxZDdx7kbONDlI0hlDQa-1CoZ0oAw9ly1hmBSjX3svcxczygIrNeXi5quFth-CG93RfsvrH_oZZN8lbpaiLnAFXq0kbVl44L_y5swEo9MOFOH5xvHZBIPVjz4hAxJNk9BC15VawFr6EYexgKGzdZ2nRB5vb-B9m5dJoOi516pL2m4ewJucXbEK1PLSgwiw8gNbarQtQjBkp0IQUs" alt="Royal brass sundial and palm-leaf scroll at golden hour" class="w-full h-full object-cover" data-stitch-original-src="dbf92bf85308b30d===../../images/briefing_dates.jpg">
+              </div>
+              <div class="p-5 flex-1 flex flex-col justify-between gap-4">
+                <div>
+                  <div class="flex items-center justify-between gap-2 mb-2">
+                    <span class="font-label text-label-sm uppercase text-gold-highlight tracking-widest">When · Dates</span>
+                    <span class="material-symbols-outlined text-gold-highlight text-body-lg" aria-hidden="true">calendar_month</span>
+                  </div>
+                  <h3 class="font-display text-headline-md text-gold-highlight tabular-nums leading-tight">23–24 Jan 2027</h3>
+                  <p class="font-body text-body-md text-cream-parchment mt-1">Saturday 09:00 AM to Sunday 09:00 PM</p>
+                </div>
+                <div class="pt-3 border-t border-gold-rich/40 flex items-center justify-between">
+                  <span class="font-label text-label-sm uppercase text-cream-parchment">Weekend Sprint</span>
+                  <span class="px-2.5 py-0.5 bg-bronze-brown border border-gold-rich rounded-sm font-label text-label-sm text-gold-highlight">36 Hours</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Pillar 2: Venue -->
+            <article class="bg-light-surface-container-lowest border-2 border-gold-rich rounded-md overflow-hidden flex flex-col justify-between shadow-sm hover:-translate-y-1 transition-transform duration-card-lift">
+              <div class="relative h-40 w-full overflow-hidden border-b-2 border-gold-rich">
+                <img src="https://lh3.googleusercontent.com/aida/ALJJyrCWnAgQ71FjHx-XXR3esUTQ8jaXi0f4G6FqngShsxeLcICCadBbmPSwq8A4ScRuJIsgBnknOUtBe0QXODEBDxpm6d99PzXy7z48xcichZTrj58Ehi62eBK_SsygYWOCjVBqkRvi2yn6PlJOAkDshP5Mtb4A2Wk0fWcpYcRNcnMgFsOgjDriq2Pve-ys3JxBOjX3_GSsDMolqAYChuahxk7Od_L87BRuLQkDdIs_7RLx96g36LmllfKal9UGMWvCOY8Mdgk" alt="GITA Autonomous College campus blended with Kalinga sandstone arches at golden hour" class="w-full h-full object-cover" data-stitch-original-src="7489840450df22ad===../../images/briefing_venue.jpg">
+              </div>
+              <div class="p-5 flex-1 flex flex-col justify-between gap-4">
+                <div>
+                  <div class="flex items-center justify-between gap-2 mb-2">
+                    <span class="font-label text-label-sm uppercase text-bronze-brown tracking-widest">Where · Venue</span>
+                    <span class="material-symbols-outlined text-bronze-brown text-body-lg" aria-hidden="true">location_on</span>
+                  </div>
+                  <h3 class="font-display text-headline-md text-dark-chocolate leading-tight">GITA Autonomous College</h3>
+                  <p class="font-body text-body-md text-navy-ink mt-1">Badaraghunathpur, Bhubaneswar, Odisha</p>
+                </div>
+                <div class="pt-3 border-t border-gold-rich/40 flex items-center justify-between">
+                  <span class="font-label text-label-sm uppercase text-bronze-brown">In Assoc. with BPUT</span>
+                  <span class="px-2.5 py-0.5 bg-light-surface-container border border-gold-rich/70 rounded-sm font-label text-label-sm text-dark-chocolate">Main Campus</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Pillar 3: Mode -->
+            <article class="bg-light-surface-container-lowest border-2 border-gold-rich rounded-md overflow-hidden flex flex-col justify-between shadow-sm hover:-translate-y-1 transition-transform duration-card-lift">
+              <div class="relative h-40 w-full overflow-hidden border-b-2 border-gold-rich">
+                <img src="https://lh3.googleusercontent.com/aida/ALJJyrD0f48jjfS40bC7FOfphbq-1P2ccKZs8tYnEE0NfCSkm41khhNymjIh1Fd5PmcJRTGmAHGiJRI-GdH4RwvNC-JE0UzF4rHe49OITStf0RA5ASy_NLB1Iimx9bawpZzDOGanVWPx8Cc9ZdH1U-ReHoiTyEADTpQvQztHhlOmoVN6XjElhOW2YkMxG-t8-RCkUP1EK_Uhbj_-d6_cB3Tmu0Zj6Hss3F1iEjZc4exj8XGkFhRdzVvX9v98zjzu1_L-hbmg" alt="Student engineers collaborating inside a sunlit sandstone pavilion" class="w-full h-full object-cover" data-stitch-original-src="f37b23ea7a1f523c===../../images/briefing_mode.jpg">
+              </div>
+              <div class="p-5 flex-1 flex flex-col justify-between gap-4">
+                <div>
+                  <div class="flex items-center justify-between gap-2 mb-2">
+                    <span class="font-label text-label-sm uppercase text-bronze-brown tracking-widest">How · Mode</span>
+                    <span class="material-symbols-outlined text-bronze-brown text-body-lg" aria-hidden="true">bolt</span>
+                  </div>
+                  <h3 class="font-display text-headline-md text-dark-chocolate leading-tight">Offline · In-Person</h3>
+                  <p class="font-body text-body-md text-navy-ink mt-1">Non-stop on-campus build with live jury demos</p>
+                </div>
+                <div class="pt-3 border-t border-gold-rich/40 flex items-center justify-between">
+                  <span class="font-label text-label-sm uppercase text-bronze-brown">Meals &amp; Mentors</span>
+                  <span class="px-2.5 py-0.5 bg-light-surface-container border border-gold-rich/70 rounded-sm font-label text-label-sm text-dark-chocolate">Full Access</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Bottom Tier: 3 Supporting Command Cards (Team Size, Prize Pool, Eligibility) -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <article class="bg-light-surface-container-lowest border border-gold-rich rounded-md p-4 flex items-center gap-4 shadow-sm hover:-translate-y-0.5 transition-transform duration-card-lift">
+              <div class="w-16 h-16 shrink-0 rounded-md overflow-hidden border-2 border-gold-rich shadow-sm">
+                <img src="https://lh3.googleusercontent.com/aida/ALJJyrDA7c9bHvorSFxq2-jj4Q8F5_tGSO84yOeCZgqFNhQdumWCSTi5gTjeAzkjJnrM3ts-NKgInOEqK413LhYbRKUEKd2u8o2RLda1JgLg9Rk8laPyNxmoQIQFLFQnHjfLdMC5PW5O8KaglzbLqcaoi4LBpx7rY_306iJX_LWDa0POYkhmgy1CKbXrpGqp1sEGtTNNShNhY-dc2fn47eRownDz-HwLK9I74-k9lcwsYGIcBnm2LxJJcmN92857YYYuq6izUg" alt="Four heroic squad silhouettes with golden chakra crest" class="w-full h-full object-cover" data-stitch-original-src="62ebf49b45891254===../../images/briefing_squad.jpg">
+              </div>
+              <div>
+                <span class="font-label text-label-sm uppercase text-bronze-brown block">Squad Size</span>
+                <span class="font-title text-title-lg text-dark-chocolate block">2–4 Members</span>
+                <span class="font-body text-label-sm text-navy-ink">Inter-college teams allowed</span>
+              </div>
+            </article>
+
+            <article class="bg-dark-chocolate border-2 border-gold-highlight rounded-md p-4 flex items-center gap-4 shadow-sm hover:-translate-y-0.5 transition-transform duration-card-lift">
+              <div class="w-16 h-16 shrink-0 rounded-md overflow-hidden border-2 border-gold-highlight shadow-sm">
+                <img src="https://lh3.googleusercontent.com/aida/ALJJyrAahKPKD493a5jYZ35v4K3GSuTJOUHSwU1vwXIxrO83OfRl432miuary1ztstTj29FUJrlt-WvzdBqqombfg5iG4uTFmTF2MVLTUAS9M0QUWvSNxgo75DQqId8VxXIvCTGlF9IvYNVSOzklt6og49VKLP4Xo9asiCPdFXETNZcuAOWgfQqrDrPUqeOwH--Yg5Zgf3OIomUhcYJ6wag9b9ae678vnUlbmlFjKZxAZvdXfANDZxOpKNoo3zHzQujDPUP1Fhs" alt="Ornate golden trophy chalice radiating warm amber light" class="w-full h-full object-cover" data-stitch-original-src="e69e741ae7ae0647===../../images/briefing_prize.jpg">
+              </div>
+              <div>
+                <span class="font-label text-label-sm uppercase text-cream-parchment block">Prize Pool</span>
+                <span class="font-title text-title-lg text-gold-highlight tabular-nums block">₹1,00,000</span>
+                <span class="font-body text-label-sm text-cream-parchment">Cash prizes, swag &amp; goodies</span>
+              </div>
+            </article>
+
+            <article class="bg-light-surface-container-lowest border border-gold-rich rounded-md p-4 flex items-center gap-4 shadow-sm hover:-translate-y-0.5 transition-transform duration-card-lift">
+              <div class="w-16 h-16 shrink-0 rounded-md overflow-hidden border-2 border-gold-rich shadow-sm">
+                <img src="https://lh3.googleusercontent.com/aida/ALJJyrBsh-1ZZ3acZwwKD1P-gNc719NzTQZUStoTn4xexKGx3vMgTJ6jQMy7LBVID0ixd7W4tgfd8JVtEF7E0mNyg8Tc4Irm2R2x9198eMcHb9fqbkcyXu35gnQ9ZW4ZpLcG6GWPx_zE8xjdtoVEwIx4URIS6zgRBKf75MQy0JIYEZb07jmiW6N9GziCNKplnurljHzDEHvYo0LshLVp3-TwuNpEtyHE58fFF6RnppW7RCc2cCy-XeDvLbWTx0WToN5q-AUfbpDdLizWsQI" alt="Golden graduation scroll beside a glowing brass diya lamp" class="w-full h-full object-cover" data-stitch-original-src="65e9e12c6a77df2f===../../images/briefing_eligibility.jpg">
+              </div>
+              <div>
+                <span class="font-label text-label-sm uppercase text-bronze-brown block">Eligibility</span>
+                <span class="font-title text-title-lg text-dark-chocolate block">UG / PG India</span>
+                <span class="font-body text-label-sm text-navy-ink">Open to all engineering branches</span>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Tracks / Domains — Interactive Astra Armory Showcase -->
+        <div id="tracks" class="flex flex-col gap-6 pt-4">
+          <div class="flex items-center justify-between flex-wrap gap-4 border-b border-gold-rich/50 pb-3">
+            <div>
+              <span class="font-label text-label-sm uppercase text-bronze-brown">Choose Your Astra</span>
+              <h3 class="font-headline text-headline-md text-bronze-brown">Tracks &amp; Domains</h3>
+            </div>
+            <span class="px-4 py-1 bg-dark-chocolate text-gold-highlight border border-gold-rich ribbon-pill font-label text-label-sm uppercase">5 Battlefields · Interactive Armory</span>
+          </div>
+
+          <!-- 5+7 Master-Detail Astra Armory -->
+          <div class="bg-dark-chocolate text-cream-parchment border-2 border-gold-highlight rounded-xl p-5 md:p-7 shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+            <!-- Left 5 Cols: 5 Interactive Astra Selector Rows -->
+            <div class="lg:col-span-5 flex flex-col gap-3 justify-between" role="tablist" aria-label="Select a hackathon track">
+              <button type="button" data-astra-target="aiml" role="tab" aria-selected="true" class="astra-tab w-full text-left rounded-lg p-3.5 border-2 border-gold-highlight bg-bronze-brown/80 flex items-center gap-3.5 transition-colors">
+                <img src="https://lh3.googleusercontent.com/aida/ALJJyrD7i45EKBWIwQAyzURxkQWeLZ31pp1FrU2WlSq9yEy7QP0khK25Hm9WZjqi9wyB4Vw9tr4KuqkAcO1jaASIMonVtElLhz6grOPOKK7HlQ_xCGyJWXoqeAtOfaNcryrB1lk1lZY9ddnXaj50kef-pmTWOyshpCsc-KwRE8g6hmKVQ2YKmxBj0yJ96JdWJTI67pC3CDOt-qFX6K1Um22OaaxTEOh7rdN-n8_5RamTyx4Mb0sMpn4d54nrf2X9T8N_sw" alt class="w-14 h-14 rounded-md object-cover border border-gold-highlight shrink-0" data-stitch-original-src="5e2967bcb910301a===../../images/track_aiml.jpg">
+                <div class="flex-1 min-w-0">
+                  <span class="font-label text-label-sm uppercase text-gold-highlight block">Astra 01</span>
+                  <span class="font-display text-title-lg text-cream-parchment block truncate">AI &amp; ML</span>
+                  <span class="font-body text-label-sm text-cream-parchment/90 block truncate">GenAI · Vision · Agents</span>
+                </div>
+                <span class="material-symbols-outlined text-gold-highlight shrink-0" aria-hidden="true">arrow_forward</span>
+              </button>
+
+              <button type="button" data-astra-target="web3" role="tab" aria-selected="false" class="astra-tab w-full text-left rounded-lg p-3.5 border border-gold-rich/40 bg-dark-chocolate/80 hover:bg-bronze-brown/40 flex items-center gap-3.5 transition-colors">
+                <img src="https://lh3.googleusercontent.com/aida/ALJJyrAiPc7RrXz24givgdjMSW6XltJpFyPUnP8ooR7qb_roITw8Dog4paD28O6ghGuMr0mlI-ZReDeiomVmK2C0Pl6ZSZHGLwaea9wPVxtT2BZKL947RbK0vIsC81tDffINVal2Q6iJPqI1fWY_LFNgqwGXuKNITKm-CWAxEvu8RR-GxlDDOfQw5cQrILGDhfHlv1TWeebMbRsRAGUhkjREk-59YiwGuUWTVdk7CsPlVX2yWiYaDYcCaYtPu531btE3LQ" alt class="w-14 h-14 rounded-md object-cover border border-gold-rich/60 shrink-0" data-stitch-original-src="1099f90752dbe163===../../images/track_web3.jpg">
+                <div class="flex-1 min-w-0">
+                  <span class="font-label text-label-sm uppercase text-gold-highlight block">Astra 02</span>
+                  <span class="font-display text-title-lg text-cream-parchment block truncate">Web3 &amp; Trust</span>
+                  <span class="font-body text-label-sm text-cream-parchment/90 block truncate">DeFi · Identity · ZK</span>
+                </div>
+                <span class="material-symbols-outlined text-gold-rich shrink-0" aria-hidden="true">chevron_right</span>
+              </button>
+
+              <button type="button" data-astra-target="fintech" role="tab" aria-selected="false" class="astra-tab w-full text-left rounded-lg p-3.5 border border-gold-rich/40 bg-dark-chocolate/80 hover:bg-bronze-brown/40 flex items-center gap-3.5 transition-colors">
+                <img src="https://lh3.googleusercontent.com/aida/ALJJyrDbfca9dnQTLoXeM7gDIt_Xv38AerHg4JPDEMruQmV_eNdDHod1oQENREdZwJH0TwCiuLe1DXxsHC9q1-z5C0T8SKDraz_bdQj4J4lhPkUbhnl8s-jcZA58cYkO9kD4Y2ktnv4TanSnB7ugHwg2CYjL8xZxq3nV-jI4eMRppgKcv1ohkoDriDOF3ySPNtG6xxxuiPciMQS-jTPg3JWRH7NBv7vISmb0vRcaJneIheWB6rFxn-ncXal4sXPUOlm-YHU6bQ" alt class="w-14 h-14 rounded-md object-cover border border-gold-rich/60 shrink-0" data-stitch-original-src="4b58184b1e09809f===../../images/track_fintech.jpg">
+                <div class="flex-1 min-w-0">
+                  <span class="font-label text-label-sm uppercase text-gold-highlight block">Astra 03</span>
+                  <span class="font-display text-title-lg text-cream-parchment block truncate">FinTech</span>
+                  <span class="font-body text-label-sm text-cream-parchment/90 block truncate">Payments · Fraud · Credit</span>
+                </div>
+                <span class="material-symbols-outlined text-gold-rich shrink-0" aria-hidden="true">chevron_right</span>
+              </button>
+
+              <button type="button" data-astra-target="healthtech" role="tab" aria-selected="false" class="astra-tab w-full text-left rounded-lg p-3.5 border border-gold-rich/40 bg-dark-chocolate/80 hover:bg-bronze-brown/40 flex items-center gap-3.5 transition-colors">
+                <img src="https://lh3.googleusercontent.com/aida/ALJJyrDEnFqGcIGCKGeYrhsi7QxTZzVFoTD1_z8z9UCeI0palAluBiDCl4QYhXFJbkrY_WqMFnIezfuUYL94SpJOrb1BYey2ByqB5aV6DTJNLjqeg_K3sDlqb6VahjIi1O9EXaPjVqjUAMb2Lkn8uJQpbG5Ytb0CXoIWD3F2MzHs7wqPNirebCNxu5bVhFdP8jyUQshA9PIuYCQOHPOEjtJuwji7GVT3PMf7vD_WxzD6ksztrr_ipvNByjadP8_D7VnZu9FqjPS7" alt class="w-14 h-14 rounded-md object-cover border border-gold-rich/60 shrink-0" data-stitch-original-src="9c4bafd70f2af1f3===../../images/track_healthtech.jpg">
+                <div class="flex-1 min-w-0">
+                  <span class="font-label text-label-sm uppercase text-gold-highlight block">Astra 04</span>
+                  <span class="font-display text-title-lg text-cream-parchment block truncate">HealthTech</span>
+                  <span class="font-body text-label-sm text-cream-parchment/90 block truncate">Triage · MedTech · Diagnostics</span>
+                </div>
+                <span class="material-symbols-outlined text-gold-rich shrink-0" aria-hidden="true">chevron_right</span>
+              </button>
+
+              <button type="button" data-astra-target="open" role="tab" aria-selected="false" class="astra-tab w-full text-left rounded-lg p-3.5 border border-gold-rich/40 bg-dark-chocolate/80 hover:bg-bronze-brown/40 flex items-center gap-3.5 transition-colors">
+                <img src="https://lh3.googleusercontent.com/aida/ALJJyrA8fhLNEkD_BGiKHARjERdLdYEn5nxsUv4VIqCa5vy3TJZreV7UhNlLSDXZIWs6uS13x7HU1hlyTv9Kg9s28ZtAyoUVJMbACZ4qd3wGhMBvekflTEqKq7lhyyVPXzc1S3CY_v49Ent9F1OVOmmFwsCZwpmRRV0KcNN3O4hBbV5ubdvnyUpMKZcpz3CVhxDAzvz-8auCMpH8UWYb1eX0XreX8ShepOwJLnSKFFwBxnCyYB9_MalO8_jVoCQkGH2VEg" alt class="w-14 h-14 rounded-md object-cover border border-gold-rich/60 shrink-0" data-stitch-original-src="b8b4203a8096d39b===../../images/track_open.jpg">
+                <div class="flex-1 min-w-0">
+                  <span class="font-label text-label-sm uppercase text-gold-highlight block">Astra 05</span>
+                  <span class="font-display text-title-lg text-cream-parchment block truncate">Open Track</span>
+                  <span class="font-body text-label-sm text-cream-parchment/90 block truncate">AgriTech · Smart Odisha · IoT</span>
+                </div>
+                <span class="material-symbols-outlined text-gold-rich shrink-0" aria-hidden="true">chevron_right</span>
+              </button>
+            </div>
+
+            <!-- Right 7 Cols: Active Astra Spotlight Stage -->
+            <div class="lg:col-span-7 bg-light-surface-container-lowest text-navy-ink border-2 border-gold-rich rounded-lg overflow-hidden flex flex-col justify-between shadow-lg">
+              <!-- Panel 1: AI & ML (Default Visible) -->
+              <div id="astra-panel-aiml" class="astra-panel flex-1 flex flex-col justify-between">
+                <div class="relative h-56 sm:h-64 w-full overflow-hidden border-b-2 border-gold-rich">
+                  <img src="https://lh3.googleusercontent.com/aida/ALJJyrD7i45EKBWIwQAyzURxkQWeLZ31pp1FrU2WlSq9yEy7QP0khK25Hm9WZjqi9wyB4Vw9tr4KuqkAcO1jaASIMonVtElLhz6grOPOKK7HlQ_xCGyJWXoqeAtOfaNcryrB1lk1lZY9ddnXaj50kef-pmTWOyshpCsc-KwRE8g6hmKVQ2YKmxBj0yJ96JdWJTI67pC3CDOt-qFX6K1Um22OaaxTEOh7rdN-n8_5RamTyx4Mb0sMpn4d54nrf2X9T8N_sw" alt="Luminous golden chakra neural constellation above an astrolabe" class="w-full h-full object-cover" data-stitch-original-src="5e2967bcb910301a===../../images/track_aiml.jpg">
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between gap-4">
+                  <div>
+                    <div class="flex items-center justify-between gap-2 mb-2">
+                      <span class="px-3 py-0.5 bg-dark-chocolate text-gold-highlight font-label text-label-sm uppercase rounded-sm">Astra 01 · Brahmastra of Intelligence</span>
+                      <span class="material-symbols-outlined text-bronze-brown text-body-lg" aria-hidden="true">psychology</span>
+                    </div>
+                    <h4 class="font-display text-headline-md text-dark-chocolate">AI &amp; Machine Learning</h4>
+                    <p class="font-body text-body-md text-navy-ink mt-1.5">
+                      Build applied generative AI, computer vision, and autonomous multi-agent workflows engineered for latency, accuracy, and real-world deployment.
+                    </p>
+                  </div>
+                  <div class="bg-light-surface-container-low border border-gold-rich/60 rounded-md p-3.5">
+                    <span class="font-label text-label-sm uppercase text-bronze-brown block mb-1.5">Sample Challenge Prompts</span>
+                    <ul class="font-body text-label-sm text-navy-ink flex flex-col gap-1">
+                      <li>• Vernacular Odia &amp; Hindi voice-first citizen service agents</li>
+                      <li>• Real-time edge vision for campus &amp; industrial safety</li>
+                      <li>• Automated code &amp; documentation copilots for SMEs</li>
+                    </ul>
+                  </div>
+                  <div class="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-gold-rich/40">
+                    <div class="flex flex-wrap gap-1.5">
+                      <span class="px-2.5 py-0.5 bg-light-surface-container border border-gold-rich/60 rounded-sm font-label text-label-sm text-bronze-brown">GenAI</span>
+                      <span class="px-2.5 py-0.5 bg-light-surface-container border border-gold-rich/60 rounded-sm font-label text-label-sm text-bronze-brown">Vision</span>
+                      <span class="px-2.5 py-0.5 bg-light-surface-container border border-gold-rich/60 rounded-sm font-label text-label-sm text-bronze-brown">Agents</span>
+                    </div>
+                    <a href="#register" class="px-5 py-2 bg-dark-chocolate text-gold-highlight border border-gold-rich ribbon-pill font-label text-label-sm uppercase tracking-wider hover:bg-bronze-brown transition-colors">Lock This Track →</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Panel 2: Web3 & Trust -->
+              <div id="astra-panel-web3" class="astra-panel hidden flex-1 flex flex-col justify-between">
+                <div class="relative h-56 sm:h-64 w-full overflow-hidden border-b-2 border-gold-rich">
+                  <img src="https://lh3.googleusercontent.com/aida/ALJJyrAiPc7RrXz24givgdjMSW6XltJpFyPUnP8ooR7qb_roITw8Dog4paD28O6ghGuMr0mlI-ZReDeiomVmK2C0Pl6ZSZHGLwaea9wPVxtT2BZKL947RbK0vIsC81tDffINVal2Q6iJPqI1fWY_LFNgqwGXuKNITKm-CWAxEvu8RR-GxlDDOfQw5cQrILGDhfHlv1TWeebMbRsRAGUhkjREk-59YiwGuUWTVdk7CsPlVX2yWiYaDYcCaYtPu531btE3LQ" alt="Golden interlocking shield and celestial seal over sandstone pillars" class="w-full h-full object-cover" data-stitch-original-src="1099f90752dbe163===../../images/track_web3.jpg">
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between gap-4">
+                  <div>
+                    <div class="flex items-center justify-between gap-2 mb-2">
+                      <span class="px-3 py-0.5 bg-dark-chocolate text-gold-highlight font-label text-label-sm uppercase rounded-sm">Astra 02 · Sudarshana of Trust</span>
+                      <span class="material-symbols-outlined text-bronze-brown text-body-lg" aria-hidden="true">verified_user</span>
+                    </div>
+                    <h4 class="font-display text-headline-md text-dark-chocolate">Web3 &amp; Digital Trust</h4>
+                    <p class="font-body text-body-md text-navy-ink mt-1.5">
+                      Architect decentralized identity, zero-knowledge verification, and transparent public-good rails that eliminate single points of failure.
+                    </p>
+                  </div>
+                  <div class="bg-light-surface-container-low border border-gold-rich/60 rounded-md p-3.5">
+                    <span class="font-label text-label-sm uppercase text-bronze-brown block mb-1.5">Sample Challenge Prompts</span>
+                    <ul class="font-body text-label-sm text-navy-ink flex flex-col gap-1">
+                      <li>• Tamper-proof academic &amp; hackathon credential verification</li>
+                      <li>• Privacy-preserving ZK-proofs for student KYC</li>
+                      <li>• Transparent supply-chain provenance for local artisans</li>
+                    </ul>
+                  </div>
+                  <div class="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-gold-rich/40">
+                    <div class="flex flex-wrap gap-1.5">
+                      <span class="px-2.5 py-0.5 bg-light-surface-container border border-gold-rich/60 rounded-sm font-label text-label-sm text-bronze-brown">DeFi</span>
+                      <span class="px-2.5 py-0.5 bg-light-surface-container border border-gold-rich/60 rounded-sm font-label text-label-sm text-bronze-brown">Identity</span>
+                      <span class="px-2.5 py-0.5 bg-light-surface-container border border-gold-rich/60 rounded-sm font-label text-label-sm text-bronze-brown">ZK</span>
+                    </div>
+                    <a href="#register" class="px-5 py-2 bg-dark-chocolate text-gold-highlight border border-gold-rich ribbon-pill font-label text-label-sm uppercase tracking-wider hover:bg-bronze-brown transition-colors">Lock This Track →</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Panel 3: FinTech -->
+              <div id="astra-panel-fintech" class="astra-panel hidden flex-1 flex flex-col justify-between">
+                <div class="relative h-56 sm:h-64 w-full overflow-hidden border-b-2 border-gold-rich">
+                  <img src="https://lh3.googleusercontent.com/aida/ALJJyrDbfca9dnQTLoXeM7gDIt_Xv38AerHg4JPDEMruQmV_eNdDHod1oQENREdZwJH0TwCiuLe1DXxsHC9q1-z5C0T8SKDraz_bdQj4J4lhPkUbhnl8s-jcZA58cYkO9kD4Y2ktnv4TanSnB7ugHwg2CYjL8xZxq3nV-jI4eMRppgKcv1ohkoDriDOF3ySPNtG6xxxuiPciMQS-jTPg3JWRH7NBv7vISmb0vRcaJneIheWB6rFxn-ncXal4sXPUOlm-YHU6bQ" alt="Royal treasury scale balanced with golden coins and sacred geometry" class="w-full h-full object-cover" data-stitch-original-src="4b58184b1e09809f===../../images/track_fintech.jpg">
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between gap-4">
+                  <div>
+                    <div class="flex items-center justify-between gap-2 mb-2">
+                      <span class="px-3 py-0.5 bg-dark-chocolate text-gold-highlight font-label text-label-sm uppercase rounded-sm">Astra 03 · Kubera Treasury</span>
+                      <span class="material-symbols-outlined text-bronze-brown text-body-lg" aria-hidden="true">account_balance</span>
+                    </div>
+                    <h4 class="font-display text-headline-md text-dark-chocolate">FinTech &amp; Inclusion</h4>
+                    <p class="font-body text-body-md text-navy-ink mt-1.5">
+                      Create UPI-scale payment experiences, real-time fraud defense, and micro-credit scoring tools tailored for Bharat&#39;s next billion users.
+                    </p>
+                  </div>
+                  <div class="bg-light-surface-container-low border border-gold-rich/60 rounded-md p-3.5">
+                    <span class="font-label text-label-sm uppercase text-bronze-brown block mb-1.5">Sample Challenge Prompts</span>
+                    <ul class="font-body text-label-sm text-navy-ink flex flex-col gap-1">
+                      <li>• Real-time UPI phishing &amp; mule-account detection</li>
+                      <li>• Alternative credit scoring for rural micro-merchants</li>
+                      <li>• Automated student expense &amp; scholarship budgeting</li>
+                    </ul>
+                  </div>
+                  <div class="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-gold-rich/40">
+                    <div class="flex flex-wrap gap-1.5">
+                      <span class="px-2.5 py-0.5 bg-light-surface-container border border-gold-rich/60 rounded-sm font-label text-label-sm text-bronze-brown">Payments</span>
+                      <span class="px-2.5 py-0.5 bg-light-surface-container border border-gold-rich/60 rounded-sm font-label text-label-sm text-bronze-brown">Security</span>
+                      <span class="px-2.5 py-0.5 bg-light-surface-container border border-gold-rich/60 rounded-sm font-label text-label-sm text-bronze-brown">Credit</span>
+                    </div>
+                    <a href="#register" class="px-5 py-2 bg-dark-chocolate text-gold-highlight border border-gold-rich ribbon-pill font-label text-label-sm uppercase tracking-wider hover:bg-bronze-brown transition-colors">Lock This Track →</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Panel 4: HealthTech -->
+              <div id="astra-panel-healthtech" class="astra-panel hidden flex-1 flex flex-col justify-between">
+                <div class="relative h-56 sm:h-64 w-full overflow-hidden border-b-2 border-gold-rich">
+                  <img src="https://lh3.googleusercontent.com/aida/ALJJyrDEnFqGcIGCKGeYrhsi7QxTZzVFoTD1_z8z9UCeI0palAluBiDCl4QYhXFJbkrY_WqMFnIezfuUYL94SpJOrb1BYey2ByqB5aV6DTJNLjqeg_K3sDlqb6VahjIi1O9EXaPjVqjUAMb2Lkn8uJQpbG5Ytb0CXoIWD3F2MzHs7wqPNirebCNxu5bVhFdP8jyUQshA9PIuYCQOHPOEjtJuwji7GVT3PMf7vD_WxzD6ksztrr_ipvNByjadP8_D7VnZu9FqjPS7" alt="Glowing Sanjeevani herb beside a radiant brass healing vessel" class="w-full h-full object-cover" data-stitch-original-src="9c4bafd70f2af1f3===../../images/track_healthtech.jpg">
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between gap-4">
+                  <div>
+                    <div class="flex items-center justify-between gap-2 mb-2">
+                      <span class="px-3 py-0.5 bg-dark-chocolate text-gold-highlight font-label text-label-sm uppercase rounded-sm">Astra 04 · Sanjeevani</span>
+                      <span class="material-symbols-outlined text-bronze-brown text-body-lg" aria-hidden="true">health_and_safety</span>
+                    </div>
+                    <h4 class="font-display text-headline-md text-dark-chocolate">HealthTech &amp; MedTech</h4>
+                    <p class="font-body text-body-md text-navy-ink mt-1.5">
+                      Design accessible rural diagnostics, smart emergency triage, and low-cost assistive medical tools that bridge clinics and communities.
+                    </p>
+                  </div>
+                  <div class="bg-light-surface-container-low border border-gold-rich/60 rounded-md p-3.5">
+                    <span class="font-label text-label-sm uppercase text-bronze-brown block mb-1.5">Sample Challenge Prompts</span>
+                    <ul class="font-body text-label-sm text-navy-ink flex flex-col gap-1">
+                      <li>• Offline-capable primary health worker triage assistant</li>
+                      <li>• Low-cost wearable vitals alert for elderly care</li>
+                      <li>• Multilingual prescription &amp; dosage companion</li>
+                    </ul>
+                  </div>
+                  <div class="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-gold-rich/40">
+                    <div class="flex flex-wrap gap-1.5">
+                      <span class="px-2.5 py-0.5 bg-light-surface-container border border-gold-rich/60 rounded-sm font-label text-label-sm text-bronze-brown">Triage</span>
+                      <span class="px-2.5 py-0.5 bg-light-surface-container border border-gold-rich/60 rounded-sm font-label text-label-sm text-bronze-brown">MedTech</span>
+                      <span class="px-2.5 py-0.5 bg-light-surface-container border border-gold-rich/60 rounded-sm font-label text-label-sm text-bronze-brown">Diagnostics</span>
+                    </div>
+                    <a href="#register" class="px-5 py-2 bg-dark-chocolate text-gold-highlight border border-gold-rich ribbon-pill font-label text-label-sm uppercase tracking-wider hover:bg-bronze-brown transition-colors">Lock This Track →</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Panel 5: Open Track -->
+              <div id="astra-panel-open" class="astra-panel hidden flex-1 flex flex-col justify-between">
+                <div class="relative h-56 sm:h-64 w-full overflow-hidden border-b-2 border-gold-rich">
+                  <img src="https://lh3.googleusercontent.com/aida/ALJJyrA8fhLNEkD_BGiKHARjERdLdYEn5nxsUv4VIqCa5vy3TJZreV7UhNlLSDXZIWs6uS13x7HU1hlyTv9Kg9s28ZtAyoUVJMbACZ4qd3wGhMBvekflTEqKq7lhyyVPXzc1S3CY_v49Ent9F1OVOmmFwsCZwpmRRV0KcNN3O4hBbV5ubdvnyUpMKZcpz3CVhxDAzvz-8auCMpH8UWYb1eX0XreX8ShepOwJLnSKFFwBxnCyYB9_MalO8_jVoCQkGH2VEg" alt="Lush green fields of Odisha meeting a glowing solar chakra horizon" class="w-full h-full object-cover" data-stitch-original-src="b8b4203a8096d39b===../../images/track_open.jpg">
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between gap-4">
+                  <div>
+                    <div class="flex items-center justify-between gap-2 mb-2">
+                      <span class="px-3 py-0.5 bg-dark-chocolate text-gold-highlight font-label text-label-sm uppercase rounded-sm">Astra 05 · Vishwakarma Open</span>
+                      <span class="material-symbols-outlined text-bronze-brown text-body-lg" aria-hidden="true">public</span>
+                    </div>
+                    <h4 class="font-display text-headline-md text-dark-chocolate">Open Innovation &amp; Smart Odisha</h4>
+                    <p class="font-body text-body-md text-navy-ink mt-1.5">
+                      Tackle AgriTech, disaster resilience, IoT hardware, clean energy, or campus sustainability—bring your boldest original idea to life.
+                    </p>
+                  </div>
+                  <div class="bg-light-surface-container-low border border-gold-rich/60 rounded-md p-3.5">
+                    <span class="font-label text-label-sm uppercase text-bronze-brown block mb-1.5">Sample Challenge Prompts</span>
+                    <ul class="font-body text-label-sm text-navy-ink flex flex-col gap-1">
+                      <li>• Coastal cyclone early-warning &amp; mesh relay network</li>
+                      <li>• Smart soil &amp; crop-disease advisory for Odisha farmers</li>
+                      <li>• Campus solar micro-grid &amp; waste-to-energy tracker</li>
+                    </ul>
+                  </div>
+                  <div class="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-gold-rich/40">
+                    <div class="flex flex-wrap gap-1.5">
+                      <span class="px-2.5 py-0.5 bg-light-surface-container border border-gold-rich/60 rounded-sm font-label text-label-sm text-bronze-brown">AgriTech</span>
+                      <span class="px-2.5 py-0.5 bg-light-surface-container border border-gold-rich/60 rounded-sm font-label text-label-sm text-bronze-brown">IoT</span>
+                      <span class="px-2.5 py-0.5 bg-light-surface-container border border-gold-rich/60 rounded-sm font-label text-label-sm text-bronze-brown">Climate</span>
+                    </div>
+                    <a href="#register" class="px-5 py-2 bg-dark-chocolate text-gold-highlight border border-gold-rich ribbon-pill font-label text-label-sm uppercase tracking-wider hover:bg-bronze-brown transition-colors">Lock This Track →</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script>
+            (function () {
+              const tabs = document.querySelectorAll('.astra-tab');
+              const panels = document.querySelectorAll('.astra-panel');
+              tabs.forEach(function (tab) {
+                tab.addEventListener('click', function () {
+                  const target = tab.getAttribute('data-astra-target');
+                  tabs.forEach(function (t) {
+                    t.setAttribute('aria-selected', 'false');
+                    t.classList.remove('border-2', 'border-gold-highlight', 'bg-bronze-brown/80');
+                    t.classList.add('border', 'border-gold-rich/40', 'bg-dark-chocolate/80');
+                    const icon = t.querySelector('.material-symbols-outlined');
+                    if (icon) icon.textContent = 'chevron_right';
+                  });
+                  tab.setAttribute('aria-selected', 'true');
+                  tab.classList.add('border-2', 'border-gold-highlight', 'bg-bronze-brown/80');
+                  tab.classList.remove('border', 'border-gold-rich/40', 'bg-dark-chocolate/80');
+                  const activeIcon = tab.querySelector('.material-symbols-outlined');
+                  if (activeIcon) activeIcon.textContent = 'arrow_forward';
+
+                  panels.forEach(function (p) {
+                    if (p.id === 'astra-panel-' + target) {
+                      p.classList.remove('hidden');
+                    } else {
+                      p.classList.add('hidden');
+                    }
+                  });
+                });
+              });
+            })();
+          </script>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         4. TIMELINE — "THE SEVEN GATES" (ARCHITECTURAL CHAKRAVYUH SPINE)
+    ========================================================== -->
+    <section id="timeline" class="relative py-20 md:py-28 bg-dark-chocolate text-cream-parchment border-t-4 border-saffron overflow-hidden">
+      <!-- Kurukshetra Spiral Battlefield Backdrop -->
+      <img src="https://lh3.googleusercontent.com/aida/ALJJyrCrjuWcOmzQUN-IxvT69sI8onnSTAcb4KojP_EVOrsawOfdpXBd3G1-lscRUz7BRKsrqvXiLSkfjnPZr34qd6Aeb44pysgwqNdsS-NrOUxyTPBjQ1z8vpmpkgBr0sSO-mTyKJaQQXvob2YuYRMqmqW7-1SbC_TffEptkdXgYLS7C9HmCTm1UAy0f-V4RJgo1DLeVbxBgAuv0rzVcZTE4nitAnlDMwLY-KkjNSAb0VfkOoLwk_pKxLKjh1rN7Q4FfwrTRg-zy93ApUI" alt="Chakravyuh spiral formation on Kurukshetra at twilight golden hour" class="absolute inset-0 w-full h-full object-cover object-center opacity-45" data-stitch-original-src="6d6b7eedb306bbd1===../../images/roadmap_chakravyuh_bg.jpg">
+      <div class="absolute inset-0 bg-gradient-to-b from-dark-chocolate/95 via-dark-chocolate/80 to-dark-chocolate/95"></div>
+
+      <!-- Concentric Chakravyuh Sacred Geometry Watermark -->
+      <div class="pointer-events-none absolute inset-0 flex items-center justify-center opacity-15" aria-hidden="true">
+        <svg class="w-[820px] h-[820px] text-gold-rich animate-chakra" viewBox="0 0 400 400" fill="none" stroke="currentColor">
+          <circle cx="200" cy="200" r="192" stroke-width="0.9" stroke-dasharray="6 6"></circle>
+          <circle cx="200" cy="200" r="160" stroke-width="1"></circle>
+          <circle cx="200" cy="200" r="128" stroke-width="0.8" stroke-dasharray="4 4"></circle>
+          <circle cx="200" cy="200" r="96" stroke-width="1"></circle>
+          <circle cx="200" cy="200" r="64" stroke-width="1.2"></circle>
+          <path d="M200 8v384M8 200h384M64 64l272 272M336 64L64 336" stroke-width="0.5"></path>
+        </svg>
+      </div>
+
+      <div class="relative z-10 max-w-6xl mx-auto px-4 md:px-6 flex flex-col gap-12">
+        <!-- Section Header -->
+        <div class="text-center flex flex-col items-center gap-3">
+          <span class="px-5 py-1 bg-bronze-brown/90 border border-gold-rich ribbon-pill font-label text-label-sm uppercase text-gold-highlight tracking-widest">
+            7-Ring Battle Progression
+          </span>
+          <h2 class="font-display text-display-md-mobile md:text-display-md text-gold-highlight uppercase epic-text-shadow">
+            The Seven Gates
+          </h2>
+          <p class="font-body text-body-md text-cream-parchment max-w-2xl text-pretty">
+            Every team must pierce seven progressive rings—from nationwide squad registration to the 36-hour war room and the Grand Finale sanctum at GITA Autonomous College.
+          </p>
+        </div>
+
+        <!-- 7-Ring Compass Strip + Phase Filter -->
+        <div class="bg-dark-chocolate/90 border border-gold-rich/60 rounded-lg p-5 md:p-6 shadow-lg flex flex-col gap-5">
+          <!-- 7 Roman Numeral Ring Nodes -->
+          <div class="relative flex items-center justify-between gap-2 overflow-x-auto pb-1">
+            <div class="hidden sm:block absolute left-6 right-6 top-5 h-0.5 bg-gold-rich/40" aria-hidden="true"></div>
+            <a href="#gate-1" class="relative z-10 flex flex-col items-center gap-1.5 min-w-[68px] group">
+              <span class="w-10 h-10 rounded-full bg-gold-highlight text-dark-chocolate border-2 border-cream-parchment font-display text-body-md font-bold flex items-center justify-center shadow">I</span>
+              <span class="font-label text-label-sm uppercase text-gold-highlight">Open</span>
+            </a>
+            <a href="#gate-2" class="relative z-10 flex flex-col items-center gap-1.5 min-w-[68px] group">
+              <span class="w-10 h-10 rounded-full bg-dark-chocolate text-cream-parchment border-2 border-saffron font-display text-body-md font-bold flex items-center justify-center group-hover:bg-saffron group-hover:text-dark-chocolate transition-colors">II</span>
+              <span class="font-label text-label-sm uppercase text-cream-parchment">Close</span>
+            </a>
+            <a href="#gate-3" class="relative z-10 flex flex-col items-center gap-1.5 min-w-[68px] group">
+              <span class="w-10 h-10 rounded-full bg-dark-chocolate text-sky-light border-2 border-krishna-blue font-display text-body-md font-bold flex items-center justify-center group-hover:bg-krishna-blue group-hover:text-cream-parchment transition-colors">III</span>
+              <span class="font-label text-label-sm uppercase text-sky-light">Shortlist</span>
+            </a>
+            <a href="#gate-4" class="relative z-10 flex flex-col items-center gap-1.5 min-w-[68px] group">
+              <span class="w-10 h-10 rounded-full bg-dark-chocolate text-gold-highlight border-2 border-gold-rich font-display text-body-md font-bold flex items-center justify-center group-hover:bg-gold-rich group-hover:text-dark-chocolate transition-colors">IV</span>
+              <span class="font-label text-label-sm uppercase text-gold-highlight">Kickoff</span>
+            </a>
+            <a href="#gate-5" class="relative z-10 flex flex-col items-center gap-1.5 min-w-[68px] group">
+              <span class="w-10 h-10 rounded-full bg-dark-chocolate text-cream-parchment border-2 border-peacock-green font-display text-body-md font-bold flex items-center justify-center group-hover:bg-peacock-green group-hover:text-cream-parchment transition-colors">V</span>
+              <span class="font-label text-label-sm uppercase text-cream-parchment">Mentor</span>
+            </a>
+            <a href="#gate-6" class="relative z-10 flex flex-col items-center gap-1.5 min-w-[68px] group">
+              <span class="w-10 h-10 rounded-full bg-dark-chocolate text-cream-parchment border-2 border-saffron font-display text-body-md font-bold flex items-center justify-center group-hover:bg-saffron group-hover:text-dark-chocolate transition-colors">VI</span>
+              <span class="font-label text-label-sm uppercase text-cream-parchment">Pitch</span>
+            </a>
+            <a href="#gate-7" class="relative z-10 flex flex-col items-center gap-1.5 min-w-[68px] group">
+              <span class="w-10 h-10 rounded-full bg-bronze-brown text-gold-highlight border-2 border-gold-highlight font-display text-body-md font-bold flex items-center justify-center group-hover:bg-gold-highlight group-hover:text-dark-chocolate transition-colors">VII</span>
+              <span class="font-label text-label-sm uppercase text-gold-highlight">Finale</span>
+            </a>
+          </div>
+
+          <!-- Interactive Phase Filter Tabs -->
+          <div class="flex flex-wrap items-center justify-center gap-2 pt-3 border-t border-gold-rich/30" role="tablist" aria-label="Filter timeline gates by phase">
+            <button type="button" data-gate-filter="all" class="gate-filter-btn px-4 py-1.5 rounded-full bg-gold-highlight text-dark-chocolate font-label text-label-sm uppercase tracking-wider transition-colors">All 7 Gates</button>
+            <button type="button" data-gate-filter="pre" class="gate-filter-btn px-4 py-1.5 rounded-full bg-bronze-brown/60 text-cream-parchment border border-gold-rich/50 font-label text-label-sm uppercase tracking-wider hover:bg-bronze-brown transition-colors">Pre-Battle (I–III)</button>
+            <button type="button" data-gate-filter="sprint" class="gate-filter-btn px-4 py-1.5 rounded-full bg-bronze-brown/60 text-cream-parchment border border-gold-rich/50 font-label text-label-sm uppercase tracking-wider hover:bg-bronze-brown transition-colors">36h War Room (IV–VI)</button>
+            <button type="button" data-gate-filter="finale" class="gate-filter-btn px-4 py-1.5 rounded-full bg-bronze-brown/60 text-cream-parchment border border-gold-rich/50 font-label text-label-sm uppercase tracking-wider hover:bg-bronze-brown transition-colors">Sanctum (VII)</button>
+          </div>
+        </div>
+
+        <!-- Central Golden Battle-Spine + Alternating Architectural Plaques -->
+        <div class="relative flex flex-col gap-8">
+          <!-- Vertical Golden Spine (Desktop Center / Mobile Hidden) -->
+          <div class="hidden md:block absolute left-1/2 -translate-x-1/2 top-4 bottom-36 w-1 bg-gradient-to-b from-gold-highlight via-saffron to-gold-highlight opacity-75" aria-hidden="true"></div>
+
+          <!-- GATE I (Left) -->
+          <div id="gate-1" data-gate-phase="pre" class="gate-row relative grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+            <div class="md:pr-10">
+              <article class="bg-dark-chocolate/95 border-2 border-gold-highlight rounded-lg overflow-hidden stage-plaque-active hover:-translate-y-1 transition-transform duration-card-lift flex flex-col sm:flex-row">
+                <div class="sm:w-32 bg-bronze-brown/60 border-b sm:border-b-0 sm:border-r border-gold-highlight/50 p-4 flex sm:flex-col items-center justify-between sm:justify-center gap-2 text-center shrink-0">
+                  <span class="font-display text-display-md-mobile text-gold-highlight leading-none">I</span>
+                  <span class="px-2.5 py-0.5 rounded-full bg-gold-highlight text-dark-chocolate font-label text-label-sm uppercase">Live Now</span>
+                </div>
+                <div class="p-5 flex-1 flex flex-col gap-2.5">
+                  <div class="flex items-center justify-between gap-2">
+                    <span class="font-label text-label-sm uppercase text-gold-highlight tabular-nums">15 DEC 2026 · 10:00 AM</span>
+                    <span class="material-symbols-outlined text-gold-highlight text-body-lg" aria-hidden="true">calendar_month</span>
+                  </div>
+                  <h3 class="font-headline text-title-lg text-cream-parchment">Registration Opens</h3>
+                  <p class="font-body text-body-md text-cream-parchment">Squad registration and track selection goes live for UG/PG builders across India.</p>
+                  <div class="pt-2 border-t border-gold-rich/30 flex items-center justify-between">
+                    <span class="font-label text-label-sm uppercase text-gold-highlight">Action: Squad + Track Lock</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="hidden md:flex items-center justify-start pl-4" aria-hidden="true">
+              <div class="flex items-center gap-3">
+                <span class="w-4 h-4 -ml-[26px] rounded-full bg-gold-highlight border-2 border-dark-chocolate shadow"></span>
+                <span class="px-3 py-1 rounded-sm bg-dark-chocolate/90 border border-gold-highlight/50 font-label text-label-sm uppercase text-gold-highlight">Phase 01 · Entry</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- GATE II (Right) -->
+          <div id="gate-2" data-gate-phase="pre" class="gate-row relative grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+            <div class="hidden md:flex items-center justify-end pr-4" aria-hidden="true">
+              <div class="flex items-center gap-3">
+                <span class="px-3 py-1 rounded-sm bg-dark-chocolate/90 border border-saffron/60 font-label text-label-sm uppercase text-cream-parchment">Phase 02 · Submission</span>
+                <span class="w-4 h-4 -mr-[26px] rounded-full bg-saffron border-2 border-dark-chocolate shadow"></span>
+              </div>
+            </div>
+            <div class="md:pl-10">
+              <article class="bg-dark-chocolate/95 border-2 border-saffron rounded-lg overflow-hidden stage-plaque hover:-translate-y-1 transition-transform duration-card-lift flex flex-col sm:flex-row">
+                <div class="sm:w-32 bg-bronze-brown/50 border-b sm:border-b-0 sm:border-r border-saffron/50 p-4 flex sm:flex-col items-center justify-between sm:justify-center gap-2 text-center shrink-0">
+                  <span class="font-display text-display-md-mobile text-saffron leading-none">II</span>
+                  <span class="px-2.5 py-0.5 rounded-full bg-dark-chocolate border border-saffron text-cream-parchment font-label text-label-sm uppercase">Deadline</span>
+                </div>
+                <div class="p-5 flex-1 flex flex-col gap-2.5">
+                  <div class="flex items-center justify-between gap-2">
+                    <span class="font-label text-label-sm uppercase text-gold-highlight tabular-nums">10 JAN 2027 · 11:59 PM</span>
+                    <span class="material-symbols-outlined text-saffron text-body-lg" aria-hidden="true">hourglass_bottom</span>
+                  </div>
+                  <h3 class="font-headline text-title-lg text-cream-parchment">Registration Closes</h3>
+                  <p class="font-body text-body-md text-cream-parchment">Final cutoff to lock your 2–4 member team and upload your solution pitch deck.</p>
+                  <div class="pt-2 border-t border-gold-rich/30 flex items-center justify-between">
+                    <span class="font-label text-label-sm uppercase text-cream-parchment">Deliverable: Idea PPT</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <!-- GATE III (Left) -->
+          <div id="gate-3" data-gate-phase="pre" class="gate-row relative grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+            <div class="md:pr-10">
+              <article class="bg-dark-chocolate/95 border-2 border-krishna-blue rounded-lg overflow-hidden stage-plaque hover:-translate-y-1 transition-transform duration-card-lift flex flex-col sm:flex-row">
+                <div class="sm:w-32 bg-navy-ink/70 border-b sm:border-b-0 sm:border-r border-krishna-blue/60 p-4 flex sm:flex-col items-center justify-between sm:justify-center gap-2 text-center shrink-0">
+                  <span class="font-display text-display-md-mobile text-sky-light leading-none">III</span>
+                  <span class="px-2.5 py-0.5 rounded-full bg-dark-chocolate border border-krishna-blue text-sky-light font-label text-label-sm uppercase">Selection</span>
+                </div>
+                <div class="p-5 flex-1 flex flex-col gap-2.5">
+                  <div class="flex items-center justify-between gap-2">
+                    <span class="font-label text-label-sm uppercase text-sky-light tabular-nums">15 JAN 2027 · 06:00 PM</span>
+                    <span class="material-symbols-outlined text-sky-light text-body-lg" aria-hidden="true">verified</span>
+                  </div>
+                  <h3 class="font-headline text-title-lg text-cream-parchment">Shortlist Announcement</h3>
+                  <p class="font-body text-body-md text-cream-parchment">Top 125 squads earn their Gate Pass to compete live at GITA Campus, Bhubaneswar.</p>
+                  <div class="pt-2 border-t border-krishna-blue/40 flex items-center justify-between">
+                    <span class="font-label text-label-sm uppercase text-sky-light">Milestone: Top 125 Teams</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="hidden md:flex items-center justify-start pl-4" aria-hidden="true">
+              <div class="flex items-center gap-3">
+                <span class="w-4 h-4 -ml-[26px] rounded-full bg-krishna-blue border-2 border-sky-light shadow"></span>
+                <span class="px-3 py-1 rounded-sm bg-dark-chocolate/90 border border-krishna-blue/60 font-label text-label-sm uppercase text-sky-light">Phase 03 · Gate Pass</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- GATE IV (Right) -->
+          <div id="gate-4" data-gate-phase="sprint" class="gate-row relative grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+            <div class="hidden md:flex items-center justify-end pr-4" aria-hidden="true">
+              <div class="flex items-center gap-3">
+                <span class="px-3 py-1 rounded-sm bg-dark-chocolate/90 border border-gold-rich/60 font-label text-label-sm uppercase text-gold-highlight">Phase 04 · 36h Begins</span>
+                <span class="w-4 h-4 -mr-[26px] rounded-full bg-gold-rich border-2 border-cream-parchment shadow"></span>
+              </div>
+            </div>
+            <div class="md:pl-10">
+              <article class="bg-dark-chocolate/95 border-2 border-gold-rich rounded-lg overflow-hidden stage-plaque hover:-translate-y-1 transition-transform duration-card-lift flex flex-col sm:flex-row">
+                <div class="sm:w-32 bg-bronze-brown/60 border-b sm:border-b-0 sm:border-r border-gold-rich/50 p-4 flex sm:flex-col items-center justify-between sm:justify-center gap-2 text-center shrink-0">
+                  <span class="font-display text-display-md-mobile text-gold-highlight leading-none">IV</span>
+                  <span class="px-2.5 py-0.5 rounded-full bg-dark-chocolate border border-gold-rich text-gold-highlight font-label text-label-sm uppercase">Day 1</span>
+                </div>
+                <div class="p-5 flex-1 flex flex-col gap-2.5">
+                  <div class="flex items-center justify-between gap-2">
+                    <span class="font-label text-label-sm uppercase text-gold-highlight tabular-nums">23 JAN 2027 · 09:00 AM</span>
+                    <span class="material-symbols-outlined text-gold-highlight text-body-lg" aria-hidden="true">rocket_launch</span>
+                  </div>
+                  <h3 class="font-headline text-title-lg text-cream-parchment">Hackathon Kickoff</h3>
+                  <p class="font-body text-body-md text-cream-parchment">On-campus check-in, inaugural ceremony, GitHub repo initialization, and 36-hour build.</p>
+                  <div class="pt-2 border-t border-gold-rich/30 flex items-center justify-between">
+                    <span class="font-label text-label-sm uppercase text-gold-highlight">Arena: GITA Auditorium</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <!-- GATE V (Left) -->
+          <div id="gate-5" data-gate-phase="sprint" class="gate-row relative grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+            <div class="md:pr-10">
+              <article class="bg-dark-chocolate/95 border-2 border-peacock-green rounded-lg overflow-hidden stage-plaque hover:-translate-y-1 transition-transform duration-card-lift flex flex-col sm:flex-row">
+                <div class="sm:w-32 bg-peacock-green/20 border-b sm:border-b-0 sm:border-r border-peacock-green/60 p-4 flex sm:flex-col items-center justify-between sm:justify-center gap-2 text-center shrink-0">
+                  <span class="font-display text-display-md-mobile text-cream-parchment leading-none">V</span>
+                  <span class="px-2.5 py-0.5 rounded-full bg-dark-chocolate border border-peacock-green text-cream-parchment font-label text-label-sm uppercase">Checkpoint</span>
+                </div>
+                <div class="p-5 flex-1 flex flex-col gap-2.5">
+                  <div class="flex items-center justify-between gap-2">
+                    <span class="font-label text-label-sm uppercase text-gold-highlight tabular-nums">23 JAN 2027 · 08:00 PM</span>
+                    <span class="material-symbols-outlined text-cream-parchment text-body-lg" aria-hidden="true">groups</span>
+                  </div>
+                  <h3 class="font-headline text-title-lg text-cream-parchment">Mid Evaluation</h3>
+                  <p class="font-body text-body-md text-cream-parchment">Night-one architecture review, technical debugging, and 1-on-1 industry mentoring.</p>
+                  <div class="pt-2 border-t border-peacock-green/40 flex items-center justify-between">
+                    <span class="font-label text-label-sm uppercase text-cream-parchment">Review: Prototype + Architecture</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="hidden md:flex items-center justify-start pl-4" aria-hidden="true">
+              <div class="flex items-center gap-3">
+                <span class="w-4 h-4 -ml-[26px] rounded-full bg-peacock-green border-2 border-cream-parchment shadow"></span>
+                <span class="px-3 py-1 rounded-sm bg-dark-chocolate/90 border border-peacock-green/60 font-label text-label-sm uppercase text-cream-parchment">Phase 05 · Mentor Ring</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- GATE VI (Right) -->
+          <div id="gate-6" data-gate-phase="sprint" class="gate-row relative grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+            <div class="hidden md:flex items-center justify-end pr-4" aria-hidden="true">
+              <div class="flex items-center gap-3">
+                <span class="px-3 py-1 rounded-sm bg-dark-chocolate/90 border border-saffron/60 font-label text-label-sm uppercase text-cream-parchment">Phase 06 · Live Jury</span>
+                <span class="w-4 h-4 -mr-[26px] rounded-full bg-saffron border-2 border-cream-parchment shadow"></span>
+              </div>
+            </div>
+            <div class="md:pl-10">
+              <article class="bg-dark-chocolate/95 border-2 border-saffron rounded-lg overflow-hidden stage-plaque hover:-translate-y-1 transition-transform duration-card-lift flex flex-col sm:flex-row">
+                <div class="sm:w-32 bg-bronze-brown/50 border-b sm:border-b-0 sm:border-r border-saffron/50 p-4 flex sm:flex-col items-center justify-between sm:justify-center gap-2 text-center shrink-0">
+                  <span class="font-display text-display-md-mobile text-saffron leading-none">VI</span>
+                  <span class="px-2.5 py-0.5 rounded-full bg-dark-chocolate border border-saffron text-cream-parchment font-label text-label-sm uppercase">Day 2</span>
+                </div>
+                <div class="p-5 flex-1 flex flex-col gap-2.5">
+                  <div class="flex items-center justify-between gap-2">
+                    <span class="font-label text-label-sm uppercase text-gold-highlight tabular-nums">24 JAN 2027 · 02:00 PM</span>
+                    <span class="material-symbols-outlined text-saffron text-body-lg" aria-hidden="true">gavel</span>
+                  </div>
+                  <h3 class="font-headline text-title-lg text-cream-parchment">Final Pitch &amp; Judging</h3>
+                  <p class="font-body text-body-md text-cream-parchment">Code freeze followed by live working product demos before the national jury panel.</p>
+                  <div class="pt-2 border-t border-gold-rich/30 flex items-center justify-between">
+                    <span class="font-label text-label-sm uppercase text-cream-parchment">Format: 5m Demo + 3m Q&amp;A</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <!-- GATE VII — THE INNERMOST SANCTUM (Centered Full-Width Climax) -->
+          <div id="gate-7" data-gate-phase="finale" class="gate-row relative pt-4">
+            <article class="max-w-2xl mx-auto bg-gradient-to-b from-bronze-brown/90 to-dark-chocolate border-2 border-gold-highlight rounded-lg p-6 md:p-8 text-center flex flex-col items-center gap-4 stage-plaque-active shadow-xl">
+              <div class="w-16 h-16 rounded-full bg-dark-chocolate border-2 border-gold-highlight flex items-center justify-center text-gold-highlight shadow-md">
+                <span class="material-symbols-outlined text-headline-md" aria-hidden="true">emoji_events</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="px-4 py-1 bg-gold-highlight text-dark-chocolate font-label text-label-sm uppercase rounded-full tracking-widest">Gate VII · Innermost Sanctum</span>
+              </div>
+              <h3 class="font-display text-headline-lg text-gold-highlight uppercase">Grand Finale &amp; Prize Distribution</h3>
+              <span class="px-5 py-1.5 rounded-full bg-dark-chocolate border border-gold-highlight font-label text-label-sm text-gold-highlight tabular-nums">
+                24 JAN 2027 · 05:30 PM
+              </span>
+              <p class="font-body text-body-lg text-cream-parchment max-w-lg text-balance">
+                Champions break the Chakravyuh—crowned on stage with the ₹1,00,000 prize pool, track awards, and BPUT felicitation.
+              </p>
+            </article>
+          </div>
+
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          const filterButtons = document.querySelectorAll('.gate-filter-btn');
+          const gateRows = document.querySelectorAll('.gate-row');
+          filterButtons.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+              const target = btn.getAttribute('data-gate-filter');
+              filterButtons.forEach(function (b) {
+                b.classList.remove('bg-gold-highlight', 'text-dark-chocolate');
+                b.classList.add('bg-bronze-brown/60', 'text-cream-parchment', 'border', 'border-gold-rich/50');
+              });
+              btn.classList.add('bg-gold-highlight', 'text-dark-chocolate');
+              btn.classList.remove('bg-bronze-brown/60', 'text-cream-parchment', 'border', 'border-gold-rich/50');
+
+              gateRows.forEach(function (row) {
+                if (target === 'all' || row.getAttribute('data-gate-phase') === target) {
+                  row.classList.remove('hidden');
+                } else {
+                  row.classList.add('hidden');
+                }
+              });
+            });
+          });
+        })();
+      </script>
+    </section>
+
+    <!-- =========================================================
+         5. GUIDELINES — "RULES OF THE BATTLEFIELD" (NIYAM)
+    ========================================================== -->
+    <section id="guidelines" class="py-20 md:py-28 bg-cream-parchment border-t-2 border-gold-rich">
+      <div class="max-w-7xl mx-auto px-4 md:px-6 flex flex-col gap-12">
+        <!-- Section Header -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-gold-rich/50 pb-6">
+          <div>
+            <div class="flex items-center gap-3 mb-2">
+              <span class="h-px w-8 bg-gold-rich"></span>
+              <span class="font-label text-label-sm uppercase text-bronze-brown">Niyam · Code of Conduct</span>
+            </div>
+            <h2 class="font-display text-display-md-mobile md:text-display-md text-bronze-brown">Rules of the Battlefield</h2>
+            <p class="font-body text-body-md text-navy-ink mt-2 max-w-2xl">
+              Every warrior enters Kurukshetra under the same sacred code—fair play, original engineering, and live working demos.
+            </p>
+          </div>
+          <a href="#register" data-component-id="button-with-icon" data-component-type="button" data-component-variant="with-icon" class="inline-flex items-center justify-center gap-gutter-sm px-6 py-3 bg-dark-chocolate text-gold-highlight border border-gold-rich ribbon-pill font-label text-label-sm uppercase tracking-widest hover:bg-bronze-brown hover:text-cream-parchment transition-colors shrink-0 shadow-sm">
+            <span class="material-symbols-outlined text-body-lg" aria-hidden="true">menu_book</span>
+            <span data-design-text-token="label-sm">Download Full Rulebook</span>
+          </a>
+        </div>
+
+        <!-- Asymmetric 7+5 Tactical Rulebook Layout -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+          <!-- Left 7 Cols: 3 Split-Crest Niyam Scroll Tablets -->
+          <div class="lg:col-span-7 flex flex-col gap-5 justify-between">
+            <!-- NIYAM 01 -->
+            <article data-component-id="card-elevated" data-component-type="card" data-component-variant="elevated" class="bg-light-surface-container-lowest border-2 border-gold-rich rounded-lg overflow-hidden shadow-sm hover:-translate-y-0.5 transition-transform duration-card-lift flex flex-col sm:flex-row">
+              <div class="sm:w-28 bg-dark-chocolate text-gold-highlight p-4 flex sm:flex-col items-center justify-between sm:justify-center gap-2 border-b sm:border-b-0 sm:border-r-2 border-gold-rich shrink-0">
+                <span class="font-display text-headline-md text-gold-highlight leading-none">01</span>
+                <span class="material-symbols-outlined text-body-lg text-gold-highlight" aria-hidden="true">groups</span>
+                <span class="font-label text-label-sm uppercase text-cream-parchment">Squads</span>
+              </div>
+              <div class="p-5 flex-1 flex flex-col gap-2.5">
+                <div class="flex items-center justify-between gap-2">
+                  <h3 class="font-title text-title-lg text-dark-chocolate" data-design-text-token="title-lg">Team Size &amp; Eligibility</h3>
+                  <span class="px-2.5 py-0.5 bg-light-surface-container border border-gold-rich/60 rounded-sm font-label text-label-sm uppercase text-bronze-brown">Niyam 01</span>
+                </div>
+                <p class="font-body text-body-md text-navy-ink" data-design-text-token="body-md">
+                  Teams must consist of 2 to 4 students currently enrolled in any recognized UG/PG program across India.
+                </p>
+                <div class="flex flex-wrap gap-2 pt-1">
+                  <span class="inline-flex items-center gap-1 px-2.5 py-0.5 bg-cream-parchment border border-gold-rich/50 rounded-sm font-label text-label-sm text-bronze-brown">
+                    <span class="material-symbols-outlined text-label-sm text-peacock-green" aria-hidden="true">check_circle</span>
+                    2–4 Warriors
+                  </span>
+                  <span class="inline-flex items-center gap-1 px-2.5 py-0.5 bg-cream-parchment border border-gold-rich/50 rounded-sm font-label text-label-sm text-bronze-brown">
+                    <span class="material-symbols-outlined text-label-sm text-peacock-green" aria-hidden="true">check_circle</span>
+                    Inter-College Allowed
+                  </span>
+                </div>
+              </div>
+            </article>
+
+            <!-- NIYAM 02 -->
+            <article data-component-id="card-elevated" data-component-type="card" data-component-variant="elevated" class="bg-light-surface-container-lowest border-2 border-gold-rich rounded-lg overflow-hidden shadow-sm hover:-translate-y-0.5 transition-transform duration-card-lift flex flex-col sm:flex-row">
+              <div class="sm:w-28 bg-dark-chocolate text-gold-highlight p-4 flex sm:flex-col items-center justify-between sm:justify-center gap-2 border-b sm:border-b-0 sm:border-r-2 border-gold-rich shrink-0">
+                <span class="font-display text-headline-md text-gold-highlight leading-none">02</span>
+                <span class="material-symbols-outlined text-body-lg text-gold-highlight" aria-hidden="true">verified_user</span>
+                <span class="font-label text-label-sm uppercase text-cream-parchment">Integrity</span>
+              </div>
+              <div class="p-5 flex-1 flex flex-col gap-2.5">
+                <div class="flex items-center justify-between gap-2">
+                  <h3 class="font-title text-title-lg text-dark-chocolate" data-design-text-token="title-lg">Original Work &amp; GitHub</h3>
+                  <span class="px-2.5 py-0.5 bg-light-surface-container border border-gold-rich/60 rounded-sm font-label text-label-sm uppercase text-bronze-brown">Niyam 02</span>
+                </div>
+                <p class="font-body text-body-md text-navy-ink" data-design-text-token="body-md">
+                  All code must be written during the 36-hour window and pushed to a jury-accessible GitHub repository initialized at kickoff.
+                </p>
+                <div class="flex flex-wrap gap-2 pt-1">
+                  <span class="inline-flex items-center gap-1 px-2.5 py-0.5 bg-cream-parchment border border-gold-rich/50 rounded-sm font-label text-label-sm text-bronze-brown">
+                    <span class="material-symbols-outlined text-label-sm text-peacock-green" aria-hidden="true">check_circle</span>
+                    Fresh Repo at Kickoff
+                  </span>
+                  <span class="inline-flex items-center gap-1 px-2.5 py-0.5 bg-cream-parchment border border-gold-rich/50 rounded-sm font-label text-label-sm text-bronze-brown">
+                    <span class="material-symbols-outlined text-label-sm text-peacock-green" aria-hidden="true">check_circle</span>
+                    Timestamped Commits
+                  </span>
+                </div>
+              </div>
+            </article>
+
+            <!-- NIYAM 03 -->
+            <article data-component-id="card-elevated" data-component-type="card" data-component-variant="elevated" class="bg-light-surface-container-lowest border-2 border-gold-rich rounded-lg overflow-hidden shadow-sm hover:-translate-y-0.5 transition-transform duration-card-lift flex flex-col sm:flex-row">
+              <div class="sm:w-28 bg-dark-chocolate text-gold-highlight p-4 flex sm:flex-col items-center justify-between sm:justify-center gap-2 border-b sm:border-b-0 sm:border-r-2 border-gold-rich shrink-0">
+                <span class="font-display text-headline-md text-gold-highlight leading-none">03</span>
+                <span class="material-symbols-outlined text-body-lg text-gold-highlight" aria-hidden="true">construction</span>
+                <span class="font-label text-label-sm uppercase text-cream-parchment">Arsenal</span>
+              </div>
+              <div class="p-5 flex-1 flex flex-col gap-2.5">
+                <div class="flex items-center justify-between gap-2">
+                  <h3 class="font-title text-title-lg text-dark-chocolate" data-design-text-token="title-lg">Tech Stack &amp; Gear</h3>
+                  <span class="px-2.5 py-0.5 bg-light-surface-container border border-gold-rich/60 rounded-sm font-label text-label-sm uppercase text-bronze-brown">Niyam 03</span>
+                </div>
+                <p class="font-body text-body-md text-navy-ink" data-design-text-token="body-md">
+                  Any open-source framework, cloud API, or hardware kit is allowed. Bring laptops, chargers, college ID cards, and extension boards.
+                </p>
+                <div class="flex flex-wrap gap-2 pt-1">
+                  <span class="inline-flex items-center gap-1 px-2.5 py-0.5 bg-cream-parchment border border-gold-rich/50 rounded-sm font-label text-label-sm text-bronze-brown">
+                    <span class="material-symbols-outlined text-label-sm text-peacock-green" aria-hidden="true">check_circle</span>
+                    Open-Source &amp; APIs OK
+                  </span>
+                  <span class="inline-flex items-center gap-1 px-2.5 py-0.5 bg-cream-parchment border border-gold-rich/50 rounded-sm font-label text-label-sm text-bronze-brown">
+                    <span class="material-symbols-outlined text-label-sm text-peacock-green" aria-hidden="true">check_circle</span>
+                    College ID Mandatory
+                  </span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Right 5 Cols: Dark-Chocolate & Gold Jury Scorecard (NIYAM 04) -->
+          <div class="lg:col-span-5 flex">
+            <article class="w-full bg-dark-chocolate text-cream-parchment border-2 border-gold-highlight rounded-lg p-6 md:p-7 shadow-lg flex flex-col justify-between gap-6">
+              <div>
+                <div class="flex items-center justify-between gap-3 pb-4 border-b border-gold-rich/40">
+                  <div>
+                    <span class="font-label text-label-sm uppercase text-gold-highlight tracking-widest block">Niyam 04 · Evaluation</span>
+                    <h3 class="font-display text-headline-md text-cream-parchment mt-1">Jury Scorecard</h3>
+                  </div>
+                  <span class="px-3.5 py-1.5 rounded-full bg-bronze-brown border border-gold-highlight font-label text-label-sm uppercase text-gold-highlight tabular-nums">100 Pts Total</span>
+                </div>
+
+                <div class="flex flex-col gap-5 pt-5">
+                  <!-- Criterion 1 -->
+                  <div class="flex flex-col gap-1.5">
+                    <div class="flex items-center justify-between">
+                      <span class="font-title text-body-md font-bold text-cream-parchment">Innovation &amp; Originality</span>
+                      <span class="px-2 py-0.5 rounded-sm bg-saffron text-dark-chocolate font-label text-label-sm tabular-nums">30%</span>
+                    </div>
+                    <div class="w-full h-2.5 bg-bronze-brown/70 rounded-full overflow-hidden border border-gold-rich/30">
+                      <div class="h-full bg-saffron w-[30%] rounded-full"></div>
+                    </div>
+                    <span class="font-body text-label-sm text-cream-parchment/90">Novelty of problem framing &amp; creative solution design</span>
+                  </div>
+
+                  <!-- Criterion 2 -->
+                  <div class="flex flex-col gap-1.5">
+                    <div class="flex items-center justify-between">
+                      <span class="font-title text-body-md font-bold text-cream-parchment">Technical Depth</span>
+                      <span class="px-2 py-0.5 rounded-sm bg-gold-highlight text-dark-chocolate font-label text-label-sm tabular-nums">30%</span>
+                    </div>
+                    <div class="w-full h-2.5 bg-bronze-brown/70 rounded-full overflow-hidden border border-gold-rich/30">
+                      <div class="h-full bg-gold-highlight w-[30%] rounded-full"></div>
+                    </div>
+                    <span class="font-body text-label-sm text-cream-parchment/90">Architecture soundness, code quality &amp; working prototype</span>
+                  </div>
+
+                  <!-- Criterion 3 -->
+                  <div class="flex flex-col gap-1.5">
+                    <div class="flex items-center justify-between">
+                      <span class="font-title text-body-md font-bold text-cream-parchment">Real-World Impact</span>
+                      <span class="px-2 py-0.5 rounded-sm bg-sky-light text-dark-chocolate font-label text-label-sm tabular-nums">25%</span>
+                    </div>
+                    <div class="w-full h-2.5 bg-bronze-brown/70 rounded-full overflow-hidden border border-gold-rich/30">
+                      <div class="h-full bg-sky-light w-[25%] rounded-full"></div>
+                    </div>
+                    <span class="font-body text-label-sm text-cream-parchment/90">Practical viability, user adoption &amp; measurable benefit</span>
+                  </div>
+
+                  <!-- Criterion 4 -->
+                  <div class="flex flex-col gap-1.5">
+                    <div class="flex items-center justify-between">
+                      <span class="font-title text-body-md font-bold text-cream-parchment">Presentation &amp; Demo</span>
+                      <span class="px-2 py-0.5 rounded-sm bg-cream-parchment text-dark-chocolate font-label text-label-sm tabular-nums">15%</span>
+                    </div>
+                    <div class="w-full h-2.5 bg-bronze-brown/70 rounded-full overflow-hidden border border-gold-rich/30">
+                      <div class="h-full bg-cream-parchment w-[15%] rounded-full"></div>
+                    </div>
+                    <span class="font-body text-label-sm text-cream-parchment/90">Clarity of 5-minute live demo &amp; jury Q&amp;A defense</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="p-3.5 rounded-md bg-bronze-brown/70 border border-gold-rich/60 flex items-center gap-3">
+                <span class="material-symbols-outlined text-gold-highlight text-body-lg shrink-0" aria-hidden="true">tips_and_updates</span>
+                <p class="font-body text-label-sm text-cream-parchment">
+                  <strong class="text-gold-highlight">Jury Tip:</strong> Live working software always outweighs static slide decks.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Framed Royal FAQ Scroll -->
+        <div class="bg-light-surface-container-low border-2 border-gold-rich rounded-lg p-6 md:p-8 shadow-sm">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-5 mb-2 border-b border-gold-rich/60">
+            <div>
+              <span class="font-label text-label-sm uppercase text-bronze-brown">Clarifications</span>
+              <h3 class="font-headline text-headline-md text-bronze-brown">Frequently Asked Questions</h3>
+            </div>
+            <span class="font-label text-label-sm uppercase text-bronze-brown">Tap any question to expand</span>
+          </div>
+
+          <div data-component-id="accordion-group" data-component-type="accordion" data-component-variant="group" class="divide-y divide-gold-rich/60">
+            <details name="faq-group" class="group py-4" open>
+              <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-title text-title-lg text-dark-chocolate">
+                <span class="flex items-center gap-3">
+                  <span class="w-8 h-8 rounded-full bg-dark-chocolate text-gold-highlight font-label text-label-sm flex items-center justify-center shrink-0">Q1</span>
+                  <span data-design-text-token="title-lg">Is there a registration fee for shortlisted teams?</span>
+                </span>
+                <span class="material-symbols-outlined text-bronze-brown group-open:rotate-45 transition-transform duration-state-change shrink-0" aria-hidden="true">brightness_7</span>
+              </summary>
+              <div class="pt-3 pl-11 pr-6">
+                <p class="font-body text-body-md text-navy-ink" data-design-text-token="body-md">
+                  Idea submission is completely free. Shortlisted teams pay a nominal ₹400 per member hospitality fee covering all meals, snacks, and campus accommodation for 36 hours.
+                </p>
+              </div>
+            </details>
+
+            <details name="faq-group" class="group py-4">
+              <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-title text-title-lg text-dark-chocolate">
+                <span class="flex items-center gap-3">
+                  <span class="w-8 h-8 rounded-full bg-dark-chocolate text-gold-highlight font-label text-label-sm flex items-center justify-center shrink-0">Q2</span>
+                  <span data-design-text-token="title-lg">Can we use pre-trained AI models or public APIs?</span>
+                </span>
+                <span class="material-symbols-outlined text-bronze-brown group-open:rotate-45 transition-transform duration-state-change shrink-0" aria-hidden="true">brightness_7</span>
+              </summary>
+              <div class="pt-3 pl-11 pr-6">
+                <p class="font-body text-body-md text-navy-ink" data-design-text-token="body-md">
+                  Yes, open-weight models and public APIs are permitted, provided your core application logic, integration, and product workflow are built during the hackathon.
+                </p>
+              </div>
+            </details>
+
+            <details name="faq-group" class="group py-4">
+              <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-title text-title-lg text-dark-chocolate">
+                <span class="flex items-center gap-3">
+                  <span class="w-8 h-8 rounded-full bg-dark-chocolate text-gold-highlight font-label text-label-sm flex items-center justify-center shrink-0">Q3</span>
+                  <span data-design-text-token="title-lg">Will travel reimbursement or certificates be provided?</span>
+                </span>
+                <span class="material-symbols-outlined text-bronze-brown group-open:rotate-45 transition-transform duration-state-change shrink-0" aria-hidden="true">brightness_7</span>
+              </summary>
+              <div class="pt-3 pl-11 pr-6">
+                <p class="font-body text-body-md text-navy-ink" data-design-text-token="body-md">
+                  Every finalist receives an official BPUT-recognized participation certificate, swag kit, and mentor feedback. Travel support is available for outstation winners.
+                </p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         6. SPONSORS — "OUR ALLIES"
+    ========================================================== -->
+    <section id="sponsors" class="relative py-16 md:py-24 overflow-hidden border-t-2 border-gold-rich">
+      <img src="https://lh3.googleusercontent.com/aida/ALJJyrBqOi_x3oApvH_vcDoW6TflQYtNBeiISNAYN5UK8pt8EmiYLmDLCZEf7IdLkKXrb_2lkeDq0un0R75VtzlwGAaFqpTa--FF1O7pMyPEwkE0GrYPzZoLq-fPPYVxOR3qUQg9vToPjMlUN6yvUvk1pT1ymogv7NZWgRPk7XJjltcZ6yYV3v0LTBWtohR3pJgnGiXb_rPvJSMV9avzdiLW_Yjd8iz3dNkQzDKC5nYbA6QfH-xOGh9MdjO8DTHXw0TijG3IOy8447sibWWEYQ" alt="Sunset over Kurukshetra with Lord Krishna on the right" class="absolute inset-0 w-full h-full object-cover object-center" data-stitch-original-src="97e02244af5f5246===../../images/krishna_horizon_allies.jpg">
+      <div class="absolute inset-0 bg-cream-parchment/85"></div>
+
+      <div class="relative z-10 max-w-7xl mx-auto px-4 md:px-6 flex flex-col gap-12">
+        <div class="text-center flex flex-col items-center gap-2">
+          <span class="font-label text-label-sm uppercase text-bronze-brown">Backed By Industry &amp; Academia</span>
+          <h2 class="font-display text-display-md-mobile md:text-display-md text-bronze-brown uppercase">Our Allies</h2>
+        </div>
+
+        <!-- Tiered Sponsor Grid -->
+        <div class="flex flex-col gap-8">
+          <div class="flex flex-col items-center gap-3">
+            <span class="font-label text-label-sm uppercase text-bronze-brown">Title Sponsor</span>
+            <div class="w-full max-w-md bg-light-surface-container-lowest border-2 border-gold-rich rounded p-8 text-center shadow-md">
+              <p class="font-headline text-headline-md text-bronze-brown">Your Brand Here</p>
+              <p class="font-body text-body-md text-navy-ink mt-1">Premier Title Partner Slot Open</p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <div class="bg-light-surface-container-lowest border border-gold-rich rounded p-6 text-center">
+              <span class="font-label text-label-sm uppercase text-bronze-brown">Gold Ally</span>
+              <p class="font-title text-title-lg text-bronze-brown mt-2">Odisha Cloud Collective</p>
+            </div>
+            <div class="bg-light-surface-container-lowest border border-gold-rich rounded p-6 text-center">
+              <span class="font-label text-label-sm uppercase text-bronze-brown">Gold Ally</span>
+              <p class="font-title text-title-lg text-bronze-brown mt-2">Kalinga DevWorks</p>
+            </div>
+            <div class="bg-light-surface-container-lowest border border-gold-rich rounded p-6 text-center">
+              <span class="font-label text-label-sm uppercase text-bronze-brown">Community Partner</span>
+              <p class="font-title text-title-lg text-bronze-brown mt-2">BPUT Innovation Cell</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Poster 3 Style "BECOME A SPONSOR" Panel -->
+        <div class="bg-light-surface-container-lowest/95 border-2 border-gold-rich rounded p-8 md:p-10 shadow-lg flex flex-col gap-8">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+            <div class="flex flex-col gap-3 max-w-2xl">
+              <div class="inline-block self-start bg-dark-chocolate text-cream-parchment px-5 py-2">
+                <span class="font-headline text-headline-md uppercase tracking-wider">Call For Sponsors</span>
+              </div>
+              <p class="font-body text-body-lg text-navy-ink font-bold">
+                Partner with us in shaping innovation, empowering young minds and building a brighter tomorrow.
+              </p>
+            </div>
+
+            <!-- Gold-framed QR + Ribbon -->
+            <div class="flex flex-col items-center gap-2 shrink-0">
+              <div class="p-2.5 bg-cream-parchment border-2 border-gold-rich rounded">
+                <svg class="w-24 h-24 text-dark-chocolate" viewBox="0 0 24 24" fill="currentColor" aria-label="Sponsor QR Code">
+                  <path d="M3 3h8v8H3V3zm2 2v4h4V5H5zm8-2h8v8h-8V3zm2 2v4h4V5h-4zM3 13h8v8H3v-8zm2 2v4h4v-4H5zm10-2h2v2h-2v-2zm4 0h2v4h-2v-4zm-4 4h2v4h-2v-4zm4 2h2v2h-2v-2zm-6-2h2v2h-2v-2z"></path>
+                </svg>
+              </div>
+              <span class="px-4 py-1 bg-dark-chocolate text-cream-parchment ribbon-pill font-label text-label-sm uppercase">Scan To Partner</span>
+            </div>
+          </div>
+
+          <!-- 4 Poster-3 Icon Benefits with Thin Vertical Dividers -->
+          <div class="grid grid-cols-2 lg:grid-cols-4 divide-y lg:divide-y-0 lg:divide-x divide-bronze-brown/40 border-y border-bronze-brown/30 py-4">
+            <div class="flex flex-col items-center text-center gap-2 px-4 py-2">
+              <div class="w-12 h-12 rounded-full border border-bronze-brown flex items-center justify-center text-bronze-brown">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 12a4 4 0 100-8 4 4 0 000 8zM4 20c0-3.3 3.6-6 8-6s8 2.7 8 6"></path></svg>
+              </div>
+              <span class="font-label text-label-sm uppercase text-navy-ink">Brand Visibility</span>
+            </div>
+            <div class="flex flex-col items-center text-center gap-2 px-4 py-2">
+              <div class="w-12 h-12 rounded-full border border-bronze-brown flex items-center justify-center text-bronze-brown">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-3.5 10.9c.7.5 1 1.3 1 2.1h5c0-.8.3-1.6 1-2.1A6 6 0 0012 3z"></path></svg>
+              </div>
+              <span class="font-label text-label-sm uppercase text-navy-ink">Engage Young Talent</span>
+            </div>
+            <div class="flex flex-col items-center text-center gap-2 px-4 py-2">
+              <div class="w-12 h-12 rounded-full border border-bronze-brown flex items-center justify-center text-bronze-brown">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 12l4 4 6-6M3 12l4 4M15 8l3-3 3 3"></path></svg>
+              </div>
+              <span class="font-label text-label-sm uppercase text-navy-ink">Lasting Partnerships</span>
+            </div>
+            <div class="flex flex-col items-center text-center gap-2 px-4 py-2">
+              <div class="w-12 h-12 rounded-full border border-bronze-brown flex items-center justify-center text-bronze-brown">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 17l6-6 4 4 6-8M16 7h4v4"></path></svg>
+              </div>
+              <span class="font-label text-label-sm uppercase text-navy-ink">Be Part of Impact</span>
+            </div>
+          </div>
+
+          <div class="flex justify-center">
+            <a href="#contact" class="inline-flex items-center justify-center gap-2 px-8 py-3 bg-dark-chocolate text-gold-highlight border border-gold-rich ribbon-pill font-label text-label-sm uppercase tracking-widest hover:bg-bronze-brown">
+              <span class="material-symbols-outlined text-body-lg" aria-hidden="true">description</span>
+              <span>Download Sponsorship Brochure</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         7. COORDINATORS — "THE COMMANDERS"
+    ========================================================== -->
+    <section id="coordinators" class="py-16 md:py-24 bg-cream-parchment border-t-2 border-gold-rich">
+      <div class="max-w-7xl mx-auto px-4 md:px-6 flex flex-col gap-10">
+        <div class="text-center flex flex-col items-center gap-2">
+          <span class="font-label text-label-sm uppercase text-bronze-brown">Faculty &amp; Student Organizing Committee</span>
+          <h2 class="font-display text-display-md-mobile md:text-display-md text-bronze-brown uppercase">The Commanders</h2>
+        </div>
+
+        <!-- 4-Column Desktop / Horizontal Swipe Mobile -->
+        <div class="flex md:grid md:grid-cols-4 gap-6 overflow-x-auto pb-4 md:pb-0 snap-x snap-mandatory">
+          <article class="min-w-[260px] snap-center bg-light-surface-container-lowest border-2 border-gold-rich rounded-t-full p-6 flex flex-col items-center text-center gap-4 shadow-sm hover:-translate-y-1 transition-transform duration-card-lift">
+            <div class="w-28 h-28 rounded-full border-2 border-gold-rich p-1">
+              <img src="https://lh3.googleusercontent.com/aida/ALJJyrDtbnd9C0qKjR9cjnzOF4LAtCRNzSLlXMwW2Iqin-LXFRUyQ_yx0pyU-lfBPd54klpGKyB-Szk4kQITZYeNn_8jfFmIcOdp5P2fGgH8MK6jf0g8RwllX72NLDWbIBx0e-P7kL35bHVMK-Pmpmaw1C70F4in0trZtDd-MEG-JgoHH5FA3NB8wugniqxhxgQU9EQrjx3_qFDC0DG2tRZ4ls4dfqH5ykV_45iT6SKgqu6FJC63Wr2HSxHhd2AzgBQJOQobX4vHnTsc" alt="Prof. D. Mohanty" class="w-full h-full rounded-full object-cover" data-stitch-original-src="5bac0db10edc0623===../../images/coordinator_faculty.jpg">
+            </div>
+            <div>
+              <h3 class="font-headline text-title-lg text-bronze-brown">Prof. D. Mohanty</h3>
+              <p class="font-label text-label-sm uppercase text-bronze-brown mt-1">Faculty Convener · CSE</p>
+            </div>
+            <p class="font-body text-body-md text-navy-ink">“Guiding student builders from classroom theory to national impact.”</p>
+            <span class="font-label text-label-sm text-bronze-brown tabular-nums">+91 94370 12840</span>
+          </article>
+
+          <article class="min-w-[260px] snap-center bg-light-surface-container-lowest border-2 border-gold-rich rounded-t-full p-6 flex flex-col items-center text-center gap-4 shadow-sm hover:-translate-y-1 transition-transform duration-card-lift">
+            <div class="w-28 h-28 rounded-full border-2 border-gold-rich p-1">
+              <img src="https://lh3.googleusercontent.com/aida/ALJJyrDJSTwoGb3WdUEu7JeBw_2DTtoZKBnD0TvJUGwofSNWZs1H19sCbJ1HtZ_GWExe1WEW1vC7YEF2NKOIff1uG7Xz09AVqxvaj7PvEth834tdzloE3Xysm2UVwbRYCd2OMGU3z9NYt-JGCbIuDkzRHq70dWzSHQCLfPcey8R8bKrvuWt7e5VyDoxE-g6akSxQZknjS2EabUp6YzDPRlFJn_amTMSIXEBhY4yZXv0ir-LYGnaxqo6Y5bPqQyrLM4MgcuVsIooIqW8K" alt="Ananya Pattnaik" class="w-full h-full rounded-full object-cover" data-stitch-original-src="c234be2ba6770d56===../../images/coordinator_lead_1.jpg">
+            </div>
+            <div>
+              <h3 class="font-headline text-title-lg text-bronze-brown">Ananya Pattnaik</h3>
+              <p class="font-label text-label-sm uppercase text-bronze-brown mt-1">Lead Student Coordinator</p>
+            </div>
+            <p class="font-body text-body-md text-navy-ink">“Every gate is an invitation to ship something unforgettable.”</p>
+            <span class="font-label text-label-sm text-bronze-brown tabular-nums">+91 82491 55312</span>
+          </article>
+
+          <article class="min-w-[260px] snap-center bg-light-surface-container-lowest border-2 border-gold-rich rounded-t-full p-6 flex flex-col items-center text-center gap-4 shadow-sm hover:-translate-y-1 transition-transform duration-card-lift">
+            <div class="w-28 h-28 rounded-full border-2 border-gold-rich p-1">
+              <img src="https://lh3.googleusercontent.com/aida/ALJJyrCmIYSnZq1b7c0YNuk9DsBVD0ha3VDNz2Mtll3EDmnvz87qzBf-8J_3Y99TQQsB_Bfc-2X8vnRnH-kwgNuzCfI4FtOMGew2o2xggcbhcJA2SDrt6-MP93EHMM8T9T3Dfi6e3A7wnsMnVsE2WgHTLTuZTG7BcKSY3yekv7czzN0wYSWV8jQ1SYumyfh936RH1vOWt1GB6MNcANLLGFj-rEaGVnYJbB5_PmLi5z1ERiweUiJDfAQ4al4xVmrl8b-CSonbtWi-4aZh" alt="Subham Tripathy" class="w-full h-full rounded-full object-cover" data-stitch-original-src="30edde8974dd24f1===../../images/coordinator_lead_2.jpg">
+            </div>
+            <div>
+              <h3 class="font-headline text-title-lg text-bronze-brown">Subham Tripathy</h3>
+              <p class="font-label text-label-sm uppercase text-bronze-brown mt-1">Operations &amp; Alliances</p>
+            </div>
+            <p class="font-body text-body-md text-navy-ink">“36 hours of seamless hospitality, mentors, and pure focus.”</p>
+            <span class="font-label text-label-sm text-bronze-brown tabular-nums">+91 79784 31029</span>
+          </article>
+
+          <article class="min-w-[260px] snap-center bg-light-surface-container-lowest border-2 border-gold-rich rounded-t-full p-6 flex flex-col items-center text-center gap-4 shadow-sm hover:-translate-y-1 transition-transform duration-card-lift">
+            <div class="w-28 h-28 rounded-full border-2 border-gold-rich p-1">
+              <img src="https://lh3.googleusercontent.com/aida/ALJJyrAidXwVZ9PiZOVyuIiL89hcbqmL2OEgx1SuE946fIpBiw05nl630Roo4VmXfuKW_9VIKTJtFXVGGB8mdHHapo47I-sbvcf1OtuXvnazlBLYWyGbPOVx71fUMhTokm9F-nAaYAFzvZyPnVL2tdBm2qJYew6GeBQ2k8VY5fwHgmao5oTsjv3L9Y5LzC64wIcl1Fk_hPgCTZTMbOEapQ_lLepQyCTqhM2c2kjikyRmYzjShl4zmVUo1pptPWEEZQUjx6lOiVKv" alt="Rohan Behera" class="w-full h-full rounded-full object-cover" data-stitch-original-src="30c13f6085239e63===../../images/coordinator_tech.jpg">
+            </div>
+            <div>
+              <h3 class="font-headline text-title-lg text-bronze-brown">Rohan Behera</h3>
+              <p class="font-label text-label-sm uppercase text-bronze-brown mt-1">Technical &amp; Design Lead</p>
+            </div>
+            <p class="font-body text-body-md text-navy-ink">“Built for developers who care about craft as much as code.”</p>
+            <span class="font-label text-label-sm text-bronze-brown tabular-nums">+91 90402 67118</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         7B. COMMUNITY & SOCIALS HUB
+    ========================================================== -->
+    <section id="community" class="py-16 md:py-24 bg-light-surface-container-low border-t-2 border-gold-rich">
+      <div class="max-w-7xl mx-auto px-4 md:px-6 flex flex-col gap-10">
+        <div class="text-center flex flex-col items-center gap-2">
+          <span class="font-label text-label-sm uppercase text-bronze-brown">Connect &amp; Stay Updated</span>
+          <h2 class="font-display text-display-md-mobile md:text-display-md text-bronze-brown uppercase">Join The Community</h2>
+          <p class="font-body text-body-md text-navy-ink max-w-xl">
+            Follow our official channels and scan to join the WhatsApp community for teammate matching, problem releases, and live announcements.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+          <!-- WhatsApp Community -->
+          <article class="bg-light-surface-container-lowest border-2 border-gold-rich rounded p-6 flex flex-col items-center text-center justify-between gap-5 shadow-sm hover:-translate-y-1 transition-transform duration-card-lift reveal-on-scroll">
+            <div class="flex flex-col items-center gap-3">
+              <div class="w-14 h-14 rounded-full border-2 border-gold-rich bg-cream-parchment flex items-center justify-center shadow-sm">
+                <svg class="w-8 h-8" viewBox="0 0 32 32" aria-hidden="true">
+                  <path fill="#25D366" d="M16 3C8.8 3 3 8.8 3 16c0 2.4.7 4.8 1.9 6.8L3.6 29l6.4-1.3c1.9 1 4 1.6 6 1.6 7.2 0 13-5.8 13-13S23.2 3 16 3z"></path>
+                  <path fill="#FFFFFF" d="M22.2 19.3c-.3-.2-2-.9-2.3-1-.3-.1-.5-.2-.7.2-.2.3-.9 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-2-1.8-2.3-.2-.3 0-.5.1-.6.1-.1.3-.4.5-.5.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.7-1.8-1-2.4-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.2.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"></path>
+                </svg>
+              </div>
+              <div>
+                <span class="font-label text-label-sm uppercase text-bronze-brown">WhatsApp Community</span>
+                <h3 class="font-headline text-title-lg text-dark-chocolate mt-1">Chakravyuh 2.0 Official</h3>
+              </div>
+              <p class="font-body text-body-md text-navy-ink">
+                Find teammates, get instant shortlist alerts, and ask queries directly to student coordinators.
+              </p>
+            </div>
+
+            <div class="flex flex-col items-center gap-3">
+              <div class="p-2.5 bg-cream-parchment border-2 border-gold-rich rounded">
+                <svg class="w-28 h-28 text-dark-chocolate" viewBox="0 0 24 24" fill="currentColor" aria-label="WhatsApp Community QR Code">
+                  <path d="M3 3h8v8H3V3zm2 2v4h4V5H5zm8-2h8v8h-8V3zm2 2v4h4V5h-4zM3 13h8v8H3v-8zm2 2v4h4v-4H5zm10-2h2v2h-2v-2zm4 0h2v4h-2v-4zm-4 4h2v4h-2v-4zm4 2h2v2h-2v-2z"></path>
+                </svg>
+              </div>
+              <a href="#register" class="inline-flex items-center justify-center px-6 py-2 bg-dark-chocolate text-gold-highlight border border-gold-rich ribbon-pill font-label text-label-sm uppercase tracking-wider hover:bg-bronze-brown transition-colors">
+                Scan For WhatsApp
+              </a>
+            </div>
+          </article>
+
+          <!-- Instagram -->
+          <article class="bg-light-surface-container-lowest border-2 border-gold-rich rounded p-6 flex flex-col items-center text-center justify-between gap-5 shadow-sm hover:-translate-y-1 transition-transform duration-card-lift reveal-on-scroll">
+            <div class="flex flex-col items-center gap-3">
+              <div class="w-14 h-14 rounded-full border-2 border-gold-rich bg-cream-parchment flex items-center justify-center shadow-sm">
+                <svg class="w-8 h-8" viewBox="0 0 32 32" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="ig-brand-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+                      <stop offset="0%" stop-color="#F58529"></stop>
+                      <stop offset="45%" stop-color="#DD2A7B"></stop>
+                      <stop offset="75%" stop-color="#8134AF"></stop>
+                      <stop offset="100%" stop-color="#515BD4"></stop>
+                    </linearGradient>
+                  </defs>
+                  <rect x="3" y="3" width="26" height="26" rx="7" fill="url(#ig-brand-grad)"></rect>
+                  <rect x="8.5" y="8.5" width="15" height="15" rx="4.2" fill="none" stroke="#FFFFFF" stroke-width="2"></rect>
+                  <circle cx="16" cy="16" r="3.7" fill="none" stroke="#FFFFFF" stroke-width="2"></circle>
+                  <circle cx="20.8" cy="11.2" r="1.1" fill="#FFFFFF"></circle>
+                </svg>
+              </div>
+              <div>
+                <span class="font-label text-label-sm uppercase text-bronze-brown">Instagram</span>
+                <h3 class="font-headline text-title-lg text-dark-chocolate mt-1">@chakravyuh.gita</h3>
+              </div>
+              <p class="font-body text-body-md text-navy-ink">
+                Daily countdowns, speaker &amp; jury reveals, campus reels, and live hackathon highlights.
+              </p>
+            </div>
+
+            <div class="flex flex-col items-center gap-3">
+              <div class="p-2.5 bg-cream-parchment border-2 border-gold-rich rounded">
+                <svg class="w-28 h-28 text-dark-chocolate" viewBox="0 0 24 24" fill="currentColor" aria-label="Instagram QR Code">
+                  <path d="M3 3h8v8H3V3zm2 2v4h4V5H5zm8-2h8v8h-8V3zm2 2v4h4V5h-4zM3 13h8v8H3v-8zm2 2v4h4v-4H5zm11-2h4v2h-4v-2zm-2 3h2v4h-2v-4zm4 2h3v3h-3v-3zm-2 2h2v2h-2v-2z"></path>
+                </svg>
+              </div>
+              <a href="#register" class="inline-flex items-center justify-center px-6 py-2 bg-dark-chocolate text-gold-highlight border border-gold-rich ribbon-pill font-label text-label-sm uppercase tracking-wider hover:bg-bronze-brown transition-colors">
+                Follow @chakravyuh.gita
+              </a>
+            </div>
+          </article>
+
+          <!-- LinkedIn -->
+          <article class="bg-light-surface-container-lowest border-2 border-gold-rich rounded p-6 flex flex-col items-center text-center justify-between gap-5 shadow-sm hover:-translate-y-1 transition-transform duration-card-lift reveal-on-scroll">
+            <div class="flex flex-col items-center gap-3">
+              <div class="w-14 h-14 rounded-full border-2 border-gold-rich bg-cream-parchment flex items-center justify-center shadow-sm">
+                <svg class="w-8 h-8" viewBox="0 0 32 32" aria-hidden="true">
+                  <rect x="3" y="3" width="26" height="26" rx="5" fill="#0A66C2"></rect>
+                  <path fill="#FFFFFF" d="M10.5 13.5h3v10h-3v-10zm1.5-4.8a1.75 1.75 0 110 3.5 1.75 1.75 0 010-3.5zM15.8 13.5h2.9v1.4h.1c.4-.8 1.4-1.6 2.9-1.6 3.1 0 3.7 2 3.7 4.7v5.5h-3v-4.9c0-1.2 0-2.7-1.6-2.7s-1.9 1.3-1.9 2.6v5h-3v-10z"></path>
+                </svg>
+              </div>
+              <div>
+                <span class="font-label text-label-sm uppercase text-bronze-brown">LinkedIn</span>
+                <h3 class="font-headline text-title-lg text-dark-chocolate mt-1">Chakravyuh 2.0 · GITA</h3>
+              </div>
+              <p class="font-body text-body-md text-navy-ink">
+                Official partner spotlights, BPUT announcements, and post-event winner showcases.
+              </p>
+            </div>
+
+            <div class="flex flex-col items-center gap-3">
+              <div class="p-2.5 bg-cream-parchment border-2 border-gold-rich rounded">
+                <svg class="w-28 h-28 text-dark-chocolate" viewBox="0 0 24 24" fill="currentColor" aria-label="LinkedIn QR Code">
+                  <path d="M3 3h8v8H3V3zm2 2v4h4V5H5zm8-2h8v8h-8V3zm2 2v4h4V5h-4zM3 13h8v8H3v-8zm2 2v4h4v-4H5zm10 0h4v2h-4v-2zm2 3h4v3h-4v-3zm-3 1h2v2h-2v-2z"></path>
+                </svg>
+              </div>
+              <a href="#register" class="inline-flex items-center justify-center px-6 py-2 bg-dark-chocolate text-gold-highlight border border-gold-rich ribbon-pill font-label text-label-sm uppercase tracking-wider hover:bg-bronze-brown transition-colors">
+                Connect On LinkedIn
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         8. CONTACT
+    ========================================================== -->
+    <section id="contact" class="py-16 md:py-24 bg-dark-chocolate text-cream-parchment border-t-4 border-gold-rich">
+      <div class="max-w-7xl mx-auto px-4 md:px-6 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        <div class="lg:col-span-5 flex flex-col gap-6">
+          <span class="font-label text-label-sm uppercase text-gold-highlight">Reach The War Room</span>
+          <h2 class="font-display text-display-md-mobile md:text-display-md text-gold-highlight uppercase">Contact Us</h2>
+          <p class="font-body text-body-md text-cream-parchment">
+            Questions about problem statements, campus travel, or sponsorships? Our organizing committee is ready to assist.
+          </p>
+
+          <div class="flex flex-col gap-3 border-y border-gold-rich/40 py-5">
+            <p class="font-body text-body-md text-cream-parchment tabular-nums"><strong class="text-gold-highlight">Phone:</strong> +91 94370 12840 / +91 82491 55312</p>
+            <p class="font-body text-body-md text-cream-parchment"><strong class="text-gold-highlight">Email:</strong> chakravyuh@gita.edu.in</p>
+            <p class="font-body text-body-md text-cream-parchment"><strong class="text-gold-highlight">Campus:</strong> GITA Autonomous College, Badaraghunathpur, Bhubaneswar, Odisha 752054</p>
+          </div>
+
+          <div class="flex items-center gap-4">
+            <div class="p-2 bg-cream-parchment border-2 border-gold-rich rounded shrink-0">
+              <svg class="w-16 h-16 text-dark-chocolate" viewBox="0 0 24 24" fill="currentColor" aria-label="Updates QR">
+                <path d="M3 3h8v8H3V3zm2 2v4h4V5H5zm8-2h8v8h-8V3zm2 2v4h4V5h-4zM3 13h8v8H3v-8zm2 2v4h4v-4H5zm10-2h2v2h-2v-2zm4 0h2v4h-2v-4zm-4 4h2v4h-2v-4zm4 2h2v2h-2v-2z"></path>
+              </svg>
+            </div>
+            <div class="flex flex-col gap-1">
+              <span class="px-3 py-1 bg-bronze-brown text-gold-highlight ribbon-pill font-label text-label-sm uppercase self-start">Scan For Updates</span>
+              <p class="font-body text-body-md text-cream-parchment">Join the official WhatsApp &amp; Discord announcements channel.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 bg-cream-parchment text-navy-ink border-2 border-gold-rich rounded p-6 md:p-8 shadow-lg">
+          <form id="contact-form" class="flex flex-col gap-5">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <label data-component-id="input-field-text" data-component-type="input-field" data-component-variant="text" class="flex flex-col gap-1">
+                <span class="font-label text-label-sm uppercase text-bronze-brown" data-design-text-token="label-sm">Your Name</span>
+                <input type="text" required placeholder="Arjuna Pandava" class="w-full bg-light-surface-container-lowest border-0 border-b-2 border-gold-rich px-3 py-2.5 font-body text-body-md text-navy-ink placeholder:text-bronze-brown focus:border-saffron focus:ring-0">
+              </label>
+              <label data-component-id="input-field-icon" data-component-type="input-field" data-component-variant="with-icon" class="flex flex-col gap-1">
+                <span class="font-label text-label-sm uppercase text-bronze-brown" data-design-text-token="label-sm">Email Address</span>
+                <input type="email" required placeholder="you@college.edu.in" class="w-full bg-light-surface-container-lowest border-0 border-b-2 border-gold-rich px-3 py-2.5 font-body text-body-md text-navy-ink placeholder:text-bronze-brown focus:border-saffron focus:ring-0">
+              </label>
+            </div>
+            <label class="flex flex-col gap-1">
+              <span class="font-label text-label-sm uppercase text-bronze-brown">Subject</span>
+              <input type="text" required placeholder="Team Registration / Sponsorship Inquiry" class="w-full bg-light-surface-container-lowest border-0 border-b-2 border-gold-rich px-3 py-2.5 font-body text-body-md text-navy-ink placeholder:text-bronze-brown focus:border-saffron focus:ring-0">
+            </label>
+            <label class="flex flex-col gap-1">
+              <span class="font-label text-label-sm uppercase text-bronze-brown">Message</span>
+              <textarea rows="3" required placeholder="Write your message to the organizing team..." class="w-full bg-light-surface-container-lowest border-0 border-b-2 border-gold-rich px-3 py-2.5 font-body text-body-md text-navy-ink placeholder:text-bronze-brown focus:border-saffron focus:ring-0"></textarea>
+            </label>
+            <div class="flex items-center justify-between flex-wrap gap-4">
+              <button type="submit" class="inline-flex items-center justify-center px-8 py-3 bg-dark-chocolate text-gold-highlight border border-gold-rich ribbon-pill font-label text-label-sm uppercase tracking-widest hover:bg-bronze-brown">
+                Send Message
+              </button>
+              <span id="contact-status" class="hidden font-label text-label-sm text-peacock-green">Message dispatched to the War Room.</span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         9. REGISTRATION — "THE FINAL GATE AWAITS"
+    ========================================================== -->
+    <section id="register" class="py-16 md:py-24 sunburst-bg border-t-4 border-gold-rich">
+      <div class="max-w-5xl mx-auto px-4 md:px-6 text-center flex flex-col items-center gap-8">
+        <div class="inline-flex items-center gap-2 px-5 py-1.5 bg-dark-chocolate text-gold-highlight border border-gold-rich ribbon-pill">
+          <span class="font-label text-label-sm uppercase">Limited Seats · 125 Teams Max</span>
+        </div>
+
+        <div class="flex flex-col gap-2">
+          <h2 class="font-display text-display-md-mobile md:text-display-lg text-dark-chocolate uppercase">The Final Gate Awaits</h2>
+          <p class="font-body text-body-lg text-dark-chocolate">Registrations are live now. Secure your squad&#39;s place on the battlefield.</p>
+        </div>
+
+        <!-- 3-Step Horizontal Flow -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 w-full">
+          <div class="bg-cream-parchment/95 border border-gold-rich rounded p-5 flex flex-col items-center gap-2">
+            <span class="w-9 h-9 rounded-full bg-dark-chocolate text-gold-highlight font-headline font-bold flex items-center justify-center">01</span>
+            <h3 class="font-title text-title-lg text-bronze-brown">Scan or Click</h3>
+            <p class="font-body text-body-md text-navy-ink">Open the official Chakravyuh 2.0 registration portal.</p>
+          </div>
+          <div class="bg-cream-parchment/95 border border-gold-rich rounded p-5 flex flex-col items-center gap-2">
+            <span class="w-9 h-9 rounded-full bg-dark-chocolate text-gold-highlight font-headline font-bold flex items-center justify-center">02</span>
+            <h3 class="font-title text-title-lg text-bronze-brown">Fill Team Details</h3>
+            <p class="font-body text-body-md text-navy-ink">Add 2–4 members, college IDs, and choose your track.</p>
+          </div>
+          <div class="bg-cream-parchment/95 border border-gold-rich rounded p-5 flex flex-col items-center gap-2">
+            <span class="w-9 h-9 rounded-full bg-dark-chocolate text-gold-highlight font-headline font-bold flex items-center justify-center">03</span>
+            <h3 class="font-title text-title-lg text-bronze-brown">Confirm Entry</h3>
+            <p class="font-body text-body-md text-navy-ink">Receive your Gate Pass ID and shortlist updates.</p>
+          </div>
+        </div>
+
+        <!-- QR + Quick Entry Preview -->
+        <div class="w-full bg-cream-parchment/95 border-2 border-gold-rich rounded p-6 md:p-8 grid grid-cols-1 md:grid-cols-12 gap-8 items-center shadow-lg">
+          <div class="md:col-span-5 flex flex-col items-center gap-3">
+            <div class="p-3 bg-light-surface-container-lowest border-2 border-gold-rich rounded">
+              <svg class="w-32 h-32 text-dark-chocolate" viewBox="0 0 24 24" fill="currentColor" aria-label="Scan to Register QR">
+                <path d="M3 3h8v8H3V3zm2 2v4h4V5H5zm8-2h8v8h-8V3zm2 2v4h4V5h-4zM3 13h8v8H3v-8zm2 2v4h4v-4H5zm10-2h2v2h-2v-2zm4 0h2v4h-2v-4zm-4 4h2v4h-2v-4zm4 2h2v2h-2v-2z"></path>
+              </svg>
+            </div>
+            <span class="px-5 py-1.5 bg-dark-chocolate text-cream-parchment ribbon-pill font-label text-label-sm uppercase">Scan To Register</span>
+          </div>
+
+          <form id="quick-reg-form" class="md:col-span-7 flex flex-col gap-4 text-left">
+            <h3 class="font-headline text-headline-md text-bronze-brown">Quick Squad Pre-Registration</h3>
+            <label class="flex flex-col gap-1">
+              <span class="font-label text-label-sm uppercase text-bronze-brown">Team Name</span>
+              <input type="text" required placeholder="e.g. Indraprastha Devs" class="w-full bg-light-surface-container-lowest border-0 border-b-2 border-gold-rich px-3 py-2 font-body text-body-md text-navy-ink focus:border-saffron focus:ring-0">
+            </label>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <label class="flex flex-col gap-1">
+                <span class="font-label text-label-sm uppercase text-bronze-brown">Leader Email</span>
+                <input type="email" required placeholder="leader@gita.edu.in" class="w-full bg-light-surface-container-lowest border-0 border-b-2 border-gold-rich px-3 py-2 font-body text-body-md text-navy-ink focus:border-saffron focus:ring-0">
+              </label>
+              <label class="flex flex-col gap-1">
+                <span class="font-label text-label-sm uppercase text-bronze-brown">College</span>
+                <input type="text" required placeholder="GITA Autonomous College" class="w-full bg-light-surface-container-lowest border-0 border-b-2 border-gold-rich px-3 py-2 font-body text-body-md text-navy-ink focus:border-saffron focus:ring-0">
+              </label>
+            </div>
+            <div class="flex items-center gap-4 pt-2">
+              <button type="submit" class="inline-flex items-center justify-center px-8 py-3 bg-dark-chocolate text-gold-highlight border border-gold-rich ribbon-pill font-label text-label-lg uppercase tracking-widest hover:bg-bronze-brown">
+                Register Now
+              </button>
+              <span id="reg-status" class="hidden font-label text-label-sm text-peacock-green">Squad pre-registered! Check your inbox.</span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================
+       10. FOOTER
+  ========================================================== -->
+  <footer class="bg-dark-chocolate text-cream-parchment border-t-4 border-gold-rich py-12">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 flex flex-col gap-8">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-8 border-b border-gold-rich/40">
+        <div>
+          <p class="font-display text-headline-md text-gold-highlight">CHAKRAVYUH 2.0</p>
+          <p class="font-body text-body-md text-cream-parchment mt-1">Break the Chakravyuh. Build the Future.</p>
+        </div>
+        <div class="flex flex-wrap gap-6 font-label text-label-sm uppercase">
+          <a href="#about" class="hover:text-gold-highlight">About</a>
+          <a href="#timeline" class="hover:text-gold-highlight">Timeline</a>
+          <a href="#guidelines" class="hover:text-gold-highlight">Guidelines</a>
+          <a href="#sponsors" class="hover:text-gold-highlight">Sponsors</a>
+          <a href="#coordinators" class="hover:text-gold-highlight">Team</a>
+          <a href="#register" class="text-gold-highlight">Register</a>
+        </div>
+      </div>
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 font-body text-body-md text-cream-parchment">
+        <p>Organised by Coding &amp; Innovation Club, Dept. of CSE, GITA Autonomous College, Bhubaneswar · In assoc. with BPUT, Odisha</p>
+        <p class="tabular-nums">© 2026 Chakravyuh 2.0 · All Rights Reserved</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      // Sticky Navbar
+      var navbar = document.getElementById('site-navbar');
+      window.addEventListener('scroll', function () {
+        if (window.scrollY > 40) {
+          navbar.classList.add('bg-cream-parchment/95', 'border-gold-rich', 'shadow-sm');
+          navbar.classList.remove('border-transparent');
+        } else {
+          navbar.classList.remove('bg-cream-parchment/95', 'border-gold-rich', 'shadow-sm');
+          navbar.classList.add('border-transparent');
+        }
+      });
+
+      // Mobile Drawer
+      var drawer = document.getElementById('mobile-drawer');
+      var openBtn = document.getElementById('mobile-menu-open');
+      var closeBtn = document.getElementById('mobile-menu-close');
+      var links = document.querySelectorAll('.mobile-nav-link');
+      if (openBtn && drawer) {
+        openBtn.addEventListener('click', function () {
+          drawer.classList.remove('hidden');
+          drawer.classList.add('flex');
+          openBtn.setAttribute('aria-expanded', 'true');
+        });
+      }
+      if (closeBtn && drawer) {
+        closeBtn.addEventListener('click', function () {
+          drawer.classList.add('hidden');
+          drawer.classList.remove('flex');
+          openBtn.setAttribute('aria-expanded', 'false');
+        });
+      }
+      links.forEach(function (link) {
+        link.addEventListener('click', function () {
+          drawer.classList.add('hidden');
+          drawer.classList.remove('flex');
+        });
+      });
+
+      // Live Countdown to 23 Jan 2027 09:00 IST
+      var target = new Date('2027-01-23T09:00:00+05:30').getTime();
+      function updateCountdown() {
+        var now = Date.now();
+        var diff = Math.max(0, target - now);
+        var d = Math.floor(diff / 86400000);
+        var h = Math.floor((diff % 86400000) / 3600000);
+        var m = Math.floor((diff % 3600000) / 60000);
+        var s = Math.floor((diff % 60000) / 1000);
+        var elD = document.getElementById('cd-days');
+        var elH = document.getElementById('cd-hours');
+        var elM = document.getElementById('cd-mins');
+        var elS = document.getElementById('cd-secs');
+        if (elD) elD.textContent = String(d).padStart(2, '0');
+        if (elH) elH.textContent = String(h).padStart(2, '0');
+        if (elM) elM.textContent = String(m).padStart(2, '0');
+        if (elS) elS.textContent = String(s).padStart(2, '0');
+      }
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+
+      // Interactive Seven Gates
+      var gates = [
+        { roman: 'Gate I · Live Now', time: '15 Dec 2026 · 10:00 AM', title: 'Registration Opens', desc: 'Portal opens for teams of 2–4 warriors across India to submit their squad details and track preference.' },
+        { roman: 'Gate II · Upcoming', time: '10 Jan 2027 · 11:59 PM', title: 'Registration Closes', desc: 'Final deadline to lock your team roster and submit your initial problem statement pitch.' },
+        { roman: 'Gate III · Upcoming', time: '15 Jan 2027 · 06:00 PM', title: 'Shortlist Announcement', desc: 'Top 125 teams are announced and receive official invitations to GITA Autonomous College, Bhubaneswar.' },
+        { roman: 'Gate IV · Upcoming', time: '23 Jan 2027 · 09:00 AM', title: 'Hackathon Day 1 Kickoff', desc: 'On-campus check-in, inaugural ceremony, and the 36-hour coding marathon begins.' },
+        { roman: 'Gate V · Upcoming', time: '23 Jan 2027 · 08:00 PM', title: 'Mid Evaluation', desc: 'First technical architecture review and mentorship round with industry experts.' },
+        { roman: 'Gate VI · Upcoming', time: '24 Jan 2027 · 02:00 PM', title: 'Final Pitch & Judging', desc: 'Working prototypes are demonstrated live before the national jury panel.' },
+        { roman: 'Gate VII · Finale', time: '24 Jan 2027 · 05:30 PM', title: 'Prize Distribution', desc: 'Champions are crowned and the ₹1,50,000 prize pool is awarded.' }
+      ];
+      var gateBtns = document.querySelectorAll('[data-gate]');
+      gateBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var idx = Number(btn.getAttribute('data-gate'));
+          var g = gates[idx];
+          if (!g) return;
+          document.getElementById('gate-detail-roman').textContent = g.roman;
+          document.getElementById('gate-detail-time').textContent = g.time;
+          document.getElementById('gate-detail-title').textContent = g.title;
+          document.getElementById('gate-detail-desc').textContent = g.desc;
+          document.querySelectorAll('.gate-btn').forEach(function (b) {
+            var active = Number(b.getAttribute('data-gate')) === idx;
+            b.className = active
+              ? b.className.replace('bg-bronze-brown text-cream-parchment', 'bg-gold-highlight text-dark-chocolate')
+              : b.className.replace('bg-gold-highlight text-dark-chocolate', 'bg-bronze-brown text-cream-parchment');
+          });
+        });
+      });
+
+      // Forms
+      var contactForm = document.getElementById('contact-form');
+      if (contactForm) {
+        contactForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          document.getElementById('contact-status').classList.remove('hidden');
+        });
+      }
+      var regForm = document.getElementById('quick-reg-form');
+      if (regForm) {
+        regForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          document.getElementById('reg-status').classList.remove('hidden');
+        });
+      }
+    })();
+  </script>
+
+
+</body></html>
