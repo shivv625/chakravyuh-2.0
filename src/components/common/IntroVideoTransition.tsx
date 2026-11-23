@@ -27,19 +27,7 @@ export const IntroVideoTransition: React.FC<IntroVideoTransitionProps> = ({ onCo
     setTimeout(() => {
       setMounted(false);
       sessionStorage.setItem('chakravyuh_intro_shown', 'true');
-    }, 750);
-  };
-
-  const setStartTime = () => {
-    if (videoRef.current) {
-      try {
-        if (videoRef.current.currentTime < 0.03) {
-          videoRef.current.currentTime = 0.03;
-        }
-      } catch {
-        // Ignored if media not yet seekable
-      }
-    }
+    }, 700);
   };
 
   useEffect(() => {
@@ -50,26 +38,24 @@ export const IntroVideoTransition: React.FC<IntroVideoTransitionProps> = ({ onCo
       return;
     }
 
-    // Safety timeout: If video stalls or takes too long, reveal the page automatically after 9 seconds
+    // Safety timeout: Trimmed video is 6.1s. Transition automatically after 7.5s if not already ended.
     const safetyTimer = setTimeout(() => {
       if (!exitTriggeredRef.current) {
         triggerExit();
       }
-    }, 9000);
+    }, 7500);
 
-    // Auto-attempt playback from 0.03s
+    // Guaranteed autoplay on all mobile & desktop browsers
     if (videoRef.current) {
-      setStartTime();
       const playPromise = videoRef.current.play();
       if (playPromise !== undefined) {
         playPromise.catch(() => {
-          // If browser policy blocks autoplay with sound, ensure muted and retry
+          // Fallback to strict muted autoplay if required by browser policy
           if (videoRef.current) {
             videoRef.current.muted = true;
             setIsMuted(true);
-            setStartTime();
             videoRef.current.play().catch(() => {
-              // If still blocked, fallback gracefully
+              // If still blocked, allow user click anywhere to trigger
             });
           }
         });
@@ -99,38 +85,36 @@ export const IntroVideoTransition: React.FC<IntroVideoTransitionProps> = ({ onCo
 
   return (
     <div
-      aria-label="Welcome intro video"
-      className={`fixed inset-0 z-[100] w-screen h-screen overflow-hidden bg-black transition-all duration-700 ease-out select-none ${
+      aria-label="Welcome intro video - click anywhere to enter"
+      onClick={triggerExit}
+      className={`fixed inset-0 z-[100] w-screen h-screen overflow-hidden bg-black transition-all duration-700 ease-out select-none cursor-pointer ${
         exiting ? 'opacity-0 scale-105 pointer-events-none' : 'opacity-100 scale-100 pointer-events-auto'
       }`}
     >
-      {/* 1. Edge-to-Edge Fullscreen Video */}
+      {/* 1. True Edge-to-Edge Fullscreen Video */}
       <video
         ref={videoRef}
-        src="/assets/chakravyuh_intro.mp4#t=0.03"
+        src="/assets/chakravyuh_intro.mp4"
         autoPlay
         muted={isMuted}
         playsInline
         preload="auto"
-        onLoadedMetadata={setStartTime}
-        onLoadedData={setStartTime}
-        onCanPlay={setStartTime}
         onTimeUpdate={handleTimeUpdate}
         onEnded={triggerExit}
         onError={triggerExit}
         className="absolute inset-0 w-full h-full object-cover"
       />
 
-      {/* 2. Cinematic Golden Radial Overlay */}
+      {/* 2. Ambient Kurukshetra Cinematic Vignette Overlay */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/40"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/50"
       />
 
-      {/* 3. Golden Flash Sunburst on Exit Transition */}
+      {/* 3. Golden Sunburst Flash on Exit Transition */}
       <div
         aria-hidden="true"
-        className={`pointer-events-none absolute inset-0 bg-gradient-radial from-gold-highlight/40 via-saffron/20 to-transparent transition-opacity duration-700 ${
+        className={`pointer-events-none absolute inset-0 bg-gradient-radial from-gold-highlight/50 via-saffron/25 to-transparent transition-opacity duration-700 ${
           exiting ? 'opacity-100' : 'opacity-0'
         }`}
       />
@@ -138,10 +122,10 @@ export const IntroVideoTransition: React.FC<IntroVideoTransitionProps> = ({ onCo
       {/* 4. Top Floating Bar (Branding + Audio Controls) */}
       <div className="absolute top-5 inset-x-0 z-20 flex items-center justify-between px-5 sm:px-8 pointer-events-none">
         {/* Left/Center Crest Badge */}
-        <div className="pointer-events-auto flex items-center gap-2 px-4 py-1.5 rounded-full bg-dark-chocolate/85 border border-gold-rich/80 shadow-lg backdrop-blur-md">
+        <div className="pointer-events-auto flex items-center gap-2 px-4 py-1.5 rounded-full bg-dark-chocolate/90 border border-gold-rich/80 shadow-lg backdrop-blur-md">
           <Sparkles className="w-3.5 h-3.5 text-gold-highlight animate-spin" style={{ animationDuration: '4s' }} />
           <span className="font-label text-xs uppercase tracking-widest text-gold-highlight font-bold">
-            CHAKRAVYUH 2.0 · INITIATING ARENA
+            CHAKRAVYUH 2.0 · ARENA KICKOFF
           </span>
         </div>
 
@@ -150,7 +134,7 @@ export const IntroVideoTransition: React.FC<IntroVideoTransitionProps> = ({ onCo
           type="button"
           onClick={toggleSound}
           aria-label={isMuted ? 'Unmute video audio' : 'Mute video audio'}
-          className="pointer-events-auto inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-dark-chocolate/85 hover:bg-bronze-brown border border-gold-rich/80 text-gold-highlight backdrop-blur-md transition-all shadow-lg group cursor-pointer"
+          className="pointer-events-auto inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-dark-chocolate/90 hover:bg-bronze-brown border border-gold-rich/80 text-gold-highlight backdrop-blur-md transition-all shadow-lg group cursor-pointer"
         >
           {isMuted ? (
             <>
@@ -179,7 +163,10 @@ export const IntroVideoTransition: React.FC<IntroVideoTransitionProps> = ({ onCo
         {/* Enter Arena CTA */}
         <button
           type="button"
-          onClick={triggerExit}
+          onClick={(e) => {
+            e.stopPropagation();
+            triggerExit();
+          }}
           className="pointer-events-auto ml-auto inline-flex items-center gap-2.5 px-6 py-2.5 bg-dark-chocolate/95 hover:bg-gold-highlight hover:text-dark-chocolate text-gold-highlight border-2 border-gold-rich ribbon-pill font-label text-xs sm:text-sm uppercase tracking-widest font-bold shadow-2xl transition-all duration-300 cursor-pointer backdrop-blur-md hover:scale-105 active:scale-95"
         >
           <span>Enter Arena</span>
