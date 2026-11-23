@@ -7,10 +7,7 @@ import { GoldFrame } from '@/components/common/GoldFrame';
 import {
   Calendar,
   MapPin,
-  Users,
   Clock,
-  Trophy,
-  GraduationCap,
   BrainCircuit,
   ShieldCheck,
   Landmark,
@@ -36,51 +33,6 @@ export const AboutSection: React.FC = () => {
     observer.observe(statsRef.current);
     return () => observer.disconnect();
   }, []);
-
-  const infoPlaques = [
-    {
-      icon: <Calendar className="w-6 h-6 text-gold-highlight" />,
-      label: 'Dates',
-      value: '23–24 Jan 2027',
-      subtext: 'Sat–Sun Sprint',
-      isHighlight: false,
-    },
-    {
-      icon: <MapPin className="w-6 h-6 text-gold-highlight" />,
-      label: 'Venue',
-      value: 'GITA, BBSR',
-      subtext: 'Odisha Campus',
-      isHighlight: false,
-    },
-    {
-      icon: <Users className="w-6 h-6 text-gold-highlight" />,
-      label: 'Team Size',
-      value: '2–4 Members',
-      subtext: 'Inter-College OK',
-      isHighlight: false,
-    },
-    {
-      icon: <Clock className="w-6 h-6 text-gold-highlight" />,
-      label: 'Mode',
-      value: 'Offline · 36h',
-      subtext: 'Non-Stop Build',
-      isHighlight: false,
-    },
-    {
-      icon: <Trophy className="w-6 h-6 text-gold-highlight" />,
-      label: 'Prize Pool',
-      value: SITE_CONFIG.METRICS.PRIZE_POOL_TOTAL,
-      subtext: 'Cash & Swag',
-      isHighlight: true,
-    },
-    {
-      icon: <GraduationCap className="w-6 h-6 text-gold-highlight" />,
-      label: 'Eligibility',
-      value: 'UG / PG India',
-      subtext: 'All Branches',
-      isHighlight: false,
-    },
-  ];
 
   const getTrackIcon = (iconName: string) => {
     switch (iconName) {
@@ -184,129 +136,298 @@ export const AboutSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Battlefield Briefing Header */}
-        <div className="flex items-center justify-between flex-wrap gap-2 pt-2 border-t border-gold-rich/40">
-          <div className="flex items-center gap-2.5">
-            <span className="w-2.5 h-2.5 rotate-45 bg-gold-rich inline-block shadow-[0_0_8px_rgba(242,184,75,0.7)]" />
-            <span className="font-label text-xs sm:text-sm uppercase tracking-widest text-bronze-brown font-bold">
-              Battlefield Briefing · Key Intel
+        {/* Standout Battlefield Briefing (Dates, Venue, Mode & Key Details from Stitch) */}
+        <div className="relative bg-light-surface-container-low border-2 border-gold-rich rounded-lg p-6 md:p-8 shadow-md overflow-hidden group/briefing">
+          {/* Subtle Corner Accents (Kurukshetra Bronze / Gold Brackets) */}
+          <div className="pointer-events-none absolute top-2 left-2 w-5 h-5 border-t-2 border-l-2 border-bronze-brown transition-colors duration-300 group-hover/briefing:border-gold-highlight" />
+          <div className="pointer-events-none absolute top-2 right-2 w-5 h-5 border-t-2 border-r-2 border-bronze-brown transition-colors duration-300 group-hover/briefing:border-gold-highlight" />
+          <div className="pointer-events-none absolute bottom-2 left-2 w-5 h-5 border-b-2 border-l-2 border-bronze-brown transition-colors duration-300 group-hover/briefing:border-gold-highlight" />
+          <div className="pointer-events-none absolute bottom-2 right-2 w-5 h-5 border-b-2 border-r-2 border-bronze-brown transition-colors duration-300 group-hover/briefing:border-gold-highlight" />
+
+          {/* Briefing Header */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-6 mb-6 border-b border-gold-rich/60">
+            <div className="flex items-center gap-3">
+              <span className="px-4 py-1 bg-dark-chocolate text-gold-highlight border border-gold-rich ribbon-pill font-label text-label-sm uppercase tracking-widest font-bold shadow-sm">
+                Battlefield Briefing
+              </span>
+              <span className="font-body text-body-md text-bronze-brown font-bold hidden md:inline">
+                Essential Mission Parameters
+              </span>
+            </div>
+            <span className="font-label text-label-sm uppercase text-bronze-brown tracking-wider font-semibold">
+              36-Hour National Hackathon · Bhubaneswar
             </span>
           </div>
-          <span className="font-label text-xs uppercase tracking-wider text-bronze-brown/80 hidden sm:inline">
-            36-Hour National Arena · GITA Autonomous College
-          </span>
-        </div>
 
-        {/* 6 Ornate Info Plaques (Battlefield Briefing Cards with Concept-Matched Hover) */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 items-stretch">
-          {infoPlaques.map((plaque) => (
-            <article
-              key={plaque.label}
-              className={`group relative overflow-hidden border-2 rounded-md p-5 flex flex-col items-center text-center justify-between gap-3 cursor-default transition-all duration-300 ease-out select-none ${
-                plaque.isHighlight
-                  ? 'bg-dark-chocolate border-gold-highlight text-cream-parchment shadow-md hover:-translate-y-2 hover:shadow-[0_18px_36px_-6px_rgba(26,12,5,0.7),0_0_0_2px_#F2B84B,0_0_30px_rgba(242,184,75,0.45)]'
-                  : 'bg-light-surface-container-lowest border-gold-rich text-navy-ink shadow-sm hover:-translate-y-2 hover:bg-light-surface-container-low hover:border-gold-highlight hover:shadow-[0_16px_32px_-6px_rgba(107,58,30,0.22),0_0_0_1.5px_#D9961F,0_0_24px_rgba(242,184,75,0.32)]'
-              }`}
-            >
-              {/* Corner Ornaments (Ancient Bronze / Gold Brackets) */}
-              <div
-                className={`absolute top-1 left-1 w-2.5 h-2.5 border-t-2 border-l-2 transition-colors duration-300 ${
-                  plaque.isHighlight
-                    ? 'border-gold-highlight/60 group-hover:border-gold-highlight'
-                    : 'border-gold-rich/40 group-hover:border-gold-highlight'
-                }`}
-              />
-              <div
-                className={`absolute top-1 right-1 w-2.5 h-2.5 border-t-2 border-r-2 transition-colors duration-300 ${
-                  plaque.isHighlight
-                    ? 'border-gold-highlight/60 group-hover:border-gold-highlight'
-                    : 'border-gold-rich/40 group-hover:border-gold-highlight'
-                }`}
-              />
-              <div
-                className={`absolute bottom-1 left-1 w-2.5 h-2.5 border-b-2 border-l-2 transition-colors duration-300 ${
-                  plaque.isHighlight
-                    ? 'border-gold-highlight/60 group-hover:border-gold-highlight'
-                    : 'border-gold-rich/40 group-hover:border-gold-highlight'
-                }`}
-              />
-              <div
-                className={`absolute bottom-1 right-1 w-2.5 h-2.5 border-b-2 border-r-2 transition-colors duration-300 ${
-                  plaque.isHighlight
-                    ? 'border-gold-highlight/60 group-hover:border-gold-highlight'
-                    : 'border-gold-rich/40 group-hover:border-gold-highlight'
-                }`}
-              />
+          {/* Top Tier: 3 Heroic Pillars (Dates, Venue, Mode) */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-5">
+            {/* Pillar 1: Dates */}
+            <article className="group relative overflow-hidden bg-dark-chocolate text-cream-parchment border-2 border-gold-highlight rounded-md flex flex-col justify-between shadow-md hover:-translate-y-1.5 hover:shadow-[0_18px_36px_-6px_rgba(26,12,5,0.7),0_0_0_2px_#F2B84B,0_0_30px_rgba(242,184,75,0.45)] transition-all duration-300 cursor-default select-none">
+              {/* Corner accents */}
+              <div className="absolute top-1 left-1 w-2.5 h-2.5 border-t-2 border-l-2 border-gold-highlight/60 group-hover:border-gold-highlight transition-colors duration-300" />
+              <div className="absolute top-1 right-1 w-2.5 h-2.5 border-t-2 border-r-2 border-gold-highlight/60 group-hover:border-gold-highlight transition-colors duration-300" />
+              <div className="absolute bottom-1 left-1 w-2.5 h-2.5 border-b-2 border-l-2 border-gold-highlight/60 group-hover:border-gold-highlight transition-colors duration-300" />
+              <div className="absolute bottom-1 right-1 w-2.5 h-2.5 border-b-2 border-r-2 border-gold-highlight/60 group-hover:border-gold-highlight transition-colors duration-300" />
 
               {/* Sunlight Glint Shimmer Sweep on Hover */}
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out opacity-0 group-hover:opacity-100"
+                className="pointer-events-none absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out opacity-0 group-hover:opacity-100 z-20"
                 style={{
                   background:
-                    'linear-gradient(105deg, transparent 20%, rgba(242, 184, 75, 0.28) 50%, transparent 80%)',
+                    'linear-gradient(105deg, transparent 20%, rgba(242, 184, 75, 0.3) 50%, transparent 80%)',
                 }}
               />
 
-              {/* Concentric Rotating Chakra Crest Icon */}
-              <div className="relative">
-                {/* Rotating Gold Chakra Ring on Hover */}
-                <div
-                  aria-hidden="true"
-                  className={`absolute -inset-1 rounded-full border border-dashed transition-transform duration-700 ease-out group-hover:rotate-180 ${
-                    plaque.isHighlight
-                      ? 'border-gold-highlight/80 group-hover:border-gold-highlight'
-                      : 'border-gold-rich/50 group-hover:border-gold-highlight'
-                  }`}
+              <div className="relative h-44 w-full overflow-hidden border-b-2 border-gold-highlight bg-dark-chocolate">
+                <Image
+                  src="/assets/briefing_dates.jpg"
+                  alt="Royal brass sundial and palm-leaf scroll at golden hour"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover group-hover:scale-108 transition-transform duration-700 ease-out"
                 />
-
-                <div
-                  className={`relative w-12 h-12 rounded-full border flex items-center justify-center transition-all duration-300 shadow-sm group-hover:scale-110 ${
-                    plaque.isHighlight
-                      ? 'bg-bronze-brown border-gold-highlight shadow-[0_0_12px_rgba(242,184,75,0.4)]'
-                      : 'bg-dark-chocolate border-gold-rich group-hover:border-gold-highlight group-hover:shadow-[0_0_12px_rgba(242,184,75,0.35)]'
-                  }`}
-                >
-                  <div className="transition-transform duration-300 group-hover:scale-110">
-                    {plaque.icon}
-                  </div>
-                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-dark-chocolate/70 via-transparent to-transparent pointer-events-none" />
               </div>
 
-              {/* Plaque Intel Details */}
-              <div className="flex flex-col gap-0.5 z-10">
-                <span
-                  className={`font-label text-label-sm uppercase tracking-wider transition-colors duration-200 ${
-                    plaque.isHighlight
-                      ? 'text-cream-parchment group-hover:text-gold-highlight font-semibold'
-                      : 'text-bronze-brown group-hover:text-saffron font-bold'
-                  }`}
-                >
-                  {plaque.label}
-                </span>
+              <div className="p-5 flex-1 flex flex-col justify-between gap-4 z-10">
+                <div>
+                  <div className="flex items-center justify-between gap-2 mb-2">
+                    <span className="font-label text-label-sm uppercase text-gold-highlight tracking-widest font-bold">
+                      When · Dates
+                    </span>
+                    <Calendar className="w-5 h-5 text-gold-highlight transition-all duration-300 group-hover:scale-115 group-hover:drop-shadow-[0_0_8px_rgba(242,184,75,0.8)]" />
+                  </div>
+                  <h3 className="font-display text-headline-md text-gold-highlight tabular-nums leading-tight group-hover:drop-shadow-[0_0_12px_rgba(242,184,75,0.5)] transition-all">
+                    23–24 Jan 2027
+                  </h3>
+                  <p className="font-body text-body-md text-cream-parchment mt-1">
+                    Saturday 09:00 AM to Sunday 09:00 PM
+                  </p>
+                </div>
+                <div className="pt-3 border-t border-gold-rich/40 flex items-center justify-between">
+                  <span className="font-label text-label-sm uppercase text-cream-parchment/90">
+                    Weekend Sprint
+                  </span>
+                  <span className="px-2.5 py-0.5 bg-bronze-brown border border-gold-rich rounded-sm font-label text-label-sm text-gold-highlight font-bold shadow-xs">
+                    36 Hours
+                  </span>
+                </div>
+              </div>
+            </article>
 
-                <span
-                  className={`font-title text-body-md font-bold tabular-nums transition-transform duration-200 group-hover:scale-105 ${
-                    plaque.isHighlight
-                      ? 'text-gold-highlight'
-                      : 'text-dark-chocolate group-hover:text-bronze-brown'
-                  }`}
-                >
-                  {plaque.value}
-                </span>
+            {/* Pillar 2: Venue */}
+            <article className="group relative overflow-hidden bg-light-surface-container-lowest border-2 border-gold-rich rounded-md flex flex-col justify-between shadow-sm hover:-translate-y-1.5 hover:bg-light-surface-container-low hover:border-gold-highlight hover:shadow-[0_16px_32px_-6px_rgba(107,58,30,0.22),0_0_0_1.5px_#D9961F,0_0_24px_rgba(242,184,75,0.32)] transition-all duration-300 cursor-default select-none">
+              {/* Corner accents */}
+              <div className="absolute top-1 left-1 w-2.5 h-2.5 border-t-2 border-l-2 border-gold-rich/40 group-hover:border-gold-highlight transition-colors duration-300" />
+              <div className="absolute top-1 right-1 w-2.5 h-2.5 border-t-2 border-r-2 border-gold-rich/40 group-hover:border-gold-highlight transition-colors duration-300" />
+              <div className="absolute bottom-1 left-1 w-2.5 h-2.5 border-b-2 border-l-2 border-gold-rich/40 group-hover:border-gold-highlight transition-colors duration-300" />
+              <div className="absolute bottom-1 right-1 w-2.5 h-2.5 border-b-2 border-r-2 border-gold-rich/40 group-hover:border-gold-highlight transition-colors duration-300" />
 
-                <span
-                  className={`font-body text-label-sm transition-colors duration-200 ${
-                    plaque.isHighlight
-                      ? 'text-cream-parchment/85 group-hover:text-cream-parchment'
-                      : 'text-navy-ink/80 group-hover:text-navy-ink font-medium'
-                  }`}
-                >
-                  {plaque.subtext}
+              {/* Sunlight Glint Shimmer Sweep on Hover */}
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out opacity-0 group-hover:opacity-100 z-20"
+                style={{
+                  background:
+                    'linear-gradient(105deg, transparent 20%, rgba(242, 184, 75, 0.3) 50%, transparent 80%)',
+                }}
+              />
+
+              <div className="relative h-44 w-full overflow-hidden border-b-2 border-gold-rich bg-light-surface-container">
+                <Image
+                  src="/assets/briefing_venue.jpg"
+                  alt="GITA Autonomous College campus blended with Kalinga sandstone arches at golden hour"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover group-hover:scale-108 transition-transform duration-700 ease-out"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent pointer-events-none" />
+              </div>
+
+              <div className="p-5 flex-1 flex flex-col justify-between gap-4 z-10">
+                <div>
+                  <div className="flex items-center justify-between gap-2 mb-2">
+                    <span className="font-label text-label-sm uppercase text-bronze-brown tracking-widest font-bold">
+                      Where · Venue
+                    </span>
+                    <MapPin className="w-5 h-5 text-bronze-brown transition-all duration-300 group-hover:text-gold-rich group-hover:scale-115 group-hover:drop-shadow-[0_0_8px_rgba(217,150,31,0.6)]" />
+                  </div>
+                  <h3 className="font-display text-headline-md text-dark-chocolate leading-tight">
+                    GITA Autonomous College
+                  </h3>
+                  <p className="font-body text-body-md text-navy-ink mt-1">
+                    Badaraghunathpur, Bhubaneswar, Odisha
+                  </p>
+                </div>
+                <div className="pt-3 border-t border-gold-rich/40 flex items-center justify-between">
+                  <span className="font-label text-label-sm uppercase text-bronze-brown font-medium">
+                    In Assoc. with BPUT
+                  </span>
+                  <span className="px-2.5 py-0.5 bg-light-surface-container border border-gold-rich/70 rounded-sm font-label text-label-sm text-dark-chocolate font-bold">
+                    Main Campus
+                  </span>
+                </div>
+              </div>
+            </article>
+
+            {/* Pillar 3: Mode */}
+            <article className="group relative overflow-hidden bg-light-surface-container-lowest border-2 border-gold-rich rounded-md flex flex-col justify-between shadow-sm hover:-translate-y-1.5 hover:bg-light-surface-container-low hover:border-gold-highlight hover:shadow-[0_16px_32px_-6px_rgba(107,58,30,0.22),0_0_0_1.5px_#D9961F,0_0_24px_rgba(242,184,75,0.32)] transition-all duration-300 cursor-default select-none">
+              {/* Corner accents */}
+              <div className="absolute top-1 left-1 w-2.5 h-2.5 border-t-2 border-l-2 border-gold-rich/40 group-hover:border-gold-highlight transition-colors duration-300" />
+              <div className="absolute top-1 right-1 w-2.5 h-2.5 border-t-2 border-r-2 border-gold-rich/40 group-hover:border-gold-highlight transition-colors duration-300" />
+              <div className="absolute bottom-1 left-1 w-2.5 h-2.5 border-b-2 border-l-2 border-gold-rich/40 group-hover:border-gold-highlight transition-colors duration-300" />
+              <div className="absolute bottom-1 right-1 w-2.5 h-2.5 border-b-2 border-r-2 border-gold-rich/40 group-hover:border-gold-highlight transition-colors duration-300" />
+
+              {/* Sunlight Glint Shimmer Sweep on Hover */}
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out opacity-0 group-hover:opacity-100 z-20"
+                style={{
+                  background:
+                    'linear-gradient(105deg, transparent 20%, rgba(242, 184, 75, 0.3) 50%, transparent 80%)',
+                }}
+              />
+
+              <div className="relative h-44 w-full overflow-hidden border-b-2 border-gold-rich bg-light-surface-container">
+                <Image
+                  src="/assets/briefing_mode.jpg"
+                  alt="Student engineers collaborating inside a sunlit sandstone pavilion"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover group-hover:scale-108 transition-transform duration-700 ease-out"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent pointer-events-none" />
+              </div>
+
+              <div className="p-5 flex-1 flex flex-col justify-between gap-4 z-10">
+                <div>
+                  <div className="flex items-center justify-between gap-2 mb-2">
+                    <span className="font-label text-label-sm uppercase text-bronze-brown tracking-widest font-bold">
+                      How · Mode
+                    </span>
+                    <Clock className="w-5 h-5 text-bronze-brown transition-all duration-300 group-hover:text-gold-rich group-hover:scale-115 group-hover:drop-shadow-[0_0_8px_rgba(217,150,31,0.6)]" />
+                  </div>
+                  <h3 className="font-display text-headline-md text-dark-chocolate leading-tight">
+                    Offline · In-Person
+                  </h3>
+                  <p className="font-body text-body-md text-navy-ink mt-1">
+                    Non-stop on-campus build with live jury demos
+                  </p>
+                </div>
+                <div className="pt-3 border-t border-gold-rich/40 flex items-center justify-between">
+                  <span className="font-label text-label-sm uppercase text-bronze-brown font-medium">
+                    Meals &amp; Mentors
+                  </span>
+                  <span className="px-2.5 py-0.5 bg-light-surface-container border border-gold-rich/70 rounded-sm font-label text-label-sm text-dark-chocolate font-bold">
+                    Full Access
+                  </span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          {/* Bottom Tier: 3 Supporting Command Cards (Team Size, Prize Pool, Eligibility) */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {/* Squad Size */}
+            <article className="group relative overflow-hidden bg-light-surface-container-lowest border border-gold-rich rounded-md p-4 flex items-center gap-4 shadow-sm hover:-translate-y-1 hover:border-gold-highlight hover:shadow-[0_12px_24px_-4px_rgba(107,58,30,0.2),0_0_16px_rgba(242,184,75,0.25)] transition-all duration-300 cursor-default select-none">
+              {/* Sunlight Glint Shimmer Sweep */}
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out opacity-0 group-hover:opacity-100 z-20"
+                style={{
+                  background:
+                    'linear-gradient(105deg, transparent 20%, rgba(242, 184, 75, 0.3) 50%, transparent 80%)',
+                }}
+              />
+              <div className="relative w-16 h-16 shrink-0 rounded-md overflow-hidden border-2 border-gold-rich shadow-sm bg-light-surface-container">
+                <Image
+                  src="/assets/briefing_squad.jpg"
+                  alt="Four heroic squad silhouettes with golden chakra crest"
+                  fill
+                  sizes="64px"
+                  className="object-cover group-hover:scale-110 transition-transform duration-500 ease-out"
+                />
+              </div>
+              <div className="z-10">
+                <span className="font-label text-label-sm uppercase text-bronze-brown block font-bold">
+                  Squad Size
+                </span>
+                <span className="font-title text-title-lg text-dark-chocolate block group-hover:text-bronze-brown transition-colors font-bold">
+                  2–4 Members
+                </span>
+                <span className="font-body text-label-sm text-navy-ink font-medium">
+                  Inter-college teams allowed
                 </span>
               </div>
             </article>
-          ))}
+
+            {/* Prize Pool */}
+            <article className="group relative overflow-hidden bg-dark-chocolate border-2 border-gold-highlight rounded-md p-4 flex items-center gap-4 shadow-sm hover:-translate-y-1 hover:shadow-[0_14px_28px_-4px_rgba(26,12,5,0.7),0_0_0_1.5px_#F2B84B,0_0_20px_rgba(242,184,75,0.35)] transition-all duration-300 cursor-default select-none">
+              {/* Sunlight Glint Shimmer Sweep */}
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out opacity-0 group-hover:opacity-100 z-20"
+                style={{
+                  background:
+                    'linear-gradient(105deg, transparent 20%, rgba(242, 184, 75, 0.3) 50%, transparent 80%)',
+                }}
+              />
+              <div className="relative w-16 h-16 shrink-0 rounded-md overflow-hidden border-2 border-gold-highlight shadow-sm bg-bronze-brown">
+                <Image
+                  src="/assets/briefing_prize.jpg"
+                  alt="Ornate golden trophy chalice radiating warm amber light"
+                  fill
+                  sizes="64px"
+                  className="object-cover group-hover:scale-110 transition-transform duration-500 ease-out"
+                />
+              </div>
+              <div className="z-10">
+                <span className="font-label text-label-sm uppercase text-cream-parchment block font-bold">
+                  Prize Pool
+                </span>
+                <span className="font-title text-title-lg text-gold-highlight tabular-nums block font-bold group-hover:drop-shadow-[0_0_8px_rgba(242,184,75,0.6)] transition-all">
+                  {SITE_CONFIG.METRICS.PRIZE_POOL_TOTAL}
+                </span>
+                <span className="font-body text-label-sm text-cream-parchment/90">
+                  Cash prizes, swag &amp; goodies
+                </span>
+              </div>
+            </article>
+
+            {/* Eligibility */}
+            <article className="group relative overflow-hidden bg-light-surface-container-lowest border border-gold-rich rounded-md p-4 flex items-center gap-4 shadow-sm hover:-translate-y-1 hover:border-gold-highlight hover:shadow-[0_12px_24px_-4px_rgba(107,58,30,0.2),0_0_16px_rgba(242,184,75,0.25)] transition-all duration-300 cursor-default select-none">
+              {/* Sunlight Glint Shimmer Sweep */}
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out opacity-0 group-hover:opacity-100 z-20"
+                style={{
+                  background:
+                    'linear-gradient(105deg, transparent 20%, rgba(242, 184, 75, 0.3) 50%, transparent 80%)',
+                }}
+              />
+              <div className="relative w-16 h-16 shrink-0 rounded-md overflow-hidden border-2 border-gold-rich shadow-sm bg-light-surface-container">
+                <Image
+                  src="/assets/briefing_eligibility.jpg"
+                  alt="Golden graduation scroll beside a glowing brass diya lamp"
+                  fill
+                  sizes="64px"
+                  className="object-cover group-hover:scale-110 transition-transform duration-500 ease-out"
+                />
+              </div>
+              <div className="z-10">
+                <span className="font-label text-label-sm uppercase text-bronze-brown block font-bold">
+                  Eligibility
+                </span>
+                <span className="font-title text-title-lg text-dark-chocolate block group-hover:text-bronze-brown transition-colors font-bold">
+                  UG / PG India
+                </span>
+                <span className="font-body text-label-sm text-navy-ink font-medium">
+                  Open to all engineering branches
+                </span>
+              </div>
+            </article>
+          </div>
         </div>
 
         {/* Tracks / Domains Section */}
