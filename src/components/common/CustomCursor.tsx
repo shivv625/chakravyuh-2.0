@@ -2,46 +2,37 @@
 
 import React, { useEffect, useRef } from 'react';
 
-interface Ember {
+interface FireSpark {
   x: number;
   y: number;
   vx: number;
   vy: number;
-  size: number;
-  initialSize: number;
+  width: number;
+  streakScale: number;
   life: number;
   maxLife: number;
-  buoyancy: number;
-  wobbleSpeed: number;
-  wobblePhase: number;
-  wobbleAmp: number;
-  type: 'spark' | 'ember' | 'smoke';
+  gravity: number;
+  drag: number;
+  flickerRate: number;
+  flickerPhase: number;
+  colorType: 0 | 1 | 2; // 0: White-hot gold, 1: Vivid amber, 2: Fiery saffron
   active: boolean;
-}
-
-interface TrailPoint {
-  x: number;
-  y: number;
-  vx: number;
-  vy: number;
-  age: number;
 }
 
 export const CustomCursor: React.FC = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const chakraRef = useRef<HTMLDivElement | null>(null);
   const dotRef = useRef<HTMLDivElement | null>(null);
-  const flamePlumeRef = useRef<HTMLDivElement | null>(null);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
-    // Guard against touch devices / reduced motion for 100% mobile battery & native speed
+    // 1. Guard against touch devices / reduced motion for 100% mobile battery & native speed
     if (typeof window === 'undefined') return;
     const isFinePointer = window.matchMedia('(pointer: fine)').matches;
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (!isFinePointer) return;
 
-    // State tracking without React re-renders (zero reconciliation lag)
+    // State tracking without React re-renders (zero reconciliation overhead)
     let mouseX = -100;
     let mouseY = -100;
     let prevMouseX = -100;
@@ -59,7 +50,6 @@ export const CustomCursor: React.FC = () => {
     const container = containerRef.current;
     const chakra = chakraRef.current;
     const dot = dotRef.current;
-    const flamePlume = flamePlumeRef.current;
     const canvas = canvasRef.current;
 
     if (!container || !chakra || !dot || !canvas) return;
@@ -67,7 +57,7 @@ export const CustomCursor: React.FC = () => {
     const ctx = canvas.getContext('2d', { alpha: true });
     if (!ctx) return;
 
-    // High-DPI Canvas Setup
+    // Setup High-DPI Canvas
     let dpr = Math.min(window.devicePixelRatio || 1, 2);
     const resizeCanvas = () => {
       dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -80,126 +70,61 @@ export const CustomCursor: React.FC = () => {
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas, { passive: true });
 
-    // 1. Motion History Buffer for Continuous Fiery Wake (Comet ribbon)
-    const MAX_TRAIL = 14;
-    const trail: TrailPoint[] = [];
-
-    // 2. Pre-allocated Particle Pool of 65 Embers (Zero GC allocations during motion)
-    const MAX_EMBERS = 65;
-    const embers: Ember[] = Array.from({ length: MAX_EMBERS }, () => ({
+    // 2. Pre-allocated Spark Particle Pool of 85 Sparks (ZERO garbage collection pauses during motion)
+    const MAX_SPARKS = 85;
+    const sparks: FireSpark[] = Array.from({ length: MAX_SPARKS }, () => ({
       x: 0,
       y: 0,
       vx: 0,
       vy: 0,
-      size: 0,
-      initialSize: 0,
+      width: 1.5,
+      streakScale: 2.2,
       life: 0,
-      maxLife: 0,
-      buoyancy: 0.05,
-      wobbleSpeed: 0.1,
-      wobblePhase: 0,
-      wobbleAmp: 1,
-      type: 'ember',
+      maxLife: 20,
+      gravity: 0.12,
+      drag: 0.94,
+      flickerRate: 15,
+      flickerPhase: 0,
+      colorType: 0,
       active: false,
     }));
-    let emberIndex = 0;
+    let sparkIndex = 0;
 
-    const spawnEmber = (
+    const spawnSpark = (
       x: number,
       y: number,
-      moveVx: number,
-      moveVy: number,
-      forcedType?: 'spark' | 'ember' | 'smoke'
+      vx: number,
+      vy: number,
+      options?: {
+        width?: number;
+        streakScale?: number;
+        maxLife?: number;
+        gravity?: number;
+        colorType?: 0 | 1 | 2;
+      }
     ) => {
-      const e = embers[emberIndex];
-      emberIndex = (emberIndex + 1) % MAX_EMBERS;
+      const s = sparks[sparkIndex];
+      sparkIndex = (sparkIndex + 1) % MAX_SPARKS;
 
-      const typeChoice =
-        forcedType || (Math.random() < 0.4 ? 'spark' : Math.random() < 0.8 ? 'ember' : 'smoke');
-      e.type = typeChoice;
-
-      // Position jitter around chakra's flaming edge
-      const angle = Math.random() * Math.PI * 2;
-      const radius = typeChoice === 'smoke' ? 4 + Math.random() * 8 : 6 + Math.random() * 12;
-      e.x = x + Math.cos(angle) * radius;
-      e.y = y + Math.sin(angle) * radius;
-
-      // Realistic combustion aerodynamics: counter-drag + thermal updraft
-      const speed = Math.hypot(moveVx, moveVy);
-      const dragFactor = typeChoice === 'spark' ? 0.22 : 0.12;
-      e.vx = -moveVx * dragFactor + (Math.random() - 0.5) * (typeChoice === 'spark' ? 3.5 : 1.4);
-      e.vy =
-        -moveVy * dragFactor -
-        (typeChoice === 'smoke' ? 0.6 + Math.random() * 0.8 : 0.4 + Math.random() * 1.2);
-
-      if (typeChoice === 'spark') {
-        e.initialSize = 1.0 + Math.random() * 1.6;
-        e.maxLife = 14 + Math.floor(Math.random() * 14);
-        e.buoyancy = 0.02;
-        e.wobbleSpeed = 0.2 + Math.random() * 0.3;
-        e.wobbleAmp = 0.5 + Math.random() * 1.2;
-      } else if (typeChoice === 'ember') {
-        e.initialSize = 2.2 + Math.random() * 2.8;
-        e.maxLife = 26 + Math.floor(Math.random() * 22);
-        e.buoyancy = 0.06 + Math.random() * 0.05;
-        e.wobbleSpeed = 0.08 + Math.random() * 0.15;
-        e.wobbleAmp = 1.0 + Math.random() * 1.8;
-      } else {
-        // Smoke wisp
-        e.initialSize = 5.0 + Math.random() * 6.0;
-        e.maxLife = 32 + Math.floor(Math.random() * 20);
-        e.buoyancy = 0.08 + Math.random() * 0.06;
-        e.wobbleSpeed = 0.05 + Math.random() * 0.08;
-        e.wobbleAmp = 1.5 + Math.random() * 2.0;
-      }
-
-      e.size = e.initialSize;
-      e.life = e.maxLife;
-      e.wobblePhase = Math.random() * Math.PI * 2;
-      e.active = true;
+      s.x = x;
+      s.y = y;
+      s.vx = vx;
+      s.vy = vy;
+      s.width = options?.width ?? (1.0 + Math.random() * 1.5);
+      s.streakScale = options?.streakScale ?? (1.8 + Math.random() * 1.6);
+      s.maxLife = options?.maxLife ?? (14 + Math.floor(Math.random() * 18));
+      s.life = s.maxLife;
+      s.gravity = options?.gravity ?? (0.08 + Math.random() * 0.12);
+      s.drag = 0.93 + Math.random() * 0.03;
+      s.flickerRate = 12 + Math.random() * 18;
+      s.flickerPhase = Math.random() * Math.PI * 2;
+      s.colorType = options?.colorType ?? (Math.random() < 0.45 ? 0 : Math.random() < 0.8 ? 1 : 2);
+      s.active = true;
     };
 
-    // 3. Realistic Blackbody Thermal Radiation Cooling Color Calculator
-    // White-Hot -> Luminous Gold -> Vivid Amber -> Burning Saffron -> Charred Crimson -> Smoke
-    const getEmberColor = (progress: number, type: 'spark' | 'ember' | 'smoke') => {
-      // progress goes from 1.0 (just born) to 0.0 (extinguished)
-      if (type === 'smoke') {
-        const alpha = Math.max(0, progress * 0.22);
-        return `rgba(58, 29, 14, ${alpha.toFixed(3)})`;
-      }
+    // 3. Mouse Movement Listener
+    let centrifugalTimer = 0;
 
-      if (progress > 0.82) {
-        // Incandescent White-Hot Yellow
-        const t = (progress - 0.82) / 0.18;
-        const r = 255;
-        const g = Math.round(235 + 20 * t);
-        const b = Math.round(140 + 105 * t);
-        return `rgba(${r}, ${g}, ${b}, ${(0.95 * progress).toFixed(3)})`;
-      } else if (progress > 0.52) {
-        // Pure Solar Gold to Deep Amber
-        const t = (progress - 0.52) / 0.3;
-        const r = 251;
-        const g = Math.round(160 + 35 * t);
-        const b = Math.round(18 + 22 * t);
-        return `rgba(${r}, ${g}, ${b}, ${(0.9 * progress).toFixed(3)})`;
-      } else if (progress > 0.22) {
-        // Burning Saffron to Fiery Crimson
-        const t = (progress - 0.22) / 0.3;
-        const r = Math.round(210 + 25 * t);
-        const g = Math.round(55 + 65 * t);
-        const b = Math.round(15 + 10 * t);
-        return `rgba(${r}, ${g}, ${b}, ${(0.82 * progress).toFixed(3)})`;
-      } else {
-        // Cooling Charred Ash & Smoldering Ember Core
-        const t = progress / 0.22;
-        const r = Math.round(135 * t);
-        const g = Math.round(28 * t);
-        const b = Math.round(10 * t);
-        return `rgba(${r}, ${g}, ${b}, ${(0.6 * t).toFixed(3)})`;
-      }
-    };
-
-    // 4. Mouse movement listener (passive for highest performance)
     const onMouseMove = (e: MouseEvent) => {
       mouseX = e.clientX;
       mouseY = e.clientY;
@@ -217,16 +142,35 @@ export const CustomCursor: React.FC = () => {
       const dy = mouseY - prevMouseY;
       const dist = Math.hypot(dx, dy);
 
-      // Add to fiery wake ribbon buffer
-      if (dist > 1.5) {
-        trail.unshift({ x: mouseX, y: mouseY, vx: dx, vy: dy, age: 0 });
-        if (trail.length > MAX_TRAIL) trail.pop();
+      if (dist > 2.5) {
+        const moveAngle = Math.atan2(dy, dx);
+        const count = Math.min(5, Math.max(1, Math.floor(dist / 9)));
 
-        // Spawn realistic burning embers along the interpolated flight trajectory
-        const spawnCount = Math.min(4, Math.max(1, Math.floor(dist / 11)));
-        for (let i = 0; i < spawnCount; i++) {
-          const t = i / spawnCount;
-          spawnEmber(prevMouseX + dx * t, prevMouseY + dy * t, dx, dy);
+        // Spray sparks backward along the motion slipstream with realistic angular spread
+        for (let i = 0; i < count; i++) {
+          const t = i / count;
+          const spawnX = prevMouseX + dx * t;
+          const spawnY = prevMouseY + dy * t;
+
+          // Spray angle: backward with cone dispersion
+          const sprayAngle = moveAngle + Math.PI + (Math.random() - 0.5) * 1.35;
+          const sparkSpeed = 2.0 + Math.random() * 5.5 + dist * 0.15;
+
+          // Jitter spawn origin around the chakra's spinning serrated rim
+          const rimAngle = Math.random() * Math.PI * 2;
+          const rimR = 8 + Math.random() * 10;
+
+          spawnSpark(
+            spawnX + Math.cos(rimR) * 6,
+            spawnY + Math.sin(rimR) * 6,
+            Math.cos(sprayAngle) * sparkSpeed + (Math.random() - 0.5) * 1.5,
+            Math.sin(sprayAngle) * sparkSpeed - (0.5 + Math.random() * 1.2), // slight upward thermal lift
+            {
+              width: 1.0 + Math.random() * 1.6,
+              streakScale: 2.2 + Math.random() * 1.4,
+              maxLife: 16 + Math.floor(Math.random() * 16),
+            }
+          );
         }
 
         prevMouseX = mouseX;
@@ -242,10 +186,9 @@ export const CustomCursor: React.FC = () => {
     const onMouseLeave = () => {
       isVisible = false;
       if (container) container.style.opacity = '0';
-      trail.length = 0;
     };
 
-    // 5. Interactive element hover detection via event delegation
+    // 4. Interactive Hover & Click Detection
     const onMouseOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement | null;
       if (!target) return;
@@ -264,43 +207,47 @@ export const CustomCursor: React.FC = () => {
       );
 
       isHovered = isInteractive;
-      targetScale = isHovered ? (isPressed ? 1.25 : 1.5) : isPressed ? 0.85 : 1;
+      targetScale = isHovered ? (isPressed ? 1.2 : 1.45) : isPressed ? 0.85 : 1;
     };
 
     const onMouseDown = () => {
       isPressed = true;
-      targetScale = isHovered ? 1.2 : 0.82;
+      targetScale = isHovered ? 1.15 : 0.8;
 
-      // Realistic Pyrotechnic Blast: shower of radiant micro sparks and rising heat
-      for (let i = 0; i < 14; i++) {
-        const burstAngle = Math.random() * Math.PI * 2;
-        const burstSpeed = 2.5 + Math.random() * 6.5;
-        spawnEmber(
+      // Concussive Spark Blast: 24 explosive high-speed needle sparks spraying outward
+      for (let i = 0; i < 24; i++) {
+        const angle = Math.random() * Math.PI * 2;
+        const blastSpeed = 4.0 + Math.random() * 8.5;
+        spawnSpark(
           mouseX,
           mouseY,
-          Math.cos(burstAngle) * burstSpeed,
-          Math.sin(burstAngle) * burstSpeed,
-          i % 2 === 0 ? 'spark' : 'ember'
+          Math.cos(angle) * blastSpeed,
+          Math.sin(angle) * blastSpeed - 1.2,
+          {
+            width: 1.4 + Math.random() * 1.6,
+            streakScale: 2.8 + Math.random() * 1.8,
+            maxLife: 20 + Math.floor(Math.random() * 20),
+            colorType: i % 3 as 0 | 1 | 2,
+          }
         );
       }
     };
 
     const onMouseUp = () => {
       isPressed = false;
-      targetScale = isHovered ? 1.5 : 1;
+      targetScale = isHovered ? 1.45 : 1;
     };
 
-    // 6. 60-120fps Hardware-Accelerated Physics Loop
+    // 5. 60-120fps Hardware-Accelerated Animation Loop
     const lerp = 0.22;
     let lastTime = performance.now();
-    let hadActiveGraphics = false;
-    let idleCounter = 0;
+    let hadActiveSparks = false;
 
     const loop = (now: number) => {
       const delta = Math.min((now - lastTime) / 16.67, 2);
       lastTime = now;
 
-      // Update Cursor, Chakra & Directional Flame Plume
+      // Update Cursor & Chakra Transform
       if (isVisible) {
         const dx = mouseX - chakraX;
         const dy = mouseY - chakraY;
@@ -309,149 +256,146 @@ export const CustomCursor: React.FC = () => {
 
         const velocity = Math.hypot(dx, dy);
 
-        // Dynamic spin acceleration with velocity
+        // Spin acceleration with velocity
         const spinSpeed = prefersReducedMotion
           ? 0
           : isHovered
-          ? 2.4 + velocity * 0.12
-          : 1.0 + velocity * 0.08;
+          ? 2.6 + velocity * 0.14
+          : 1.2 + velocity * 0.08;
 
         rotation = (rotation + spinSpeed * delta) % 360;
-        scale += (targetScale - scale) * 0.24 * delta;
+        scale += (targetScale - scale) * 0.25 * delta;
 
-        // Apply hardware-accelerated transform to Chakra
+        // Direct GPU style update
         chakra.style.transform = `translate3d(${chakraX}px, ${chakraY}px, 0) translate(-50%, -50%) rotate(${rotation.toFixed(
           2
         )}deg) scale(${scale.toFixed(3)})`;
 
-        // Center pinpoint dot tracks mouse 1:1 with zero latency
         dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%) scale(${
           isHovered ? '0.6' : '1'
         })`;
 
-        // Dynamic Aerodynamic Flame Plume (trails behind movement)
-        if (flamePlume) {
-          if (velocity > 1.2) {
-            const plumeAngle = (Math.atan2(dy, dx) * 180) / Math.PI + 180;
-            const stretch = Math.min(2.4, 1 + velocity * 0.06);
-            flamePlume.style.opacity = `${Math.min(0.9, 0.4 + velocity * 0.04)}`;
-            flamePlume.style.transform = `translate3d(${chakraX}px, ${chakraY}px, 0) translate(-50%, -50%) rotate(${plumeAngle}deg) scale(${stretch}, ${Math.max(
-              0.7,
-              1 - velocity * 0.02
-            )})`;
-          } else {
-            // Idle smoldering breathing aura
-            flamePlume.style.opacity = '0.35';
-            flamePlume.style.transform = `translate3d(${chakraX}px, ${chakraY}px, 0) translate(-50%, -50%) scale(1)`;
-          }
-        }
+        // Continuous Centrifugal Flung Sparks from the spinning wheel perimeter
+        centrifugalTimer += delta;
+        const threshold = isHovered ? 2.5 : velocity > 1 ? 2.0 : 4.5;
+        if (centrifugalTimer >= threshold) {
+          centrifugalTimer = 0;
 
-        // Idle gentle smoke wisps when resting (smoldering fire)
-        idleCounter += delta;
-        if (velocity < 0.5 && idleCounter > 18) {
-          idleCounter = 0;
-          spawnEmber(chakraX, chakraY, 0, -0.4, 'smoke');
-        }
-      }
+          // Tangent to current rotation
+          const theta = (rotation * Math.PI) / 180 + Math.random() * 0.6;
+          const rimRadius = 14 * scale;
+          const originX = chakraX + Math.cos(theta) * rimRadius;
+          const originY = chakraY + Math.sin(theta) * rimRadius;
 
-      // Age motion trail
-      for (let i = trail.length - 1; i >= 0; i--) {
-        trail[i].age += delta;
-        if (trail[i].age > MAX_TRAIL) {
-          trail.splice(i, 1);
+          // Tangent velocity vector + slight outward fling
+          const tangentAngle = theta + Math.PI / 2;
+          const flingSpeed = (1.5 + Math.random() * 3.5) * (spinSpeed * 0.6);
+
+          spawnSpark(
+            originX,
+            originY,
+            Math.cos(tangentAngle) * flingSpeed + (Math.random() - 0.5) * 1.5,
+            Math.sin(tangentAngle) * flingSpeed - (0.4 + Math.random() * 0.8),
+            {
+              width: 1.0 + Math.random() * 1.4,
+              streakScale: 2.0 + Math.random() * 1.5,
+              maxLife: 15 + Math.floor(Math.random() * 14),
+            }
+          );
         }
       }
 
-      // Check active particles
-      let activeEmbers = 0;
-      for (let i = 0; i < MAX_EMBERS; i++) {
-        if (embers[i].active) {
-          activeEmbers++;
+      // Check Active Sparks
+      let activeCount = 0;
+      for (let i = 0; i < MAX_SPARKS; i++) {
+        if (sparks[i].active) {
+          activeCount++;
           break;
         }
       }
 
-      const hasContentToDraw = activeEmbers > 0 || trail.length > 1;
-
-      if (hasContentToDraw || hadActiveGraphics) {
+      if (activeCount > 0 || hadActiveSparks) {
         ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
-        hadActiveGraphics = hasContentToDraw;
+        hadActiveSparks = activeCount > 0;
 
-        // Use Additive Blending for realistic luminous fire combustion
+        // Optical additive blending for brilliant white-hot spark intersections
         ctx.globalCompositeOperation = 'lighter';
 
-        // A. Draw Continuous Fiery Motion Wake Ribbon
-        if (trail.length > 1) {
-          for (let i = 0; i < trail.length - 1; i++) {
-            const p1 = trail[i];
-            const p2 = trail[i + 1];
-            const progress = 1 - i / trail.length;
+        for (let i = 0; i < MAX_SPARKS; i++) {
+          const s = sparks[i];
+          if (!s.active) continue;
 
-            const width = Math.max(1, 10 * progress * (isHovered ? 1.4 : 1));
-            const alpha = progress * 0.45;
-
-            ctx.beginPath();
-            ctx.moveTo(p1.x, p1.y);
-            ctx.lineTo(p2.x, p2.y);
-            ctx.lineWidth = width;
-            ctx.lineCap = 'round';
-            ctx.strokeStyle = `rgba(245, 158, 11, ${alpha.toFixed(3)})`;
-            ctx.stroke();
-
-            // Inner hot core of the wake
-            ctx.beginPath();
-            ctx.moveTo(p1.x, p1.y);
-            ctx.lineTo(p2.x, p2.y);
-            ctx.lineWidth = width * 0.4;
-            ctx.strokeStyle = `rgba(254, 240, 138, ${(alpha * 1.5).toFixed(3)})`;
-            ctx.stroke();
-          }
-        }
-
-        // B. Update & Draw Thermal Embers with Brownian Motion & Cooling
-        for (let i = 0; i < MAX_EMBERS; i++) {
-          const e = embers[i];
-          if (!e.active) continue;
-
-          e.life -= delta;
-          if (e.life <= 0) {
-            e.active = false;
+          s.life -= delta;
+          if (s.life <= 0) {
+            s.active = false;
             continue;
           }
 
-          // Convection & turbulent drift
-          const progress = e.life / e.maxLife;
-          const wobble = Math.sin(now * 0.006 * e.wobbleSpeed + e.wobblePhase) * e.wobbleAmp;
+          // Physics: drag, gravity arc, thermal lift
+          s.vx *= Math.pow(s.drag, delta);
+          s.vy *= Math.pow(s.drag, delta);
+          s.vy += s.gravity * delta;
+          s.x += s.vx * delta;
+          s.y += s.vy * delta;
 
-          e.vy -= e.buoyancy * delta; // thermal lift
-          e.vx *= 0.95;
-          e.vy *= 0.96;
-          e.x += (e.vx + wobble) * delta;
-          e.y += e.vy * delta;
+          const progress = s.life / s.maxLife; // 1.0 -> 0.0
 
-          const currentSize =
-            e.type === 'smoke'
-              ? e.initialSize * (1 + 0.8 * (1 - progress)) // smoke expands
-              : e.initialSize * (0.2 + 0.8 * progress); // embers shrink
+          // Electric crackle twinkle
+          const flicker = 0.75 + 0.25 * Math.sin(now * 0.03 * s.flickerRate + s.flickerPhase);
+          const alpha = progress * flicker;
 
-          const color = getEmberColor(progress, e.type);
+          // High-Velocity Directional Streak Vectors
+          // Tail stretches backward along instantaneous velocity vector
+          const streakFactor = Math.min(4.5, s.streakScale);
+          const tailX = s.x - s.vx * streakFactor;
+          const tailY = s.y - s.vy * streakFactor;
 
-          // Draw ember particle core
+          // Spark Streak Gradient (from tail to white-hot head)
+          const grad = ctx.createLinearGradient(tailX, tailY, s.x, s.y);
+          if (s.colorType === 0) {
+            // White-Hot Golden Sparks
+            grad.addColorStop(0, `rgba(234, 88, 12, 0)`);
+            grad.addColorStop(0.3, `rgba(245, 158, 11, ${(0.6 * alpha).toFixed(3)})`);
+            grad.addColorStop(0.7, `rgba(254, 240, 138, ${(0.9 * alpha).toFixed(3)})`);
+            grad.addColorStop(1, `rgba(255, 255, 255, ${alpha.toFixed(3)})`);
+          } else if (s.colorType === 1) {
+            // Vivid Amber Fire Sparks
+            grad.addColorStop(0, `rgba(220, 38, 38, 0)`);
+            grad.addColorStop(0.35, `rgba(234, 88, 12, ${(0.65 * alpha).toFixed(3)})`);
+            grad.addColorStop(0.75, `rgba(245, 158, 11, ${(0.95 * alpha).toFixed(3)})`);
+            grad.addColorStop(1, `rgba(254, 240, 138, ${alpha.toFixed(3)})`);
+          } else {
+            // Molten Saffron Sparks
+            grad.addColorStop(0, `rgba(185, 28, 28, 0)`);
+            grad.addColorStop(0.4, `rgba(220, 38, 38, ${(0.7 * alpha).toFixed(3)})`);
+            grad.addColorStop(0.8, `rgba(245, 158, 11, ${(0.9 * alpha).toFixed(3)})`);
+            grad.addColorStop(1, `rgba(254, 215, 170, ${alpha.toFixed(3)})`);
+          }
+
+          // 1. Draw Directional Needle Spark Line
           ctx.beginPath();
-          ctx.arc(e.x, e.y, Math.max(0.6, currentSize), 0, Math.PI * 2);
-          ctx.fillStyle = color;
+          ctx.moveTo(tailX, tailY);
+          ctx.lineTo(s.x, s.y);
+          ctx.lineWidth = s.width * (0.4 + 0.6 * progress);
+          ctx.lineCap = 'round';
+          ctx.strokeStyle = grad;
+          ctx.stroke();
+
+          // 2. Radiant Glint Dot at the Spark Head
+          ctx.beginPath();
+          ctx.arc(s.x, s.y, s.width * 0.75 * progress, 0, Math.PI * 2);
+          ctx.fillStyle = s.colorType === 0 ? `rgba(255, 255, 255, ${alpha.toFixed(3)})` : `rgba(254, 240, 138, ${alpha.toFixed(3)})`;
           ctx.fill();
 
-          // Soft radiant light halo for hot embers
-          if (e.type !== 'smoke' && progress > 0.4 && e.initialSize > 1.8) {
+          // 3. Subtle Optical Halo for energetic sparks
+          if (progress > 0.45 && s.width > 1.3) {
             ctx.beginPath();
-            ctx.arc(e.x, e.y, currentSize * 2.4, 0, Math.PI * 2);
-            ctx.fillStyle = getEmberColor(progress * 0.35, e.type);
+            ctx.arc(s.x, s.y, s.width * 2.5 * progress, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(245, 158, 11, ${(0.22 * alpha).toFixed(3)})`;
             ctx.fill();
           }
         }
 
-        // Reset composite operation
         ctx.globalCompositeOperation = 'source-over';
       }
 
@@ -493,7 +437,7 @@ export const CustomCursor: React.FC = () => {
 
   return (
     <>
-      {/* 1. Full-screen Ultra-Lightweight Ember & Fire Wake Canvas */}
+      {/* 1. Full-screen Ultra-Lightweight Fire Sparks Canvas */}
       <canvas
         ref={canvasRef}
         aria-hidden="true"
@@ -506,37 +450,27 @@ export const CustomCursor: React.FC = () => {
         aria-hidden="true"
         className="pointer-events-none fixed inset-0 z-[99999] overflow-hidden select-none transition-opacity duration-300 opacity-0"
       >
-        {/* Aerodynamic Burning Flame Plume (stretches along movement slipstream) */}
-        <div
-          ref={flamePlumeRef}
-          className="pointer-events-none absolute left-0 top-0 w-16 h-8 -ml-8 -mt-4 rounded-full blur-[7px] will-change-transform opacity-30"
-          style={{
-            background:
-              'radial-gradient(ellipse at 75% 50%, rgba(254,240,138,0.7) 0%, rgba(245,158,11,0.5) 35%, rgba(234,88,12,0.3) 65%, transparent 100%)',
-          }}
-        />
-
-        {/* Inertial Trailing Burning Sudarshana Chakra */}
+        {/* Inertial Trailing Burning Sudarshana Chakra with Sparks */}
         <div
           ref={chakraRef}
           className="pointer-events-none absolute left-0 top-0 w-8 h-8 sm:w-9 sm:h-9 will-change-transform"
         >
-          {/* Pulsating Burning Heat Aura */}
+          {/* Pulsating Solar Fire Aura */}
           <div
-            className="pointer-events-none absolute -inset-2.5 rounded-full blur-[6px] animate-pulse"
+            className="pointer-events-none absolute -inset-2 rounded-full blur-[5px] animate-pulse"
             style={{
               background:
-                'radial-gradient(circle, rgba(254,240,138,0.6) 0%, rgba(245,158,11,0.45) 35%, rgba(234,88,12,0.25) 65%, transparent 100%)',
-              animationDuration: '1.8s',
+                'radial-gradient(circle, rgba(254,240,138,0.55) 0%, rgba(245,158,11,0.4) 40%, rgba(220,38,38,0.2) 70%, transparent 100%)',
+              animationDuration: '1.6s',
             }}
           />
 
-          {/* Deep Optical Fire Glow Filter */}
+          {/* Golden Flame Spark Drop Shadow */}
           <div
             className="w-full h-full"
             style={{
               filter:
-                'drop-shadow(0 0 6px rgba(254, 240, 138, 0.9)) drop-shadow(0 0 12px rgba(245, 158, 11, 0.75)) drop-shadow(0 0 22px rgba(234, 88, 12, 0.4))',
+                'drop-shadow(0 0 6px rgba(254, 240, 138, 0.95)) drop-shadow(0 0 12px rgba(245, 158, 11, 0.8)) drop-shadow(0 0 20px rgba(234, 88, 12, 0.4))',
             }}
           >
             <svg
@@ -548,9 +482,9 @@ export const CustomCursor: React.FC = () => {
               <defs>
                 <radialGradient id="solarGlow" cx="50%" cy="50%" r="50%">
                   <stop offset="0%" stopColor="#FFFFFF" stopOpacity="1" />
-                  <stop offset="20%" stopColor="#FEF08A" stopOpacity="0.9" />
-                  <stop offset="50%" stopColor="#F59E0B" stopOpacity="0.7" />
-                  <stop offset="80%" stopColor="#EA580C" stopOpacity="0.35" />
+                  <stop offset="25%" stopColor="#FEF08A" stopOpacity="0.9" />
+                  <stop offset="55%" stopColor="#F59E0B" stopOpacity="0.75" />
+                  <stop offset="85%" stopColor="#EA580C" stopOpacity="0.35" />
                   <stop offset="100%" stopColor="#78350F" stopOpacity="0" />
                 </radialGradient>
 
@@ -570,8 +504,8 @@ export const CustomCursor: React.FC = () => {
                 </linearGradient>
               </defs>
 
-              {/* Radiant White-Hot Solar Background Disc */}
-              <circle cx="24" cy="24" r="23" fill="url(#solarGlow)" opacity="0.6" />
+              {/* Radiant Solar Background Disc */}
+              <circle cx="24" cy="24" r="23" fill="url(#solarGlow)" opacity="0.65" />
 
               {/* 12 Aerodynamic Serrated Flame Blades (Sudarshana Teeth) */}
               {Array.from({ length: 12 }, (_, i) => {
