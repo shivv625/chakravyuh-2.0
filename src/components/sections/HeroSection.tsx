@@ -6,7 +6,7 @@ import { SITE_CONFIG } from '@/content/site';
 import { Countdown } from '@/components/common/Countdown';
 import { RibbonButton } from '@/components/common/RibbonButton';
 import { ChakraWatermark } from '@/components/common/ChakraWatermark';
-import { MapPin, ChevronDown } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 
 interface HeroSectionProps {
   onRegisterClick?: () => void;
@@ -163,23 +163,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRegisterClick }) => 
         </div>
       </div>
 
-      {/* 5. Top Institutional Badges */}
-      <div className="relative z-20 max-w-7xl w-full mx-auto px-4 md:px-6 flex items-center justify-between gap-4">
-        <div className="inline-flex items-center gap-2 bg-cream-parchment/95 border border-gold-rich rounded-full px-3.5 py-1.5 shadow-sm">
-          <span className="w-2.5 h-2.5 rounded-full bg-saffron animate-pulse" />
-          <span className="font-label text-label-sm uppercase text-dark-chocolate font-bold">
-            {SITE_CONFIG.ORGANIZER}
-          </span>
-        </div>
-        <div className="inline-flex items-center gap-2 bg-cream-parchment/95 border border-gold-rich rounded-full px-3.5 py-1.5 shadow-sm">
-          <span className="w-2.5 h-2.5 rounded-full bg-krishna-blue" />
-          <span className="font-label text-label-sm uppercase text-dark-chocolate font-bold">
-            {SITE_CONFIG.ACADEMIC_PARTNER}
-          </span>
-        </div>
-      </div>
-
-      {/* 6. Centerpiece Logo, Headline, Prize Crest & Countdown */}
+      {/* 5. Centerpiece Logo, Headline, Prize Crest & Countdown */}
       <div className="relative z-20 max-w-5xl mx-auto px-4 md:px-6 py-6 text-center flex flex-col items-center gap-4">
         {/* Eyebrow Ribbon */}
         <div className="inline-flex items-center gap-3 px-5 py-1.5 bg-dark-chocolate text-gold-highlight border border-gold-rich ribbon-pill">
@@ -196,9 +180,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRegisterClick }) => 
           <h1 className="font-display text-display-lg-mobile md:text-display-lg text-gold-highlight epic-text-shadow uppercase text-balance leading-none">
             {SITE_CONFIG.TAGLINE}
           </h1>
-          <p className="font-body text-body-lg text-dark-chocolate font-bold max-w-2xl text-pretty mt-1">
-            {SITE_CONFIG.COLLEGE_FULL_NAME}
-          </p>
         </div>
 
         {/* Prize Pool Crest */}
@@ -237,15 +218,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRegisterClick }) => 
         </div>
       </div>
 
-      {/* 7. Bottom Location Pill & Arrow Scroll Indicator */}
-      <div className="relative z-20 max-w-7xl w-full mx-auto px-4 md:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div className="inline-flex items-center gap-2 bg-dark-chocolate/95 text-cream-parchment border border-gold-rich rounded-full px-5 py-2 shadow-sm">
-          <MapPin className="w-4 h-4 text-gold-highlight" />
-          <span className="font-label text-label-sm uppercase tracking-wider font-semibold">
-            {SITE_CONFIG.VENUE.NAME}, BBSR
-          </span>
-        </div>
-
+      {/* 6. Bottom Arrow Scroll Indicator */}
+      <div className="relative z-20 max-w-7xl w-full mx-auto px-4 md:px-6 flex items-center justify-center">
         <a
           href="#about"
           className="inline-flex flex-col items-center gap-1 text-dark-chocolate hover:text-saffron transition-colors group"

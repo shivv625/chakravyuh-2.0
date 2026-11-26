@@ -107,12 +107,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onRegisterClick, onCoordinatorsC
             onClick={(e) => handleNavClick(e, '#hero')}
             className="flex items-center gap-3 shrink-0 group"
           >
-            <div className="w-11 h-11 rounded-full border-2 border-gold-rich bg-dark-chocolate flex items-center justify-center p-1 transition-transform group-hover:scale-105 duration-card-lift shadow-sm">
+            <div className="w-12 h-12 flex items-center justify-center transition-transform group-hover:scale-108 duration-card-lift drop-shadow-md">
               <Image
                 src="/assets/chakravyuh_logo.png"
                 alt="Chakravyuh 2.0 Official Logo"
-                width={40}
-                height={40}
+                width={48}
+                height={48}
                 className="w-full h-full object-contain"
                 priority
               />
@@ -188,12 +188,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onRegisterClick, onCoordinatorsC
         >
           <div className="flex items-center justify-between border-b border-gold-rich pb-4">
             <div className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-full border border-gold-rich bg-dark-chocolate flex items-center justify-center p-0.5 shadow-xs">
+              <div className="w-10 h-10 flex items-center justify-center drop-shadow-xs">
                 <Image
                   src="/assets/chakravyuh_logo.png"
                   alt="Chakravyuh 2.0 Logo"
-                  width={32}
-                  height={32}
+                  width={40}
+                  height={40}
                   className="w-full h-full object-contain"
                 />
               </div>
