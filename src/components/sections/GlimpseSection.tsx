@@ -27,7 +27,7 @@ const CHAKRAVYUH_1_IMAGES: TiltedGridImage[] = [
   },
   {
     src: '/assets/glimpse/glimpse_6.jpg',
-    alt: 'High-intensity squad collaboration across laptops during the 36-hour sprint at Chakravyuh 1.0',
+    alt: 'High-intensity squad collaboration across laptops during the 24-hour sprint at Chakravyuh 1.0',
   },
   {
     src: '/assets/glimpse/glimpse_7.jpg',
@@ -67,7 +67,7 @@ export const GlimpseSection: React.FC = () => {
           </h2>
 
           <p className="mt-3.5 font-body text-base sm:text-lg text-bronze-brown leading-relaxed max-w-2xl mx-auto font-normal">
-            Where the legend was born. 36 hours of non-stop coding, hardware warfare, mentorship breakthroughs, and unforgettable brotherhood at GITA Autonomous College.
+            Where the legend was born. 24 hours of non-stop coding, hardware warfare, mentorship breakthroughs, and unforgettable brotherhood at GITA Autonomous College.
           </p>
         </div>
 
@@ -111,7 +111,7 @@ export const GlimpseSection: React.FC = () => {
                   <div className="flex flex-col items-center justify-center p-2 text-center">
                     <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-gold-highlight mb-1" />
                     <span className="font-headline text-lg sm:text-2xl font-black text-gold-highlight">
-                      36 HRS
+                      24 HRS
                     </span>
                     <span className="font-label text-[10px] sm:text-xs text-cream-parchment/80 uppercase tracking-wider font-semibold">
                       Non-Stop Sprint

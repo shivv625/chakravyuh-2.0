@@ -34,7 +34,7 @@ const cormorant = Cormorant_Garamond({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://chakravyuh.gita.edu.in'),
   title: `${SITE_CONFIG.EVENT_NAME} — ${SITE_CONFIG.SUBTITLE} | GITA Autonomous College`,
-  description: `Official website for ${SITE_CONFIG.EVENT_NAME}, a National Level 36-Hour Hackathon hosted by GITA Autonomous College, Bhubaneswar, in association with BPUT, Odisha. Seven Gates. 36 Hours. ₹1,50,000 Prize Pool.`,
+  description: `Official website for ${SITE_CONFIG.EVENT_NAME}, a National Level 24-Hour Hackathon hosted by GITA Autonomous College, Bhubaneswar, in association with BPUT, Odisha. Seven Gates. 24 Hours. ₹1,50,000 Prize Pool.`,
   keywords: [
     'Chakravyuh 2.0',
     'GITA Autonomous College',
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   authors: [{ name: 'GITA CSE & Innovation Club' }],
   openGraph: {
     title: `${SITE_CONFIG.EVENT_NAME} — ${SITE_CONFIG.TAGLINE}`,
-    description: 'Break the Chakravyuh. 36 Hours National Hackathon at GITA Autonomous College, Bhubaneswar.',
+    description: 'Break the Chakravyuh. 24 Hours National Hackathon at GITA Autonomous College, Bhubaneswar.',
     url: 'https://chakravyuh.gita.edu.in',
     siteName: SITE_CONFIG.EVENT_NAME,
     images: [
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: `${SITE_CONFIG.EVENT_NAME} — ${SITE_CONFIG.TAGLINE}`,
-    description: 'Break the Chakravyuh. 36 Hours National Hackathon at GITA Autonomous College, Bhubaneswar.',
+    description: 'Break the Chakravyuh. 24 Hours National Hackathon at GITA Autonomous College, Bhubaneswar.',
     images: ['/assets/hero_kurukshetra_chariot.jpg'],
   },
   icons: {
@@ -104,7 +104,7 @@ export default function RootLayout({
       },
     },
     image: ['https://chakravyuh.gita.edu.in/assets/hero_kurukshetra_chariot.jpg'],
-    description: `${SITE_CONFIG.EVENT_NAME} is a National Level 36-Hour Hackathon organized by GITA Autonomous College, Bhubaneswar.`,
+    description: `${SITE_CONFIG.EVENT_NAME} is a National Level 24-Hour Hackathon organized by GITA Autonomous College, Bhubaneswar.`,
     organizer: {
       '@type': 'Organization',
       name: SITE_CONFIG.ORGANIZER,

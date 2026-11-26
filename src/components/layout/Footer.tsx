@@ -39,7 +39,7 @@ export const Footer: React.FC<FooterProps> = ({ onCoordinatorsClick }) => {
               </p>
             </div>
             <p className="font-body text-body-md text-cream-parchment max-w-md">
-              {SITE_CONFIG.TAGLINE}. 36-hour National Hackathon uniting student builders, visionary mentors, and institutional pioneers.
+              {SITE_CONFIG.TAGLINE}. 24-hour National Hackathon uniting student builders, visionary mentors, and institutional pioneers.
             </p>
           </div>
 

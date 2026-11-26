@@ -97,9 +97,9 @@ export const TimelineSection: React.FC = () => {
       accentClass: 'text-gold-highlight',
       datetime: '23 JAN 2027 · 09:00 AM',
       title: 'Hackathon Kickoff',
-      desc: 'On-campus check-in, inaugural ceremony, GitHub repo initialization, and 36-hour build.',
+      desc: 'On-campus check-in, inaugural ceremony, GitHub repo initialization, and 24-hour build.',
       action: 'Arena: GITA Auditorium',
-      phaseLabel: 'Phase 04 · 36h Begins',
+      phaseLabel: 'Phase 04 · 24h Begins',
       nodeColor: 'bg-gold-rich',
       icon: <Rocket className="w-5 h-5 text-gold-highlight" />,
     },
@@ -203,7 +203,7 @@ export const TimelineSection: React.FC = () => {
             The Seven Gates
           </h2>
           <p className="font-body text-body-md text-cream-parchment max-w-2xl text-pretty font-normal">
-            Every team must pierce seven progressive rings—from nationwide squad registration to the 36-hour war room and the Grand Finale sanctum at GITA Autonomous College.
+            Every team must pierce seven progressive rings—from nationwide squad registration to the 24-hour war room and the Grand Finale sanctum at GITA Autonomous College.
           </p>
         </div>
 
@@ -267,7 +267,7 @@ export const TimelineSection: React.FC = () => {
                   : 'bg-bronze-brown/60 text-cream-parchment border border-gold-rich/50 hover:bg-bronze-brown'
               }`}
             >
-              36h War Room (IV–VI)
+              24h War Room (IV–VI)
             </button>
             <button
               type="button"

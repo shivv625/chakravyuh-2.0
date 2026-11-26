@@ -65,7 +65,7 @@ export const SITE_CONFIG = {
   EVENT_NAME: "CHAKRAVYUH 2.0",
   EVENT_EDITION: "2.0",
   TAGLINE: "Break The Chakravyuh",
-  SUBTITLE: "National Level 36-Hour Hackathon",
+  SUBTITLE: "National Level 24-Hour Hackathon",
   ORGANIZER: "GITA Autonomous College, Bhubaneswar",
   ACADEMIC_PARTNER: "In association with BPUT, Odisha",
   COLLEGE_FULL_NAME: "Gandhi Institute for Technological Advancement (GITA Autonomous College)",
@@ -99,14 +99,14 @@ export const SITE_CONFIG = {
     FIRST_PRIZE: "TODO_FIRST_PRIZE_AMOUNT_E_G_75000",
     SECOND_PRIZE: "TODO_SECOND_PRIZE_AMOUNT_E_G_45000",
     THIRD_PRIZE: "TODO_THIRD_PRIZE_AMOUNT_E_G_25000",
-    DURATION_HOURS: "36 Hours",
+    DURATION_HOURS: "24 Hours",
     EXPECTED_PARTICIPANTS: "500+",
     SHORTLISTED_TEAMS: "125 Teams",
     COLLEGES_REPRESENTED: "40+",
     TEAM_SIZE_MIN: 2,
     TEAM_SIZE_MAX: 4,
     REGISTRATION_FEE_SUBMISSION: "Free",
-    HOSPITALITY_FEE_PER_MEMBER: "₹400", // Accommodation & Food for 36 hours for shortlisted finals
+    HOSPITALITY_FEE_PER_MEMBER: "₹400", // Accommodation & Food for 24 hours for shortlisted finals
   },
 
   // Official Documents
@@ -178,7 +178,7 @@ export const SITE_CONFIG = {
       title: "Hackathon Kickoff",
       datetime: "23 JAN 2027 · 09:00 AM",
       timestamp: "2027-01-23T09:00:00+05:30",
-      description: "Campus check-in, warrior badge issuance, inaugural conch, and 36-hour sprint commences.",
+      description: "Campus check-in, warrior badge issuance, inaugural conch, and 24-hour sprint commences.",
       icon: "Rocket",
       accentColor: "#F2B84B", // Gold Highlight
       status: "upcoming",
@@ -279,7 +279,7 @@ export const SITE_CONFIG = {
       number: "NIYAM 02",
       category: "Integrity",
       title: "Original Code & GitHub Push",
-      description: "All project code must be authored during the 36-hour sprint. Repositories must be initialized on kickoff morning and committed continuously to public or jury-accessible GitHub repos.",
+      description: "All project code must be authored during the 24-hour sprint. Repositories must be initialized on kickoff morning and committed continuously to public or jury-accessible GitHub repos.",
     },
     {
       id: "rule-3",
@@ -310,7 +310,7 @@ export const SITE_CONFIG = {
     {
       id: "faq-1",
       question: "Is there an entry fee to apply for Chakravyuh 2.0?",
-      answer: "No, initial online registration and idea submission are 100% free. Only the top 125 teams selected for the on-campus round pay a nominal ₹400 per person fee, which fully covers accommodation, meals, drinks, high-speed WiFi, and 36-hour campus facilities.",
+      answer: "No, initial online registration and idea submission are 100% free. Only the top 125 teams selected for the on-campus round pay a nominal ₹400 per person fee, which fully covers accommodation, meals, drinks, high-speed WiFi, and 24-hour campus facilities.",
     },
     {
       id: "faq-2",
@@ -376,7 +376,7 @@ export const SITE_CONFIG = {
       department: "Hospitality & Logistics",
       phone: "+91 79784 31029",
       photo: "/team/coordinator_lead_2.jpg",
-      quote: "36 hours of seamless campus hospitality, mentorship, and uninterrupted building.",
+      quote: "24 hours of seamless campus hospitality, mentorship, and uninterrupted building.",
     },
     {
       name: "Rohan Behera",

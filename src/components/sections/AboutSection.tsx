@@ -149,7 +149,7 @@ export const AboutSection: React.FC = () => {
             </div>
 
             <h2 className="font-display text-display-md-mobile md:text-display-md text-bronze-brown text-balance leading-tight">
-              Seven Rings. Thirty-Six Hours. One Breakthrough.
+              Seven Rings. Twenty-Four Hours. One Breakthrough.
             </h2>
 
             <p className="font-editorial text-body-lg text-navy-ink max-w-prose text-pretty">
@@ -157,7 +157,7 @@ export const AboutSection: React.FC = () => {
             </p>
 
             <p className="font-body text-body-md text-navy-ink max-w-prose text-pretty">
-              Conducted in proud association with Biju Patnaik University of Technology (BPUT), Odisha, this national battleground brings together 500+ student innovators for 36 non-stop hours of mentorship, rapid prototyping, and high-stakes jury defense.
+              Conducted in proud association with Biju Patnaik University of Technology (BPUT), Odisha, this national battleground brings together 500+ student innovators for 24 non-stop hours of mentorship, rapid prototyping, and high-stakes jury defense.
             </p>
 
             {/* Stats Strip */}
@@ -240,7 +240,7 @@ export const AboutSection: React.FC = () => {
               </span>
             </div>
             <span className="font-label text-label-sm uppercase text-bronze-brown tracking-wider font-semibold">
-              36-Hour National Hackathon · Bhubaneswar
+              24-Hour National Hackathon · Bhubaneswar
             </span>
           </div>
 
@@ -287,7 +287,7 @@ export const AboutSection: React.FC = () => {
                     23–24 Jan 2027
                   </h3>
                   <p className="font-body text-body-md text-cream-parchment mt-1">
-                    Saturday 09:00 AM to Sunday 09:00 PM
+                    Saturday 09:00 AM to Sunday 09:00 AM
                   </p>
                 </div>
                 <div className="pt-3 border-t border-gold-rich/40 flex items-center justify-between">
@@ -295,7 +295,7 @@ export const AboutSection: React.FC = () => {
                     Weekend Sprint
                   </span>
                   <span className="px-2.5 py-0.5 bg-bronze-brown border border-gold-rich rounded-sm font-label text-label-sm text-gold-highlight font-bold shadow-xs">
-                    36 Hours
+                    24 Hours
                   </span>
                 </div>
               </div>

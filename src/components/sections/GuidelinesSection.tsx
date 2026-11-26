@@ -24,7 +24,7 @@ export const GuidelinesSection: React.FC = () => {
       qNum: 'Q1',
       question: 'Is there a registration fee for shortlisted teams?',
       answer:
-        'Idea submission is completely free. Shortlisted teams pay a nominal ₹400 per member hospitality fee covering all meals, snacks, and campus accommodation for 36 hours.',
+        'Idea submission is completely free. Shortlisted teams pay a nominal ₹400 per member hospitality fee covering all meals, snacks, and campus accommodation for 24 hours.',
     },
     {
       qNum: 'Q2',
@@ -131,7 +131,7 @@ export const GuidelinesSection: React.FC = () => {
                   </span>
                 </div>
                 <p className="font-body text-body-md text-navy-ink font-normal">
-                  All code must be written during the 36-hour window and pushed to a jury-accessible GitHub repository initialized at kickoff.
+                  All code must be written during the 24-hour window and pushed to a jury-accessible GitHub repository initialized at kickoff.
                 </p>
                 <div className="flex flex-wrap gap-2 pt-1">
                   <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-cream-parchment border border-gold-rich/50 rounded-sm font-label text-label-sm text-bronze-brown font-medium">

@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { SITE_CONFIG } from '@/content/site';
 import { RibbonButton } from '@/components/common/RibbonButton';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
@@ -22,7 +23,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRegisterClick, onCoordinatorsC
     { label: 'Guidelines', href: '#guidelines' },
     { label: 'Glimpse', href: '#glimpse' },
     { label: 'Sponsors', href: '#sponsors' },
-    { label: 'Coordinators', href: '#coordinators' },
+    { label: 'Organizers', href: '#coordinators' },
     { label: 'Contact', href: '#contact' },
   ];
 
@@ -106,26 +107,22 @@ export const Navbar: React.FC<NavbarProps> = ({ onRegisterClick, onCoordinatorsC
             onClick={(e) => handleNavClick(e, '#hero')}
             className="flex items-center gap-3 shrink-0 group"
           >
-            <div className="w-10 h-10 rounded-full border-2 border-gold-rich bg-dark-chocolate flex items-center justify-center transition-transform group-hover:rotate-45 duration-card-lift">
-              <svg
-                className="w-6 h-6 text-gold-highlight"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.6"
-                aria-hidden="true"
-              >
-                <circle cx="12" cy="12" r="9" />
-                <circle cx="12" cy="12" r="4" />
-                <path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6L5.6 18.4" />
-              </svg>
+            <div className="w-11 h-11 rounded-full border-2 border-gold-rich bg-dark-chocolate flex items-center justify-center p-1 transition-transform group-hover:scale-105 duration-card-lift shadow-sm">
+              <Image
+                src="/assets/chakravyuh_logo.png"
+                alt="Chakravyuh 2.0 Official Logo"
+                width={40}
+                height={40}
+                className="w-full h-full object-contain"
+                priority
+              />
             </div>
             <div className="flex flex-col">
               <span className="font-display text-title-lg text-dark-chocolate leading-none">
                 CHAKRAVYUH
               </span>
-              <span className="font-label text-label-sm text-bronze-brown tracking-widest leading-none mt-1">
-                2.0 · NATIONAL
+              <span className="font-label text-label-sm text-bronze-brown tracking-widest leading-none mt-1 uppercase">
+                2nd edition
               </span>
             </div>
           </Link>
@@ -190,10 +187,24 @@ export const Navbar: React.FC<NavbarProps> = ({ onRegisterClick, onCoordinatorsC
           aria-label="Mobile Navigation"
         >
           <div className="flex items-center justify-between border-b border-gold-rich pb-4">
-            <div className="flex items-center gap-2">
-              <span className="font-display text-title-lg text-bronze-brown">
-                CHAKRAVYUH 2.0
-              </span>
+            <div className="flex items-center gap-2.5">
+              <div className="w-9 h-9 rounded-full border border-gold-rich bg-dark-chocolate flex items-center justify-center p-0.5 shadow-xs">
+                <Image
+                  src="/assets/chakravyuh_logo.png"
+                  alt="Chakravyuh 2.0 Logo"
+                  width={32}
+                  height={32}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <div className="flex flex-col">
+                <span className="font-display text-title-lg text-bronze-brown leading-none">
+                  CHAKRAVYUH
+                </span>
+                <span className="font-label text-[10px] text-bronze-brown tracking-widest uppercase mt-0.5">
+                  2nd edition
+                </span>
+              </div>
             </div>
             <button
               type="button"

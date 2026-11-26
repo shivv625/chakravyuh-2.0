@@ -35,7 +35,7 @@ export const RibbonBannerSection: React.FC = () => {
               </span>
               <Shield className="w-3.5 h-3.5 text-dark-chocolate/80" />
               <span className="tracking-wider text-xs sm:text-xs font-bold text-dark-chocolate/90">
-                36-HOUR NATIONAL ARENA
+                24-HOUR NATIONAL ARENA
               </span>
               <Star className="w-3 h-3 text-saffron fill-saffron" />
               <span className="tracking-wider text-xs sm:text-xs font-semibold text-dark-chocolate/80">

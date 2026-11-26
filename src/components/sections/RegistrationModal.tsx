@@ -461,7 +461,7 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
                 className="mt-1 w-4 h-4 text-saffron border-gold-rich rounded focus:ring-gold-rich"
               />
               <span className="font-body text-body-md text-navy-ink">
-                We solemnly agree to abide by the Niyam of Chakravyuh 2.0, author all codebase during the 36-hour sprint, and uphold collegiate sportsmanship.
+                We solemnly agree to abide by the Niyam of Chakravyuh 2.0, author all codebase during the 24-hour sprint, and uphold collegiate sportsmanship.
               </span>
             </label>
 

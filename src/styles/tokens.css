@@ -48,11 +48,11 @@
 }
 
 .hero-light-scrim {
-  background: radial-gradient(circle at 50% 40%, rgba(255, 246, 227, 0.86) 0%, rgba(255, 246, 227, 0.58) 42%, rgba(58, 29, 14, 0.38) 100%);
+  background: radial-gradient(circle at 50% 50%, rgba(255, 246, 227, 0.86) 0%, rgba(255, 246, 227, 0.58) 42%, rgba(58, 29, 14, 0.38) 100%);
 }
 
 .sunburst-bg {
-  background: radial-gradient(circle at 50% 35%, #FFF6E3 0%, #BFD6EC 55%, #8FB4DC 100%);
+  background: radial-gradient(circle at 50% 50%, #FFF6E3 0%, #BFD6EC 55%, #8FB4DC 100%);
 }
 
 @keyframes chakraSpin {
@@ -62,6 +62,8 @@
 
 .animate-chakra {
   animation: chakraSpin 55s linear infinite;
+  transform-origin: center;
+  transform-box: fill-box;
 }
 
 .stage-plaque {

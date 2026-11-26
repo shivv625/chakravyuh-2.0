@@ -24,7 +24,7 @@ export const ChakraWatermark: React.FC<ChakraWatermarkProps> = ({
       aria-hidden="true"
     >
       <svg
-        className={`${sizeClasses[size]} text-gold-rich animate-chakra`}
+        className={`${sizeClasses[size]} text-gold-rich animate-chakra origin-center`}
         viewBox="0 0 400 400"
         fill="none"
         stroke="currentColor"

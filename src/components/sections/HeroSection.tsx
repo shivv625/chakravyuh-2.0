@@ -151,14 +151,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRegisterClick }) => 
         aria-hidden="true"
       />
 
-      {/* 4. Concentric Rotating Chakra Watermark (Middle Layer) */}
-      <div
-        className="absolute inset-0 flex items-center justify-center transition-transform duration-500 ease-out pointer-events-none"
-        style={{
-          transform: `translate3d(${-mouseOffset.x * 0.3}px, ${-mouseOffset.y * 0.3}px, 0)`,
-        }}
-      >
-        <ChakraWatermark size="lg" opacity="opacity-35" />
+      {/* 4. Concentric Rotating Chakra Watermark (Middle Layer - Perfectly Centered) */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10 overflow-hidden">
+        <div
+          className="transition-transform duration-500 ease-out flex items-center justify-center"
+          style={{
+            transform: `translate3d(${-mouseOffset.x * 0.25}px, ${-mouseOffset.y * 0.25}px, 0)`,
+          }}
+        >
+          <ChakraWatermark size="lg" opacity="opacity-35" />
+        </div>
       </div>
 
       {/* 5. Top Institutional Badges */}
