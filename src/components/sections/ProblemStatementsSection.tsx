@@ -329,42 +329,30 @@ export const ProblemStatementsSection: React.FC<ProblemStatementsSectionProps> =
                   </div>
 
                   {/* 3. Bottom Action Bar: Always 100% visible immediately without any internal scrolling */}
-                  <div className="shrink-0 pt-2 border-t border-gold-rich/40 flex flex-wrap items-center justify-between gap-2">
-                    {/* Left: Download PS + Tags */}
-                    <div className="flex items-center gap-2 flex-wrap">
-                      <a
-                        href={currentPS.driveLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 sm:py-2 bg-gradient-to-r from-gold-highlight to-gold-rich text-dark-chocolate hover:from-gold-rich hover:to-gold-highlight font-headline text-[11px] sm:text-label-sm uppercase font-bold tracking-wider rounded-lg border border-gold-rich shadow-sm hover:shadow-md hover:scale-102 transition-all duration-200 group/btn shrink-0"
-                        title="Download complete Problem Statement document from Google Drive"
-                      >
+                  <div className="shrink-0 pt-2.5 border-t border-gold-rich/40 flex items-center justify-between gap-3">
+                    {/* Left: Upgraded High-Impact "Download PS Dossier" Button */}
+                    <a
+                      href={currentPS.driveLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2.5 px-4 sm:px-5 py-2 sm:py-2.5 bg-gradient-to-r from-gold-highlight via-gold-rich to-gold-highlight text-dark-chocolate hover:brightness-105 font-headline text-xs sm:text-sm uppercase font-extrabold tracking-wider rounded-lg border-2 border-gold-rich shadow-md hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 group/btn shrink-0"
+                      title="Download complete Problem Statement document from Google Drive"
+                    >
+                      <div className="w-5 h-5 rounded-md bg-dark-chocolate/15 flex items-center justify-center">
                         <Download className="w-3.5 h-3.5 text-dark-chocolate group-hover/btn:translate-y-0.5 transition-transform" />
-                        <span>Download PS</span>
-                        <ArrowUpRight className="w-3 h-3 text-dark-chocolate/80" />
-                      </a>
-
-                      {/* Category Tags */}
-                      <div className="hidden sm:flex flex-wrap gap-1">
-                        {currentPS.tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className="px-2 py-0.5 bg-light-surface-container border border-gold-rich/60 rounded-sm font-label text-[10px] sm:text-[11px] text-bronze-brown font-semibold shadow-2xs"
-                          >
-                            {tag}
-                          </span>
-                        ))}
                       </div>
-                    </div>
+                      <span>Download PS Dossier</span>
+                      <ArrowUpRight className="w-3.5 h-3.5 text-dark-chocolate/80 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
+                    </a>
 
-                    {/* Right: Lock This PS Button */}
+                    {/* Right: Royal "Lock This PS" Button */}
                     <a
                       href="#register"
                       onClick={onRegisterClick}
-                      className="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-1.5 sm:py-2 bg-dark-chocolate text-gold-highlight border border-gold-rich ribbon-pill font-label text-[11px] sm:text-label-sm uppercase tracking-wider font-bold hover:bg-bronze-brown hover:text-cream-parchment transition-all shadow-sm shrink-0"
+                      className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 bg-dark-chocolate text-gold-highlight border-2 border-gold-rich/80 rounded-lg font-headline text-xs sm:text-sm uppercase tracking-wider font-extrabold hover:bg-bronze-brown hover:border-gold-highlight hover:text-cream-parchment hover:shadow-md hover:scale-[1.02] active:scale-[0.98] transition-all shrink-0 group/lock"
                     >
                       <span>Lock This PS</span>
-                      <ArrowRight className="w-3.5 h-3.5 text-gold-highlight" />
+                      <ArrowRight className="w-4 h-4 text-gold-highlight group-hover/lock:translate-x-0.5 transition-transform" />
                     </a>
                   </div>
                 </div>
