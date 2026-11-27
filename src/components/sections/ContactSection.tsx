@@ -104,7 +104,12 @@ export const ContactSection: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-4 pt-1">
-            <QRFrame label="Scan For Updates" size="sm" />
+            <QRFrame
+              label="Scan For Updates"
+              size="sm"
+              imageSrc="/assets/qr_whatsapp.png"
+              alt="WhatsApp Community QR"
+            />
             <div className="flex flex-col gap-1">
               <span className="px-3 py-1 bg-bronze-brown text-gold-highlight ribbon-pill font-label text-label-sm uppercase self-start font-bold">
                 Scan For Updates

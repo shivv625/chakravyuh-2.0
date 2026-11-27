@@ -117,12 +117,14 @@ export const SITE_CONFIG = {
 
   // Socials & Communities
   COMMUNITIES: {
-    WHATSAPP_JOIN_LINK: "TODO_WHATSAPP_COMMUNITY_INVITE_URL",
+    WHATSAPP_NAME: "chakravyuh hackathon",
+    WHATSAPP_JOIN_LINK: "https://chat.whatsapp.com/KAWnfgp14F66qYHyYuLUli",
     DISCORD_JOIN_LINK: "TODO_DISCORD_SERVER_INVITE_URL",
-    INSTAGRAM_HANDLE: "@chakravyuh.gita",
-    INSTAGRAM_URL: "https://instagram.com/chakravyuh.gita", // TODO_VERIFY_INSTAGRAM_LINK
-    LINKEDIN_URL: "https://linkedin.com/school/gita-autonomous-college", // TODO_VERIFY_LINKEDIN_LINK
-    GITHUB_ORG_URL: "https://github.com/gita-chakravyuh", // TODO_VERIFY_GITHUB_ORG
+    INSTAGRAM_HANDLE: "chakravyuh_hackathon",
+    INSTAGRAM_URL: "https://www.instagram.com/chakravyuh_hackathon/",
+    LINKEDIN_HANDLE: "ai club gita",
+    LINKEDIN_URL: "https://www.linkedin.com/company/ai-club-gita/",
+    GITHUB_ORG_URL: "https://github.com/gita-chakravyuh",
   },
 
   // Contact Info

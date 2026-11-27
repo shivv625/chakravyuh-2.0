@@ -57,6 +57,9 @@ export const Footer: React.FC<FooterProps> = ({ onCoordinatorsClick, onRegisterC
             <a href="#glimpse" className="hover:text-gold-highlight transition-colors">
               Chakravyuh 1.0
             </a>
+            <a href="#community" className="hover:text-gold-highlight transition-colors">
+              Community
+            </a>
             <a
               href="#coordinators"
               onClick={(e) => {
