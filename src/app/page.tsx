@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import { Navbar } from '@/components/layout/Navbar';
-import { Footer } from '@/components/layout/Footer';
 import { HeroSection } from '@/components/sections/HeroSection';
 import { RibbonBannerSection } from '@/components/sections/RibbonBannerSection';
 import { AboutSection } from '@/components/sections/AboutSection';
@@ -48,19 +47,13 @@ export default function Home() {
         <ContactSection />
       </main>
 
-      {/* 5. Institutional Footer */}
-      <Footer
-        onCoordinatorsClick={() => setCoordinatorsModalOpen(true)}
-        onRegisterClick={() => setModalOpen(true)}
-      />
-
-      {/* 6. Coordinators / Commanders Modal Overlay (Opened on navbar/footer click) */}
+      {/* 5. Coordinators / Commanders Modal Overlay (Opened on navbar click) */}
       <CoordinatorsModal
         isOpen={coordinatorsModalOpen}
         onClose={() => setCoordinatorsModalOpen(false)}
       />
 
-      {/* 7. Registration Modal Overlay (Opened on Register buttons across the site) */}
+      {/* 6. Registration Modal Overlay (Opened on Register buttons across the site) */}
       <RegistrationModal
         isOpen={modalOpen}
         onClose={() => setModalOpen(false)}
