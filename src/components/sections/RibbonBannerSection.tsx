@@ -20,7 +20,7 @@ export const RibbonBannerSection: React.FC = () => {
         {/* Ribbon 1: Golden Saffron forward scroll */}
         <div className="-mx-12 w-[calc(100%+6rem)] sm:-mx-24 sm:w-[calc(100%+12rem)] relative z-10">
           <InfiniteRibbon
-            duration={26}
+            duration={50}
             repeat={6}
             rotation={-1.8}
             className="bg-gradient-to-r from-gold-rich via-gold-highlight to-gold-rich py-2 sm:py-2.5 text-dark-chocolate shadow-md border-y border-dark-chocolate/15"
@@ -49,7 +49,7 @@ export const RibbonBannerSection: React.FC = () => {
         {/* Ribbon 2: Dark Chocolate reverse scroll with gold accents */}
         <div className="-mx-12 w-[calc(100%+6rem)] sm:-mx-24 sm:w-[calc(100%+12rem)] relative z-20">
           <InfiniteRibbon
-            duration={30}
+            duration={58}
             repeat={6}
             reverse={true}
             rotation={1.5}
