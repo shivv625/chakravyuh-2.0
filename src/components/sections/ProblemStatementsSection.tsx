@@ -33,16 +33,16 @@ export const ProblemStatementsSection: React.FC<ProblemStatementsSectionProps> =
   const getTrackIcon = (id: string) => {
     switch (id) {
       case 'ps-01':
-        return <BrainCircuit className="w-5 h-5 text-gold-rich" />;
+        return <BrainCircuit className="w-4 h-4 text-gold-highlight" />;
       case 'ps-02':
-        return <ShieldCheck className="w-5 h-5 text-gold-rich" />;
+        return <ShieldCheck className="w-4 h-4 text-gold-highlight" />;
       case 'ps-03':
-        return <Landmark className="w-5 h-5 text-gold-rich" />;
+        return <Landmark className="w-4 h-4 text-gold-highlight" />;
       case 'ps-04':
-        return <HeartPulse className="w-5 h-5 text-gold-rich" />;
+        return <HeartPulse className="w-4 h-4 text-gold-highlight" />;
       case 'ps-05':
       default:
-        return <Globe className="w-5 h-5 text-gold-rich" />;
+        return <Globe className="w-4 h-4 text-gold-highlight" />;
     }
   };
 
@@ -66,7 +66,7 @@ export const ProblemStatementsSection: React.FC<ProblemStatementsSectionProps> =
             const progress = Math.max(0, Math.min(1, scrolled / totalScrollDistance));
             setScrollProgress(progress);
 
-            // Centered stable plateaus for each item:
+            // Centered stable plateaus for each item
             const step = 1 / (totalPS - 1);
             const nextIndex = Math.min(
               totalPS - 1,
@@ -171,7 +171,7 @@ export const ProblemStatementsSection: React.FC<ProblemStatementsSectionProps> =
             </div>
           </div>
 
-          {/* Master-Detail 5+7 Fixed Showcase (Direct Stitch Design) */}
+          {/* Master-Detail 5+7 Fixed Showcase */}
           <div className="flex-1 min-h-0 bg-dark-chocolate text-cream-parchment border-2 border-gold-highlight rounded-xl p-3.5 md:p-5 shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-3.5 md:gap-5 items-stretch overflow-hidden">
             {/* Left 5 Cols: 5 Interactive PS Selector Cards */}
             <div
@@ -261,85 +261,113 @@ export const ProblemStatementsSection: React.FC<ProblemStatementsSectionProps> =
               })}
             </div>
 
-            {/* Right 7 Cols: Active PS Spotlight - Authentic Stitch Parchment Layout */}
-            {/* Clean, high-contrast, zero-overlap presentation adhering strictly to Stitch */}
-            <div className="lg:col-span-7 bg-light-surface-container-lowest text-navy-ink border-2 border-gold-rich rounded-xl p-4 md:p-5 flex flex-col justify-between shadow-xl relative overflow-hidden">
-              {/* 1. Header & Title Section */}
-              <div className="relative z-10 flex flex-col gap-1.5 shrink-0">
-                <div className="flex items-center justify-between gap-2">
-                  <span className="px-3 py-0.5 bg-dark-chocolate text-gold-highlight font-label text-label-xs uppercase rounded-sm border border-gold-rich/60 font-bold tracking-wider shadow-2xs">
-                    {currentPS.code} · {currentPS.astraCode} · {currentPS.subtitle}
-                  </span>
-                  <div className="flex items-center gap-1.5 text-bronze-brown">
-                    {getTrackIcon(currentPS.id)}
-                    <span className="font-label text-label-xs uppercase font-bold hidden sm:inline">
-                      {currentPS.domain}
+            {/* Right 7 Cols: Active PS Spotlight with Horizontal Concept Banner */}
+            <div className="lg:col-span-7 bg-light-surface-container-lowest text-navy-ink border-2 border-gold-rich rounded-xl overflow-hidden flex flex-col justify-between shadow-xl">
+              <div
+                key={currentPS.id}
+                className="flex-1 flex flex-col justify-between h-full transition-all duration-300 ease-out"
+              >
+                {/* 1. Horizontal Concept Art Banner */}
+                <div className="relative h-20 sm:h-24 md:h-28 w-full overflow-hidden border-b-2 border-gold-rich bg-dark-chocolate shrink-0">
+                  <Image
+                    src={currentPS.image}
+                    alt={currentPS.alt}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 58vw"
+                    className="object-cover"
+                    priority
+                  />
+                  {/* Subtle Gradient for Overlaid Meta Badges */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-dark-chocolate/90 via-dark-chocolate/35 to-transparent pointer-events-none" />
+
+                  {/* Top Badge Overlay */}
+                  <div className="absolute top-2 left-3 right-3 flex items-center justify-between gap-2 z-10">
+                    <span className="px-3 py-0.5 bg-dark-chocolate/90 text-gold-highlight font-label text-[10px] sm:text-[11px] uppercase rounded-full font-bold border border-gold-rich/50 backdrop-blur-xs shadow-xs">
+                      {currentPS.code} · {currentPS.astraCode} · {currentPS.domain}
                     </span>
+
+                    <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full border border-gold-highlight bg-dark-chocolate/90 flex items-center justify-center shadow-xs">
+                      {getTrackIcon(currentPS.id)}
+                    </div>
+                  </div>
+
+                  {/* Subtitle in Banner */}
+                  <div className="absolute bottom-1.5 left-3 right-3 z-10">
+                    <p className="font-label text-[11px] sm:text-label-xs uppercase text-gold-highlight font-bold tracking-wider drop-shadow-xs">
+                      {currentPS.subtitle}
+                    </p>
                   </div>
                 </div>
 
-                <h3 className="font-display text-headline-sm md:text-headline-md text-dark-chocolate font-bold leading-tight mt-1">
-                  {currentPS.heading}
-                </h3>
+                {/* 2. Text Content & Challenge Scope (Clean high-contrast parchment, zero overlap) */}
+                <div className="p-3 sm:p-3.5 md:p-4 flex-1 flex flex-col justify-between gap-2 min-h-0">
+                  <div className="flex flex-col gap-1">
+                    {/* 1-Line PS Heading */}
+                    <h3 className="font-display text-base sm:text-title-md md:text-headline-sm text-dark-chocolate font-bold leading-tight truncate">
+                      {currentPS.heading}
+                    </h3>
 
-                <p className="font-body text-xs md:text-sm text-navy-ink/90 leading-relaxed line-clamp-3">
-                  {currentPS.brief}
-                </p>
-              </div>
+                    {/* Brief Description */}
+                    <p className="font-body text-xs sm:text-[13px] md:text-sm text-navy-ink/90 leading-relaxed line-clamp-2">
+                      {currentPS.brief}
+                    </p>
+                  </div>
 
-              {/* 2. Key Technical Objectives Box (Sized to fit cleanly) */}
-              <div className="relative z-10 bg-light-surface-container-low border border-gold-rich/60 rounded-lg p-2.5 md:p-3.5 my-auto shrink-0 shadow-2xs">
-                <span className="font-label text-label-xs uppercase text-bronze-brown block mb-1.5 font-bold tracking-wider">
-                  Key Technical Objectives &amp; Scope
-                </span>
-                <ul className="font-body text-xs md:text-label-sm text-navy-ink flex flex-col gap-1.5 font-medium">
-                  {currentPS.challengePrompts.map((prompt, i) => (
-                    <li key={i} className="flex items-start gap-2">
-                      <span className="text-saffron font-bold leading-none mt-0.5">•</span>
-                      <span className="line-clamp-2">{prompt}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                  {/* Key Technical Objectives Box */}
+                  <div className="bg-light-surface-container-low border border-gold-rich/60 rounded-lg p-2 sm:p-2.5 md:p-3 shrink-0 shadow-2xs">
+                    <span className="font-label text-[10px] sm:text-label-xs uppercase text-bronze-brown block mb-1 font-bold tracking-wider">
+                      Key Technical Objectives &amp; Scope
+                    </span>
+                    <ul className="font-body text-[11px] sm:text-xs md:text-label-sm text-navy-ink flex flex-col gap-1 font-medium">
+                      {currentPS.challengePrompts.map((prompt, i) => (
+                        <li key={i} className="flex items-start gap-1.5">
+                          <span className="text-saffron font-bold leading-none mt-0.5">•</span>
+                          <span className="line-clamp-1">{prompt}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
 
-              {/* 3. Bottom Action Bar: Always 100% visible immediately without any internal scrolling */}
-              <div className="relative z-10 flex flex-wrap items-center justify-between gap-3 pt-2.5 border-t border-gold-rich/40 shrink-0">
-                {/* Left: Download PS Button (Google Drive) + Tags (Stitch exact design) */}
-                <div className="flex items-center gap-2.5 flex-wrap">
-                  <a
-                    href={currentPS.driveLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-3.5 md:px-4 py-2 bg-gradient-to-r from-gold-highlight to-gold-rich text-dark-chocolate hover:from-gold-rich hover:to-gold-highlight font-headline text-label-sm uppercase font-bold tracking-wider rounded-lg border border-gold-rich shadow-sm hover:shadow-md hover:scale-102 transition-all duration-200 group/btn shrink-0"
-                    title="Download complete Problem Statement document from Google Drive"
-                  >
-                    <Download className="w-4 h-4 text-dark-chocolate group-hover/btn:translate-y-0.5 transition-transform" />
-                    <span>Download PS</span>
-                    <ArrowUpRight className="w-3.5 h-3.5 text-dark-chocolate/80" />
-                  </a>
-
-                  {/* Category Tags (Exact design from Stitch reference) */}
-                  <div className="flex flex-wrap gap-1.5">
-                    {currentPS.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-2.5 py-0.5 bg-light-surface-container border border-gold-rich/60 rounded-sm font-label text-label-sm text-bronze-brown font-semibold shadow-2xs"
+                  {/* 3. Bottom Action Bar: Always 100% visible immediately without any internal scrolling */}
+                  <div className="shrink-0 pt-2 border-t border-gold-rich/40 flex flex-wrap items-center justify-between gap-2">
+                    {/* Left: Download PS + Tags */}
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <a
+                        href={currentPS.driveLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 sm:py-2 bg-gradient-to-r from-gold-highlight to-gold-rich text-dark-chocolate hover:from-gold-rich hover:to-gold-highlight font-headline text-[11px] sm:text-label-sm uppercase font-bold tracking-wider rounded-lg border border-gold-rich shadow-sm hover:shadow-md hover:scale-102 transition-all duration-200 group/btn shrink-0"
+                        title="Download complete Problem Statement document from Google Drive"
                       >
-                        {tag}
-                      </span>
-                    ))}
+                        <Download className="w-3.5 h-3.5 text-dark-chocolate group-hover/btn:translate-y-0.5 transition-transform" />
+                        <span>Download PS</span>
+                        <ArrowUpRight className="w-3 h-3 text-dark-chocolate/80" />
+                      </a>
+
+                      {/* Category Tags */}
+                      <div className="hidden sm:flex flex-wrap gap-1">
+                        {currentPS.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="px-2 py-0.5 bg-light-surface-container border border-gold-rich/60 rounded-sm font-label text-[10px] sm:text-[11px] text-bronze-brown font-semibold shadow-2xs"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Right: Lock This PS Button */}
+                    <a
+                      href="#register"
+                      onClick={onRegisterClick}
+                      className="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-1.5 sm:py-2 bg-dark-chocolate text-gold-highlight border border-gold-rich ribbon-pill font-label text-[11px] sm:text-label-sm uppercase tracking-wider font-bold hover:bg-bronze-brown hover:text-cream-parchment transition-all shadow-sm shrink-0"
+                    >
+                      <span>Lock This PS</span>
+                      <ArrowRight className="w-3.5 h-3.5 text-gold-highlight" />
+                    </a>
                   </div>
                 </div>
-
-                {/* Right: Lock This PS Button */}
-                <a
-                  href="#register"
-                  onClick={onRegisterClick}
-                  className="inline-flex items-center gap-1.5 px-4 md:px-5 py-2 bg-dark-chocolate text-gold-highlight border border-gold-rich ribbon-pill font-label text-label-sm uppercase tracking-wider font-bold hover:bg-bronze-brown hover:text-cream-parchment transition-all shadow-sm shrink-0"
-                >
-                  <span>Lock This PS</span>
-                  <ArrowRight className="w-3.5 h-3.5 text-gold-highlight" />
-                </a>
               </div>
             </div>
           </div>
@@ -348,3 +376,5 @@ export const ProblemStatementsSection: React.FC<ProblemStatementsSectionProps> =
     </section>
   );
 };
+
+export default ProblemStatementsSection;
