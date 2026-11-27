@@ -1,423 +1,380 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
-import { SITE_CONFIG } from '@/content/site';
-import {
-  Calendar,
-  Hourglass,
-  CheckCircle,
-  Rocket,
-  Users,
-  Gavel,
-  Trophy,
-} from 'lucide-react';
 
-interface GateItem {
+interface PhaseItem {
   id: string;
-  gateNum: string;
-  phase: 'pre' | 'sprint' | 'finale';
-  side: 'left' | 'right';
-  badge: string;
-  badgeClass: string;
-  borderClass: string;
-  accentClass: string;
-  datetime: string;
+  roman: string;
   title: string;
-  desc: string;
-  action: string;
-  phaseLabel: string;
-  nodeColor: string;
-  icon: React.ReactNode;
+  datetime: string;
+  image: string;
+  alt: string;
+  borderClass: string;
 }
 
 export const TimelineSection: React.FC = () => {
-  const [activeFilter, setActiveFilter] = useState<'all' | 'pre' | 'sprint' | 'finale'>('all');
-
-  const gates: GateItem[] = [
+  const phases: PhaseItem[] = [
     {
-      id: 'gate-1',
-      gateNum: 'I',
-      phase: 'pre',
-      side: 'left',
-      badge: 'Live Now',
-      badgeClass: 'bg-gold-highlight text-dark-chocolate font-bold',
+      id: 'phase-1',
+      roman: 'I',
+      title: 'Registration Open',
+      datetime: '15th Dec 2026 · 10:00 AM',
+      image: '/assets/phase_01_conch.jpg',
+      alt: 'Ancient warrior blowing a golden Shankha conch',
       borderClass: 'border-gold-highlight',
-      accentClass: 'text-gold-highlight',
-      datetime: '15 DEC 2026 · 10:00 AM',
-      title: 'Registration Opens',
-      desc: 'Squad registration and track selection goes live for UG/PG builders across India.',
-      action: 'Action: Squad + Track Lock',
-      phaseLabel: 'Phase 01 · Entry',
-      nodeColor: 'bg-gold-highlight',
-      icon: <Calendar className="w-5 h-5 text-gold-highlight" />,
     },
     {
-      id: 'gate-2',
-      gateNum: 'II',
-      phase: 'pre',
-      side: 'right',
-      badge: 'Deadline',
-      badgeClass: 'bg-dark-chocolate border border-saffron text-cream-parchment',
-      borderClass: 'border-saffron',
-      accentClass: 'text-saffron',
-      datetime: '10 JAN 2027 · 11:59 PM',
+      id: 'phase-2',
+      roman: 'II',
       title: 'Registration Closes',
-      desc: 'Final cutoff to lock your 3–5 member team and upload your solution pitch deck.',
-      action: 'Deliverable: Idea PPT',
-      phaseLabel: 'Phase 02 · Submission',
-      nodeColor: 'bg-saffron',
-      icon: <Hourglass className="w-5 h-5 text-saffron" />,
-    },
-    {
-      id: 'gate-3',
-      gateNum: 'III',
-      phase: 'pre',
-      side: 'left',
-      badge: 'Selection',
-      badgeClass: 'bg-dark-chocolate border border-krishna-blue text-sky-light',
-      borderClass: 'border-krishna-blue',
-      accentClass: 'text-sky-light',
-      datetime: '15 JAN 2027 · 06:00 PM',
-      title: 'Shortlist Announcement',
-      desc: 'Top 125 squads earn their Gate Pass to compete live at GITA Campus, Bhubaneswar.',
-      action: 'Milestone: Top 125 Teams',
-      phaseLabel: 'Phase 03 · Gate Pass',
-      nodeColor: 'bg-krishna-blue',
-      icon: <CheckCircle className="w-5 h-5 text-sky-light" />,
-    },
-    {
-      id: 'gate-4',
-      gateNum: 'IV',
-      phase: 'sprint',
-      side: 'right',
-      badge: 'Day 1',
-      badgeClass: 'bg-dark-chocolate border border-gold-rich text-gold-highlight',
+      datetime: '10th Jan 2027 · 11:59 PM',
+      image: '/assets/phase_02_scroll.jpg',
+      alt: 'Royal Bhojpatra war scroll sealed with wax',
       borderClass: 'border-gold-rich',
-      accentClass: 'text-gold-highlight',
-      datetime: '23 JAN 2027 · 09:00 AM',
-      title: 'Hackathon Kickoff',
-      desc: 'On-campus check-in, inaugural ceremony, GitHub repo initialization, and 24-hour build.',
-      action: 'Arena: GITA Auditorium',
-      phaseLabel: 'Phase 04 · 24h Begins',
-      nodeColor: 'bg-gold-rich',
-      icon: <Rocket className="w-5 h-5 text-gold-highlight" />,
     },
     {
-      id: 'gate-5',
-      gateNum: 'V',
-      phase: 'sprint',
-      side: 'left',
-      badge: 'Checkpoint',
-      badgeClass: 'bg-dark-chocolate border border-peacock-green text-cream-parchment',
-      borderClass: 'border-peacock-green',
-      accentClass: 'text-peacock-green',
-      datetime: '23 JAN 2027 · 08:00 PM',
-      title: 'Mid Evaluation',
-      desc: 'Night-one architecture review, technical debugging, and 1-on-1 industry mentoring.',
-      action: 'Review: Prototype + Architecture',
-      phaseLabel: 'Phase 05 · Mentor Ring',
-      nodeColor: 'bg-peacock-green',
-      icon: <Users className="w-5 h-5 text-cream-parchment" />,
+      id: 'phase-3',
+      roman: 'III',
+      title: 'Shortlist Announcement',
+      datetime: '15th Jan 2027 · 06:00 PM',
+      image: '/assets/phase_03_archers.jpg',
+      alt: 'Golden Gandiva bow and arrows',
+      borderClass: 'border-gold-rich',
     },
     {
-      id: 'gate-6',
-      gateNum: 'VI',
-      phase: 'sprint',
-      side: 'right',
-      badge: 'Day 2',
-      badgeClass: 'bg-dark-chocolate border border-saffron text-cream-parchment',
+      id: 'phase-4',
+      roman: 'IV',
+      title: 'Final Hackathon',
+      datetime: '23rd – 24th Jan 2027 · 24 Hours',
+      image: '/assets/phase_04_battle.jpg',
+      alt: 'Ancient Indian sandstone war pavilion',
+      borderClass: 'border-gold-rich',
+    },
+    {
+      id: 'phase-5',
+      roman: 'V',
+      title: 'Result Announcement',
+      datetime: '24th Jan 2027 · 05:30 PM',
+      image: '/assets/phase_05_victory.jpg',
+      alt: 'Radiant golden victory crown and Sudarshana Chakra',
       borderClass: 'border-saffron',
-      accentClass: 'text-saffron',
-      datetime: '24 JAN 2027 · 02:00 PM',
-      title: 'Final Pitch & Judging',
-      desc: 'Code freeze followed by live working product demos before the national jury panel.',
-      action: 'Format: 5m Demo + 3m Q&A',
-      phaseLabel: 'Phase 06 · Live Jury',
-      nodeColor: 'bg-saffron',
-      icon: <Gavel className="w-5 h-5 text-saffron" />,
     },
   ];
-
-  const ringNodes = [
-    { num: 'I', label: 'Open', id: '#gate-1', color: 'bg-gold-highlight text-dark-chocolate' },
-    { num: 'II', label: 'Close', id: '#gate-2', color: 'bg-dark-chocolate text-cream-parchment border-2 border-saffron hover:bg-saffron hover:text-dark-chocolate' },
-    { num: 'III', label: 'Shortlist', id: '#gate-3', color: 'bg-dark-chocolate text-sky-light border-2 border-krishna-blue hover:bg-krishna-blue hover:text-cream-parchment' },
-    { num: 'IV', label: 'Kickoff', id: '#gate-4', color: 'bg-dark-chocolate text-gold-highlight border-2 border-gold-rich hover:bg-gold-rich hover:text-dark-chocolate' },
-    { num: 'V', label: 'Mentor', id: '#gate-5', color: 'bg-dark-chocolate text-cream-parchment border-2 border-peacock-green hover:bg-peacock-green hover:text-cream-parchment' },
-    { num: 'VI', label: 'Pitch', id: '#gate-6', color: 'bg-dark-chocolate text-cream-parchment border-2 border-saffron hover:bg-saffron hover:text-dark-chocolate' },
-    { num: 'VII', label: 'Finale', id: '#gate-7', color: 'bg-bronze-brown text-gold-highlight border-2 border-gold-highlight hover:bg-gold-highlight hover:text-dark-chocolate' },
-  ];
-
-  const filteredGates = gates.filter((g) => {
-    if (activeFilter === 'all') return true;
-    return g.phase === activeFilter;
-  });
-
-  const showSanctum = activeFilter === 'all' || activeFilter === 'finale';
 
   return (
     <section
       id="timeline"
-      className="relative py-20 md:py-28 bg-dark-chocolate text-cream-parchment border-t-4 border-saffron overflow-hidden"
+      className="relative py-20 md:py-28 bg-light-surface-container-low text-navy-ink border-t-4 border-saffron overflow-hidden"
     >
-      {/* Kurukshetra Spiral Battlefield Backdrop */}
-      <div className="absolute inset-0 pointer-events-none opacity-45">
+      {/* Ancient Kurukshetra Battlefield Panoramic Parchment Map from Stitch */}
+      <div className="absolute inset-0 pointer-events-none opacity-85">
         <Image
-          src="/assets/roadmap_chakravyuh_bg.jpg"
-          alt="Chakravyuh spiral formation on Kurukshetra at twilight golden hour"
+          src="/assets/battlefield_warpath_bg.jpg"
+          alt="Ancient Indian Kurukshetra battlefield map with war chariots, elephants, and royal banners"
           fill
           sizes="100vw"
           className="object-cover object-center"
         />
       </div>
-      <div className="absolute inset-0 bg-gradient-to-b from-dark-chocolate/95 via-dark-chocolate/80 to-dark-chocolate/95 pointer-events-none" />
 
-      {/* Concentric Chakravyuh Sacred Geometry Watermark */}
-      <div
-        className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-15"
-        aria-hidden="true"
-      >
-        <svg
-          className="w-[820px] h-[820px] text-gold-rich animate-chakra"
-          viewBox="0 0 400 400"
-          fill="none"
-          stroke="currentColor"
-        >
-          <circle cx="200" cy="200" r="192" strokeWidth="0.9" strokeDasharray="6 6" />
-          <circle cx="200" cy="200" r="160" strokeWidth="1" />
-          <circle cx="200" cy="200" r="128" strokeWidth="0.8" strokeDasharray="4 4" />
-          <circle cx="200" cy="200" r="96" strokeWidth="1" />
-          <circle cx="200" cy="200" r="64" strokeWidth="1.2" />
-          <path d="M200 8v384M8 200h384M64 64l272 272M336 64L64 336" strokeWidth="0.5" />
-        </svg>
-      </div>
+      {/* Soft Central Parchment Glow Scrim for High-Contrast Typography */}
+      <div className="absolute inset-0 bg-gradient-to-b from-cream-parchment/30 via-cream-parchment/65 to-cream-parchment/40 pointer-events-none" />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 md:px-6 flex flex-col gap-12">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 flex flex-col gap-10">
         {/* Section Header */}
         <div className="text-center flex flex-col items-center gap-3">
-          <span className="px-5 py-1 bg-bronze-brown/90 border border-gold-rich ribbon-pill font-label text-label-sm uppercase text-gold-highlight tracking-widest font-bold shadow-sm">
-            7-Ring Battle Progression
+          <span className="px-5 py-1 bg-dark-chocolate border border-gold-rich ribbon-pill font-label text-label-sm uppercase text-gold-highlight tracking-widest font-bold shadow">
+            Kurukshetra Battle Progression
           </span>
-          <h2 className="font-display text-display-md-mobile md:text-display-md text-gold-highlight uppercase epic-text-shadow">
-            The Seven Gates
-          </h2>
-          <p className="font-body text-body-md text-cream-parchment max-w-2xl text-pretty font-normal">
-            Every team must pierce seven progressive rings—from nationwide squad registration to the 24-hour war room and the Grand Finale sanctum at GITA Autonomous College.
-          </p>
-        </div>
-
-        {/* 7-Ring Compass Strip + Phase Filter */}
-        <div className="bg-dark-chocolate/90 border border-gold-rich/60 rounded-lg p-5 md:p-6 shadow-lg flex flex-col gap-5 backdrop-blur-sm">
-          {/* 7 Roman Numeral Ring Nodes */}
-          <div className="relative flex items-center justify-between gap-2 overflow-x-auto pb-1">
-            <div className="hidden sm:block absolute left-6 right-6 top-5 h-0.5 bg-gold-rich/40" aria-hidden="true" />
-            {ringNodes.map((node) => (
-              <a
-                key={node.num}
-                href={node.id}
-                className="relative z-10 flex flex-col items-center gap-1.5 min-w-[68px] group transition-transform hover:scale-105"
-              >
-                <span
-                  className={`w-10 h-10 rounded-full font-display text-body-md font-bold flex items-center justify-center shadow-md transition-colors ${node.color}`}
-                >
-                  {node.num}
-                </span>
-                <span className="font-label text-label-sm uppercase tracking-wider text-cream-parchment/90 group-hover:text-gold-highlight font-semibold">
-                  {node.label}
-                </span>
-              </a>
-            ))}
-          </div>
-
-          {/* Interactive Phase Filter Tabs */}
-          <div
-            className="flex flex-wrap items-center justify-center gap-2 pt-3 border-t border-gold-rich/30"
-            role="tablist"
-            aria-label="Filter timeline gates by phase"
-          >
-            <button
-              type="button"
-              onClick={() => setActiveFilter('all')}
-              className={`px-4 py-1.5 rounded-full font-label text-label-sm uppercase tracking-wider transition-colors select-none ${
-                activeFilter === 'all'
-                  ? 'bg-gold-highlight text-dark-chocolate font-bold shadow-md'
-                  : 'bg-bronze-brown/60 text-cream-parchment border border-gold-rich/50 hover:bg-bronze-brown'
-              }`}
-            >
-              All 7 Gates
-            </button>
-            <button
-              type="button"
-              onClick={() => setActiveFilter('pre')}
-              className={`px-4 py-1.5 rounded-full font-label text-label-sm uppercase tracking-wider transition-colors select-none ${
-                activeFilter === 'pre'
-                  ? 'bg-gold-highlight text-dark-chocolate font-bold shadow-md'
-                  : 'bg-bronze-brown/60 text-cream-parchment border border-gold-rich/50 hover:bg-bronze-brown'
-              }`}
-            >
-              Pre-Battle (I–III)
-            </button>
-            <button
-              type="button"
-              onClick={() => setActiveFilter('sprint')}
-              className={`px-4 py-1.5 rounded-full font-label text-label-sm uppercase tracking-wider transition-colors select-none ${
-                activeFilter === 'sprint'
-                  ? 'bg-gold-highlight text-dark-chocolate font-bold shadow-md'
-                  : 'bg-bronze-brown/60 text-cream-parchment border border-gold-rich/50 hover:bg-bronze-brown'
-              }`}
-            >
-              24h War Room (IV–VI)
-            </button>
-            <button
-              type="button"
-              onClick={() => setActiveFilter('finale')}
-              className={`px-4 py-1.5 rounded-full font-label text-label-sm uppercase tracking-wider transition-colors select-none ${
-                activeFilter === 'finale'
-                  ? 'bg-gold-highlight text-dark-chocolate font-bold shadow-md'
-                  : 'bg-bronze-brown/60 text-cream-parchment border border-gold-rich/50 hover:bg-bronze-brown'
-              }`}
-            >
-              Sanctum (VII)
-            </button>
+          <div className="relative inline-block px-10 py-3.5 bg-cream-parchment/90 border-y-2 border-gold-rich rounded-sm shadow-sm">
+            <h2 className="font-display text-display-md-mobile md:text-display-md text-dark-chocolate uppercase tracking-wide font-bold">
+              Roadmap Timeline
+            </h2>
           </div>
         </div>
 
-        {/* Central Golden Battle-Spine + Alternating Architectural Plaques */}
-        <div className="relative flex flex-col gap-8">
-          {/* Vertical Golden Spine (Desktop Center / Mobile Hidden) */}
-          <div
-            className="hidden md:block absolute left-1/2 -translate-x-1/2 top-4 bottom-36 w-1 bg-gradient-to-b from-gold-highlight via-saffron to-gold-highlight opacity-75"
-            aria-hidden="true"
-          />
-
-          {filteredGates.map((gate) => {
-            const isLeft = gate.side === 'left';
-            return (
-              <div
-                key={gate.id}
-                id={gate.id}
-                className="relative grid grid-cols-1 md:grid-cols-2 gap-6 items-center"
-              >
-                {/* Left Side Content (if isLeft) */}
-                {isLeft ? (
-                  <div className="md:pr-10">
-                    <article
-                      className={`bg-dark-chocolate/95 border-2 ${gate.borderClass} rounded-lg overflow-hidden flex flex-col sm:flex-row hover:-translate-y-1 transition-transform duration-card-lift shadow-lg`}
-                    >
-                      <div className="sm:w-32 bg-bronze-brown/60 border-b sm:border-b-0 sm:border-r border-gold-rich/40 p-4 flex sm:flex-col items-center justify-between sm:justify-center gap-2 text-center shrink-0">
-                        <span className={`font-display text-display-md-mobile ${gate.accentClass} leading-none font-bold`}>
-                          {gate.gateNum}
-                        </span>
-                        <span className={`px-2.5 py-0.5 rounded-full font-label text-label-sm uppercase ${gate.badgeClass}`}>
-                          {gate.badge}
-                        </span>
-                      </div>
-                      <div className="p-5 flex-1 flex flex-col gap-2.5">
-                        <div className="flex items-center justify-between gap-2">
-                          <span className={`font-label text-label-sm uppercase ${gate.accentClass} tabular-nums font-bold`}>
-                            {gate.datetime}
-                          </span>
-                          {gate.icon}
-                        </div>
-                        <h3 className="font-headline text-title-lg text-cream-parchment font-bold">
-                          {gate.title}
-                        </h3>
-                        <p className="font-body text-body-md text-cream-parchment/90">
-                          {gate.desc}
-                        </p>
-                        <div className="pt-2 border-t border-gold-rich/30 flex items-center justify-between">
-                          <span className={`font-label text-label-sm uppercase ${gate.accentClass} font-semibold`}>
-                            {gate.action}
-                          </span>
-                        </div>
-                      </div>
-                    </article>
-                  </div>
-                ) : (
-                  <div className="hidden md:flex items-center justify-end pr-4" aria-hidden="true">
-                    <div className="flex items-center gap-3">
-                      <span className="px-3 py-1 rounded-sm bg-dark-chocolate/90 border border-gold-rich/50 font-label text-label-sm uppercase text-cream-parchment">
-                        {gate.phaseLabel}
-                      </span>
-                      <span className={`w-4 h-4 -mr-[26px] rounded-full ${gate.nodeColor} border-2 border-dark-chocolate shadow`} />
-                    </div>
-                  </div>
-                )}
-
-                {/* Right Side Content (if not isLeft) */}
-                {!isLeft ? (
-                  <div className="md:pl-10">
-                    <article
-                      className={`bg-dark-chocolate/95 border-2 ${gate.borderClass} rounded-lg overflow-hidden flex flex-col sm:flex-row hover:-translate-y-1 transition-transform duration-card-lift shadow-lg`}
-                    >
-                      <div className="sm:w-32 bg-bronze-brown/50 border-b sm:border-b-0 sm:border-r border-gold-rich/40 p-4 flex sm:flex-col items-center justify-between sm:justify-center gap-2 text-center shrink-0">
-                        <span className={`font-display text-display-md-mobile ${gate.accentClass} leading-none font-bold`}>
-                          {gate.gateNum}
-                        </span>
-                        <span className={`px-2.5 py-0.5 rounded-full font-label text-label-sm uppercase ${gate.badgeClass}`}>
-                          {gate.badge}
-                        </span>
-                      </div>
-                      <div className="p-5 flex-1 flex flex-col gap-2.5">
-                        <div className="flex items-center justify-between gap-2">
-                          <span className={`font-label text-label-sm uppercase ${gate.accentClass} tabular-nums font-bold`}>
-                            {gate.datetime}
-                          </span>
-                          {gate.icon}
-                        </div>
-                        <h3 className="font-headline text-title-lg text-cream-parchment font-bold">
-                          {gate.title}
-                        </h3>
-                        <p className="font-body text-body-md text-cream-parchment/90">
-                          {gate.desc}
-                        </p>
-                        <div className="pt-2 border-t border-gold-rich/30 flex items-center justify-between">
-                          <span className={`font-label text-label-sm uppercase ${gate.accentClass} font-semibold`}>
-                            {gate.action}
-                          </span>
-                        </div>
-                      </div>
-                    </article>
-                  </div>
-                ) : (
-                  <div className="hidden md:flex items-center justify-start pl-4" aria-hidden="true">
-                    <div className="flex items-center gap-3">
-                      <span className={`w-4 h-4 -ml-[26px] rounded-full ${gate.nodeColor} border-2 border-dark-chocolate shadow`} />
-                      <span className="px-3 py-1 rounded-sm bg-dark-chocolate/90 border border-gold-rich/50 font-label text-label-sm uppercase text-cream-parchment">
-                        {gate.phaseLabel}
-                      </span>
-                    </div>
-                  </div>
-                )}
+        {/* DESKTOP 5-PHASE COMPACT WARPATH (md and up) */}
+        <div className="hidden md:block relative w-full max-w-6xl mx-auto">
+          {/* Top Row: Phase I (x=200), Phase III (x=600), Phase V (x=1000) */}
+          <div className="grid grid-cols-12 gap-5 items-stretch relative z-20">
+            {/* Phase 01: Registration Open */}
+            <article className="col-span-4 bg-dark-chocolate/95 text-cream-parchment border-2 border-gold-highlight rounded-xl p-2.5 flex items-center gap-3.5 shadow-xl hover:-translate-y-0.5 transition-transform duration-card-lift select-none">
+              <div className="relative w-16 h-16 rounded-lg overflow-hidden border border-gold-highlight/80 shrink-0">
+                <Image
+                  src={phases[0].image}
+                  alt={phases[0].alt}
+                  fill
+                  sizes="64px"
+                  className="object-cover"
+                />
               </div>
-            );
-          })}
-
-          {/* GATE VII — THE INNERMOST SANCTUM (Centered Full-Width Climax) */}
-          {showSanctum && (
-            <div id="gate-7" className="relative pt-4">
-              <article className="max-w-2xl mx-auto bg-gradient-to-b from-bronze-brown/90 to-dark-chocolate border-2 border-gold-highlight rounded-lg p-6 md:p-8 text-center flex flex-col items-center gap-4 stage-plaque-active shadow-2xl">
-                <div className="w-16 h-16 rounded-full bg-dark-chocolate border-2 border-gold-highlight flex items-center justify-center text-gold-highlight shadow-md">
-                  <Trophy className="w-8 h-8 text-gold-highlight" />
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="px-4 py-1 bg-gold-highlight text-dark-chocolate font-label text-label-sm uppercase rounded-full tracking-widest font-bold">
-                    Gate VII · Innermost Sanctum
-                  </span>
-                </div>
-                <h3 className="font-display text-headline-lg text-gold-highlight uppercase tracking-wide">
-                  Grand Finale &amp; Prize Distribution
+              <div className="min-w-0 flex flex-col gap-0.5">
+                <h3 className="font-display text-body-lg font-bold text-gold-highlight leading-snug">
+                  {phases[0].title}
                 </h3>
-                <span className="px-5 py-1.5 rounded-full bg-dark-chocolate border border-gold-highlight font-label text-label-sm text-gold-highlight tabular-nums font-bold">
-                  24 JAN 2027 · 05:30 PM
+                <span className="font-label text-label-sm uppercase text-cream-parchment tabular-nums font-semibold">
+                  {phases[0].datetime}
                 </span>
-                <p className="font-body text-body-lg text-cream-parchment max-w-lg text-balance font-normal">
-                  Champions break the Chakravyuh—crowned on stage with the {SITE_CONFIG.METRICS.PRIZE_POOL_TOTAL} prize pool, track awards, and BPUT felicitation.
-                </p>
-              </article>
-            </div>
-          )}
+              </div>
+            </article>
+
+            {/* Phase 03: Shortlist Announcement */}
+            <article className="col-span-4 bg-dark-chocolate/95 text-cream-parchment border-2 border-gold-rich rounded-xl p-2.5 flex items-center gap-3.5 shadow-xl hover:-translate-y-0.5 transition-transform duration-card-lift select-none">
+              <div className="relative w-16 h-16 rounded-lg overflow-hidden border border-gold-rich/80 shrink-0">
+                <Image
+                  src={phases[2].image}
+                  alt={phases[2].alt}
+                  fill
+                  sizes="64px"
+                  className="object-cover"
+                />
+              </div>
+              <div className="min-w-0 flex flex-col gap-0.5">
+                <h3 className="font-display text-body-lg font-bold text-gold-highlight leading-snug">
+                  {phases[2].title}
+                </h3>
+                <span className="font-label text-label-sm uppercase text-cream-parchment tabular-nums font-semibold">
+                  {phases[2].datetime}
+                </span>
+              </div>
+            </article>
+
+            {/* Phase 05: Result Announcement */}
+            <article className="col-span-4 bg-dark-chocolate/95 text-cream-parchment border-2 border-saffron rounded-xl p-2.5 flex items-center gap-3.5 shadow-xl hover:-translate-y-0.5 transition-transform duration-card-lift select-none">
+              <div className="relative w-16 h-16 rounded-lg overflow-hidden border border-saffron/80 shrink-0">
+                <Image
+                  src={phases[4].image}
+                  alt={phases[4].alt}
+                  fill
+                  sizes="64px"
+                  className="object-cover"
+                />
+              </div>
+              <div className="min-w-0 flex flex-col gap-0.5">
+                <h3 className="font-display text-body-lg font-bold text-gold-highlight leading-snug">
+                  {phases[4].title}
+                </h3>
+                <span className="font-label text-label-sm uppercase text-cream-parchment tabular-nums font-semibold">
+                  {phases[4].datetime}
+                </span>
+              </div>
+            </article>
+          </div>
+
+          {/* Ornate Kurukshetra Warpath Directly Connected to Card Edges */}
+          <div className="relative w-full z-10">
+            <svg
+              className="w-full h-auto block overflow-visible"
+              viewBox="0 0 1200 130"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              {/* Vertical Connectors Touching Card Edges (y=0 top, y=130 bottom) */}
+              <line x1="200" y1="0" x2="200" y2="28" stroke="#E5A93C" strokeWidth="3.5" />
+              <circle cx="200" cy="4" r="5" fill="#E5A93C" />
+
+              <line x1="400" y1="102" x2="400" y2="130" stroke="#E5A93C" strokeWidth="3.5" />
+              <circle cx="400" cy="126" r="5" fill="#E5A93C" />
+
+              <line x1="600" y1="0" x2="600" y2="28" stroke="#E5A93C" strokeWidth="3.5" />
+              <circle cx="600" cy="4" r="5" fill="#E5A93C" />
+
+              <line x1="800" y1="102" x2="800" y2="130" stroke="#E5A93C" strokeWidth="3.5" />
+              <circle cx="800" cy="126" r="5" fill="#E5A93C" />
+
+              <line x1="1000" y1="0" x2="1000" y2="28" stroke="#DE6A1D" strokeWidth="3.5" />
+              <circle cx="1000" cy="4" r="5" fill="#DE6A1D" />
+
+              {/* Outer Gold Rim of the Royal Chariot Path */}
+              <path
+                d="M 200 28 C 290 28, 310 102, 400 102 C 490 102, 510 28, 600 28 C 690 28, 710 102, 800 102 C 890 102, 910 28, 1000 28"
+                stroke="#E5A93C"
+                strokeWidth="24"
+                strokeLinecap="round"
+              />
+              {/* Carved Dark-Bronze Stone Path Core */}
+              <path
+                d="M 200 28 C 290 28, 310 102, 400 102 C 490 102, 510 28, 600 28 C 690 28, 710 102, 800 102 C 890 102, 910 28, 1000 28"
+                stroke="#2C1A0B"
+                strokeWidth="16"
+                strokeLinecap="round"
+              />
+              {/* Glowing Saffron Arrow-Flight Centerline */}
+              <path
+                d="M 200 28 C 290 28, 310 102, 400 102 C 490 102, 510 28, 600 28 C 690 28, 710 102, 800 102 C 890 102, 910 28, 1000 28"
+                stroke="#DE6A1D"
+                strokeWidth="3"
+                strokeDasharray="9 7"
+                strokeLinecap="round"
+              />
+
+              {/* 5 Roman Numeral Sudarshana Chakra Junctions */}
+              <g transform="translate(200, 28)">
+                <circle cx="0" cy="0" r="20" fill="#DE6A1D" stroke="#FAF3E0" strokeWidth="3" />
+                <text
+                  x="0"
+                  y="6"
+                  textAnchor="middle"
+                  fill="#2C1A0B"
+                  fontFamily="Cinzel, serif"
+                  fontWeight="700"
+                  fontSize="15"
+                >
+                  I
+                </text>
+              </g>
+              <g transform="translate(400, 102)">
+                <circle cx="0" cy="0" r="19" fill="#2C1A0B" stroke="#E5A93C" strokeWidth="3" />
+                <text
+                  x="0"
+                  y="6"
+                  textAnchor="middle"
+                  fill="#E5A93C"
+                  fontFamily="Cinzel, serif"
+                  fontWeight="700"
+                  fontSize="14"
+                >
+                  II
+                </text>
+              </g>
+              <g transform="translate(600, 28)">
+                <circle cx="0" cy="0" r="19" fill="#2C1A0B" stroke="#E5A93C" strokeWidth="3" />
+                <text
+                  x="0"
+                  y="6"
+                  textAnchor="middle"
+                  fill="#E5A93C"
+                  fontFamily="Cinzel, serif"
+                  fontWeight="700"
+                  fontSize="14"
+                >
+                  III
+                </text>
+              </g>
+              <g transform="translate(800, 102)">
+                <circle cx="0" cy="0" r="19" fill="#2C1A0B" stroke="#E5A93C" strokeWidth="3" />
+                <text
+                  x="0"
+                  y="6"
+                  textAnchor="middle"
+                  fill="#E5A93C"
+                  fontFamily="Cinzel, serif"
+                  fontWeight="700"
+                  fontSize="14"
+                >
+                  IV
+                </text>
+              </g>
+              <g transform="translate(1000, 28)">
+                <circle cx="0" cy="0" r="21" fill="#E5A93C" stroke="#2C1A0B" strokeWidth="3" />
+                <text
+                  x="0"
+                  y="6"
+                  textAnchor="middle"
+                  fill="#2C1A0B"
+                  fontFamily="Cinzel, serif"
+                  fontWeight="700"
+                  fontSize="15"
+                >
+                  V
+                </text>
+              </g>
+            </svg>
+          </div>
+
+          {/* Bottom Row: Phase II (x=400), Phase IV (x=800) */}
+          <div className="grid grid-cols-12 gap-5 items-stretch relative z-20">
+            <div className="col-span-2" />
+
+            {/* Phase 02: Registration Closes */}
+            <article className="col-span-4 bg-dark-chocolate/95 text-cream-parchment border-2 border-gold-rich rounded-xl p-2.5 flex items-center gap-3.5 shadow-xl hover:-translate-y-0.5 transition-transform duration-card-lift select-none">
+              <div className="relative w-16 h-16 rounded-lg overflow-hidden border border-gold-rich/80 shrink-0">
+                <Image
+                  src={phases[1].image}
+                  alt={phases[1].alt}
+                  fill
+                  sizes="64px"
+                  className="object-cover"
+                />
+              </div>
+              <div className="min-w-0 flex flex-col gap-0.5">
+                <h3 className="font-display text-body-lg font-bold text-gold-highlight leading-snug">
+                  {phases[1].title}
+                </h3>
+                <span className="font-label text-label-sm uppercase text-cream-parchment tabular-nums font-semibold">
+                  {phases[1].datetime}
+                </span>
+              </div>
+            </article>
+
+            {/* Phase 04: Final Hackathon */}
+            <article className="col-span-4 bg-dark-chocolate/95 text-cream-parchment border-2 border-gold-rich rounded-xl p-2.5 flex items-center gap-3.5 shadow-xl hover:-translate-y-0.5 transition-transform duration-card-lift select-none">
+              <div className="relative w-16 h-16 rounded-lg overflow-hidden border border-gold-rich/80 shrink-0">
+                <Image
+                  src={phases[3].image}
+                  alt={phases[3].alt}
+                  fill
+                  sizes="64px"
+                  className="object-cover"
+                />
+              </div>
+              <div className="min-w-0 flex flex-col gap-0.5">
+                <h3 className="font-display text-body-lg font-bold text-gold-highlight leading-snug">
+                  {phases[3].title}
+                </h3>
+                <span className="font-label text-label-sm uppercase text-cream-parchment tabular-nums font-semibold">
+                  {phases[3].datetime}
+                </span>
+              </div>
+            </article>
+
+            <div className="col-span-2" />
+          </div>
+        </div>
+
+        {/* MOBILE VERTICAL COMPACT WARPATH (below md) */}
+        <div className="md:hidden relative flex flex-col gap-4 pl-6 border-l-4 border-saffron">
+          {phases.map((phase, idx) => (
+            <article
+              key={phase.id}
+              className={`relative bg-dark-chocolate/95 text-cream-parchment border-2 ${phase.borderClass} rounded-xl p-2.5 flex items-center gap-3 shadow-lg select-none`}
+            >
+              <span
+                className={`absolute -left-[34px] top-1/2 -translate-y-1/2 w-4 h-4 rounded-full ${
+                  idx % 2 === 0 ? 'bg-saffron' : 'bg-gold-rich'
+                } border-2 border-dark-chocolate`}
+              />
+              <span
+                className={`absolute -left-[18px] top-1/2 -translate-y-1/2 w-4 h-0.5 ${
+                  idx % 2 === 0 ? 'bg-gold-highlight' : 'bg-gold-rich'
+                }`}
+              />
+              <div className="relative w-14 h-14 rounded-lg overflow-hidden border border-gold-highlight/80 shrink-0">
+                <Image
+                  src={phase.image}
+                  alt={phase.alt}
+                  fill
+                  sizes="56px"
+                  className="object-cover"
+                />
+              </div>
+              <div className="min-w-0 flex flex-col gap-0.5">
+                <div className="flex items-center gap-2">
+                  <span className="px-1.5 py-0.2 bg-bronze-brown border border-gold-rich/70 rounded text-[10px] font-label font-bold text-gold-highlight uppercase">
+                    Phase {phase.roman}
+                  </span>
+                  <h3 className="font-display text-body-md font-bold text-gold-highlight leading-snug truncate">
+                    {phase.title}
+                  </h3>
+                </div>
+                <span className="font-label text-label-sm uppercase text-cream-parchment/90 tabular-nums">
+                  {phase.datetime}
+                </span>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>
