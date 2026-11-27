@@ -184,7 +184,7 @@ export const AboutSection: React.FC = () => {
               </div>
               <div>
                 <p className="font-headline text-headline-md md:text-headline-lg text-bronze-brown tabular-nums font-bold">
-                  {statsCounted ? '₹1.5L' : '0'}
+                  {statsCounted ? '₹1L' : '0'}
                 </p>
                 <p className="font-label text-label-sm uppercase text-bronze-brown font-semibold tracking-wider">
                   Prizes
@@ -306,10 +306,10 @@ export const AboutSection: React.FC = () => {
                   </div>
                   <div>
                     <h3 className="font-display text-headline-md text-gold-highlight tabular-nums leading-tight font-bold">
-                      23–24 Jan 2027
+                      2nd–3rd Feb
                     </h3>
                     <p className="font-body text-body-md text-cream-parchment/95 mt-1">
-                      Saturday 09:00 AM to Sunday 09:00 AM
+                      24-Hour Non-Stop Hackathon
                     </p>
                   </div>
                 </div>

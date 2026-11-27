@@ -80,8 +80,8 @@ export const SITE_CONFIG = {
   REGISTRATION_START: "2026-12-15T10:00:00+05:30",
   REGISTRATION_DEADLINE: "2027-01-10T23:59:59+05:30",
   SHORTLIST_ANNOUNCEMENT: "2027-01-15T18:00:00+05:30",
-  EVENT_START: "2027-01-23T09:00:00+05:30",
-  EVENT_END: "2027-01-24T18:00:00+05:30",
+  EVENT_START: "2027-02-02T09:00:00+05:30",
+  EVENT_END: "2027-02-03T18:00:00+05:30",
 
   // Venue & Location
   VENUE: {
@@ -94,8 +94,8 @@ export const SITE_CONFIG = {
 
   // Key Event Metrics
   METRICS: {
-    PRIZE_POOL_TOTAL: "₹1,50,000",
-    PRIZE_POOL_DISPLAY: "₹1,50,000/-",
+    PRIZE_POOL_TOTAL: "₹1,00,000",
+    PRIZE_POOL_DISPLAY: "₹1,00,000/-",
     FIRST_PRIZE: "TODO_FIRST_PRIZE_AMOUNT_E_G_75000",
     SECOND_PRIZE: "TODO_SECOND_PRIZE_AMOUNT_E_G_45000",
     THIRD_PRIZE: "TODO_THIRD_PRIZE_AMOUNT_E_G_25000",
@@ -176,8 +176,8 @@ export const SITE_CONFIG = {
       gateNumber: "Gate IV",
       badge: "Kickoff",
       title: "Final Hackathon",
-      datetime: "02 FEB 2026 · 09:00 AM",
-      timestamp: "2026-02-02T09:00:00+05:30",
+      datetime: "02 FEB 2027 · 09:00 AM",
+      timestamp: "2027-02-02T09:00:00+05:30",
       description: "Campus check-in, warrior badge issuance, inaugural conch, and 24-hour sprint commences.",
       icon: "Rocket",
       accentColor: "#F2B84B", // Gold Highlight
@@ -188,8 +188,8 @@ export const SITE_CONFIG = {
       gateNumber: "Gate V",
       badge: "Checkpoint",
       title: "Mid Evaluation & Mentoring",
-      datetime: "23 JAN 2027 · 08:00 PM",
-      timestamp: "2027-01-23T20:00:00+05:30",
+      datetime: "02 FEB 2027 · 08:00 PM",
+      timestamp: "2027-02-02T20:00:00+05:30",
       description: "Architecture critique, progress checks, and deep mentorship with leading industry architects.",
       icon: "Users",
       accentColor: "#3E8E5A", // Peacock Green
@@ -200,8 +200,8 @@ export const SITE_CONFIG = {
       gateNumber: "Gate VI",
       badge: "Day 2",
       title: "Final Pitch & Demonstration",
-      datetime: "24 JAN 2027 · 02:00 PM",
-      timestamp: "2027-01-24T14:00:00+05:30",
+      datetime: "03 FEB 2027 · 02:00 PM",
+      timestamp: "2027-02-03T14:00:00+05:30",
       description: "Live working product demos before the national jury and venture scouts.",
       icon: "Gavel",
       accentColor: "#E8761E", // Saffron
@@ -212,9 +212,9 @@ export const SITE_CONFIG = {
       gateNumber: "Gate VII",
       badge: "Grand Finale",
       title: "Prize Distribution & Conclave",
-      datetime: "24 JAN 2027 · 05:30 PM",
-      timestamp: "2027-01-24T17:30:00+05:30",
-      description: "Champions crowned, trophies consecrated, and ₹1,50,000 prize pool handed to victors.",
+      datetime: "03 FEB 2027 · 05:30 PM",
+      timestamp: "2027-02-03T17:30:00+05:30",
+      description: "Champions crowned, trophies consecrated, and ₹1,00,000 prize pool handed to victors.",
       icon: "Trophy",
       accentColor: "#F2B84B", // Gold Highlight
       status: "upcoming",

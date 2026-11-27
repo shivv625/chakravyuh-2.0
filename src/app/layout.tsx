@@ -34,7 +34,7 @@ const cormorant = Cormorant_Garamond({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://chakravyuh.gita.edu.in'),
   title: `${SITE_CONFIG.EVENT_NAME} — ${SITE_CONFIG.SUBTITLE} | GITA Autonomous College`,
-  description: `Official website for ${SITE_CONFIG.EVENT_NAME}, a National Level 24-Hour Hackathon hosted by GITA Autonomous College, Bhubaneswar, in association with BPUT, Odisha. Seven Gates. 24 Hours. ₹1,50,000 Prize Pool.`,
+  description: `Official website for ${SITE_CONFIG.EVENT_NAME}, a National Level 24-Hour Hackathon hosted by GITA Autonomous College, Bhubaneswar, in association with BPUT, Odisha. Seven Gates. 24 Hours. ₹1,00,000 Prize Pool.`,
   keywords: [
     'Chakravyuh 2.0',
     'GITA Autonomous College',
