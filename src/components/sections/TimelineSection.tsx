@@ -1,169 +1,239 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
+import {
+  Sparkles,
+  ArrowRight,
+  ChevronLeft,
+  ChevronRight,
+  ShieldAlert,
+  CheckCircle2,
+  Calendar,
+  Clock,
+  MapPin,
+  Flag,
+} from 'lucide-react';
 
 interface PhaseItem {
   id: string;
   roman: string;
   title: string;
   datetime: string;
+  tagline: string;
+  brief: string;
+  objectives: string[];
+  status: 'active' | 'upcoming' | 'grand';
+  x: number; // SVG coordinate
+  y: number; // SVG coordinate
   image: string;
   alt: string;
-  borderClass: string;
 }
 
 export const TimelineSection: React.FC = () => {
+  const [activePhaseIndex, setActivePhaseIndex] = useState<number>(0);
+
   const phases: PhaseItem[] = [
     {
       id: 'phase-1',
       roman: 'I',
       title: 'Registration Open',
-      datetime: '1st Dec 2026 · 7 PM',
+      datetime: '1st Dec 2026 · 7:00 PM',
+      tagline: 'Conch Blow of Warfare',
+      brief:
+        'The conch sounds across Bharat! Registrations officially open on Devfolio. Form your squad of 3 to 5 warriors, register your credentials, and prepare your initial strategy for the 5 Astra problem statements.',
+      objectives: [
+        'Squad formation: 3 to 5 members per team',
+        'Cross-department & inter-college squads welcome',
+        'Free entry — 100% sponsored registration',
+      ],
+      status: 'active',
+      x: 200,
+      y: 28,
       image: '/assets/phase_01_conch.jpg',
       alt: 'Ancient warrior blowing a golden Shankha conch',
-      borderClass: 'border-gold-highlight',
     },
     {
       id: 'phase-2',
       roman: 'II',
       title: 'Registration Closes',
       datetime: '5th Jan 2026 · 11:59 PM',
+      tagline: 'Sealing the Gates',
+      brief:
+        'The royal Bhojpatra battle scroll is sealed! Final deadline to submit your complete squad roster, mentor references, and problem statement domain preference. Late entries will not breach the gates of Chakravyuh.',
+      objectives: [
+        'Final squad roster lock on portal',
+        'Initial approach synopsis & domain lock',
+        'Verification of student IDs and GitHub handles',
+      ],
+      status: 'upcoming',
+      x: 400,
+      y: 102,
       image: '/assets/phase_02_scroll.jpg',
       alt: 'Royal Bhojpatra war scroll sealed with wax',
-      borderClass: 'border-gold-rich',
     },
     {
       id: 'phase-3',
       roman: 'III',
       title: 'Shortlisting Team Announcement',
       datetime: '16th Jan 2026',
+      tagline: 'Chosen Warriors of the Arena',
+      brief:
+        'The Grand Jury of industry veterans and academic conveners publishes the elite shortlisted squads. Finalists receive official travel advisories, campus briefing documents, and direct access to mentorship channels.',
+      objectives: [
+        'Top 100+ nationwide squads shortlisted',
+        'Physical attendance confirmation at GITA Autonomous College',
+        'Access to problem statement mentors & Discord war room',
+      ],
+      status: 'upcoming',
+      x: 600,
+      y: 28,
       image: '/assets/phase_03_archers.jpg',
       alt: 'Golden Gandiva bow and arrows',
-      borderClass: 'border-gold-rich',
     },
     {
       id: 'phase-4',
       roman: 'IV',
       title: 'Final Hackathon',
       datetime: 'Feb 2nd – 3rd 2026',
+      tagline: 'The 24-Hour Kurukshetra Siege',
+      brief:
+        'The ultimate physical showdown at GITA Autonomous College, Bhubaneswar! 24 hours of non-stop coding, hardware prototyping, mid-siege jury checkpoints, and final live stage pitches before the grand panel.',
+      objectives: [
+        '24-Hour continuous offline hackathon sprint',
+        'Complimentary meals, refreshments, and rest zones',
+        'Multi-stage jury evaluations & architecture audits',
+      ],
+      status: 'grand',
+      x: 800,
+      y: 102,
       image: '/assets/phase_04_battle.jpg',
       alt: 'Ancient Indian sandstone war pavilion',
-      borderClass: 'border-gold-rich',
     },
     {
       id: 'phase-5',
       roman: 'V',
       title: 'Result Announcement',
       datetime: 'Feb 3rd 2026 · Evening',
+      tagline: 'Victory & Grand Consecration',
+      brief:
+        'The Sudarshana Chakra of judgment descends! Champions are crowned on the grand dais, hoisting the iconic Chakravyuh veena trophy alongside the ₹1,00,000 cash prize pool, sponsor bounties, and incubation grants.',
+      objectives: [
+        '₹1,00,000 Cash Prize pool distributed live',
+        'Prestigious Chakravyuh 2.0 trophies & medallions',
+        'Incubation pathways & interview opportunities',
+      ],
+      status: 'grand',
+      x: 1000,
+      y: 28,
       image: '/assets/phase_05_victory.jpg',
       alt: 'Radiant golden victory crown and Sudarshana Chakra',
-      borderClass: 'border-saffron',
     },
   ];
+
+  const currentPhase = phases[activePhaseIndex];
 
   return (
     <section
       id="timeline"
-      className="relative py-20 md:py-28 bg-light-surface-container-low text-navy-ink border-t-4 border-saffron overflow-hidden"
+      className="relative py-18 md:py-26 bg-light-surface-container-low text-navy-ink border-t-4 border-gold-rich overflow-hidden"
     >
-      {/* Ancient Kurukshetra Battlefield Panoramic Parchment Map from Stitch */}
-      <div className="absolute inset-0 pointer-events-none opacity-85">
+      {/* Ancient Kurukshetra Battlefield Panoramic Map */}
+      <div className="absolute inset-0 pointer-events-none opacity-80">
         <Image
           src="/assets/battlefield_warpath_bg.jpg"
-          alt="Ancient Indian Kurukshetra battlefield map with war chariots, elephants, and royal banners"
+          alt="Ancient Indian Kurukshetra battlefield map with war chariots and royal banners"
           fill
           sizes="100vw"
           className="object-cover object-center"
         />
       </div>
 
-      {/* Soft Central Parchment Glow Scrim for High-Contrast Typography */}
-      <div className="absolute inset-0 bg-gradient-to-b from-cream-parchment/30 via-cream-parchment/65 to-cream-parchment/40 pointer-events-none" />
+      {/* Atmospheric Kurukshetra Golden Dust Scrim */}
+      <div className="absolute inset-0 bg-gradient-to-b from-cream-parchment/40 via-cream-parchment/70 to-cream-parchment/50 pointer-events-none" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 flex flex-col gap-10">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 flex flex-col gap-8 md:gap-10">
         {/* Section Header */}
         <div className="text-center flex flex-col items-center gap-3">
-          <span className="px-5 py-1 bg-dark-chocolate border border-gold-rich ribbon-pill font-label text-label-sm uppercase text-gold-highlight tracking-widest font-bold shadow">
-            Kurukshetra Battle Progression
-          </span>
-          <div className="relative inline-block px-10 py-3.5 bg-cream-parchment/90 border-y-2 border-gold-rich rounded-sm shadow-sm">
-            <h2 className="font-display text-display-md-mobile md:text-display-md text-dark-chocolate uppercase tracking-wide font-bold">
-              Roadmap Timeline
-            </h2>
+          <div className="inline-flex items-center gap-2 px-4 py-1 bg-dark-chocolate border border-gold-rich ribbon-pill font-label text-label-xs uppercase text-gold-highlight tracking-widest font-bold shadow-xs">
+            <Sparkles className="w-3.5 h-3.5 text-gold-highlight animate-pulse" />
+            <span>Kurukshetra Battle Progression</span>
           </div>
+
+          <h2 className="font-display text-display-md-mobile md:text-display-md text-dark-chocolate uppercase tracking-tight font-bold">
+            Roadmap Timeline
+          </h2>
+
+          <p className="font-body text-body-sm md:text-body-md text-navy-ink/80 max-w-xl text-pretty">
+            Hover or tap any battle gate to command the celestial Rath along the sacred war trail.
+          </p>
         </div>
 
-        {/* DESKTOP 5-PHASE COMPACT WARPATH (md and up) */}
+        {/* ============================================================== */}
+        {/* DESKTOP INTERACTIVE BATTLEFIELD WARPATH (md and up)           */}
+        {/* ============================================================== */}
         <div className="hidden md:block relative w-full max-w-6xl mx-auto">
           {/* Top Row: Phase I (x=200), Phase III (x=600), Phase V (x=1000) */}
           <div className="grid grid-cols-12 gap-5 items-stretch relative z-20">
-            {/* Phase 01: Registration Open */}
-            <article className="col-span-4 bg-dark-chocolate/95 text-cream-parchment border-2 border-gold-highlight rounded-xl p-2.5 flex items-center gap-3.5 shadow-xl hover:-translate-y-0.5 transition-transform duration-card-lift select-none">
-              <div className="relative w-16 h-16 rounded-lg overflow-hidden border border-gold-highlight/80 shrink-0">
-                <Image
-                  src={phases[0].image}
-                  alt={phases[0].alt}
-                  fill
-                  sizes="64px"
-                  className="object-cover"
-                />
-              </div>
-              <div className="min-w-0 flex flex-col gap-0.5">
-                <h3 className="font-display text-body-lg font-bold text-gold-highlight leading-snug">
-                  {phases[0].title}
-                </h3>
-                <span className="font-label text-label-sm uppercase text-cream-parchment tabular-nums font-semibold">
-                  {phases[0].datetime}
-                </span>
-              </div>
-            </article>
+            {[0, 2, 4].map((idx) => {
+              const p = phases[idx];
+              const isSelected = activePhaseIndex === idx;
 
-            {/* Phase 03: Shortlist Announcement */}
-            <article className="col-span-4 bg-dark-chocolate/95 text-cream-parchment border-2 border-gold-rich rounded-xl p-2.5 flex items-center gap-3.5 shadow-xl hover:-translate-y-0.5 transition-transform duration-card-lift select-none">
-              <div className="relative w-16 h-16 rounded-lg overflow-hidden border border-gold-rich/80 shrink-0">
-                <Image
-                  src={phases[2].image}
-                  alt={phases[2].alt}
-                  fill
-                  sizes="64px"
-                  className="object-cover"
-                />
-              </div>
-              <div className="min-w-0 flex flex-col gap-0.5">
-                <h3 className="font-display text-body-lg font-bold text-gold-highlight leading-snug">
-                  {phases[2].title}
-                </h3>
-                <span className="font-label text-label-sm uppercase text-cream-parchment tabular-nums font-semibold">
-                  {phases[2].datetime}
-                </span>
-              </div>
-            </article>
+              return (
+                <article
+                  key={p.id}
+                  onClick={() => setActivePhaseIndex(idx)}
+                  onMouseEnter={() => setActivePhaseIndex(idx)}
+                  className={`col-span-4 rounded-xl p-3 flex items-center gap-3.5 shadow-xl cursor-pointer transition-all duration-300 select-none group relative overflow-hidden ${
+                    isSelected
+                      ? 'bg-gradient-to-r from-bronze-brown via-dark-chocolate to-bronze-brown border-2 border-gold-highlight scale-[1.03] shadow-[0_8px_30px_rgba(242,184,75,0.4)] z-30'
+                      : 'bg-dark-chocolate/95 border-2 border-gold-rich/60 hover:border-gold-highlight/90 hover:scale-[1.01]'
+                  }`}
+                >
+                  {/* Active Golden Glow Strip */}
+                  {isSelected && (
+                    <span className="absolute top-0 left-0 bottom-0 w-1.5 bg-gradient-to-b from-gold-highlight via-saffron to-gold-highlight" />
+                  )}
 
-            {/* Phase 05: Result Announcement */}
-            <article className="col-span-4 bg-dark-chocolate/95 text-cream-parchment border-2 border-saffron rounded-xl p-2.5 flex items-center gap-3.5 shadow-xl hover:-translate-y-0.5 transition-transform duration-card-lift select-none">
-              <div className="relative w-16 h-16 rounded-lg overflow-hidden border border-saffron/80 shrink-0">
-                <Image
-                  src={phases[4].image}
-                  alt={phases[4].alt}
-                  fill
-                  sizes="64px"
-                  className="object-cover"
-                />
-              </div>
-              <div className="min-w-0 flex flex-col gap-0.5">
-                <h3 className="font-display text-body-lg font-bold text-gold-highlight leading-snug">
-                  {phases[4].title}
-                </h3>
-                <span className="font-label text-label-sm uppercase text-cream-parchment tabular-nums font-semibold">
-                  {phases[4].datetime}
-                </span>
-              </div>
-            </article>
+                  {/* Thumbnail Image with Roman Badge */}
+                  <div className="relative w-15 h-15 rounded-lg overflow-hidden border border-gold-highlight/80 shrink-0 bg-black/40">
+                    <Image
+                      src={p.image}
+                      alt={p.alt}
+                      fill
+                      sizes="60px"
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-black/35 flex items-center justify-center">
+                      <span className="font-display text-sm font-bold text-gold-highlight">
+                        {p.roman}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="min-w-0 flex flex-col gap-0.5">
+                    <span className="font-label text-[10px] uppercase tracking-wider text-gold-highlight font-bold">
+                      Phase {p.roman} · {p.tagline}
+                    </span>
+                    <h3
+                      className={`font-display text-base font-bold leading-snug truncate transition-colors ${
+                        isSelected ? 'text-cream-parchment' : 'text-cream-parchment/90 group-hover:text-gold-highlight'
+                      }`}
+                    >
+                      {p.title}
+                    </h3>
+                    <span className="font-label text-xs uppercase text-cream-parchment/75 tabular-nums font-semibold">
+                      {p.datetime}
+                    </span>
+                  </div>
+                </article>
+              );
+            })}
           </div>
 
-          {/* Ornate Kurukshetra Warpath Directly Connected to Card Edges */}
-          <div className="relative w-full z-10">
+          {/* SVG BATTLEFIELD WARPATH & MYTHOLOGICAL RATH ANIMATION */}
+          <div className="relative w-full z-10 my-1">
             <svg
               className="w-full h-auto block overflow-visible"
               viewBox="0 0 1200 130"
@@ -171,212 +241,368 @@ export const TimelineSection: React.FC = () => {
               xmlns="http://www.w3.org/2000/svg"
               aria-hidden="true"
             >
-              {/* Vertical Connectors Touching Card Edges (y=0 top, y=130 bottom) */}
-              <line x1="200" y1="0" x2="200" y2="28" stroke="#E5A93C" strokeWidth="3.5" />
-              <circle cx="200" cy="4" r="5" fill="#E5A93C" />
+              <defs>
+                {/* Golden Battlefield Sand Glow */}
+                <filter id="warpath-glow" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur stdDeviation="4" result="blur" />
+                  <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                </filter>
 
-              <line x1="400" y1="102" x2="400" y2="130" stroke="#E5A93C" strokeWidth="3.5" />
-              <circle cx="400" cy="126" r="5" fill="#E5A93C" />
+                {/* Chariot Rut Pattern */}
+                <linearGradient id="chariot-track-gold" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#C69214" />
+                  <stop offset="50%" stopColor="#F2B84B" />
+                  <stop offset="100%" stopColor="#D87D24" />
+                </linearGradient>
+              </defs>
 
-              <line x1="600" y1="0" x2="600" y2="28" stroke="#E5A93C" strokeWidth="3.5" />
-              <circle cx="600" cy="4" r="5" fill="#E5A93C" />
+              {/* Vertical Connectors to Cards */}
+              <line x1="200" y1="0" x2="200" y2="28" stroke="#F2B84B" strokeWidth="3" strokeDasharray="3 3" />
+              <line x1="400" y1="102" x2="400" y2="130" stroke="#F2B84B" strokeWidth="3" strokeDasharray="3 3" />
+              <line x1="600" y1="0" x2="600" y2="28" stroke="#F2B84B" strokeWidth="3" strokeDasharray="3 3" />
+              <line x1="800" y1="102" x2="800" y2="130" stroke="#F2B84B" strokeWidth="3" strokeDasharray="3 3" />
+              <line x1="1000" y1="0" x2="1000" y2="28" stroke="#F2B84B" strokeWidth="3" strokeDasharray="3 3" />
 
-              <line x1="800" y1="102" x2="800" y2="130" stroke="#E5A93C" strokeWidth="3.5" />
-              <circle cx="800" cy="126" r="5" fill="#E5A93C" />
-
-              <line x1="1000" y1="0" x2="1000" y2="28" stroke="#DE6A1D" strokeWidth="3.5" />
-              <circle cx="1000" cy="4" r="5" fill="#DE6A1D" />
-
-              {/* Outer Gold Rim of the Royal Chariot Path */}
+              {/* 1. Deep Carved Stone War Trail in Sand */}
               <path
                 d="M 200 28 C 290 28, 310 102, 400 102 C 490 102, 510 28, 600 28 C 690 28, 710 102, 800 102 C 890 102, 910 28, 1000 28"
-                stroke="#E5A93C"
-                strokeWidth="24"
-                strokeLinecap="round"
-              />
-              {/* Carved Dark-Bronze Stone Path Core */}
-              <path
-                d="M 200 28 C 290 28, 310 102, 400 102 C 490 102, 510 28, 600 28 C 690 28, 710 102, 800 102 C 890 102, 910 28, 1000 28"
-                stroke="#2C1A0B"
-                strokeWidth="16"
-                strokeLinecap="round"
-              />
-              {/* Glowing Saffron Arrow-Flight Centerline */}
-              <path
-                d="M 200 28 C 290 28, 310 102, 400 102 C 490 102, 510 28, 600 28 C 690 28, 710 102, 800 102 C 890 102, 910 28, 1000 28"
-                stroke="#DE6A1D"
-                strokeWidth="3"
-                strokeDasharray="9 7"
+                stroke="#1B0C04"
+                strokeWidth="28"
                 strokeLinecap="round"
               />
 
-              {/* 5 Roman Numeral Sudarshana Chakra Junctions */}
-              <g transform="translate(200, 28)">
-                <circle cx="0" cy="0" r="20" fill="#DE6A1D" stroke="#FAF3E0" strokeWidth="3" />
-                <text
-                  x="0"
-                  y="6"
-                  textAnchor="middle"
-                  fill="#2C1A0B"
-                  fontFamily="Cinzel, serif"
-                  fontWeight="700"
-                  fontSize="15"
-                >
-                  I
-                </text>
-              </g>
-              <g transform="translate(400, 102)">
-                <circle cx="0" cy="0" r="19" fill="#2C1A0B" stroke="#E5A93C" strokeWidth="3" />
-                <text
-                  x="0"
-                  y="6"
-                  textAnchor="middle"
-                  fill="#E5A93C"
-                  fontFamily="Cinzel, serif"
-                  fontWeight="700"
-                  fontSize="14"
-                >
-                  II
-                </text>
-              </g>
-              <g transform="translate(600, 28)">
-                <circle cx="0" cy="0" r="19" fill="#2C1A0B" stroke="#E5A93C" strokeWidth="3" />
-                <text
-                  x="0"
-                  y="6"
-                  textAnchor="middle"
-                  fill="#E5A93C"
-                  fontFamily="Cinzel, serif"
-                  fontWeight="700"
-                  fontSize="14"
-                >
-                  III
-                </text>
-              </g>
-              <g transform="translate(800, 102)">
-                <circle cx="0" cy="0" r="19" fill="#2C1A0B" stroke="#E5A93C" strokeWidth="3" />
-                <text
-                  x="0"
-                  y="6"
-                  textAnchor="middle"
-                  fill="#E5A93C"
-                  fontFamily="Cinzel, serif"
-                  fontWeight="700"
-                  fontSize="14"
-                >
-                  IV
-                </text>
-              </g>
-              <g transform="translate(1000, 28)">
-                <circle cx="0" cy="0" r="21" fill="#E5A93C" stroke="#2C1A0B" strokeWidth="3" />
-                <text
-                  x="0"
-                  y="6"
-                  textAnchor="middle"
-                  fill="#2C1A0B"
-                  fontFamily="Cinzel, serif"
-                  fontWeight="700"
-                  fontSize="15"
-                >
-                  V
-                </text>
-              </g>
+              {/* 2. Outer Ornate Golden Sandstone Embankment */}
+              <path
+                d="M 200 28 C 290 28, 310 102, 400 102 C 490 102, 510 28, 600 28 C 690 28, 710 102, 800 102 C 890 102, 910 28, 1000 28"
+                stroke="url(#chariot-track-gold)"
+                strokeWidth="18"
+                strokeLinecap="round"
+              />
+
+              {/* 3. Battlefield Chariot Wheel Ruts (Dual Track Grooves left by the Rath) */}
+              <path
+                d="M 200 28 C 290 28, 310 102, 400 102 C 490 102, 510 28, 600 28 C 690 28, 710 102, 800 102 C 890 102, 910 28, 1000 28"
+                stroke="#3D1C06"
+                strokeWidth="10"
+                strokeLinecap="round"
+              />
+
+              {/* 4. Glowing Radiant Saffron Energy Runepath */}
+              <path
+                d="M 200 28 C 290 28, 310 102, 400 102 C 490 102, 510 28, 600 28 C 690 28, 710 102, 800 102 C 890 102, 910 28, 1000 28"
+                stroke="#F2B84B"
+                strokeWidth="2.5"
+                strokeDasharray="8 6"
+                strokeLinecap="round"
+              />
+
+              {/* 5 Milestone Sudarshana Chakra Checkpoints */}
+              {phases.map((p, idx) => {
+                const isSelected = activePhaseIndex === idx;
+
+                return (
+                  <g
+                    key={p.id}
+                    transform={`translate(${p.x}, ${p.y})`}
+                    onClick={() => setActivePhaseIndex(idx)}
+                    className="cursor-pointer group/node"
+                  >
+                    {/* Animated Pulsing Ring on Active Milestone */}
+                    {isSelected && (
+                      <circle
+                        cx="0"
+                        cy="0"
+                        r="26"
+                        fill="none"
+                        stroke="#F2B84B"
+                        strokeWidth="2"
+                        className="animate-ping opacity-60"
+                      />
+                    )}
+
+                    {/* Ornate Chakra Rim */}
+                    <circle
+                      cx="0"
+                      cy="0"
+                      r={isSelected ? 22 : 19}
+                      fill={isSelected ? '#F2B84B' : '#200E06'}
+                      stroke={isSelected ? '#200E06' : '#C69214'}
+                      strokeWidth="3.5"
+                      className="transition-all duration-300 shadow-md"
+                    />
+
+                    {/* 8-Spoke Chakra Hub */}
+                    <circle
+                      cx="0"
+                      cy="0"
+                      r={isSelected ? 16 : 14}
+                      fill={isSelected ? '#200E06' : '#3E1C0A'}
+                      stroke="#F2B84B"
+                      strokeWidth="1.5"
+                    />
+
+                    {/* Roman Numeral */}
+                    <text
+                      x="0"
+                      y="5"
+                      textAnchor="middle"
+                      fill="#F2B84B"
+                      fontFamily="Cinzel, serif"
+                      fontWeight="800"
+                      fontSize={isSelected ? '14' : '12'}
+                    >
+                      {p.roman}
+                    </text>
+                  </g>
+                );
+              })}
             </svg>
+
+            {/* MYTHOLOGICAL "RATH" (CHARIOT) - Smoothly Rides to the Active Phase */}
+            <div
+              className="absolute pointer-events-none transition-all duration-700 ease-[cubic-bezier(0.34,1.3,0.64,1)] z-40"
+              style={{
+                left: `${(currentPhase.x / 1200) * 100}%`,
+                top: `${(currentPhase.y / 130) * 100}%`,
+                transform: 'translate(-50%, -75%)',
+              }}
+            >
+              {/* Divine Celestial Chariot Token with 3D Depth & Glowing Aura */}
+              <div className="relative flex flex-col items-center">
+                {/* Floating Celestial Name Banner */}
+                <div className="mb-1 px-2.5 py-0.5 rounded-full bg-dark-chocolate/90 border border-gold-highlight text-gold-highlight font-label text-[10px] uppercase font-bold tracking-wider shadow-lg whitespace-nowrap animate-bounce">
+                  ⚡ Kapidhwaja Rath · Phase {currentPhase.roman}
+                </div>
+
+                {/* Chariot Artwork & Radiant Sun Aura */}
+                <div className="relative w-28 h-22 sm:w-32 sm:h-24 filter drop-shadow-[0_8px_16px_rgba(242,184,75,0.7)] group hover:scale-105 transition-transform">
+                  <Image
+                    src="/assets/mythological_rath.png"
+                    alt="Mythological Kurukshetra Chariot (Rath)"
+                    fill
+                    sizes="128px"
+                    className="object-contain"
+                    priority
+                  />
+                </div>
+
+                {/* Golden Sand Dust & Energy Wake beneath the Rath */}
+                <div className="w-24 h-3 bg-gradient-to-r from-transparent via-gold-highlight/80 to-transparent blur-[3px] rounded-full mt-[-6px]" />
+              </div>
+            </div>
           </div>
 
           {/* Bottom Row: Phase II (x=400), Phase IV (x=800) */}
           <div className="grid grid-cols-12 gap-5 items-stretch relative z-20">
             <div className="col-span-2" />
 
-            {/* Phase 02: Registration Closes */}
-            <article className="col-span-4 bg-dark-chocolate/95 text-cream-parchment border-2 border-gold-rich rounded-xl p-2.5 flex items-center gap-3.5 shadow-xl hover:-translate-y-0.5 transition-transform duration-card-lift select-none">
-              <div className="relative w-16 h-16 rounded-lg overflow-hidden border border-gold-rich/80 shrink-0">
-                <Image
-                  src={phases[1].image}
-                  alt={phases[1].alt}
-                  fill
-                  sizes="64px"
-                  className="object-cover"
-                />
-              </div>
-              <div className="min-w-0 flex flex-col gap-0.5">
-                <h3 className="font-display text-body-lg font-bold text-gold-highlight leading-snug">
-                  {phases[1].title}
-                </h3>
-                <span className="font-label text-label-sm uppercase text-cream-parchment tabular-nums font-semibold">
-                  {phases[1].datetime}
-                </span>
-              </div>
-            </article>
+            {[1, 3].map((idx) => {
+              const p = phases[idx];
+              const isSelected = activePhaseIndex === idx;
 
-            {/* Phase 04: Final Hackathon */}
-            <article className="col-span-4 bg-dark-chocolate/95 text-cream-parchment border-2 border-gold-rich rounded-xl p-2.5 flex items-center gap-3.5 shadow-xl hover:-translate-y-0.5 transition-transform duration-card-lift select-none">
-              <div className="relative w-16 h-16 rounded-lg overflow-hidden border border-gold-rich/80 shrink-0">
-                <Image
-                  src={phases[3].image}
-                  alt={phases[3].alt}
-                  fill
-                  sizes="64px"
-                  className="object-cover"
-                />
-              </div>
-              <div className="min-w-0 flex flex-col gap-0.5">
-                <h3 className="font-display text-body-lg font-bold text-gold-highlight leading-snug">
-                  {phases[3].title}
-                </h3>
-                <span className="font-label text-label-sm uppercase text-cream-parchment tabular-nums font-semibold">
-                  {phases[3].datetime}
-                </span>
-              </div>
-            </article>
+              return (
+                <article
+                  key={p.id}
+                  onClick={() => setActivePhaseIndex(idx)}
+                  onMouseEnter={() => setActivePhaseIndex(idx)}
+                  className={`col-span-4 rounded-xl p-3 flex items-center gap-3.5 shadow-xl cursor-pointer transition-all duration-300 select-none group relative overflow-hidden ${
+                    isSelected
+                      ? 'bg-gradient-to-r from-bronze-brown via-dark-chocolate to-bronze-brown border-2 border-gold-highlight scale-[1.03] shadow-[0_8px_30px_rgba(242,184,75,0.4)] z-30'
+                      : 'bg-dark-chocolate/95 border-2 border-gold-rich/60 hover:border-gold-highlight/90 hover:scale-[1.01]'
+                  }`}
+                >
+                  {/* Active Golden Glow Strip */}
+                  {isSelected && (
+                    <span className="absolute top-0 left-0 bottom-0 w-1.5 bg-gradient-to-b from-gold-highlight via-saffron to-gold-highlight" />
+                  )}
+
+                  {/* Thumbnail Image with Roman Badge */}
+                  <div className="relative w-15 h-15 rounded-lg overflow-hidden border border-gold-highlight/80 shrink-0 bg-black/40">
+                    <Image
+                      src={p.image}
+                      alt={p.alt}
+                      fill
+                      sizes="60px"
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-black/35 flex items-center justify-center">
+                      <span className="font-display text-sm font-bold text-gold-highlight">
+                        {p.roman}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="min-w-0 flex flex-col gap-0.5">
+                    <span className="font-label text-[10px] uppercase tracking-wider text-gold-highlight font-bold">
+                      Phase {p.roman} · {p.tagline}
+                    </span>
+                    <h3
+                      className={`font-display text-base font-bold leading-snug truncate transition-colors ${
+                        isSelected ? 'text-cream-parchment' : 'text-cream-parchment/90 group-hover:text-gold-highlight'
+                      }`}
+                    >
+                      {p.title}
+                    </h3>
+                    <span className="font-label text-xs uppercase text-cream-parchment/75 tabular-nums font-semibold">
+                      {p.datetime}
+                    </span>
+                  </div>
+                </article>
+              );
+            })}
 
             <div className="col-span-2" />
           </div>
         </div>
 
-        {/* MOBILE VERTICAL COMPACT WARPATH (below md) */}
-        <div className="md:hidden relative flex flex-col gap-4 pl-6 border-l-4 border-saffron">
-          {phases.map((phase, idx) => (
-            <article
-              key={phase.id}
-              className={`relative bg-dark-chocolate/95 text-cream-parchment border-2 ${phase.borderClass} rounded-xl p-2.5 flex items-center gap-3 shadow-lg select-none`}
-            >
-              <span
-                className={`absolute -left-[34px] top-1/2 -translate-y-1/2 w-4 h-4 rounded-full ${
-                  idx % 2 === 0 ? 'bg-saffron' : 'bg-gold-rich'
-                } border-2 border-dark-chocolate`}
-              />
-              <span
-                className={`absolute -left-[18px] top-1/2 -translate-y-1/2 w-4 h-0.5 ${
-                  idx % 2 === 0 ? 'bg-gold-highlight' : 'bg-gold-rich'
-                }`}
-              />
-              <div className="relative w-14 h-14 rounded-lg overflow-hidden border border-gold-highlight/80 shrink-0">
-                <Image
-                  src={phase.image}
-                  alt={phase.alt}
-                  fill
-                  sizes="56px"
-                  className="object-cover"
-                />
-              </div>
-              <div className="min-w-0 flex flex-col gap-0.5">
-                <div className="flex items-center gap-2">
-                  <span className="px-1.5 py-0.2 bg-bronze-brown border border-gold-rich/70 rounded text-[10px] font-label font-bold text-gold-highlight uppercase">
-                    Phase {phase.roman}
-                  </span>
-                  <h3 className="font-display text-body-md font-bold text-gold-highlight leading-snug truncate">
-                    {phase.title}
+        {/* ============================================================== */}
+        {/* DYNAMIC BATTLEFIELD STAGE BRIEFING SPOTLIGHT (Desktop & Mobile) */}
+        {/* Appears smoothly on hover or click of any roadmap stage        */}
+        {/* ============================================================== */}
+        <div className="relative max-w-4xl mx-auto w-full z-20">
+          <div className="bg-gradient-to-r from-dark-chocolate via-[#261208] to-dark-chocolate text-cream-parchment border-2 border-gold-highlight rounded-2xl p-5 md:p-6 shadow-2xl relative overflow-hidden transition-all duration-300">
+            {/* Corner Vedic Brackets */}
+            <span className="absolute top-2.5 left-2.5 w-4 h-4 border-t-2 border-l-2 border-gold-highlight/70 pointer-events-none" />
+            <span className="absolute top-2.5 right-2.5 w-4 h-4 border-t-2 border-r-2 border-gold-highlight/70 pointer-events-none" />
+            <span className="absolute bottom-2.5 left-2.5 w-4 h-4 border-b-2 border-l-2 border-gold-highlight/70 pointer-events-none" />
+            <span className="absolute bottom-2.5 right-2.5 w-4 h-4 border-b-2 border-r-2 border-gold-highlight/70 pointer-events-none" />
+
+            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-b border-gold-rich/40 pb-4 mb-4">
+              {/* Left Stage Identity */}
+              <div className="flex items-center gap-3.5">
+                <div className="w-12 h-12 rounded-xl bg-gold-highlight/15 border border-gold-highlight flex items-center justify-center text-gold-highlight font-display text-xl font-bold shrink-0">
+                  {currentPhase.roman}
+                </div>
+
+                <div>
+                  <div className="flex items-center gap-2">
+                    <span className="px-2.5 py-0.5 bg-gold-highlight/20 border border-gold-highlight/60 rounded text-[11px] font-label font-bold text-gold-highlight uppercase tracking-wider">
+                      Phase {currentPhase.roman} · {currentPhase.tagline}
+                    </span>
+                  </div>
+                  <h3 className="font-display text-xl md:text-2xl text-cream-parchment font-bold mt-1">
+                    {currentPhase.title}
                   </h3>
                 </div>
-                <span className="font-label text-label-sm uppercase text-cream-parchment/90 tabular-nums">
-                  {phase.datetime}
-                </span>
               </div>
-            </article>
-          ))}
+
+              {/* Right Date & Navigation */}
+              <div className="flex items-center gap-3 self-stretch md:self-auto justify-between md:justify-end">
+                <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-black/40 border border-gold-rich/40 font-mono text-xs md:text-sm text-gold-highlight font-bold">
+                  <Clock className="w-4 h-4 text-gold-highlight" />
+                  <span>{currentPhase.datetime}</span>
+                </div>
+
+                {/* Stepper Buttons */}
+                <div className="flex items-center gap-1.5">
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setActivePhaseIndex((prev) => (prev > 0 ? prev - 1 : phases.length - 1))
+                    }
+                    className="p-1.5 rounded-lg bg-dark-chocolate border border-gold-rich/50 text-gold-highlight hover:bg-bronze-brown transition-colors"
+                    aria-label="Previous Phase"
+                  >
+                    <ChevronLeft className="w-4 h-4" />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setActivePhaseIndex((prev) => (prev < phases.length - 1 ? prev + 1 : 0))
+                    }
+                    className="p-1.5 rounded-lg bg-dark-chocolate border border-gold-rich/50 text-gold-highlight hover:bg-bronze-brown transition-colors"
+                    aria-label="Next Phase"
+                  >
+                    <ChevronRight className="w-4 h-4" />
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Description Briefing */}
+            <p className="font-body text-sm md:text-base text-cream-parchment/90 leading-relaxed mb-4">
+              {currentPhase.brief}
+            </p>
+
+            {/* Key Objectives Checklist */}
+            <div className="bg-black/35 rounded-xl p-3.5 border border-gold-rich/30">
+              <span className="font-label text-xs uppercase tracking-wider text-gold-highlight font-bold block mb-2">
+                Gate Directives &amp; Action Protocol:
+              </span>
+              <ul className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                {currentPhase.objectives.map((obj, i) => (
+                  <li key={i} className="flex items-start gap-2 text-xs md:text-[13px] text-cream-parchment/85">
+                    <CheckCircle2 className="w-4 h-4 text-gold-highlight shrink-0 mt-0.5" />
+                    <span>{obj}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* ============================================================== */}
+        {/* MOBILE VERTICAL INTERACTIVE PROGRESSION (below md)            */}
+        {/* ============================================================== */}
+        <div className="md:hidden relative flex flex-col gap-4 pl-6 border-l-4 border-gold-rich">
+          {phases.map((phase, idx) => {
+            const isSelected = activePhaseIndex === idx;
+
+            return (
+              <article
+                key={phase.id}
+                onClick={() => setActivePhaseIndex(idx)}
+                className={`relative rounded-xl p-3 flex flex-col gap-2 shadow-lg cursor-pointer transition-all ${
+                  isSelected
+                    ? 'bg-dark-chocolate border-2 border-gold-highlight shadow-[0_4px_20px_rgba(242,184,75,0.35)]'
+                    : 'bg-dark-chocolate/90 border border-gold-rich/50'
+                }`}
+              >
+                {/* Connector Node */}
+                <span
+                  className={`absolute -left-[33px] top-4 w-4 h-4 rounded-full border-2 border-dark-chocolate ${
+                    isSelected ? 'bg-gold-highlight animate-pulse' : 'bg-gold-rich'
+                  }`}
+                />
+
+                <div className="flex items-center gap-3">
+                  <div className="relative w-12 h-12 rounded-lg overflow-hidden border border-gold-highlight/80 shrink-0">
+                    <Image
+                      src={phase.image}
+                      alt={phase.alt}
+                      fill
+                      sizes="48px"
+                      className="object-cover"
+                    />
+                  </div>
+
+                  <div className="min-w-0 flex-1">
+                    <span className="font-label text-[10px] uppercase text-gold-highlight font-bold">
+                      Phase {phase.roman}
+                    </span>
+                    <h3 className="font-display text-sm font-bold text-cream-parchment leading-tight">
+                      {phase.title}
+                    </h3>
+                    <span className="font-label text-xs uppercase text-cream-parchment/75 tabular-nums">
+                      {phase.datetime}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Expanded description on Mobile selection */}
+                {isSelected && (
+                  <div className="pt-2 border-t border-gold-rich/30 text-xs text-cream-parchment/85 leading-relaxed">
+                    <p>{phase.brief}</p>
+                  </div>
+                )}
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>
   );
 };
+
+export default TimelineSection;
