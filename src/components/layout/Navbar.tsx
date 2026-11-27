@@ -23,7 +23,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRegisterClick, onCoordinatorsC
     { label: 'Timeline', href: '#timeline' },
     { label: 'Glimpse', href: '#glimpse' },
     { label: 'Guidelines', href: '#guidelines' },
-    { label: 'Community', href: '#community' },
+    { label: 'Stay Connected', href: '#community' },
     { label: 'Organizers', href: '#coordinators' },
     { label: 'Contact', href: '#contact' },
   ];
