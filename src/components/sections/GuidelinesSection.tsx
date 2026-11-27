@@ -19,26 +19,11 @@ export const GuidelinesSection: React.FC = () => {
     setOpenFaq(openFaq === index ? null : index);
   };
 
-  const faqs = [
-    {
-      qNum: 'Q1',
-      question: 'Is there a registration fee for shortlisted teams?',
-      answer:
-        'Idea submission is completely free. Shortlisted teams pay a nominal ₹400 per member hospitality fee covering all meals, snacks, and campus accommodation for 24 hours.',
-    },
-    {
-      qNum: 'Q2',
-      question: 'Can we use pre-trained AI models or public APIs?',
-      answer:
-        'Yes, open-weight models and public APIs are permitted, provided your core application logic, integration, and product workflow are built during the hackathon.',
-    },
-    {
-      qNum: 'Q3',
-      question: 'Will travel reimbursement or certificates be provided?',
-      answer:
-        'Every finalist receives an official BPUT-recognized participation certificate, swag kit, and mentor feedback. Travel support is available for outstation winners.',
-    },
-  ];
+  const faqs = SITE_CONFIG.FAQS.map((faq, index) => ({
+    qNum: `Q${index + 1}`,
+    question: faq.question,
+    answer: faq.answer,
+  }));
 
   return (
     <section id="guidelines" className="py-20 md:py-28 bg-cream-parchment border-t-2 border-gold-rich">
@@ -331,13 +316,15 @@ export const GuidelinesSection: React.FC = () => {
                       }`}
                     />
                   </button>
-                  {isOpen && (
-                    <div className="pt-3 pl-11 pr-6 animate-fadeIn">
-                      <p className="font-body text-body-md text-navy-ink font-normal">
-                        {faq.answer}
-                      </p>
-                    </div>
-                  )}
+                  <div
+                    className={`pt-3 pl-11 pr-6 transition-all duration-300 ${
+                      isOpen ? 'block animate-fadeIn' : 'hidden'
+                    }`}
+                  >
+                    <p className="font-body text-body-md text-navy-ink font-normal leading-relaxed">
+                      {faq.answer}
+                    </p>
+                  </div>
                 </div>
               );
             })}

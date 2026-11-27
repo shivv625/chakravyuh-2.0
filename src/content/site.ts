@@ -433,26 +433,46 @@ export const SITE_CONFIG = {
   FAQS: [
     {
       id: "faq-1",
-      question: "Is there an entry fee to apply for Chakravyuh 2.0?",
-      answer: "No, initial online registration and idea submission are 100% free. Only the top 125 teams selected for the on-campus round pay a nominal ₹400 per person fee, which fully covers accommodation, meals, drinks, high-speed WiFi, and 24-hour campus facilities.",
+      question: "Who can participate in CHAKRAVYUH 2.0?",
+      answer: "CHAKRAVYUH 2.0 is open to all college students across India, irrespective of their academic department, branch, or field of study.",
     },
     {
       id: "faq-2",
-      question: "Can teams use pre-trained AI models or cloud APIs?",
-      answer: "Yes, utilizing open-weight AI models (e.g. LLaMA, Whisper) and standard cloud APIs (e.g. OpenAI, Google Cloud, Firebase) is permitted, provided all application logic, interface, data pipeline, and system integration are created during the hackathon.",
+      question: "What is the minimum and maximum team size?",
+      answer: "Each team must consist of a minimum of 3 and a maximum of 5 members.",
     },
     {
       id: "faq-3",
-      question: "Are inter-college or cross-year teams allowed?",
-      answer: "Yes! Squad members can belong to different colleges, different graduation years, or different engineering/non-engineering branches across India.",
+      question: "Can students from different academic branches participate together?",
+      answer: "Yes! Students from different academic branches, departments, and disciplines can form a team and participate together.",
     },
     {
       id: "faq-4",
-      question: "What accommodation and facilities are provided?",
-      answer: "Shortlisted finalists will receive hostel accommodation on the GITA Autonomous College campus, round-the-clock power and WiFi, snacks and meals, designated rest areas, and first-aid medical support.",
+      question: "Is individual participation allowed?",
+      answer: "No. Individual participation is not permitted. All participants must register as a team of 3–5 members.",
     },
     {
       id: "faq-5",
+      question: "Can we work on our own project idea instead of the given problem statements?",
+      answer: "No. Participants must select and work on one of the problem statements provided by the CHAKRAVYUH 2.0 organizing team.",
+    },
+    {
+      id: "faq-6",
+      question: "Can we use open-source frameworks, APIs, and AI tools?",
+      answer: "Yes! Participants are free to use open-source frameworks, cloud APIs, AI tools, and other development resources to build their solutions.",
+    },
+    {
+      id: "faq-7",
+      question: "Will the hackathon be conducted offline or online?",
+      answer: "CHAKRAVYUH 2.0 will be conducted entirely offline at GITA Autonomous College, Bhubaneswar, Odisha. All participating teams are required to be physically present at the venue.",
+    },
+    {
+      id: "faq-8",
+      question: "Is there an entry fee to apply for CHAKRAVYUH 2.0?",
+      answer: "No, initial online registration and idea submission are 100% free. Only the top 125 teams selected for the on-campus round pay a nominal ₹400 per person fee, which fully covers accommodation, meals, drinks, high-speed WiFi, and 24-hour campus facilities.",
+    },
+    {
+      id: "faq-9",
       question: "Will participation certificates and goodies be provided?",
       answer: "Every participant attending the physical hackathon receives an official BPUT-recognized certificate of participation, Chakravyuh 2.0 t-shirt, stickers, and partner swags.",
     },
