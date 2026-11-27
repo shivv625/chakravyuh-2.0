@@ -8,8 +8,8 @@ import { RibbonBannerSection } from '@/components/sections/RibbonBannerSection';
 import { AboutSection } from '@/components/sections/AboutSection';
 import { ProblemStatementsSection } from '@/components/sections/ProblemStatementsSection';
 import { TimelineSection } from '@/components/sections/TimelineSection';
-import { GuidelinesSection } from '@/components/sections/GuidelinesSection';
 import { GlimpseSection } from '@/components/sections/GlimpseSection';
+import { GuidelinesSection } from '@/components/sections/GuidelinesSection';
 import { CoordinatorsModal } from '@/components/sections/CoordinatorsModal';
 import { CommunitySection } from '@/components/sections/CommunitySection';
 import { ContactSection } from '@/components/sections/ContactSection';
@@ -35,15 +35,15 @@ export default function Home() {
         onCoordinatorsClick={() => setCoordinatorsModalOpen(true)}
       />
 
-      {/* 4. Main Section Sequence — Ends at ContactSection */}
+      {/* 4. Main Section Sequence — GlimpseSection is placed above Guidelines/FAQs, ending at ContactSection */}
       <main>
         <HeroSection onRegisterClick={() => setModalOpen(true)} />
         <RibbonBannerSection />
         <AboutSection />
         <ProblemStatementsSection onRegisterClick={() => setModalOpen(true)} />
         <TimelineSection />
-        <GuidelinesSection />
         <GlimpseSection />
+        <GuidelinesSection />
         <CommunitySection />
         <ContactSection />
       </main>

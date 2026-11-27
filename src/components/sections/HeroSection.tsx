@@ -138,11 +138,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRegisterClick }) => 
           centerpieceRef.current.style.transform = `translate3d(${cMoveX}px, ${cMoveY}px, 20px) rotateX(${cRotX}deg) rotateY(${cRotY}deg)`;
         }
 
-        // D. Prize Pool Chakra Parallax
+        // D. Prize Pool Chakra Halo (Anchored concentric to crest)
         if (chakraRef.current) {
-          const chX = -cur.x * 8;
-          const chY = -cur.y * 6;
-          chakraRef.current.style.transform = `translate3d(calc(-50% + ${chX}px), calc(-50% + ${chY}px), 0)`;
+          chakraRef.current.style.transform = 'translate3d(-50%, -50%, 0)';
         }
       }
 
@@ -269,9 +267,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRegisterClick }) => 
           <Image
             src="/assets/prize_pool_crest.png"
             alt={`Prize Pool ${SITE_CONFIG.METRICS.PRIZE_POOL_DISPLAY}`}
-            width={400}
-            height={100}
-            className="w-full max-w-xs sm:max-w-sm h-auto object-contain drop-shadow-md relative z-10"
+            width={512}
+            height={259}
+            className="w-full max-w-xs sm:max-w-sm h-auto object-contain drop-shadow-md relative z-10 mx-auto"
             priority
           />
         </div>
