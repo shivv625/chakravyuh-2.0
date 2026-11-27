@@ -439,10 +439,10 @@ export const AboutSection: React.FC = () => {
                   Squad Size
                 </span>
                 <span className="font-title text-title-lg text-dark-chocolate block group-hover:text-bronze-brown transition-colors font-bold">
-                  2–4 Members
+                  3–5 Members
                 </span>
                 <span className="font-body text-label-sm text-navy-ink font-medium">
-                  Inter-college teams allowed
+                  No compulsory girls participant
                 </span>
               </div>
             </article>
@@ -505,10 +505,10 @@ export const AboutSection: React.FC = () => {
                   Eligibility
                 </span>
                 <span className="font-title text-title-lg text-dark-chocolate block group-hover:text-bronze-brown transition-colors font-bold">
-                  UG / PG India
+                  All Students
                 </span>
                 <span className="font-body text-label-sm text-navy-ink font-medium">
-                  Open to all engineering branches
+                  Open for all college students
                 </span>
               </div>
             </article>

@@ -142,7 +142,7 @@ export const SITE_CONFIG = {
       title: "Registration Opens",
       datetime: "15 DEC 2026 · 10:00 AM",
       timestamp: "2026-12-15T10:00:00+05:30",
-      description: "Portal opens for squads of 2–4 warriors across India to submit team roster and track preference.",
+      description: "Portal opens for squads of 3–5 warriors across India to submit team roster and track preference.",
       icon: "Calendar",
       accentColor: "#F2B84B", // Gold Highlight
       status: "live",
@@ -272,7 +272,7 @@ export const SITE_CONFIG = {
       number: "NIYAM 01",
       category: "Squads",
       title: "Team Size & Eligibility",
-      description: "Teams must consist of 2 to 4 students currently enrolled in any recognized UG/PG program in India. Inter-college teams and multidisciplinary branches are warmly encouraged.",
+      description: "Teams must consist of 3 to 5 students. No compulsory girls participant. Open for all college students across India. Inter-college teams and multidisciplinary branches are warmly encouraged.",
     },
     {
       id: "rule-2",

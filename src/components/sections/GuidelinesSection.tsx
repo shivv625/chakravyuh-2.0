@@ -95,16 +95,20 @@ export const GuidelinesSection: React.FC = () => {
                   </span>
                 </div>
                 <p className="font-body text-body-md text-navy-ink font-normal">
-                  Teams must consist of 2 to 4 students currently enrolled in any recognized UG/PG program across India.
+                  Teams must consist of 3 to 5 students. No compulsory girls participant required. Open for all college students.
                 </p>
                 <div className="flex flex-wrap gap-2 pt-1">
                   <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-cream-parchment border border-gold-rich/50 rounded-sm font-label text-label-sm text-bronze-brown font-medium">
                     <CheckCircle2 className="w-3.5 h-3.5 text-peacock-green shrink-0" />
-                    2–4 Warriors
+                    3–5 Warriors
                   </span>
                   <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-cream-parchment border border-gold-rich/50 rounded-sm font-label text-label-sm text-bronze-brown font-medium">
                     <CheckCircle2 className="w-3.5 h-3.5 text-peacock-green shrink-0" />
-                    Inter-College Allowed
+                    No Compulsory Girls Participant
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-cream-parchment border border-gold-rich/50 rounded-sm font-label text-label-sm text-bronze-brown font-medium">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-peacock-green shrink-0" />
+                    All College Students
                   </span>
                 </div>
               </div>

@@ -39,6 +39,8 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
     member3Email: '',
     member4Name: '',
     member4Email: '',
+    member5Name: '',
+    member5Email: '',
     githubLink: '',
     ideaSummary: '',
 
@@ -173,10 +175,10 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
 
             <label className="flex flex-col gap-1.5">
               <span className="font-label text-label-sm uppercase text-bronze-brown font-bold">
-                Squad Size (2 to 4 Warriors) *
+                Squad Size (3 to 5 Warriors) *
               </span>
               <div className="grid grid-cols-3 gap-3">
-                {[2, 3, 4].map((size) => (
+                {[3, 4, 5].map((size) => (
                   <button
                     key={size}
                     type="button"
@@ -191,6 +193,9 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
                   </button>
                 ))}
               </div>
+              <span className="font-body text-label-sm text-navy-ink/80 italic">
+                No compulsory girls participant · Open for all college students
+              </span>
             </label>
 
             <div className="flex justify-end pt-4">
@@ -397,6 +402,35 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
                     value={form.member4Email}
                     onChange={(e) => setForm({ ...form, member4Email: e.target.value })}
                     placeholder="member4@college.edu.in"
+                    className="w-full bg-light-surface-container-lowest border-0 border-b-2 border-gold-rich px-3 py-2 font-body text-body-md text-navy-ink focus:border-saffron focus:ring-0"
+                  />
+                </label>
+              </div>
+            )}
+
+            {form.teamSize >= 5 && (
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <label className="flex flex-col gap-1">
+                  <span className="font-label text-label-sm uppercase text-bronze-brown font-bold">
+                    Member 5 Name
+                  </span>
+                  <input
+                    type="text"
+                    value={form.member5Name}
+                    onChange={(e) => setForm({ ...form, member5Name: e.target.value })}
+                    placeholder="Yudhisthira Pandava"
+                    className="w-full bg-light-surface-container-lowest border-0 border-b-2 border-gold-rich px-3 py-2 font-body text-body-md text-navy-ink focus:border-saffron focus:ring-0"
+                  />
+                </label>
+                <label className="flex flex-col gap-1">
+                  <span className="font-label text-label-sm uppercase text-bronze-brown font-bold">
+                    Member 5 Email
+                  </span>
+                  <input
+                    type="email"
+                    value={form.member5Email}
+                    onChange={(e) => setForm({ ...form, member5Email: e.target.value })}
+                    placeholder="member5@college.edu.in"
                     className="w-full bg-light-surface-container-lowest border-0 border-b-2 border-gold-rich px-3 py-2 font-body text-body-md text-navy-ink focus:border-saffron focus:ring-0"
                   />
                 </label>

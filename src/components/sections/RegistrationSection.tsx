@@ -97,7 +97,7 @@ export const RegistrationSection: React.FC<RegistrationSectionProps> = ({
                 Fill Team Details
               </h3>
               <p className="font-body text-body-md text-navy-ink">
-                Add 2–4 warriors, institutional college IDs, and select your battlefield Astra track.
+                Add 3–5 warriors, institutional college IDs, and select your battlefield Astra track.
               </p>
             </div>
 

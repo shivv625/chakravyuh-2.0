@@ -63,7 +63,7 @@ export const TimelineSection: React.FC = () => {
       accentClass: 'text-saffron',
       datetime: '10 JAN 2027 · 11:59 PM',
       title: 'Registration Closes',
-      desc: 'Final cutoff to lock your 2–4 member team and upload your solution pitch deck.',
+      desc: 'Final cutoff to lock your 3–5 member team and upload your solution pitch deck.',
       action: 'Deliverable: Idea PPT',
       phaseLabel: 'Phase 02 · Submission',
       nodeColor: 'bg-saffron',

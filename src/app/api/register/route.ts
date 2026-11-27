@@ -4,7 +4,7 @@ import { z } from 'zod';
 const registerSchema = z.object({
   teamName: z.string().min(2, 'Team name required'),
   track: z.string().min(1, 'Track selection required'),
-  teamSize: z.number().min(2).max(4),
+  teamSize: z.number().min(3).max(5),
   leaderName: z.string().min(2, 'Leader name required'),
   leaderEmail: z.string().email('Valid leader email required'),
   leaderPhone: z.string().min(10, 'Valid phone required'),
@@ -16,6 +16,8 @@ const registerSchema = z.object({
   member3Email: z.string().optional(),
   member4Name: z.string().optional(),
   member4Email: z.string().optional(),
+  member5Name: z.string().optional(),
+  member5Email: z.string().optional(),
   githubLink: z.string().optional(),
   ideaSummary: z.string().optional(),
   consent: z.boolean(),
