@@ -19,6 +19,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRegisterClick, onCoordinatorsC
 
   const navLinks = [
     { label: 'About', href: '#about' },
+    { label: 'PS & Tracks', href: '#tracks' },
     { label: 'Timeline', href: '#timeline' },
     { label: 'Guidelines', href: '#guidelines' },
     { label: 'Glimpse', href: '#glimpse' },
@@ -36,7 +37,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRegisterClick, onCoordinatorsC
     handleScroll();
 
     // IntersectionObserver for active section
-    const sections = ['hero', 'about', 'timeline', 'guidelines', 'glimpse', 'community', 'coordinators', 'contact'];
+    const sections = ['hero', 'about', 'tracks', 'timeline', 'guidelines', 'glimpse', 'community', 'coordinators', 'contact'];
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {

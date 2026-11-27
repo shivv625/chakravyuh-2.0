@@ -48,6 +48,9 @@ export const Footer: React.FC<FooterProps> = ({ onCoordinatorsClick, onRegisterC
             <a href="#about" className="hover:text-gold-highlight transition-colors">
               About
             </a>
+            <a href="#tracks" className="hover:text-gold-highlight transition-colors">
+              PS &amp; Tracks
+            </a>
             <a href="#timeline" className="hover:text-gold-highlight transition-colors">
               The Seven Gates
             </a>

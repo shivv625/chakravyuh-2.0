@@ -38,6 +38,23 @@ export interface TrackDomain {
   tags: string[];
 }
 
+export interface ProblemStatement {
+  id: string;
+  code: string;
+  heading: string;
+  domain: string;
+  astraCode: string;
+  subtitle: string;
+  brief: string;
+  challengePrompts: string[];
+  tags: string[];
+  image: string;
+  alt: string;
+  driveLink: string;
+  difficulty?: string;
+  deliverable?: string;
+}
+
 export interface RuleItem {
   id: string;
   number: string;
@@ -113,6 +130,7 @@ export const SITE_CONFIG = {
   DOCUMENTS: {
     RULEBOOK_PDF_URL: "/rulebook.pdf", // Placeholder in public/rulebook.pdf
     SPONSORSHIP_BROCHURE_URL: "/sponsorship-brochure.pdf",
+    PS_DRIVE_FOLDER_URL: "https://drive.google.com/drive/folders/1yZ8N-chakravyuh2-ps-docs?usp=sharing",
   },
 
   // Socials & Communities
@@ -266,6 +284,110 @@ export const SITE_CONFIG = {
       tags: ["AgriTech", "IoT", "Sustainability"],
     },
   ] as TrackDomain[],
+
+  // Problem Statements (PS) with Dedicated Drive Links & Sticky Scroll Details
+  PROBLEM_STATEMENTS: [
+    {
+      id: "ps-01",
+      code: "PS 01",
+      heading: "Autonomous Multi-Agent Swarm for Critical Infrastructure Security & Disaster Triage",
+      domain: "AI & Machine Learning",
+      astraCode: "Astra 01",
+      subtitle: "Brahmashira · Autonomous Defense",
+      brief: "Develop an autonomous multi-agent orchestration framework capable of real-time distributed anomaly detection, cross-sensor telemetry analysis, and automated incident mitigation across mission-critical networks without human-in-the-loop latency.",
+      challengePrompts: [
+        "Multi-agent coordination protocol with decentralized consensus under high network jitter",
+        "Real-time multimodal log & telemetry anomaly detection with under 200ms inference",
+        "Self-healing recovery playbooks with cryptographic audit trails and human override",
+      ],
+      tags: ["Multi-Agent", "GenAI", "Cyber Defense"],
+      image: "/assets/track_aiml.jpg",
+      alt: "Radiant golden cyber chakra core with neural data strands",
+      driveLink: "https://drive.google.com/drive/folders/1yZ8N-chakravyuh2-ps-aiml?usp=sharing",
+      difficulty: "Advanced",
+      deliverable: "Working Agent Swarm Prototype + Architecture Spec + Live Pitch",
+    },
+    {
+      id: "ps-02",
+      code: "PS 02",
+      heading: "Decentralized Zero-Knowledge Verifiable Identity & Public Good Provenance Engine",
+      domain: "Web3 & Digital Trust",
+      astraCode: "Astra 02",
+      subtitle: "Sudarshana · Trustless Verification",
+      brief: "Architect a privacy-preserving zero-knowledge verification layer and decentralized identity (DID) infrastructure for academic accreditations, hackathon credential verification, and anti-Sybil voter governance with zero exposure of sensitive student data.",
+      challengePrompts: [
+        "ZK-SNARK circuit proving university enrollment and grade boundaries with sub-second proof generation",
+        "Decentralized Soulbound credential issuance compatible with ERC-4337 account abstraction",
+        "Sybil-resistant quadratic funding voting engine for collegiate developer grants",
+      ],
+      tags: ["ZK-Proofs", "Decentralized ID", "Soulbound"],
+      image: "/assets/track_web3.jpg",
+      alt: "Golden interlocking shield and celestial seal over sandstone pillars",
+      driveLink: "https://drive.google.com/drive/folders/1yZ8N-chakravyuh2-ps-web3?usp=sharing",
+      difficulty: "Advanced",
+      deliverable: "Smart Contracts on Testnet + ZK Verifier Web UI + Audit Report",
+    },
+    {
+      id: "ps-03",
+      code: "PS 03",
+      heading: "Real-Time UPI Fraud Sentinel & Alternate Credit Engine for Rural Micro-Merchants",
+      domain: "FinTech & Payments",
+      astraCode: "Astra 03",
+      subtitle: "Kubera · Financial Resilience",
+      brief: "Build an ultra-low latency transaction defense engine that intercepts mule-account laundering patterns and UPI phishing vectors at scale, coupled with an alternative cash-flow underwriting algorithm for underserved rural merchants.",
+      challengePrompts: [
+        "Graph neural network tracking multi-hop mule account velocity under 50ms per transaction",
+        "Offline-capable device-fingerprinting and SMS-less OTP phishing interception",
+        "Non-traditional cashflow credit scoring utilizing utility, mandi, and GST ledger trails",
+      ],
+      tags: ["Payments", "Security", "Credit"],
+      image: "/assets/track_fintech.jpg",
+      alt: "Royal treasury scale balanced with golden coins and sacred geometry",
+      driveLink: "https://drive.google.com/drive/folders/1yZ8N-chakravyuh2-ps-fintech?usp=sharing",
+      difficulty: "Intermediate",
+      deliverable: "Transaction Interceptor Engine + Credit Scoring Dashboard + Demo Sandbox",
+    },
+    {
+      id: "ps-04",
+      code: "PS 04",
+      heading: "Offline-First Edge Diagnostic Triage & Multilingual Clinical Decision Companion",
+      domain: "HealthTech & Diagnostics",
+      astraCode: "Astra 04",
+      subtitle: "Sanjeevani · Community Health",
+      brief: "Engineer an offline-first mobile-edge diagnostic tool for ASHA and rural community healthcare workers, integrating edge-AI acoustic respiratory analysis, vitals triage, and multilingual patient prescription narration in local Indian languages.",
+      challengePrompts: [
+        "On-device quantised model for acoustic cough & wheeze classification running on budget Android",
+        "Emergency vitals risk score calculator compliant with Ayushman Bharat Digital Mission (ABDM)",
+        "Zero-bandwidth sync engine reconciling rural clinical triage logs once network reconnects",
+      ],
+      tags: ["Edge AI", "Offline-First", "ABDM Health"],
+      image: "/assets/track_healthtech.jpg",
+      alt: "Glowing Sanjeevani herb beside a radiant brass healing vessel",
+      driveLink: "https://drive.google.com/drive/folders/1yZ8N-chakravyuh2-ps-healthtech?usp=sharing",
+      difficulty: "Intermediate",
+      deliverable: "Mobile PWA / Native APK + Edge Inference Model + FHIR Telemetry Hub",
+    },
+    {
+      id: "ps-05",
+      code: "PS 05",
+      heading: "Coastal Cyclone Mesh Telemetry & Disaster Early-Warning Resilience Grid",
+      domain: "Open Innovation & Smart Odisha",
+      astraCode: "Astra 05",
+      subtitle: "Vishwakarma · Open Resilience",
+      brief: "Design a decentralized hardware-software mesh telemetry system for coastal cyclone early warning, automated flood level tracking, and citizen emergency distress routing when cellular towers fail during extreme weather events in Odisha.",
+      challengePrompts: [
+        "Long-range LoRaWAN mesh relay protocol linking coastal sensors with zero cellular reliance",
+        "Predictive hydrological surge modeling fusing tidal radar feeds with edge river sensors",
+        "Low-power SOS beacon locator with offline GPS topological evacuation route generation",
+      ],
+      tags: ["Disaster IoT", "LoRaWAN Mesh", "Smart Odisha"],
+      image: "/assets/track_open.jpg",
+      alt: "Lush green fields of Odisha meeting a glowing solar chakra horizon",
+      driveLink: "https://drive.google.com/drive/folders/1yZ8N-chakravyuh2-ps-open?usp=sharing",
+      difficulty: "Open / High Impact",
+      deliverable: "Hardware Telemetry Prototype / Simulator + Emergency Mesh Web Console",
+    },
+  ] as ProblemStatement[],
 
   // Rules of the Battlefield (Niyam)
   RULES: [

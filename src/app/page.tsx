@@ -6,6 +6,7 @@ import { Footer } from '@/components/layout/Footer';
 import { HeroSection } from '@/components/sections/HeroSection';
 import { RibbonBannerSection } from '@/components/sections/RibbonBannerSection';
 import { AboutSection } from '@/components/sections/AboutSection';
+import { ProblemStatementsSection } from '@/components/sections/ProblemStatementsSection';
 import { TimelineSection } from '@/components/sections/TimelineSection';
 import { GuidelinesSection } from '@/components/sections/GuidelinesSection';
 import { GlimpseSection } from '@/components/sections/GlimpseSection';
@@ -39,6 +40,7 @@ export default function Home() {
         <HeroSection onRegisterClick={() => setModalOpen(true)} />
         <RibbonBannerSection />
         <AboutSection />
+        <ProblemStatementsSection onRegisterClick={() => setModalOpen(true)} />
         <TimelineSection />
         <GuidelinesSection />
         <GlimpseSection />
