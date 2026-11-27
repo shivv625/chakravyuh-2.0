@@ -15,10 +15,17 @@ interface HeroSectionProps {
 export const HeroSection: React.FC<HeroSectionProps> = ({ onRegisterClick }) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const heroRef = useRef<HTMLElement | null>(null);
-  const [mouseOffset, setMouseOffset] = useState({ x: 0, y: 0 });
+  const backdropRef = useRef<HTMLDivElement | null>(null);
+  const glareRef = useRef<HTMLDivElement | null>(null);
+  const centerpieceRef = useRef<HTMLDivElement | null>(null);
+  const chakraRef = useRef<HTMLDivElement | null>(null);
   const [isSectionVisible, setIsSectionVisible] = useState(true);
 
-  // Parallax on mouse move for desktop
+  // Mouse position state stored in mutable refs for zero-lag 120Hz/60Hz physics lerp
+  const mouseTargetRef = useRef({ x: 0, y: 0 });
+  const mouseCurrentRef = useRef({ x: 0, y: 0 });
+
+  // Parallax mouse tracker on desktop
   useEffect(() => {
     const isTouch = window.matchMedia('(pointer: coarse)').matches;
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -26,16 +33,26 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRegisterClick }) => 
 
     const handleMouseMove = (e: MouseEvent) => {
       const { innerWidth, innerHeight } = window;
-      const x = (e.clientX / innerWidth - 0.5) * 20; // -10px to +10px
-      const y = (e.clientY / innerHeight - 0.5) * 15;
-      setMouseOffset({ x, y });
+      // Normalized coordinates from -1.0 to +1.0 relative to viewport center
+      const x = (e.clientX / innerWidth - 0.5) * 2;
+      const y = (e.clientY / innerHeight - 0.5) * 2;
+      mouseTargetRef.current = { x, y };
+    };
+
+    const handleMouseLeave = () => {
+      // Gracefully glide back to center equilibrium
+      mouseTargetRef.current = { x: 0, y: 0 };
     };
 
     window.addEventListener('mousemove', handleMouseMove, { passive: true });
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mouseleave', handleMouseLeave);
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseleave', handleMouseLeave);
+    };
   }, []);
 
-  // IntersectionObserver to pause particle canvas when off-screen
+  // IntersectionObserver to pause particle canvas and 3D transforms when off-screen
   useEffect(() => {
     if (!heroRef.current) return;
     const observer = new IntersectionObserver(
@@ -48,7 +65,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRegisterClick }) => 
     return () => observer.disconnect();
   }, []);
 
-  // Gold dust particle canvas (capped at 40, paused when off-screen or prefers-reduced-motion)
+  // Unified 60-120fps render loop: Gold dust particles + Immersive 3D Parallax Camera
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -56,7 +73,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRegisterClick }) => 
     if (!ctx) return;
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReducedMotion) return;
+    const isTouch = window.matchMedia('(pointer: coarse)').matches;
 
     let animationFrameId: number;
     let width = (canvas.width = window.innerWidth);
@@ -70,7 +87,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRegisterClick }) => 
     window.addEventListener('resize', handleResize);
 
     // Particle setup
-    const particleCount = 40;
+    const particleCount = 42;
     const particles = Array.from({ length: particleCount }).map(() => ({
       x: Math.random() * width,
       y: Math.random() * height,
@@ -87,6 +104,49 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRegisterClick }) => 
         return;
       }
 
+      // 1. Organic Physics Spring-Lerp for Immersive 3D Camera
+      if (!prefersReducedMotion && !isTouch) {
+        const lerpSpeed = 0.055;
+        const cur = mouseCurrentRef.current;
+        const target = mouseTargetRef.current;
+
+        cur.x += (target.x - cur.x) * lerpSpeed;
+        cur.y += (target.y - cur.y) * lerpSpeed;
+
+        // A. 3D Backdrop Artwork Transform (Deep Tilt, Pan & Horizon Pitch)
+        if (backdropRef.current) {
+          const moveX = cur.x * 24; // ±24px pan
+          const moveY = cur.y * 16; // ±16px pan
+          const rotY = cur.x * 5.2; // ±5.2deg yaw
+          const rotX = -cur.y * 3.8; // ±3.8deg pitch
+          backdropRef.current.style.transform = `scale(1.12) translate3d(${moveX}px, ${moveY}px, -20px) rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+        }
+
+        // B. Dynamic 3D Sunbeam Glare Reflection
+        if (glareRef.current) {
+          const glareX = 50 + cur.x * 26;
+          const glareY = 40 + cur.y * 22;
+          glareRef.current.style.background = `radial-gradient(circle at ${glareX}% ${glareY}%, rgba(255, 248, 230, 0.38) 0%, rgba(242, 184, 75, 0.14) 38%, transparent 72%)`;
+        }
+
+        // C. Centerpiece Counter-Parallax & Subtle Spatial Relief
+        if (centerpieceRef.current) {
+          const cMoveX = -cur.x * 10;
+          const cMoveY = -cur.y * 8;
+          const cRotY = -cur.x * 1.8;
+          const cRotX = cur.y * 1.4;
+          centerpieceRef.current.style.transform = `translate3d(${cMoveX}px, ${cMoveY}px, 20px) rotateX(${cRotX}deg) rotateY(${cRotY}deg)`;
+        }
+
+        // D. Prize Pool Chakra Parallax
+        if (chakraRef.current) {
+          const chX = -cur.x * 8;
+          const chY = -cur.y * 6;
+          chakraRef.current.style.transform = `translate3d(calc(-50% + ${chX}px), calc(-50% + ${chY}px), 0)`;
+        }
+      }
+
+      // 2. Render Gold Dust Particles
       ctx.clearRect(0, 0, width, height);
 
       particles.forEach((p) => {
@@ -123,12 +183,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRegisterClick }) => 
       id="hero"
       ref={heroRef}
       className="relative min-h-screen flex flex-col justify-between pt-28 pb-12 overflow-hidden sunburst-bg select-none"
+      style={{ perspective: '1200px', transformStyle: 'preserve-3d' }}
     >
-      {/* 1. Backdrop Artwork Layer with Subtle Parallax */}
+      {/* 1. Backdrop Artwork Layer with Immersive 3D Tilt & Pan */}
       <div
-        className="absolute inset-0 transition-transform duration-300 ease-out pointer-events-none"
+        ref={backdropRef}
+        className="absolute inset-0 pointer-events-none will-change-transform"
         style={{
-          transform: `scale(1.05) translate3d(${mouseOffset.x * 0.5}px, ${mouseOffset.y * 0.5}px, 0)`,
+          transform: 'scale(1.12) translate3d(0, 0, -20px)',
+          transformOrigin: 'center center',
+          transformStyle: 'preserve-3d',
         }}
       >
         <Image
@@ -144,15 +208,26 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRegisterClick }) => 
       {/* 2. Light Atmospheric Scrim */}
       <div className="absolute inset-0 hero-light-scrim pointer-events-none" />
 
-      {/* 3. Floating Gold Dust Canvas Layer */}
+      {/* 3. Dynamic 3D Sunbeam Glare Reflection */}
+      <div
+        ref={glareRef}
+        className="absolute inset-0 pointer-events-none z-[4] mix-blend-screen transition-opacity duration-500"
+        aria-hidden="true"
+      />
+
+      {/* 4. Floating Gold Dust Canvas Layer */}
       <canvas
         ref={canvasRef}
         className="absolute inset-0 pointer-events-none z-10"
         aria-hidden="true"
       />
 
-      {/* 4. Centerpiece Logo, Headline, Prize Crest & Countdown */}
-      <div className="relative z-20 max-w-5xl mx-auto px-4 md:px-6 py-6 text-center flex flex-col items-center gap-4">
+      {/* 5. Centerpiece Logo, Headline, Prize Crest & Countdown (with subtle 3D depth) */}
+      <div
+        ref={centerpieceRef}
+        className="relative z-20 max-w-5xl mx-auto px-4 md:px-6 py-6 text-center flex flex-col items-center gap-4 will-change-transform"
+        style={{ transformStyle: 'preserve-3d' }}
+      >
         {/* Eyebrow Ribbon */}
         <div className="inline-flex items-center gap-3 px-5 py-1.5 bg-dark-chocolate text-gold-highlight border border-gold-rich ribbon-pill">
           <span className="font-label text-label-sm uppercase tracking-widest font-bold">
@@ -182,9 +257,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRegisterClick }) => 
         <div className="relative w-full max-w-sm sm:max-w-md mx-auto my-1 flex items-center justify-center">
           {/* Rotating Chakra centered right in the middle of the Prize Pool Image */}
           <div
-            className="absolute top-1/2 left-1/2 pointer-events-none -z-10 flex items-center justify-center transition-transform duration-500 ease-out"
+            ref={chakraRef}
+            className="absolute top-1/2 left-1/2 pointer-events-none -z-10 flex items-center justify-center will-change-transform"
             style={{
-              transform: `translate3d(calc(-50% + ${-mouseOffset.x * 0.25}px), calc(-50% + ${-mouseOffset.y * 0.25}px), 0)`,
+              transform: 'translate3d(-50%, -50%, 0)',
             }}
           >
             <ChakraWatermark size="lg" opacity="opacity-45" />
