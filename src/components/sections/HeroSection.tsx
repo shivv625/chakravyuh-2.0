@@ -151,19 +151,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRegisterClick }) => 
         aria-hidden="true"
       />
 
-      {/* 4. Concentric Rotating Chakra Watermark (Middle Layer - Perfectly Centered) */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10 overflow-hidden">
-        <div
-          className="transition-transform duration-500 ease-out flex items-center justify-center"
-          style={{
-            transform: `translate3d(${-mouseOffset.x * 0.25}px, ${-mouseOffset.y * 0.25}px, 0)`,
-          }}
-        >
-          <ChakraWatermark size="lg" opacity="opacity-35" />
-        </div>
-      </div>
-
-      {/* 5. Centerpiece Logo, Headline, Prize Crest & Countdown */}
+      {/* 4. Centerpiece Logo, Headline, Prize Crest & Countdown */}
       <div className="relative z-20 max-w-5xl mx-auto px-4 md:px-6 py-6 text-center flex flex-col items-center gap-4">
         {/* Eyebrow Ribbon */}
         <div className="inline-flex items-center gap-3 px-5 py-1.5 bg-dark-chocolate text-gold-highlight border border-gold-rich ribbon-pill">
@@ -173,23 +161,41 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRegisterClick }) => 
         </div>
 
         {/* Big Brand & Headline */}
-        <div className="flex flex-col items-center gap-1.5">
+        <div className="flex flex-col items-center gap-2">
           <p className="font-display text-headline-md md:text-headline-lg text-dark-chocolate tracking-widest uppercase">
             CHAKRAVYUH <span className="text-krishna-blue">2.0</span>
           </p>
-          <h1 className="font-display text-display-lg-mobile md:text-display-lg text-gold-highlight epic-text-shadow uppercase text-balance leading-none">
+          <h1 className="font-display text-display-lg-mobile md:text-display-lg kurukshetra-gold-title uppercase text-balance leading-none tracking-wide">
             {SITE_CONFIG.TAGLINE}
           </h1>
+          {/* Institutional Sub-title */}
+          <div className="flex items-center justify-center gap-2.5 sm:gap-3.5 mt-1 max-w-2xl px-2">
+            <span className="w-6 sm:w-10 h-px bg-gradient-to-r from-transparent to-gold-rich/70" />
+            <p className="font-headline text-xs sm:text-sm md:text-base font-bold uppercase tracking-[0.22em] text-dark-chocolate drop-shadow-xs text-balance text-center">
+              Gandhi Institute For Technological Advancement, BBSR
+            </p>
+            <span className="w-6 sm:w-10 h-px bg-gradient-to-l from-transparent to-gold-rich/70" />
+          </div>
         </div>
 
-        {/* Prize Pool Crest */}
-        <div className="w-full max-w-sm sm:max-w-md mx-auto my-1 flex items-center justify-center">
+        {/* Prize Pool Crest with Rotating Chakra Halo (Aligned Right in the Middle of Prize Pool) */}
+        <div className="relative w-full max-w-sm sm:max-w-md mx-auto my-1 flex items-center justify-center">
+          {/* Rotating Chakra centered right in the middle of the Prize Pool Image */}
+          <div
+            className="absolute top-1/2 left-1/2 pointer-events-none -z-10 flex items-center justify-center transition-transform duration-500 ease-out"
+            style={{
+              transform: `translate3d(calc(-50% + ${-mouseOffset.x * 0.25}px), calc(-50% + ${-mouseOffset.y * 0.25}px), 0)`,
+            }}
+          >
+            <ChakraWatermark size="lg" opacity="opacity-45" />
+          </div>
+
           <Image
             src="/assets/prize_pool_crest.png"
             alt={`Prize Pool ${SITE_CONFIG.METRICS.PRIZE_POOL_DISPLAY}`}
             width={400}
             height={100}
-            className="w-full max-w-xs sm:max-w-sm h-auto object-contain drop-shadow-md"
+            className="w-full max-w-xs sm:max-w-sm h-auto object-contain drop-shadow-md relative z-10"
             priority
           />
         </div>
