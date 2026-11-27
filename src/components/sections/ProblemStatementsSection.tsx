@@ -262,19 +262,8 @@ export const ProblemStatementsSection: React.FC<ProblemStatementsSectionProps> =
             </div>
 
             {/* Right 7 Cols: Active PS Spotlight - Authentic Stitch Parchment Layout */}
-            {/* Sized so Download PS, Category Tags, and Lock This PS are 100% visible immediately */}
+            {/* Clean, high-contrast, zero-overlap presentation adhering strictly to Stitch */}
             <div className="lg:col-span-7 bg-light-surface-container-lowest text-navy-ink border-2 border-gold-rich rounded-xl p-4 md:p-5 flex flex-col justify-between shadow-xl relative overflow-hidden">
-              {/* Atmospheric Watermark Artwork in Background */}
-              <div className="absolute -top-12 -right-12 w-64 h-64 opacity-12 pointer-events-none rounded-full overflow-hidden mix-blend-multiply blur-[0.5px]">
-                <Image
-                  src={currentPS.image}
-                  alt={currentPS.alt}
-                  fill
-                  sizes="256px"
-                  className="object-cover"
-                />
-              </div>
-
               {/* 1. Header & Title Section */}
               <div className="relative z-10 flex flex-col gap-1.5 shrink-0">
                 <div className="flex items-center justify-between gap-2">
