@@ -9,11 +9,10 @@ import { AboutSection } from '@/components/sections/AboutSection';
 import { TimelineSection } from '@/components/sections/TimelineSection';
 import { GuidelinesSection } from '@/components/sections/GuidelinesSection';
 import { GlimpseSection } from '@/components/sections/GlimpseSection';
-import { SponsorsSection } from '@/components/sections/SponsorsSection';
 import { CoordinatorsModal } from '@/components/sections/CoordinatorsModal';
 import { CommunitySection } from '@/components/sections/CommunitySection';
 import { ContactSection } from '@/components/sections/ContactSection';
-import { RegistrationSection } from '@/components/sections/RegistrationSection';
+import { RegistrationModal } from '@/components/sections/RegistrationModal';
 import { IntroVideoTransition } from '@/components/common/IntroVideoTransition';
 import { CustomCursor } from '@/components/common/CustomCursor';
 
@@ -35,7 +34,7 @@ export default function Home() {
         onCoordinatorsClick={() => setCoordinatorsModalOpen(true)}
       />
 
-      {/* 4. Main Section Sequence (Coordinators is opened via modal from navbar, not shown in scroll flow) */}
+      {/* 4. Main Section Sequence — Ends at ContactSection */}
       <main>
         <HeroSection onRegisterClick={() => setModalOpen(true)} />
         <RibbonBannerSection />
@@ -43,22 +42,26 @@ export default function Home() {
         <TimelineSection />
         <GuidelinesSection />
         <GlimpseSection />
-        <SponsorsSection />
         <CommunitySection />
         <ContactSection />
-        <RegistrationSection
-          modalOpen={modalOpen}
-          setModalOpen={setModalOpen}
-        />
       </main>
 
       {/* 5. Institutional Footer */}
-      <Footer onCoordinatorsClick={() => setCoordinatorsModalOpen(true)} />
+      <Footer
+        onCoordinatorsClick={() => setCoordinatorsModalOpen(true)}
+        onRegisterClick={() => setModalOpen(true)}
+      />
 
       {/* 6. Coordinators / Commanders Modal Overlay (Opened on navbar/footer click) */}
       <CoordinatorsModal
         isOpen={coordinatorsModalOpen}
         onClose={() => setCoordinatorsModalOpen(false)}
+      />
+
+      {/* 7. Registration Modal Overlay (Opened on Register buttons across the site) */}
+      <RegistrationModal
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
       />
     </div>
   );

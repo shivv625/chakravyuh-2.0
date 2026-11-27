@@ -7,9 +7,10 @@ import { ArrowUp, ArrowUpRight, Shield, Award, MapPin } from 'lucide-react';
 
 interface FooterProps {
   onCoordinatorsClick?: () => void;
+  onRegisterClick?: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onCoordinatorsClick }) => {
+export const Footer: React.FC<FooterProps> = ({ onCoordinatorsClick, onRegisterClick }) => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -56,9 +57,6 @@ export const Footer: React.FC<FooterProps> = ({ onCoordinatorsClick }) => {
             <a href="#glimpse" className="hover:text-gold-highlight transition-colors">
               Chakravyuh 1.0
             </a>
-            <a href="#sponsors" className="hover:text-gold-highlight transition-colors">
-              Sponsors
-            </a>
             <a
               href="#coordinators"
               onClick={(e) => {
@@ -69,11 +67,18 @@ export const Footer: React.FC<FooterProps> = ({ onCoordinatorsClick }) => {
               }}
               className="hover:text-gold-highlight transition-colors cursor-pointer"
             >
-              Commanders
+              Organizers
             </a>
-            <a href="#register" className="text-gold-highlight font-bold hover:underline">
+            <a href="#contact" className="hover:text-gold-highlight transition-colors">
+              Contact
+            </a>
+            <button
+              type="button"
+              onClick={onRegisterClick}
+              className="text-gold-highlight font-bold hover:underline"
+            >
               Register Now
-            </a>
+            </button>
           </div>
         </div>
 
@@ -116,15 +121,6 @@ export const Footer: React.FC<FooterProps> = ({ onCoordinatorsClick }) => {
                 className="hover:text-gold-highlight transition-colors inline-flex items-center gap-1"
               >
                 <span>Download Rulebook (PDF)</span>
-                <ArrowUpRight className="w-3.5 h-3.5" />
-              </a>
-              <a
-                href={SITE_CONFIG.DOCUMENTS.SPONSORSHIP_BROCHURE_URL}
-                target="_blank"
-                rel="noreferrer"
-                className="hover:text-gold-highlight transition-colors inline-flex items-center gap-1"
-              >
-                <span>Sponsorship Deck (PDF)</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />
               </a>
             </div>
