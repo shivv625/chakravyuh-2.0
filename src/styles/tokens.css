@@ -47,15 +47,6 @@
   text-shadow: 0 2px 0 rgba(58, 29, 14, 0.85), 0 6px 24px rgba(242, 184, 75, 0.45);
 }
 
-.kurukshetra-gold-title {
-  background: linear-gradient(180deg, #FFFFFF 0%, #FFF3CA 18%, #F7C04D 42%, #D8891B 72%, #7B3708 98%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: #F2B84B;
-  filter: drop-shadow(0 2px 0px #3A1D0E) drop-shadow(0 4px 10px rgba(58, 29, 14, 0.65)) drop-shadow(0 8px 24px rgba(232, 118, 30, 0.35));
-}
-
 .hero-light-scrim {
   background: radial-gradient(circle at 50% 50%, rgba(255, 246, 227, 0.86) 0%, rgba(255, 246, 227, 0.58) 42%, rgba(58, 29, 14, 0.38) 100%);
 }

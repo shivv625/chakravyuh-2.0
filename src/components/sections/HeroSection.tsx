@@ -165,7 +165,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRegisterClick }) => 
           <p className="font-display text-headline-md md:text-headline-lg text-dark-chocolate tracking-widest uppercase">
             CHAKRAVYUH <span className="text-krishna-blue">2.0</span>
           </p>
-          <h1 className="font-display text-display-lg-mobile md:text-display-lg kurukshetra-gold-title uppercase text-balance leading-none tracking-wide">
+          <h1 className="font-display text-display-lg-mobile md:text-display-lg text-gold-highlight epic-text-shadow uppercase text-balance leading-none">
             {SITE_CONFIG.TAGLINE}
           </h1>
           {/* Institutional Sub-title */}
