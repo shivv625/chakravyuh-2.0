@@ -31,6 +31,16 @@ export const IntroVideoTransition: React.FC<IntroVideoTransitionProps> = ({ onCo
   };
 
   useEffect(() => {
+    // 0. Skip immediately if already seen in this session
+    try {
+      if (typeof window !== 'undefined' && sessionStorage.getItem('chakravyuh_intro_shown') === 'true') {
+        setMounted(false);
+        return;
+      }
+    } catch {
+      // Ignore storage errors in private browsing
+    }
+
     // Check prefers-reduced-motion
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) {
