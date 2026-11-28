@@ -206,20 +206,18 @@ export const TimelineSection: React.FC = () => {
                     <span className="absolute top-0 left-0 bottom-0 w-1.5 bg-gradient-to-b from-gold-highlight via-saffron to-gold-highlight" />
                   )}
 
-                  {/* Thumbnail Image with Roman Badge */}
-                  <div className="relative w-15 h-15 rounded-lg overflow-hidden border border-gold-highlight/80 shrink-0 bg-black/40">
+                  {/* Visible Thematic Thumbnail Image */}
+                  <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-lg overflow-hidden border-2 border-gold-highlight/80 shrink-0 shadow-md bg-black/30">
                     <Image
                       src={p.image}
                       alt={p.alt}
                       fill
-                      sizes="60px"
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      sizes="64px"
+                      className="object-cover group-hover:scale-110 transition-transform duration-300"
                     />
-                    <div className="absolute inset-0 bg-black/35 flex items-center justify-center">
-                      <span className="font-display text-sm font-bold text-gold-highlight">
-                        {p.roman}
-                      </span>
-                    </div>
+                    <span className="absolute bottom-1 right-1 px-1.5 py-0.5 rounded bg-dark-chocolate/90 border border-gold-highlight/90 font-display text-[10px] font-bold text-gold-highlight shadow-xs leading-none">
+                      {p.roman}
+                    </span>
                   </div>
 
                   {/* Content */}
@@ -433,20 +431,18 @@ export const TimelineSection: React.FC = () => {
                     <span className="absolute top-0 left-0 bottom-0 w-1.5 bg-gradient-to-b from-gold-highlight via-saffron to-gold-highlight" />
                   )}
 
-                  {/* Thumbnail Image with Roman Badge */}
-                  <div className="relative w-15 h-15 rounded-lg overflow-hidden border border-gold-highlight/80 shrink-0 bg-black/40">
+                  {/* Visible Thematic Thumbnail Image */}
+                  <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-lg overflow-hidden border-2 border-gold-highlight/80 shrink-0 shadow-md bg-black/30">
                     <Image
                       src={p.image}
                       alt={p.alt}
                       fill
-                      sizes="60px"
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      sizes="64px"
+                      className="object-cover group-hover:scale-110 transition-transform duration-300"
                     />
-                    <div className="absolute inset-0 bg-black/35 flex items-center justify-center">
-                      <span className="font-display text-sm font-bold text-gold-highlight">
-                        {p.roman}
-                      </span>
-                    </div>
+                    <span className="absolute bottom-1 right-1 px-1.5 py-0.5 rounded bg-dark-chocolate/90 border border-gold-highlight/90 font-display text-[10px] font-bold text-gold-highlight shadow-xs leading-none">
+                      {p.roman}
+                    </span>
                   </div>
 
                   {/* Content */}
